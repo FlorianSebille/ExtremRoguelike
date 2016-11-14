@@ -1,0 +1,27 @@
+
+JEU -> MAP ENTIERE -> SALLES -> PIECES
+
+
+structure des données:
+
+- un type enum t_decor qui contient tous les caractères utilisés sur la carte.
+- un type struct t_carac avec son nom, son niveau, son expérience, ses points de vie, sa barre de faim, son niveau, ses dégâts d’attaque et son armure.
+- une matrice de type t_decor pour afficher la carte.
+
+
+fonctions:
+
+- fonction qui génère une matrice aléatoire (pièces reliés par des couloirs) où la taille de la carte (nombre de pièces) dépendra de la salle (void).
+
+- fonctions qui génèrent des monstres, de la nourriture, du heal (en fonction de la salle où il se situe) (void).
+
+- fonction mouv qui gère les déplacements (void) en fonction du choix du joueur
+
+- (fonction niveau qui prend en paramètre le niveau et les points d’exp actuel et retourne le niveau, fonction santé…) contenu dans une fonction majperso qui met à jour les stats du joueur.
+
+- fonction combat qui vérifie si il y a un monstre aux alentours et qui déclenche un combat si le joueur est trop proche.
+
+
+
+
+
