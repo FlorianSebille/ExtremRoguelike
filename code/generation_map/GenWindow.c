@@ -39,14 +39,14 @@ int GenWindow()
 	startxF = (int) COLS * 0.03 ;
 
   heightS = (int) LINES * 0.85;
-	widthS = (int) COLS * 0.6;
+	widthS = (int) COLS * 0.5;
 	startyS = 2 ;	/* Dimensions et Position de la 2ème fenêtre */
 	startxS = (int) COLS * 0.17 ;
 
   heightT = (int) LINES * 0.85;
-	widthT = (int) COLS * 0.12;
+	widthT = (int) COLS * 0.2;
 	startyT = 2 ;	/* Dimensions et Position de la 3ème fenêtre */
-	startxT = (int) COLS * 0.795 ;
+	startxT = (int) COLS * 0.697 ;
 
 	printw("Press q to exit\n");
   printw("Nombre de lignes: %i, Nombre de colonnes: %i\n",LINES,COLS);

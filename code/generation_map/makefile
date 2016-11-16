@@ -11,3 +11,4 @@ Rogue.o: Rogue.c
 
 clean:
 	rm *.o
+	./Rogue
