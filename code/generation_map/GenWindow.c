@@ -32,22 +32,24 @@ int GenWindow()
 
 	initscr();			/* On démarre le mode ncurses 		*/
 
-	heightF = 50;
-	widthF = 35;
+
+	heightF = (int) LINES * 0.85;
+	widthF = (int) COLS * 0.12;
 	startyF = 2 ;	/* Dimensions et Position de la 1ère fenêtre */
-	startxF = 10 ;
+	startxF = (int) COLS * 0.03 ;
 
-  heightS = 50;
-	widthS = 180;
+  heightS = (int) LINES * 0.85;
+	widthS = (int) COLS * 0.6;
 	startyS = 2 ;	/* Dimensions et Position de la 2ème fenêtre */
-	startxS = 50 ;
+	startxS = (int) COLS * 0.17 ;
 
-  heightT = 50;
-	widthT = 35;
+  heightT = (int) LINES * 0.85;
+	widthT = (int) COLS * 0.12;
 	startyT = 2 ;	/* Dimensions et Position de la 3ème fenêtre */
-	startxT = 235 ;
+	startxT = (int) COLS * 0.795 ;
 
 	printw("Press q to exit\n");
+  printw("Nombre de lignes: %i, Nombre de colonnes: %i\n",LINES,COLS);
   refresh();
   F_win=create_newwin(heightF,widthF,startyF,startxF);
   S_win=create_newwin(heightS,widthS,startyS,startxS);
