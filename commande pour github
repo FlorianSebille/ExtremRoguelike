@@ -1,0 +1,2 @@
+export HTTP_PROXY="http://proxy.univ-lemans.fr:3128"
+export HTTPS_PROXY="http://proxy.univ-lemans.fr:3128"
