@@ -21,7 +21,7 @@ Projet
 
 utiliser des structures : 
 	→ Une pour la carte
-	→ ne pour le joueur
+	→ une pour le joueur
 Génération de carte aléatoire/automatique, de plus en plus dur selon le niveau.
 Le but du jeu est de se déplacer dans un labyrinthe générer automatiquement à travers des pièces 
 reliés par des couloirs et de récupérer le trésor avant de s’enfuir par la sortie. La taille du labyrinthe
@@ -32,4 +32,4 @@ Le joueur se déplace grâce aux touches du clavier dans une matrice de structur
 	→ mur vertical (---)
 	→ mur horizontal ( | )
 	→ porte (P)
-	→ joueur (@) 
+	→ joueur (@)

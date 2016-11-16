@@ -11,15 +11,27 @@ structure des données:
 
 fonctions:
 
-- fonction qui génère une matrice aléatoire (pièces reliés par des couloirs) où la taille de la carte (nombre de pièces) dépendra de la salle (void).
+- fichier qui s’occupe de la map :
+	- fonction aillant en paramètre la salle où il se trouve et qui génère une matrice aléatoire (pièces reliés par des couloirs) où la taille de la carte (nombre de pièces) dépendra de la salle (void).
+	- fonctions qui génèrent des monstres, de la nourriture, du heal (en fonction de la salle où il se situe) (void).
 
-- fonctions qui génèrent des monstres, de la nourriture, du heal (en fonction de la salle où il se situe) (void).
+- fichier mouvement : 
+	- fonction mouv_perso qui gère les déplacements (void) en fonction du choix du joueur.
+	- fonction mouv_monster qui gère les déplacements des différent monstre.
 
-- fonction mouv qui gère les déplacements (void) en fonction du choix du joueur
+- fonction niveau qui prend en paramètre le niveau et les points d’exp actuel et retourne le niveau, fonction santé… contenu dans une fonction majperso qui met à jour les stats du joueur.
 
-- (fonction niveau qui prend en paramètre le niveau et les points d’exp actuel et retourne le niveau, fonction santé…) contenu dans une fonction majperso qui met à jour les stats du joueur.
+- fichier combat :
+	- fonction test_combat qui vérifie si il y a un monstre aux alentours et qui déclenche un combat si le joueur est trop proche.
+	- fonction init_combat qui inflige le premier dégât obligatoire au perso.
+	- fonction combat qui gère la suite du combat en attendant que l’utilisateur appui soit sur la touche pour fuir soit pour attaquer ensuite le monstre attaques et inflige en certain nombre de dégât émis de façon aléatoire en fonction du niveau du montres et celui du perso et fait avancer le combat jusqu’à se que un des deux ne meurt ou que le perso fuit.
 
-- fonction combat qui vérifie si il y a un monstre aux alentours et qui déclenche un combat si le joueur est trop proche.
+- fichier sauvegarde: (si le temps)
+	- qui gère les sauvegarde en demandant au joueur si il veut continuer la sauvegarde ou une des sauvegardes ou commencer une nouvelle partie si qui écrasera la sauvegarde selectionner.	
+
+- fichier principale :
+	- qui appelle les diffèrent autres fichiers et utilise les fonction pour que le jeu se déroule comme souhaiter.
+
 
 
 
