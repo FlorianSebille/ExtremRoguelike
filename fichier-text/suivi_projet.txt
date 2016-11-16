@@ -1,0 +1,21 @@
+Projet
+
+1 Analyse des besoins
+	→ Ecrire un document environ 20 pages max (6 à 8h)
+		→ Introduction
+		→ règles du jeu
+		→ mode d’interaction des joueurs
+			→ interfaces
+			→ commandes
+		→ Contraintes
+			→ dates
+			→ langage de prog
+			→ outils ?
+——————————————————————FAIT——————————————————————————————————————
+2 Conception
+	→ Document environ 5 pages max
+		→ Structure des données
+		→ découpage fonctionnel (main →fonction →fonction) (6 à 8h)
+3 Codage/Test
+	→ Répartition du travail
+	→ Tester les fonctions dès qu’elles sont crées
