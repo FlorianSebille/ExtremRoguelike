@@ -1,5 +1,6 @@
 #include <ncurses.h>
 #include "GenWindow.h"
+#include "RandomRoom.h"
 
 
 
@@ -37,8 +38,9 @@ int main(){
   S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
   T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
 
-  mvwprintw(F_win,2,2,"Bonjour");
-  wrefresh(F_win);
+  fillwin(S_win);
+  init_room(S_win);
+  wrefresh(S_win);
 
   getch();
 
