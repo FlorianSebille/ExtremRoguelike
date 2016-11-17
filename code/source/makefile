@@ -6,8 +6,8 @@ Rogue: GenWindow.o Rogue.o
 GenWindow.o: GenWindow.c
 	gcc -c GenWindow.c
 
-Rogue.o: Rogue.c fichierh/GenWindow.h
-	gcc -c -I Rogue.c ./fichierh
+Rogue.o: Rogue.c
+	gcc -c Rogue.c
 
 clean:
 	rm *.o
