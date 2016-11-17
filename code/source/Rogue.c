@@ -1,6 +1,6 @@
 #include <ncurses.h>
 #include "GenWindow.h"
-
+#include "Win_Stat.h"
 
 
 int main(){
@@ -36,8 +36,7 @@ int main(){
   F_win=create_newwin(heightF,widthF,startyF,startxF,"Profile");
   S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
   T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
-
-  mvwprintw(F_win,2,2,"Bonjour");
+  Win_Stat(F_win);
   wrefresh(F_win);
 
   getch();

@@ -6,7 +6,7 @@ void init_curses()
 {
         initscr();
         start_color();
-        init_pair(1,COLOR_WHITE,COLOR_BLUE);
+        init_pair(1,COLOR_WHITE,COLOR_BLACK);
         init_pair(2,COLOR_RED,COLOR_GREEN);
         init_pair(3,COLOR_RED,COLOR_WHITE);
 	init_pair(4,COLOR_BLUE,COLOR_YELLOW);
@@ -17,39 +17,39 @@ void init_curses()
 }
 void draw_menubar(WINDOW *menubar)
 {
-        wbkgd(menubar,COLOR_PAIR(5));
+        wbkgd(menubar,COLOR_PAIR(2));
         waddstr(menubar,"File");
-        wattron(menubar,COLOR_PAIR(3));
+        wattron(menubar,COLOR_PAIR(2));
         waddstr(menubar,"(F1)");
         wattroff(menubar,COLOR_PAIR(3));
         wmove(menubar,0,10);
         waddstr(menubar,"Edit");
-        wattron(menubar,COLOR_PAIR(3));
+        wattron(menubar,COLOR_PAIR(4));
         waddstr(menubar,"(F2)");
 	wmove(menubar,0,20);
-        wattroff(menubar,COLOR_PAIR(3));
+        wattroff(menubar,COLOR_PAIR(5));
 	waddstr(menubar,"Search");
-	wattron(menubar,COLOR_PAIR(3));
+	wattron(menubar,COLOR_PAIR(1));
 	waddstr(menubar,"(F3)");
 	wmove(menubar,0,31);
-	wattroff(menubar,COLOR_PAIR(3));
+	wattroff(menubar,COLOR_PAIR(2));
         waddstr(menubar,"Cursor ");
 	wattron(menubar,COLOR_PAIR(3));
 	waddstr(menubar,"(F4)");
 	wmove(menubar,0,43);
-	wattroff(menubar,COLOR_PAIR(3));
+	wattroff(menubar,COLOR_PAIR(4));
 	waddstr(menubar,"Compile");
-	wattron(menubar,COLOR_PAIR(3));
+	wattron(menubar,COLOR_PAIR(5));
 	waddstr(menubar,"(F5)");
-        wattroff(menubar,COLOR_PAIR(3));
+        wattroff(menubar,COLOR_PAIR(1));
 	wmove(menubar,0,56);
 	waddstr(menubar,"Help");
-	wattron(menubar,COLOR_PAIR(3));
+	wattron(menubar,COLOR_PAIR(2));
 	waddstr(menubar,"(F6)");
         wattroff(menubar,COLOR_PAIR(3));
 	wmove(menubar,0,66);
 	waddstr(menubar,"Exit");
-	wattron(menubar,COLOR_PAIR(3));
+	wattron(menubar,COLOR_PAIR(4));
 	waddstr(menubar,"(F7)");
 
 }
