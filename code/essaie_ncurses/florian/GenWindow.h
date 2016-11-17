@@ -1,5 +1,4 @@
 #include <ncurses.h>
-#define TAILLE 100
 
 WINDOW * create_newwin(int height, int width, int starty, int startx, char * label);
 int taille_terminal();

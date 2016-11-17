@@ -43,11 +43,9 @@ int main(){
     mvwprintw(F_win,2,2,"Bonjour");
     wrefresh(F_win);
 
-    ecrire_chat(T_win,phrase);
+    ecrire_chat(T_win);
 
     getch();
-
-
     endwin();
   }
 }
