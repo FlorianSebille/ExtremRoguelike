@@ -16,3 +16,10 @@ WINDOW * create_newwin(int height, int width, int starty, int startx, char * lab
 
 	return local_win; /* Renvoi la fenêtre */
 }
+
+void destroy_win(WINDOW *local_win)
+{
+	wborder(local_win, ' ', ' ', ' ',' ',' ',' ',' ',' ');
+	wrefresh(local_win);
+	delwin(local_win);
+}

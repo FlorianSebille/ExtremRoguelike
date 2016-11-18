@@ -1,10 +1,10 @@
 #include <ncurses.h>
+#include "GenWindow.h"
 #define TAILLE 100
 
 
-void ecrire_chat(WINDOW *chatwin/*, int *ligne*/,char phrase[TAILLE]){
+void ecrire_chat(WINDOW *chatwin, int *ligne,char phrase[TAILLE]){
 
-  int ligne = 1;
   int lignemax;
   int colonemax;
 
@@ -16,20 +16,20 @@ void ecrire_chat(WINDOW *chatwin/*, int *ligne*/,char phrase[TAILLE]){
 
   getmaxyx(chatwin,lignemax,colonemax);
 
-  mvwprintw(chatwin,ligne,1,"c");
+  mvwprintw(chatwin,*ligne,1,"c");
 
-  while(getch() != 'q'){
-    if(ligne >= lignemax-1){
+  if(*ligne >= lignemax-1){
+    
+    destroy_win(chatwin);
+    /*wclear(chatwin);
+    wborder(chatwin, '|', '|', '-','-','+','+','+','+');  Création des bordures */
+    chatwin = create_newwin(heightT,widthT,startyT,startxT,"Chat");
+    *ligne = 1;
+    mvwprintw(chatwin,*ligne,1,"%s",phrase);
 
-      wclear(chatwin);
-      chatwin=create_newwin(heightT,widthT,startyT,startxT,"Chat");
-      ligne = 1;
-      mvwprintw(chatwin,ligne,1,"%s",phrase);
-
-    }else {
-      mvwprintw(chatwin,ligne,1,"%s",phrase);
-      ligne = ligne + 1;
-    }
-    wrefresh(chatwin);
+  }else {
+    mvwprintw(chatwin,*ligne,1,"%s",phrase);
+    *ligne = *ligne + 1;
   }
+  wrefresh(chatwin);
 }
