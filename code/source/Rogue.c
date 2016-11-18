@@ -16,20 +16,19 @@ int main(){
   WINDOW * S_win;
   WINDOW * T_win;
 
-  heightF = (int) LINES * 0.85;
+  heightF = (int) LINES * 0.85;   /* Dimensions et Position de la 1ère fenêtre */
   widthF =  (int) COLS * 0.12;
-  startyF = 2 ;	/* Dimensions et Position de la 1ère fenêtre */
+  startyF = 2 ;
   startxF =  (int) COLS * 0.03 ;
 
-  heightS = (int) LINES * 0.85;
+  heightS = (int) LINES * 0.85;   /* Dimensions et Position de la 2ème fenêtre */
   widthS =  (int) COLS * 0.5;
-  startyS = 2 ;	/* Dimensions et Position de la 2ème fenêtre */
+  startyS = 2 ;
   startxS =  (int) COLS * 0.17 ;
 
-  heightT = (int) LINES * 0.85;
+  heightT = (int) LINES * 0.85;    /* Dimensions et Position de la 3ème fenêtre */
   widthT = (int) COLS * 0.2;
-
-  startyT = 2 ;	/* Dimensions et Position de la 3ème fenêtre */
+  startyT = 2 ;
   startxT = (int) COLS * 0.697 ;
 
   refresh();
@@ -38,9 +37,6 @@ int main(){
   S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
   T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
 
-  fillwin(S_win);
-  init_room(S_win);
-  wrefresh(S_win);
 
   getch();
 
