@@ -1,6 +1,7 @@
 #include <ncurses.h>
 #include "GenWindow.h"
 #include "RandomRoom.h"
+#include "AfficherMap.h"
 
 
 
@@ -16,20 +17,20 @@ int main(){
   WINDOW * S_win;
   WINDOW * T_win;
 
-  heightF = (int) LINES * 0.85;   /* Dimensions et Position de la 1ère fenêtre */
-  widthF =  (int) COLS * 0.12;
+  heightF = 31;   /* Dimensions et Position de la 1ère fenêtre */
+  widthF = 22;
   startyF = 2 ;
-  startxF =  (int) COLS * 0.03 ;
+  startxF = 5 ;
 
-  heightS = (int) LINES * 0.85;   /* Dimensions et Position de la 2ème fenêtre */
-  widthS =  (int) COLS * 0.5;
+  heightS = 31;   /* Dimensions et Position de la 2ème fenêtre */
+  widthS = 90;
   startyS = 2 ;
-  startxS =  (int) COLS * 0.17 ;
+  startxS = 31 ;
 
-  heightT = (int) LINES * 0.85;    /* Dimensions et Position de la 3ème fenêtre */
-  widthT = (int) COLS * 0.2;
+  heightT = 31;    /* Dimensions et Position de la 3ème fenêtre */
+  widthT = 36;
   startyT = 2 ;
-  startxT = (int) COLS * 0.697 ;
+  startxT = 125 ;
 
   refresh();
 
@@ -37,6 +38,7 @@ int main(){
   S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
   T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
 
+  init_map();
 
   getch();
 
