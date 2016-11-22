@@ -1,7 +1,7 @@
 all: Rogue clean
 
 Rogue: GenWindow.o Rogue.o Win_Stat.o
-	gcc -o Rogue GenWindow.o Rogue.o Win_Stat.o -lncurses
+	gcc -o Rogue GenWindow.o Rogue.o Win_Stat.o -lncurses -lm
 
 GenWindow.o: GenWindow.c
 	gcc -c GenWindow.c

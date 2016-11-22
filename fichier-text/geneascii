@@ -1,0 +1,4 @@
+python3
+for i in range(20000):
+...     print(chr(i), end=' ')
+...

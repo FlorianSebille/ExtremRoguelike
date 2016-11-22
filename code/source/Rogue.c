@@ -36,7 +36,7 @@ int main(){
   F_win=create_newwin(heightF,widthF,startyF,startxF,"Profile");
   S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
   T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
-  Win_Stat(F_win);
+  Win_Stat(F_win,widthF);
   wrefresh(F_win);
 
   getch();
