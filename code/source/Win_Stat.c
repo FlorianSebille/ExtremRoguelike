@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
+#include "GenWindow.h"
 
 #define COLOR_BLACK   0
 #define COLOR_RED     1
@@ -15,6 +16,8 @@
 
 
 void Win_Stat(WINDOW *F_win, int widthF){
+	WINDOW * arrows_win;
+	arrows_win=create_newwin(6,1,26,15,"");
 	int x=0;
 	int n;
 	int STAGE = 10;
@@ -68,7 +71,8 @@ void Win_Stat(WINDOW *F_win, int widthF){
 	mvwprintw(F_win,22,2,"QUIT             Q");
 	mvwprintw(F_win,23,2,"SAVE             S");
 	mvwprintw(F_win,25,2,"MOVE: %c ", 10136);
-	mvwprintw(F_win,26,2,"UP        ⭡");
+	mvwprintw(F_win,26,2,"UP");
+	mvwprintw(F_win,26,17,"⭡");
 	mvwprintw(F_win,27,2,"DOWN           ⭣");
 	mvwprintw(F_win,28,2,"RIGHT          ⭢");
 	mvwprintw(F_win,29,2,"LEFT           ⭠");
