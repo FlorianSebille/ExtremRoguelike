@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "RandomRoom.h"
 
-extern t_cellule MAP[][];
+extern t_cellule MAP[100][200];
 
 void Afficher(WINDOW * fenetre, int height, int width){
   int i,j;

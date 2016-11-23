@@ -38,7 +38,6 @@ int main(){
   S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
   T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
 
-  init_map();
 
   getch();
 
