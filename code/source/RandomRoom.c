@@ -1,8 +1,8 @@
 #include <time.h>
 #include <ncurses.h>
 #include <stdlib.h>
-#define x 30
-#define y 60
+#define x 31
+#define y 90
 
 
 
@@ -28,6 +28,8 @@ void fillmap(){                     //fonction qui remplit la map à l'état vid
 int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx){    //fonction qui renvoit 1 si la creation d'une salle est possible
   int i, j, k;
   i = posx;
+  if(posx == 0 || posx >= x - lg_mur_vert) return 0;
+  if(posy == 0 || posy >= y - lg_mur_horiz) return 0;
   for(j = posy, k = 0; (k < lg_mur_horiz) && (j < y); j++, k++){
     if(MAP[i][j].lieu == 1) return 0;
   }
@@ -47,8 +49,8 @@ int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx){    //
 void init_room(){                   //fonction qui initialise une salle de taille aléatoire à un endroit aléatoire.
   int i, j, k, l;
   int posx, posy, lg_mur_horiz, lg_mur_vert;
-  lg_mur_horiz = aleat(10,20);
-  lg_mur_vert= aleat(10,20);
+  lg_mur_horiz = aleat(7,19);
+  lg_mur_vert= aleat(5,9);
   posx = aleat(0,x);
   posy = aleat(0,y);
 
@@ -63,7 +65,7 @@ void init_room(){                   //fonction qui initialise une salle de taill
       MAP[i][j].lieu = mur;
       MAP[i][j].position = 1;
     }
-    for(j = posy, k = 0; (k < lg_mur_horiz) && (i < y); j++, k++){   //...du bas
+    for(j = posy, k = 0; (k <= lg_mur_horiz) && (i < y); j++, k++){   //...du bas
       MAP[i][j].lieu = mur;
       MAP[i][j].position = 1;
     }
@@ -73,8 +75,8 @@ void init_room(){                   //fonction qui initialise une salle de taill
       MAP[i][j].position = 1;
     }
 
-    for(i = posx + 1, k = 0; (k < lg_mur_horiz - 1) && (i < y - 1); i++, k++){   //on place le sol dans la salle
-      for(j = posy - 1, l = 0; (l < lg_mur_vert - 1) && (j < x - 1); j++, l++){
+    for(j = posy + 1, k = 0; (k < lg_mur_horiz - 1) && (j < y - 1); j++, k++){   //on place le sol dans la salle
+      for(i = posx + 1, l = 0; (l < lg_mur_vert - 1) && (i < x - 1); i++, l++){
         MAP[i][j].lieu = sol;
         MAP[i][j].position = 2;
       }
@@ -89,7 +91,7 @@ void init_map(){                    //fonction qui remplit la map d'un nombre de
   int i;
 
   fillmap();
-  nb_salle = aleat(4,8);
+  nb_salle = aleat(3,6);
 
   for(i = 0; i < nb_salle; i++){
     init_room();
@@ -100,20 +102,14 @@ int main(){
   srand(time(NULL));
   int i,j;
 
-  /*fillmap();
+  fillmap();
   init_map();
 
   for(i = 0; i < x; i++){
     for(j = 0; j < y; j++){
-      printf("%i ",MAP[i][j].position);
+      if(MAP[i][j].lieu != vide) printf("%i",MAP[i][j].position);
+      else printf(" ");
     }
     printf("\n");
-  }*/
-  j=0;
-  while(j<200){
-  	i = aleat(10,20);
-  	printf("%i ",i);
-    j++;
   }
-  return 0;
 }
