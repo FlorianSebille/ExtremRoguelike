@@ -44,8 +44,15 @@ int main(){
 
     start_color();
     use_default_colors();
-
-    ecrire_chat(T_win,&ligne, position_perso);
+    int position_perso = 1;
+    while (getch() != 'q') {
+      ecrire_chat(T_win,&ligne, position_perso);
+      position_perso++;
+      if (position_perso > 4) {
+        position_perso = 1;
+      }
+    }
+    //ecrire_chat(T_win,&ligne, position_perso);
 
     endwin();
   }

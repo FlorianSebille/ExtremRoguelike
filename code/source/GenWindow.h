@@ -9,4 +9,4 @@ void destroy_win(WINDOW *local_win);
 int taille_terminal();
 
 //dans le fichier chat.c
-void ecrire_chat(WINDOW *chatwin,int *ligne,char phrase[TAILLE]);
+void ecrire_chat(WINDOW *chatwin,int *ligne,int position_perso);

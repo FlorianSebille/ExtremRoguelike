@@ -5,7 +5,7 @@
 #define TAILLE 100
 
 
-void ecrire_chat(WINDOW *chatwin, int *ligne, position_perso){
+void ecrire_chat(WINDOW *chatwin, int *ligne, int position_perso){
 
   int lignemax;
   int colonemax;
@@ -26,9 +26,9 @@ void ecrire_chat(WINDOW *chatwin, int *ligne, position_perso){
 
   }
   switch (position_perso) {
-    case 0: mvwprintw(chatwin,*ligne,1,"deplacer vous avec les fleches vers la porte"); break;
-    case 1: mvwprintw(chatwin,*ligne,1,"vous etes sur une porte appuier sur entrer pour changer de salle"); break;
-    case 2: mvwprintw(chatwin,*ligne,1,"vous etes près d'un monstre vous pouver l'atacker et fuier"); break;
+    case 0: mvwprintw(chatwin,*ligne,1,"deplacer vous avec les fleches"); break;
+    case 1: mvwprintw(chatwin,*ligne,1,"vous etes sur une porte appuier sur entrer"); break;
+    case 2: mvwprintw(chatwin,*ligne,1,"vous etes près d'un monstre"); break;
     case 3: mvwprintw(chatwin,*ligne,1,"vous etes mort, vous etes nul"); break;
     case 4: mvwprintw(chatwin,*ligne,1,"vous avez de la chance vous avez gagnez"); break;
     //case ?: ; break;
