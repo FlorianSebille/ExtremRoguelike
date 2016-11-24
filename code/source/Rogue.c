@@ -14,6 +14,7 @@ int main(){
     int startxF, startyF, widthF, heightF;
     int startxS, startyS, widthS, heightS;
     int startxT, startyT, widthT, heightT;
+    int ligne = 1;
 
     WINDOW * F_win;
     WINDOW * S_win;
@@ -41,36 +42,11 @@ int main(){
     S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
     T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
 
-
-
-    mvwprintw(F_win,2,2,"Bonjour");
-    wrefresh(F_win);
-
-    int ligne = 1;
-    char key = getch();
-
     start_color();
     use_default_colors();
 
-    while(key != 'q'){
-      if(key == 'a'){
-        char phrase[TAILLE]={"vous avez appuier sur a"};
-        ecrire_chat(T_win,&ligne,phrase);
-      }
-      if(key == 'b'){
-        char phrase[TAILLE]={"vous avez appuier sur b"};
-        ecrire_chat(T_win,&ligne,phrase);
-      }
-      if(key == 'c'){
-        char phrase[TAILLE]={"vous avez appuier sur c"};
-        ecrire_chat(T_win,&ligne,phrase);
-      }
-      if(key == 'd'){
-        char phrase[TAILLE]={"vous avez appuier sur d"};
-        ecrire_chat(T_win,&ligne,phrase);
-      }
-      key = getch();
-    }
+    ecrire_chat(T_win,&ligne, position_perso);
+
     endwin();
   }
 }
