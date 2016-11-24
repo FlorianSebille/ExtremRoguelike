@@ -1,4 +1,6 @@
 #include <ncurses.h>
+#include <curses.h>
+#include <stdlib.h>
 #include "GenWindow.h"
 #define TAILLE 100
 
@@ -6,6 +8,7 @@
 int main(){
 
   initscr();
+  noecho();
   if(taille_terminal()){
 
     int startxF, startyF, widthF, heightF;
@@ -45,6 +48,9 @@ int main(){
 
     int ligne = 1;
     char key = getch();
+
+    start_color();
+    use_default_colors();
 
     while(key != 'q'){
       if(key == 'a'){
