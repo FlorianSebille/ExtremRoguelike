@@ -10,3 +10,5 @@ int taille_terminal();
 
 //dans le fichier chat.c
 void ecrire_chat(WINDOW *chatwin,int *ligne,int position_perso);
+
+int addsauv(WINDOW *centerwin);
