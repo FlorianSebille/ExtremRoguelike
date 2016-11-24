@@ -16,9 +16,6 @@
 
 
 void Win_Stat(WINDOW *F_win, int widthF){
-	WINDOW * arrows_win;
-	arrows_win=create_newwin(6,1,26,15,"");
-	int x=0;
 	int n;
 	int STAGE = 10;
 	int LEVEL = 1;
@@ -29,6 +26,7 @@ void Win_Stat(WINDOW *F_win, int widthF){
 	int DEF = 15;
 	int MAX_FOOD = 10;
 	int FOOD = 5 ;
+	
 	start_color();
 	use_default_colors();
 	init_pair(1, COLOR_RED, -1);
@@ -68,14 +66,13 @@ void Win_Stat(WINDOW *F_win, int widthF){
 	n = log10(FOOD) + 1;
 	mvwprintw(F_win,14,widthF-1-n,"%i", FOOD);
 	mvwprintw(F_win,21,2,"COMMAND:");
-	mvwprintw(F_win,22,2,"QUIT             Q");
-	mvwprintw(F_win,23,2,"SAVE             S");
-	mvwprintw(F_win,25,2,"MOVE: %c ", 10136);
-	mvwprintw(F_win,26,2,"UP");
-	mvwprintw(F_win,26,17,"⭡");
-	mvwprintw(F_win,27,2,"DOWN           ⭣");
-	mvwprintw(F_win,28,2,"RIGHT          ⭢");
-	mvwprintw(F_win,29,2,"LEFT           ⭠");
+	mvwprintw(F_win,22,2,"Q                    QUIT");
+	mvwprintw(F_win,23,2,"S                    SAVE");
+	mvwprintw(F_win,25,2,"MOVE:");
+	mvwprintw(F_win,26,2,"⭡                    UP");
+	mvwprintw(F_win,27,2,"⭣                  DOWN");
+	mvwprintw(F_win,28,2,"⭢                 RIGHT");
+	mvwprintw(F_win,29,2,"⭠                  LEFT");
 	
 	wattroff(F_win, A_BOLD | COLOR_PAIR(2));
 	wrefresh(F_win);
