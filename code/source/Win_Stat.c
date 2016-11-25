@@ -1,20 +1,4 @@
-#include <ncurses.h>
-#include <curses.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
-#include "GenWindow.h"
-
-#define COLOR_BLACK   0
-#define COLOR_RED     1
-#define	COLOR_GREEN   2
-#define	COLOR_YELLOW  3
-#define	COLOR_BLUE    4
-#define	COLOR_MAGENTA 5
-#define	COLOR_CYAN    6
-#define COLOR_WHITE   7
-
+#include "total.h"
 
 void Win_Stat(WINDOW *F_win, int widthF){
 	int n;

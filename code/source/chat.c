@@ -1,8 +1,4 @@
-#include <ncurses.h>
-#include <curses.h>
-#include <stdlib.h>
-#include "GenWindow.h"
-#define TAILLE 100
+#include "total.h"
 
 
 void ecrire_chat(WINDOW *chatwin, int *ligne, int position_perso){

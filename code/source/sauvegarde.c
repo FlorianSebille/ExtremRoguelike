@@ -1,7 +1,4 @@
-#include <ncurses.h>
-#include <curses.h>
-#include <stdlib.h>
-#include "GenWindow.h"
+#include "total.h"
 
 int addsauv(WINDOW *centerwin){
 

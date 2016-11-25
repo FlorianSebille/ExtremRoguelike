@@ -1,9 +1,4 @@
-#include <ncurses.h>
-#include <curses.h>
-#include <stdlib.h>
-#include "GenWindow.h"
-#define TAILLE 100
-#include "Win_Stat.h"
+#include "total.h"
 
 
 

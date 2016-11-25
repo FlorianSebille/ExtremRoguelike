@@ -1,5 +1,11 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <curses.h>
+#include <stdlib.h>
 #include <ncurses.h>
 #define TAILLE 100
+
 
 //dans le fichier GenWindows.c
 WINDOW * create_newwin(int height, int width, int starty, int startx, char * label);
@@ -12,3 +18,5 @@ int taille_terminal();
 void ecrire_chat(WINDOW *chatwin,int *ligne,int position_perso);
 
 int addsauv(WINDOW *centerwin);
+
+void Win_Stat(WINDOW *F_winn, int widthF);

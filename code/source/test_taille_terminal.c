@@ -1,7 +1,7 @@
 /* test pour savoir si le terminal est assez grand
 pour pouvoir jouer sinon redimansionner quitter et
 relancer*/
-#include <ncurses.h>
+#include "total.h"
 
 int taille_terminal(){
 

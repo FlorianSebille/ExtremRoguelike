@@ -1,4 +1,4 @@
-#include <ncurses.h>
+#include "total.h"
 
 
 WINDOW * create_newwin(int height, int width, int starty, int startx, char * label)
