@@ -51,7 +51,7 @@ void Win_Stat(WINDOW *F_win, int widthF){
 	mvwprintw(F_win,14,2,"FOOD");
 	n = log10(FOOD) + 1;
 	mvwprintw(F_win,14,widthF-1-n,"%i", FOOD);
-	mvwprintw(F_win,21,2,"COMMAND:");
+	mvwprintw(F_win,21,2,"COMMAND: ");
 	mvwprintw(F_win,22,2,"QUIT");
 	n = strlen("Q");
 	mvwprintw(F_win,22,widthF-1-n,"Q");
