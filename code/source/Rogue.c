@@ -3,7 +3,6 @@
 
 
 int main(){
-
   initscr();
   noecho();
   if(taille_terminal()){
