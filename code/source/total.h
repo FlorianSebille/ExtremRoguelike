@@ -6,6 +6,8 @@
 #include <ncurses.h>
 #define TAILLE 100
 typedef struct joueur {char "nom";int x;int y;int STAGE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD} t_joueur;
+typedef enum element {vide, mur, sol} t_element;
+typedef struct cellule {t_element lieu; int position;} t_cellule;
 t_joueur perso;
 
 
@@ -22,3 +24,14 @@ void ecrire_chat(WINDOW *chatwin,int *ligne,int position_perso);
 int addsauv(WINDOW *centerwin);
 
 void Win_Stat(WINDOW *F_winn, int widthF);
+
+//dans le fichier RandomRoom.c
+int aleat(int min, int max);
+
+void fillmap();
+
+int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx);
+
+void init_room();
+
+void init_map();
