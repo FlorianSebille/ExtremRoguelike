@@ -1,12 +1,7 @@
 all: Rogue clean
 
-<<<<<<< HEAD
 Rogue: GenWindow.o test_taille_terminal.o chat.o sauvegarde.o Win_Stat.o Rogue.o
 	gcc -o Rogue GenWindow.o test_taille_terminal.o chat.o sauvegarde.o Win_Stat.o Rogue.o -lncurses
-=======
-Rogue: GenWindow.o Rogue.o RandomRoom.o AfficherMap.o
-	gcc -o Rogue GenWindow.o Rogue.o RandomRoom.o AfficherMap.o -lncurses
->>>>>>> Branche-Arthur
 
 GenWindow.o: GenWindow.c
 	gcc -c GenWindow.c
@@ -28,9 +23,6 @@ Rogue.o: Rogue.c
 
 RandomRoom.o: RandomRoom.c
 	gcc -c RandomRoom.c
-
-AfficherMap.o: AfficherMap.c RandomRoom.c RandomRoom.h
-	gcc -c AfficherMap.c RandomRoom.c
 
 clean:
 	rm *.o
