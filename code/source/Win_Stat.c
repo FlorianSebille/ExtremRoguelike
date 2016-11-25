@@ -6,16 +6,6 @@
 #include <math.h>
 #include "GenWindow.h"
 
-#define COLOR_BLACK   0
-#define COLOR_RED     1
-#define	COLOR_GREEN   2
-#define	COLOR_YELLOW  3
-#define	COLOR_BLUE    4
-#define	COLOR_MAGENTA 5
-#define	COLOR_CYAN    6
-#define COLOR_WHITE   7
-
-
 void Win_Stat(WINDOW *F_win, int widthF){
 	int n;
 	int STAGE = 10;
@@ -67,27 +57,25 @@ void Win_Stat(WINDOW *F_win, int widthF){
 	n = log10(FOOD) + 1;
 	mvwprintw(F_win,14,widthF-1-n,"%i", FOOD);
 	mvwprintw(F_win,21,2,"COMMAND:");
-	mvwprintw(F_win,22,2,"Q");
-	n = strlen("QUIT");
-	mvwprintw(F_win,22,widthF-1-n,"QUIT");
-	mvwprintw(F_win,23,2,"S");
-	n = strlen("SAVE");
-	mvwprintw(F_win,23,widthF-1-n,"SAVE");
+	mvwprintw(F_win,22,2,"QUIT");
+	n = strlen("Q");
+	mvwprintw(F_win,22,widthF-1-n,"Q");
+	mvwprintw(F_win,23,2,"SAVE");
+	n = strlen("S");
+	mvwprintw(F_win,23,widthF-1-n,"S");
 	mvwprintw(F_win,25,2,"MOVE:");
-	n = strlen("UP");
-	mvwprintw(F_win,26,widthF-1-n,"UP");
-	n = strlen("DOWN");
-	mvwprintw(F_win,27,widthF-1-n,"DOWN");
-	n = strlen("RIGHT");
-	mvwprintw(F_win,28,widthF-1-n,"RIGHT");
-	n = strlen("LEFT");
-	mvwprintw(F_win,29,widthF-1-n,"LEFT");
-	//mvwprintw(F_win,26,2,"⭡                UP");
-	//mvwprintw(F_win,27,2,"⭣                  DOWN");
-	//mvwprintw(F_win,28,2,"⭢                 RIGHT");
-	//mvwprintw(F_win,29,2,"⭠                 LEFT");
-	wattroff(F_win, A_BOLD | COLOR_PAIR(2));
-
+	n = strlen("UPWARDS ARROW");
+	mvwprintw(F_win,26,widthF-1-n,"UPWARDS ARROW");
+	n = strlen("DOWNWARDS ARROW");
+	mvwprintw(F_win,27,widthF-1-n,"DOWNWARDS ARROW");
+	n = strlen("RIGHTWARDS ARROW");
+	mvwprintw(F_win,28,widthF-1-n,"RIGHTWARDS ARROW");
+	n = strlen("LEFTWARDS ARROW");
+	mvwprintw(F_win,29,widthF-1-n,"LEFTWARDS ARROW");
+	mvwprintw(F_win,26,2,"UP");
+	mvwprintw(F_win,27,2,"DOWN");
+	mvwprintw(F_win,28,2,"RIGHT");
+	mvwprintw(F_win,29,2,"LEFT");
 	wattroff(F_win, A_BOLD | COLOR_PAIR(2));
 	wrefresh(F_win);
 }
