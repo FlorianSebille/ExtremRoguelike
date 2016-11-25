@@ -6,11 +6,10 @@ void ecrire_chat(WINDOW *chatwin, int *ligne, int position_perso){
   int lignemax;
   int colonemax;
 
-  int heightT = (int) LINES * 0.85;
-  int widthT = (int) COLS * 0.2;
-
-  int startyT = 2 ;	/* Dimensions et Position de la 3ème fenêtre */
-  int startxT = (int) COLS * 0.697  ;
+  int heightT = 31;    /* Dimensions et Position de la 3ème fenêtre */
+  int widthT = 36;
+  int startyT = 2 ;
+  int startxT = 134 ;
 
   getmaxyx(chatwin,lignemax,colonemax);
 

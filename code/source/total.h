@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <ncurses.h>
 #define TAILLE 100
-typedef struct joueur {char "nom";int x;int y;int STAGE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD} t_joueur;
+typedef struct joueur {char nom;int x;int y;int STAGE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
 typedef enum element {vide, mur, sol} t_element;
 typedef struct cellule {t_element lieu; int position;} t_cellule;
 t_joueur perso;
