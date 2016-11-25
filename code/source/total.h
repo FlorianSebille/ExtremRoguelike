@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <ncurses.h>
 #define TAILLE 100
+typedef struct joueur {char "nom";int x;int y;int STAGE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD} t_joueur;
+t_joueur perso;
 
 
 //dans le fichier GenWindows.c
