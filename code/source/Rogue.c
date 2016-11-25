@@ -37,25 +37,21 @@ int main(){
     startxT = (int) COLS * 0.697 ;
 
     refresh();
+    start_color();
+    use_default_colors();
 
     F_win=create_newwin(heightF,widthF,startyF,startxF,"Profile");
     S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
     T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
 
-    start_color();
-    use_default_colors();
-
-    if(addsauv(S_win) == 2){
-
-      int position_perso = 1;
-      while (getch() != 'q') {
-        ecrire_chat(T_win,&ligne, position_perso);
-        position_perso++;
-        if (position_perso > 4) {
-          position_perso = 1;
-        }
+    int position_perso = 0;
+    while (getch() != 'q') {
+      ecrire_chat(T_win,&ligne, position_perso);
+      position_perso++;
+      if (position_perso > 4) {
+        position_perso = 0;
       }
     }
-    endwin();
   }
+  endwin();
 }

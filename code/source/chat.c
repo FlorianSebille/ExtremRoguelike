@@ -25,14 +25,16 @@ void ecrire_chat(WINDOW *chatwin, int *ligne, int position_perso){
     *ligne = 1;
 
   }
+
   switch (position_perso) {
     case 0: mvwprintw(chatwin,*ligne,1,"deplacer vous avec les fleches"); break;
-    case 1: mvwprintw(chatwin,*ligne,1,"vous etes sur une porte appuier sur entrer"); break;
+    case 1: mvwprintw(chatwin,*ligne,1,"vous etes sur une porte"); break;
     case 2: mvwprintw(chatwin,*ligne,1,"vous etes près d'un monstre"); break;
     case 3: mvwprintw(chatwin,*ligne,1,"vous etes mort, vous etes nul"); break;
-    case 4: mvwprintw(chatwin,*ligne,1,"vous avez de la chance vous avez gagnez"); break;
+    case 4: mvwprintw(chatwin,*ligne,1,"vous avez gagnez, bien joue"); break;
     //case ?: ; break;
   }
-  *ligne = *ligne + 1;
+  *ligne = *ligne + 2;
   wrefresh(chatwin);
+
 }
