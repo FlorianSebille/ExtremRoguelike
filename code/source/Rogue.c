@@ -2,12 +2,17 @@
 #include <curses.h>
 #include <stdlib.h>
 #include "GenWindow.h"
+<<<<<<< HEAD
 #define TAILLE 100
+=======
+#include "Win_Stat.h"
+>>>>>>> Xenos
 
 
 int main(){
 
   initscr();
+<<<<<<< HEAD
   noecho();
   if(taille_terminal()){
 
@@ -43,6 +48,9 @@ int main(){
     F_win=create_newwin(heightF,widthF,startyF,startxF,"Profile");
     S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
     T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
+
+    Win_Stat(F_win,widthF);
+    wrefresh(F_win);
 
     int position_perso = 0;
     while (getch() != 'q') {

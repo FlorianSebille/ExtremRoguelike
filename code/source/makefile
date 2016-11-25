@@ -1,7 +1,7 @@
 all: Rogue clean
 
-Rogue: GenWindow.o test_taille_terminal.o chat.o sauvegarde.o Rogue.o
-	gcc -o Rogue GenWindow.o test_taille_terminal.o chat.o sauvegarde.o Rogue.o -lncurses
+Rogue: GenWindow.o test_taille_terminal.o chat.o sauvegarde.o Win_Stat.o Rogue.o
+	gcc -o Rogue GenWindow.o test_taille_terminal.o chat.o sauvegarde.o Win_Stat.o Rogue.o -lncurses
 
 GenWindow.o: GenWindow.c
 	gcc -c GenWindow.c
@@ -14,6 +14,9 @@ chat.o: chat.c
 
 sauvegarde.o: sauvegarde.c
 	gcc -c sauvegarde.c
+
+Win_Stat.o: Win_Stat.c
+	gcc -c Win_Stat.c
 
 Rogue.o: Rogue.c
 	gcc -c Rogue.c
