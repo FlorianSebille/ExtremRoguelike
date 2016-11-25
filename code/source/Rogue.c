@@ -2,17 +2,14 @@
 #include <curses.h>
 #include <stdlib.h>
 #include "GenWindow.h"
-<<<<<<< HEAD
 #define TAILLE 100
-=======
 #include "Win_Stat.h"
->>>>>>> Xenos
+
 
 
 int main(){
 
   initscr();
-<<<<<<< HEAD
   noecho();
   if(taille_terminal()){
 
