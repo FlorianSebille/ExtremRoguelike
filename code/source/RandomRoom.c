@@ -1,6 +1,4 @@
-#include <time.h>
-#include <ncurses.h>
-#include <stdlib.h>
+#include "total.h"
 #define x 31
 #define y 90
 
@@ -176,7 +174,7 @@ void init_map(){                    //fonction qui remplit la map d'un nombre de
   }
 }
 
-int main(){
+/*int main(){
   srand(time(NULL));
   int i,j;
 
@@ -191,4 +189,4 @@ int main(){
     }
     printf("\n");
   }
-}
+}*/

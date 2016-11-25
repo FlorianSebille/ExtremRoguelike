@@ -1,8 +1,4 @@
 #include "total.h"
-#include "RandomRoom.h"
-#include "AfficherMap.h"
-
-
 
 int main(){
   initscr();
@@ -19,19 +15,19 @@ int main(){
     WINDOW * T_win;
 
     heightF = 31;   /* Dimensions et Position de la 1ère fenêtre */
-    widthF = 22;
+    widthF = 30;
     startyF = 2 ;
     startxF = 5 ;
 
     heightS = 31;   /* Dimensions et Position de la 2ème fenêtre */
     widthS = 90;
     startyS = 2 ;
-    startxS = 31 ;
+    startxS = 39 ;
 
     heightT = 31;    /* Dimensions et Position de la 3ème fenêtre */
     widthT = 36;
     startyT = 2 ;
-    startxT = 125 ;
+    startxT = 134 ;
 
     refresh();
     start_color();
