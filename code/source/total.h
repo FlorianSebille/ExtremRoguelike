@@ -12,7 +12,8 @@ t_joueur joueur;
 
 typedef enum element {vide, mur, sol, porte, couloir, personnage} t_element;
 
-typedef struct cellule {t_element lieu; int position;} t_cellule;
+typedef struct cellule {t_element lieu; int position; int relie; int num_salle;} t_cellule;
+
 #define x 30
 #define y 89
 t_cellule MAP[x][y];
@@ -40,6 +41,8 @@ void fillmap();
 int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx);
 
 void init_room();
+
+int trouver_porte(int * xA, int * yA);
 
 void init_map();
 
