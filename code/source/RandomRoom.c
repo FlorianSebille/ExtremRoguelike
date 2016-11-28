@@ -2,13 +2,6 @@
 #define x 31
 #define y 90
 
-
-
-typedef enum element {vide, mur, sol, porte, couloir} t_element;
-typedef struct cellule {t_element lieu; int position;} t_cellule;
-t_cellule MAP[x][y];
-
-
 int aleat(int min, int max){         //fonction qui retourne un nombre aléatoire entre 2 bornes
     return (rand() % (max - min + 1)) + min;
 }

@@ -16,5 +16,5 @@ void affichage(t_cellule MAP [x] [y], WINDOW *fenetre){
       }
     }
   }
-  wrefresh(fenetre);0
+  wrefresh(fenetre);
 }

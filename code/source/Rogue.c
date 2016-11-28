@@ -39,6 +39,8 @@ int main(){
 
     Win_Stat(F_win,widthF);
     wrefresh(F_win);
+    
+    void affichage(t_cellule MAP [x] [y], WINDOW *fenetre);
 
     int position_perso = 0;
     while (getch() != 'q') {
