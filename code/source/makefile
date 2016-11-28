@@ -1,7 +1,7 @@
 all: Rogue clean
 
-Rogue: GenWindow.o test_taille_terminal.o chat.o sauvegarde.o Win_Stat.o affichage_Swin.o RandomRoom.o Rogue.o
-	gcc -o Rogue GenWindow.o test_taille_terminal.o chat.o sauvegarde.o Win_Stat.o affichage_Swin.o RandomRoom.o Rogue.o -lncurses -lm
+Rogue: GenWindow.o test_taille_terminal.o chat.o sauvegarde.o Win_Stat.o affichage_Swin.o RandomRoom.o Placer_perso.o Rogue.o
+	gcc -o Rogue GenWindow.o test_taille_terminal.o chat.o sauvegarde.o Win_Stat.o affichage_Swin.o RandomRoom.o Placer_perso.o Rogue.o -lncurses -lm
 
 GenWindow.o: GenWindow.c
 	gcc -c GenWindow.c
@@ -26,6 +26,9 @@ RandomRoom.o: RandomRoom.c
 
 Rogue.o: Rogue.c
 	gcc -c Rogue.c
+
+Placer_perso.o: Placer_perso.c
+	gcc -c Placer_perso.c
 
 clean:
 	rm *.o

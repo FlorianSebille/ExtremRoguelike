@@ -42,8 +42,8 @@ int main(){
 
     srand(time(NULL));
     init_map();
+    Placer_perso(MAP,S_win);
     affichage(MAP,S_win);
-
     int position_perso = 0;
     while (getch() != 'q') {
       ecrire_chat(T_win,&ligne, position_perso);
