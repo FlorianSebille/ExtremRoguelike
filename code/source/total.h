@@ -8,9 +8,9 @@
 #define TAILLE 100
 
 typedef struct joueur {char nom;int x;int y;int STAGE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
-t_joueur perso;
+t_joueur joueur;
 
-typedef enum element {vide, mur, sol, porte, couloir} t_element;
+typedef enum element {vide, mur, sol, porte, couloir, personnage} t_element;
 
 typedef struct cellule {t_element lieu; int position;} t_cellule;
 #define x 30

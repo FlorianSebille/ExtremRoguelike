@@ -54,5 +54,5 @@ int main(){
       }
     }
   }
-  endwin();
+  endwin();  	
 }
