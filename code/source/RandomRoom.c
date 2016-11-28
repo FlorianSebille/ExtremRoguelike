@@ -41,8 +41,8 @@ void init_room(int num, int nb_salle){                   //fonction qui initiali
   int lg_mur_horiz, lg_mur_vert;
   int perim_room, pos_door1, pos_door2;
   int compteur = 0;
-  lg_mur_horiz = aleat(7,19);
-  lg_mur_vert= aleat(10,15);
+  lg_mur_horiz = aleat(10,15);
+  lg_mur_vert= aleat(5,10);
   posx = aleat(0,x);
   posy = aleat(0,y);
   perim_room = (lg_mur_horiz + lg_mur_vert )* 2;
@@ -74,24 +74,30 @@ void init_room(int num, int nb_salle){                   //fonction qui initiali
     for(j = posy, k = 0; (k < lg_mur_horiz) && (j < y); j++, k++){   //On place le mur du haut
       if(compteur == pos_door1 || compteur == pos_door2){    // On place la porte de la salle aleatoirement sur l'un des 4 murs en s'assurant que la porte n'est pas dans un angle */
         MAP[i][j].lieu = porte;
+        MAP[i][j].num_salle = num;
       }else{
         MAP[i][j].lieu = mur;
+        MAP[i][j].num_salle = num;
       }
       compteur++;
     }
     for(i = posx, k = 0; (k < lg_mur_vert) && (i < x); i++, k++){     //...de droite
       if(compteur == pos_door1 || compteur == pos_door2){
         MAP[i][j].lieu = porte;
+        MAP[i][j].num_salle = num;
       }else{
         MAP[i][j].lieu = mur;
+        MAP[i][j].num_salle = num;
       }
       compteur++;
     }
     for(j = posy, k = 0; (k <= lg_mur_horiz) && (i < y); j++, k++){   //...du bas
       if(compteur == pos_door1 || compteur == pos_door2){
         MAP[i][j].lieu = porte;
+        MAP[i][j].num_salle = num;
       }else{
         MAP[i][j].lieu = mur;
+        MAP[i][j].num_salle = num;
       }
       compteur++;
     }
@@ -99,38 +105,44 @@ void init_room(int num, int nb_salle){                   //fonction qui initiali
     for(i = posx + 1, k = 0; (k < lg_mur_vert) && (i < x); i++, k++){     //...de gauche
       if(compteur == pos_door1 || compteur == pos_door2){
         MAP[i][j].lieu = porte;
+        MAP[i][j].num_salle = num;
       }else{
         MAP[i][j].lieu = mur;
+        MAP[i][j].num_salle = num;
       }
       compteur++;
     }
     for(j = posy + 1, k = 0; (k < lg_mur_horiz - 1) && (j < y - 1); j++, k++){   //on place le sol dans la salle
       for(i = posx + 1, l = 0; (l < lg_mur_vert - 1) && (i < x - 1); i++, l++){
         MAP[i][j].lieu = sol;
+        MAP[i][j].num_salle = num;
       }
     }
   }else{
     init_room(num, nb_salle);
   }
 }
-/*
+
 int trouver_porte(int * xA, int * yA){
+  int i,j;
   for(i = 0; i < x; i++){
     for(j = 0; j < y; j++){
-      if(MAP[i][j].lieu == porte && MAP[i][j].position != -1){
+      if(MAP[i][j].lieu == porte && MAP[i][j].relie != 1){
         *xA = i;
         *yA = j;
-        MAP[i][j].position = -1
+        MAP[i][j].relie = 1;
         return 0;
       }
     }
   }
-}
+}                  //fonction qui retourne les coordonnées d'un pointeur et marque la porte comme reliée
 
-
+/*
 void relier_2Portes(int x, int y){
   int compteur = 0;
   MAP[x][y].lieu == vide;
+  int num = MAP[x][y].num_salle
+
   do{
     if(MAP[x][y].lieu == vide){
       MAP[x][y].position = compteur;
@@ -140,13 +152,14 @@ void relier_2Portes(int x, int y){
       relier_2Portes(x,y+1);
       relier_2Portes(x,y-1);
     }
-  }while(MAP[x][y].lieu != porte);
-}
-*/
+  }while(MAP[x][y].lieu != porte && MAP[x][y].relie = 0 && MAP[x][y].num_salle = num + 1);
+}*/
+
 
 void init_map(){                    //fonction qui remplit la map d'un nombre de salle aléatoire
   int nb_salle;
   int i;
+
 
   fillmap();
   nb_salle = aleat(3,6);
@@ -154,4 +167,5 @@ void init_map(){                    //fonction qui remplit la map d'un nombre de
   for(i = 0; i < nb_salle; i++){
     init_room(i,nb_salle);
   }
+
 }
