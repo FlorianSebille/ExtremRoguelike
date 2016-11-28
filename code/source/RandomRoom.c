@@ -1,12 +1,4 @@
 #include "total.h"
-#define x 31
-#define y 90
-
-
-
-typedef enum element {vide, mur, sol, porte, couloir} t_element;
-typedef struct cellule {t_element lieu; int position;} t_cellule;
-t_cellule MAP[x][y];
 
 
 int aleat(int min, int max){         //fonction qui retourne un nombre aléatoire entre 2 bornes
@@ -44,19 +36,20 @@ int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx){    //
   return 1;
 }
 
-void init_room(){                   //fonction qui initialise une salle de taille aléatoire à un endroit aléatoire.
+void init_room(int num, int nb_salle){                   //fonction qui initialise une salle de taille aléatoire à un endroit aléatoire avec des portes
   int i, j, k, l;
   int posx, posy;
   int lg_mur_horiz, lg_mur_vert;
   int perim_room, pos_door1, pos_door2;
   int compteur = 0;
   lg_mur_horiz = aleat(7,19);
-  lg_mur_vert= aleat(5,9);
+  lg_mur_vert= aleat(10,15);
   posx = aleat(0,x);
   posy = aleat(0,y);
   perim_room = (lg_mur_horiz + lg_mur_vert )* 2;
   pos_door1 = aleat(0,perim_room);
-  pos_door2 = aleat(0,perim_room);
+  if(num != 0 && num != nb_salle -1) pos_door2 = aleat(0,perim_room); //on initialise qu'une porte pour la salle de depart et d'arrivée
+  else pos_door2 = -1;
 
    //On vérifie que les portes ne sont pas dans les angles et décalés d'au moins 1
 
@@ -82,30 +75,24 @@ void init_room(){                   //fonction qui initialise une salle de taill
     for(j = posy, k = 0; (k < lg_mur_horiz) && (j < y); j++, k++){   //On place le mur du haut
       if(compteur == pos_door1 || compteur == pos_door2){    // On place la porte de la salle aleatoirement sur l'un des 4 murs en s'assurant que la porte n'est pas dans un angle */
         MAP[i][j].lieu = porte;
-        MAP[i][j].position = 3;
       }else{
         MAP[i][j].lieu = mur;
-        MAP[i][j].position = 1;
       }
       compteur++;
     }
     for(i = posx, k = 0; (k < lg_mur_vert) && (i < x); i++, k++){     //...de droite
       if(compteur == pos_door1 || compteur == pos_door2){
         MAP[i][j].lieu = porte;
-        MAP[i][j].position = 3;
       }else{
         MAP[i][j].lieu = mur;
-        MAP[i][j].position = 1;
       }
       compteur++;
     }
     for(j = posy, k = 0; (k <= lg_mur_horiz) && (i < y); j++, k++){   //...du bas
       if(compteur == pos_door1 || compteur == pos_door2){
         MAP[i][j].lieu = porte;
-        MAP[i][j].position = 3;
       }else{
         MAP[i][j].lieu = mur;
-        MAP[i][j].position = 1;
       }
       compteur++;
     }
@@ -113,77 +100,51 @@ void init_room(){                   //fonction qui initialise une salle de taill
     for(i = posx + 1, k = 0; (k < lg_mur_vert) && (i < x); i++, k++){     //...de gauche
       if(compteur == pos_door1 || compteur == pos_door2){
         MAP[i][j].lieu = porte;
-        MAP[i][j].position = 3;
       }else{
         MAP[i][j].lieu = mur;
-        MAP[i][j].position = 1;
       }
       compteur++;
     }
     for(j = posy + 1, k = 0; (k < lg_mur_horiz - 1) && (j < y - 1); j++, k++){   //on place le sol dans la salle
       for(i = posx + 1, l = 0; (l < lg_mur_vert - 1) && (i < x - 1); i++, l++){
         MAP[i][j].lieu = sol;
-        MAP[i][j].position = 2;
       }
     }
   }else{
-    init_room();
+    init_room(num, nb_salle);
+  }
+}
+/*
+int trouver_porte(int * xA, int * yA){
+  for(i = 0; i < x; i++){
+    for(j = 0; j < y; j++){
+      if(MAP[i][j].lieu == porte && MAP[i][j].position != -1){
+        *xA = i;
+        *yA = j;
+        MAP[i][j].position = -1
+        return 0;
+      }
+    }
   }
 }
 
-/*void relier_2Portes(int xA, int yA, int xB, int yB){
-  int relie = 0;
-  int aligne = 0;
 
+void relier_2Portes(int x, int y){
+  int compteur = 0;
+  MAP[x][y].lieu == vide;
   do{
-    if(xA < xB && aligne == 0){                                        //si la porte A se situe au-dessus de la porte B
-      if(MAP[xA+1][yA] == vide){                              //si l'espace est libre on descend
-        xA = xA + 1;
-        MAP[xA][yA].lieu = couloir;
-      }else if(MAP[xA][yA+1] == vide){                        //sinon si l'espace à droite est libre on va à droite
-        yA = yA + 1;
-        MAP[xA][yA].lieu = couloir;
-      }else if(MAP[xA][yA-1] == vide){                        //sinon si l'espace à gauche est libre on va à gauche
-        yA = yA - 1;
-        MAP[xA][yA].lieu = couloir;
-      }else{                                                  //sinon on monte
-        xA = xA - 1;
-        MAP[xA][yA];
-      }
-    }else if(xA > xB && aligne == 0){                                    //sinon si la porte A se situe en dessous de la porte B
-      if(MAP[xA - 1][yA] == vide){                            //si l'espace est libre on monte
-        xA = xA - 1;
-        MAP[xA][yA].lieu = couloir;
-      }else if(MAP[xA][yA+1] == vide){                        //sinon si l'espace à droite est libre on va à droite
-        yA = yA + 1;
-        MAP[xA][yA].lieu = couloir;
-      }else if(MAP[xA][yA-1] == vide){                        //sinon si l'espace à gauche est libre on va à gauche
-        yA = yA - 1;
-        MAP[xA][yA].lieu = couloir;
-      }else{                                                  //sinon on descend
-        xA = xA + 1;
-        MAP[xA][yA];
-      }
-    }else{                                                 //sinon c'est que la porte A se situe à la même hauteur que la porte B
-      aligne = 1;
-      if(xA == xB){
-        if(yA < yB){                                            //si la porte A se situe à gauche de la porte B
-          if(MAP[xA][yA+1] == vide || MAP[xA][yA+1] == vide){        //si l'espace a droite est libre on va à droite
-            yA = yA + 1
-            MAP[xA][yA].lieu = couloir;
-          }else if(MAP[xA][yA+1] == vide || MAP[xA][yA+1] == vide){
-
-          }
-        }
-      }
+    if(MAP[x][y].lieu == vide){
+      MAP[x][y].position = compteur;
+      compteur++;
+      relier_2Portes(x+1,y);
+      relier_2Portes(x-1,y);
+      relier_2Portes(x,y+1);
+      relier_2Portes(x,y-1);
     }
-
-
-  }while(relie == 0);
-
-
+  }while(MAP[x][y].lieu != porte);
 }
 */
+
 void init_map(){                    //fonction qui remplit la map d'un nombre de salle aléatoire
   int nb_salle;
   int i;
@@ -192,23 +153,6 @@ void init_map(){                    //fonction qui remplit la map d'un nombre de
   nb_salle = aleat(3,6);
 
   for(i = 0; i < nb_salle; i++){
-    init_room();
+    init_room(i,nb_salle);
   }
 }
-
-/*int main(){
-  srand(time(NULL));
-  int i,j;
-
-  fillmap();
-  init_map();
-
-  for(i = 0; i < x; i++){
-    for(j = 0; j < y; j++){
-      if(MAP[i][j].lieu == vide) printf(" ");
-      else if(MAP[i][j].lieu == porte) printf(".");
-      else printf("%i",MAP[i][j].position);
-    }
-    printf("\n");
-  }
-}*/
