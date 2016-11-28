@@ -16,7 +16,7 @@ void affichage(t_cellule MAP [x] [y], WINDOW *fenetre){
       }else if(MAP[i][j].lieu == mur){
         mvwprintw(fenetre,i,j,"+");
       }else if(MAP[i][j].lieu == personnage){
-      	mvwprintf(fenetre,i,j,"@");
+      	mvwprintw(fenetre,i,j,"@");
       }
     }
   }
