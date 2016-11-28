@@ -3,12 +3,19 @@
 #include <math.h>
 #include <curses.h>
 #include <stdlib.h>
+#include <time.h>
 #include <ncurses.h>
 #define TAILLE 100
+
 typedef struct joueur {char nom;int x;int y;int STAGE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
-typedef enum element {vide, mur, sol} t_element;
-typedef struct cellule {t_element lieu; int position;} t_cellule;
 t_joueur perso;
+
+typedef enum element {vide, mur, sol, porte, couloir} t_element;
+
+typedef struct cellule {t_element lieu; int position;} t_cellule;
+#define x 30
+#define y 89
+t_cellule MAP[x][y];
 
 
 //dans le fichier GenWindows.c
@@ -35,3 +42,5 @@ int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx);
 void init_room();
 
 void init_map();
+
+void affichage(t_cellule MAP [x] [y], WINDOW *fenetre);
