@@ -1,6 +1,4 @@
 #include "total.h"
-#define x 31
-#define y 90
 
 int aleat(int min, int max){         //fonction qui retourne un nombre aléatoire entre 2 bornes
     return (rand() % (max - min + 1)) + min;
@@ -19,8 +17,8 @@ void fillmap(){                     //fonction qui remplit la map à l'état vid
 int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx){    //fonction qui renvoit 1 si la creation d'une salle est possible
   int i, j, k;
   i = posx;
-  if(posx == 0 || posx >= x - lg_mur_vert) return 0;
-  if(posy == 0 || posy >= y - lg_mur_horiz) return 0;
+  if(posx <= 1 || posx >= x - lg_mur_vert -1) return 0;
+  if(posy <= 1 || posy >= y - lg_mur_horiz -1) return 0;
   for(j = posy, k = 0; (k < lg_mur_horiz) && (j < y); j++, k++){
     if(MAP[i][j].lieu == 1 || MAP[i+1][j].lieu == 1 || MAP[i-1][j].lieu == 1) return 0;
   }

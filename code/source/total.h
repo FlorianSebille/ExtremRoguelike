@@ -3,6 +3,7 @@
 #include <math.h>
 #include <curses.h>
 #include <stdlib.h>
+#include <time.h>
 #include <ncurses.h>
 #define TAILLE 100
 
@@ -12,6 +13,8 @@ t_joueur perso;
 typedef enum element {vide, mur, sol, porte, couloir} t_element;
 
 typedef struct cellule {t_element lieu; int position;} t_cellule;
+#define x 30
+#define y 89
 t_cellule MAP[x][y];
 
 

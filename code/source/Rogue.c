@@ -39,9 +39,12 @@ int main(){
 
     Win_Stat(F_win,widthF);
     wrefresh(F_win);
-    
-    void affichage(t_cellule MAP [x] [y], WINDOW *fenetre);
 
+    srand(time(NULL));
+    fillmap();
+    init_map();
+    affichage(MAP,S_win);
+  
     int position_perso = 0;
     while (getch() != 'q') {
       ecrire_chat(T_win,&ligne, position_perso);

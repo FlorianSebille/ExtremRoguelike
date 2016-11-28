@@ -21,7 +21,7 @@ void ecrire_chat(WINDOW *chatwin, int *ligne, int position_perso){
 
   }
 
-  switch (position_perso) {
+  switch (position_perso) { // pas plus de 44 caractere par commentaire dans le chat
     case 0: mvwprintw(chatwin,*ligne,1,"deplacer vous avec les fleches"); break;
     case 1: mvwprintw(chatwin,*ligne,1,"vous etes sur une porte"); break;
     case 2: mvwprintw(chatwin,*ligne,1,"vous etes près d'un monstre"); break;
