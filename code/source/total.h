@@ -47,3 +47,25 @@ int trouver_porte(int * xA, int * yA);
 void init_map();
 
 void affichage(t_cellule MAP [x] [y], WINDOW *fenetre);
+
+/* Dimensions et Position de la 1ère fenêtre
+const int startxF = 5;
+const int startyF = 2;
+const int widthF = 30;
+const int heightF = 31;
+
+Dimensions et Position de la 2ème fenêtre
+const int startxS = 39;
+const int startyS = 2;
+const int widthS = 90;
+const int heightS = 31;
+
+Dimensions et Position de la 3ème fenêtre
+const int startxT = 134;
+const int startyT = 2;
+const int widthT = 36;
+const int heightT = 31;
+
+WINDOW * F_win;
+WINDOW * S_win;
+WINDOW * T_win;*/
