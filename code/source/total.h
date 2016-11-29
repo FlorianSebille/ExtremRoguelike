@@ -7,7 +7,7 @@
 #include <ncurses.h>
 #define TAILLE 100
 
-typedef struct joueur {char nom;int positionx;int coordo_x;int coordo_y;int STAGE;int SALLE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
+typedef struct joueur {char nom;int coordo_x;int coordo_y;int etat_avant;int STAGE;int SALLE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
 t_joueur joueur;
 
 typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel} t_element;
@@ -27,9 +27,13 @@ void destroy_win(WINDOW *local_win);
 int taille_terminal();
 
 //dans le fichier chat.c
-void ecrire_chat(WINDOW *chatwin,int *ligne,int position_perso);
+void effacer_ligne(WINDOW *chatwin, int ligne_effacer);
 
-int addsauv(WINDOW *centerwin);
+void effacer_fenetre(WINDOW *chatwin);
+
+void ecrire_chat(WINDOW *chatwin,int position_perso);
+
+//int addsauv(WINDOW *centerwin);
 
 void Win_Stat(WINDOW *F_winn, int widthF);
 
@@ -54,7 +58,7 @@ int Placer_perso(t_cellule MAP [x] [y], WINDOW *fenetre);
 
 int test_depl(t_cellule MAP [x] [y], int c,t_joueur joueur);
 
-void Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur,int *ligne, WINDOW *fenetre);
+int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur,int *ligne, WINDOW *fenetre);
 
 
 /* Dimensions et Position de la 1ère fenêtre

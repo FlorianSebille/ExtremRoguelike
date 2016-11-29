@@ -9,6 +9,7 @@ int main(){
     int startxS, startyS, widthS, heightS;
     int startxT, startyT, widthT, heightT;
     int ligne = 1;
+    int utilisateur = 0;
 
     WINDOW * F_win;
     WINDOW * S_win;
@@ -42,12 +43,13 @@ int main(){
 
     srand(time(NULL));
     init_map();
+
     Placer_perso(MAP, S_win);
     affichage(MAP,S_win);
-    while (getch() != 'q') {
-       Depl_perso(MAP, &joueur, &ligne,T_win);
-       affichage(MAP,S_win);
+    while (utilisateur != 'q') {
+      utilisateur = Depl_perso(MAP, &joueur, &ligne,T_win);
+      affichage(MAP,S_win);
     }
-  endwin();  
-  }	
+  }
+  endwin();
 }
