@@ -1,6 +1,6 @@
 #include "total.h"
 
-void Placer_perso(t_cellule MAP [x] [y], WINDOW *fenetre){
+int Placer_perso(t_cellule MAP [x] [y], WINDOW *fenetre){
 	
 	int i,max_i,j,max_j;
   	getmaxyx(fenetre,max_i,max_j);
@@ -12,9 +12,11 @@ void Placer_perso(t_cellule MAP [x] [y], WINDOW *fenetre){
     					joueur.positionx=i;
     					joueur.positiony=j;
     					MAP[i][j].lieu=personnage;
-                        return;
+                        return 1;
     				}
     			}    		
     		}
-    	}
+
+    }
+    return 0;
 }

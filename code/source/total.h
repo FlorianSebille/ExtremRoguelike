@@ -7,10 +7,10 @@
 #include <ncurses.h>
 #define TAILLE 100
 
-typedef struct joueur {char nom;int positionx;int positiony;int STAGE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
+typedef struct joueur {char nom;int positionx;int coordo_x;int coordo_y;int STAGE;int SALLE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
 t_joueur joueur;
 
-typedef enum element {vide, mur, sol, porte, couloir, personnage} t_element;
+typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel} t_element;
 
 typedef struct cellule {t_element lieu; int position; int relie; int num_salle;} t_cellule;
 
@@ -48,7 +48,12 @@ void init_map();
 
 void affichage(t_cellule MAP [x] [y], WINDOW *fenetre);
 
-void Placer_perso(t_cellule MAP [x] [y], WINDOW *fenetre);
+int Placer_perso(t_cellule MAP [x] [y], WINDOW *fenetre);
+
+int test_depl(t_cellule MAP [x] [y], int c,t_joueur joueur);
+
+void Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur,int *ligne, WINDOW *fenetre);
+
 
 /* Dimensions et Position de la 1ère fenêtre
 const int startxF = 5;
