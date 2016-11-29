@@ -11,6 +11,9 @@ int Placer_perso(t_cellule MAP [x] [y], WINDOW *fenetre){
     		if(MAP[i][j].lieu == sol){
   				joueur.coordo_x=i;
 					joueur.coordo_y=j;
+					joueur.etat_avant = 2;
+					joueur.STAGE = 1;
+					joueur.SALLE = 1;
 					MAP[i][j].lieu=personnage;
 					return 1;
 				}

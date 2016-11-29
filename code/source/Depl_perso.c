@@ -29,46 +29,52 @@ int test_depl(t_cellule MAP [x] [y], int c,t_joueur joueur){
 	return 0;
 }
 
-void Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, int *ligne, WINDOW *fenetre){
+int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, int *ligne, WINDOW *fenetre){
 
 	cbreak();
 	keypad(stdscr,TRUE);
   timeout(0);
  	int c;
+	int porte = 0;
 	t_joueur temp_joueur;
 	temp_joueur = *joueur;
 	c = getch();
 	if(c!=ERR){
 		switch(c){
 			case KEY_UP:	if(test_depl(MAP, c, temp_joueur)){
-											ecrire_chat(fenetre,&(*ligne), MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu);
+											ecrire_chat(fenetre, MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu);
+											MAP[temp_joueur.coordo_x][temp_joueur.coordo_y].lieu = temp_joueur.etat_avant;
+											temp_joueur.etat_avant = MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu;
 											MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu = personnage;
-											MAP[temp_joueur.coordo_x][temp_joueur.coordo_y].lieu = sol;
 											temp_joueur.coordo_x++;
 										}
 										break;
 			case KEY_DOWN:	if(test_depl(MAP, c, temp_joueur)){
-												ecrire_chat(fenetre,&(*ligne), MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu);
+												ecrire_chat(fenetre, MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu);
+												MAP[temp_joueur.coordo_x][temp_joueur.coordo_y].lieu = temp_joueur.etat_avant;
+												temp_joueur.etat_avant = MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu;
 												MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu = personnage;
-												MAP[temp_joueur.coordo_x][temp_joueur.coordo_y].lieu = sol;
 												temp_joueur.coordo_x--;
 											}
 											break;
 			case KEY_LEFT:	if(test_depl(MAP, c, temp_joueur)){
-												ecrire_chat(fenetre,&(*ligne), MAP[temp_joueur.coordo_x][temp_joueur.coordo_y-1].lieu);
+												ecrire_chat(fenetre, MAP[temp_joueur.coordo_x][temp_joueur.coordo_y-1].lieu);
+												MAP[temp_joueur.coordo_x][temp_joueur.coordo_y].lieu = temp_joueur.etat_avant;
+												temp_joueur.etat_avant = MAP[temp_joueur.coordo_x][temp_joueur.coordo_y-1].lieu;
 												MAP[temp_joueur.coordo_x][temp_joueur.coordo_y-1].lieu = personnage;
-												MAP[temp_joueur.coordo_x][temp_joueur.coordo_y].lieu = sol;
 												temp_joueur.coordo_y--;
 											}
 											break;
 			case KEY_RIGHT: if(test_depl(MAP, c, temp_joueur)){
-												ecrire_chat(fenetre,&(*ligne), MAP[temp_joueur.coordo_x][temp_joueur.coordo_y+1].lieu);
+												ecrire_chat(fenetre, MAP[temp_joueur.coordo_x][temp_joueur.coordo_y+1].lieu);
+												MAP[temp_joueur.coordo_x][temp_joueur.coordo_y].lieu = temp_joueur.etat_avant;
+												temp_joueur.etat_avant = MAP[temp_joueur.coordo_x][temp_joueur.coordo_y+1].lieu;
 												MAP[temp_joueur.coordo_x][temp_joueur.coordo_y+1].lieu = personnage;
-												MAP[temp_joueur.coordo_x][temp_joueur.coordo_y].lieu = sol;
 												temp_joueur.coordo_y++;
 											}
 											break;
 		}
 	}
 	*joueur = temp_joueur;
+	return c;
 }
