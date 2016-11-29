@@ -2,31 +2,31 @@
 
 int test_depl(t_cellule MAP [x] [y], int c,t_joueur joueur){
 
-	t_joueur temp_joueur;
-	temp_joueur = joueur;
-	switch(c){
-		case KEY_UP:	if(MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu == mur){
-										return 0;
-									}else{
-										return 1;
-									}
-		case KEY_DOWN:	if(MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu == mur){
-											return 0;
-										}else{
-											return 1;
-										}
-		case KEY_LEFT:	if(MAP[temp_joueur.coordo_x][temp_joueur.coordo_y-1].lieu == mur){
-											return 0;
-										}else{
-											return 1;
-										}
-		case KEY_RIGHT:	if(MAP[temp_joueur.coordo_x][temp_joueur.coordo_y+1].lieu == mur){
-											return 0;
-										}else{
-											return 1;
-										}
-	}
-	return 0;
+ 	t_joueur temp_joueur;
+ 	temp_joueur = joueur;
+ 	switch(c){
+ 		case KEY_UP:	if(MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu == mur){
+ 										return 0;
+ 									}else{
+ 										return 1;
+ 									}
+ 	  case KEY_DOWN:	if(MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu == mur){
+ 											return 0;
+ 										}else{
+ 											return 1;
+ 										}
+ 		case KEY_LEFT:	if(MAP[temp_joueur.coordo_x][temp_joueur.coordo_y-1].lieu == mur){
+ 											return 0;
+ 										}else{
+ 											return 1;
+ 										}
+ 		case KEY_RIGHT:	if(MAP[temp_joueur.coordo_x][temp_joueur.coordo_y+1].lieu == mur){
+ 											return 0;
+ 										}else{
+ 											return 1;
+     							  }
+ 	}
+ 	return 0;
 }
 
 int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, int *ligne, WINDOW *fenetre){
@@ -37,7 +37,8 @@ int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, int *ligne, WINDOW *fenet
  	int c;
 	int porte = 0;
 	t_joueur temp_joueur;
-	temp_joueur = *joueur;
+ 	temp_joueur = *joueur;
+   	int c;
 	c = getch();
 	if(c!=ERR){
 		switch(c){

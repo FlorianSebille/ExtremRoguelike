@@ -48,6 +48,8 @@ void init_room();
 
 int trouver_porte(int * xA, int * yA);
 
+int relier_2Portes(int xA, int yA);
+
 void init_map();
 
 void affichage(t_cellule MAP [x] [y], WINDOW *fenetre);
@@ -57,6 +59,7 @@ int Placer_perso(t_cellule MAP [x] [y], WINDOW *fenetre);
 int test_depl(t_cellule MAP [x] [y], int c,t_joueur joueur);
 
 int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur,int *ligne, WINDOW *fenetre);
+
 
 /* Dimensions et Position de la 1ère fenêtre
 const int startxF = 5;
@@ -79,3 +82,22 @@ const int heightT = 31;
 WINDOW * F_win;
 WINDOW * S_win;
 WINDOW * T_win;*/
+
+//dans le fichier file.c
+
+typedef struct coord{int ligne; int colonne;} t_colonne;
+
+typedef struct elemfile{t_colonne nombre; struct elemfile*suivant;} t_elemfile;
+
+t_elemfile*tete;
+t_elemfile*queue;
+
+void init_file();
+
+int file_vide(void);
+
+void ajouter(int l, int c);
+
+void retirer(int*l, int*c);
+
+void queue_file(int*l, int*c);

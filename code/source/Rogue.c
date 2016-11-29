@@ -43,13 +43,13 @@ int main(){
 
     srand(time(NULL));
     init_map();
+
     Placer_perso(MAP, S_win);
     affichage(MAP,S_win);
     while (utilisateur != 'q') {
       utilisateur = Depl_perso(MAP, &joueur, &ligne,T_win);
       affichage(MAP,S_win);
     }
-
   }
   endwin();
 }

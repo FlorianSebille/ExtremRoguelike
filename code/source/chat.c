@@ -42,6 +42,7 @@ void ecrire_chat(WINDOW *chatwin, int position_perso){  // fonction qui ecrit da
     case 6: mvwprintw(chatwin,3,1,"vous etes sur un escalier"); mvwprintw(chatwin,5,1,"voulez vous allez dans le stage %i",joueur.STAGE+1); mvwprintw(chatwin,7,1,"oui: appuier sur entrer"); mvwprintw(chatwin,9,1,"non: appuier sur supprimer"); break;
     //case ?: ; break;
   }
+  
   /*if(position_perso == 3){
     char choix = getch();
     if(choix == 'ENTER'){
