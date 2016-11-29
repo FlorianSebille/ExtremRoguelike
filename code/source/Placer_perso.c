@@ -9,8 +9,8 @@ int Placer_perso(t_cellule MAP [x] [y], WINDOW *fenetre){
     		for(j = 1; j < max_j -1; j++){
     			if(MAP[i][j].num_salle == 0){
     				if(MAP[i][j].lieu == sol){
-    					joueur.positionx=i;
-    					joueur.positiony=j;
+    					joueur.coordo_x=i;
+    					joueur.coordo_y=j;
     					MAP[i][j].lieu=personnage;
                         return 1;
     				}
