@@ -123,7 +123,7 @@ void init_room(int num, int nb_salle){                   //fonction qui initiali
   }
 }
 
-int trouver_porte(int * xA, int * yA){
+int trouver_porte(int * xA, int * yA){    //fonction qui retourne les coordonnées d'un pointeur et marque la porte comme reliée
   int i,j;
   for(i = 0; i < x; i++){
     for(j = 0; j < y; j++){
@@ -135,25 +135,31 @@ int trouver_porte(int * xA, int * yA){
       }
     }
   }
-}                  //fonction qui retourne les coordonnées d'un pointeur et marque la porte comme reliée
+  return 0;
+}
 
-/*
-void relier_2Portes(int x, int y){
+int relier_2Portes(int xA, int yA){
+  int num = MAP[xA][yA].num_salle;
   int compteur = 0;
-  MAP[x][y].lieu == vide;
-  int num = MAP[x][y].num_salle
+  int l,c;
 
-  do{
-    if(MAP[x][y].lieu == vide){
-      MAP[x][y].position = compteur;
-      compteur++;
-      relier_2Portes(x+1,y);
-      relier_2Portes(x-1,y);
-      relier_2Portes(x,y+1);
-      relier_2Portes(x,y-1);
-    }
-  }while(MAP[x][y].lieu != porte && MAP[x][y].relie = 0 && MAP[x][y].num_salle = num + 1);
-}*/
+  init_file();
+
+  if(MAP[xA][yA].lieu != vide && !(MAP[xA][yA].lieu == porte && MAP[xA][yA].num_salle == num))return 0;
+  ajouter(xA,yA);
+
+  while(!file_vide()){
+    retirer(&l,&c);
+    MAP[l][c].position = compteur;
+    compteur++;
+
+    if((MAP[l-1][c].lieu == vide || (MAP[l-1][c].lieu == porte && MAP[l-1][c].num_salle == num +1)) && l-1 >= 0)ajouter(l-1,c);
+    if((MAP[l+1][c].lieu == vide || (MAP[l+1][c].lieu == porte && MAP[l+1][c].num_salle == num +1)) && l+1 <= x)ajouter(l+1,c);
+    if((MAP[l][c-1].lieu == vide || (MAP[l][c-1].lieu == porte && MAP[l][c-1].num_salle == num +1)) && c-1 >= 0)ajouter(l,c-1);
+    if((MAP[l][c+1].lieu == vide || (MAP[l][c+1].lieu == porte && MAP[l][c+1].num_salle == num +1)) && l+1 <= y)ajouter(l,c+1);
+  }
+  return 1;
+}
 
 
 void init_map(){                    //fonction qui remplit la map d'un nombre de salle aléatoire

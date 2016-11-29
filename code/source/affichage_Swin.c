@@ -8,7 +8,7 @@ void affichage(t_cellule MAP [x] [y], WINDOW *fenetre){
   for(i = 1; i < max_i -1; i++){
     for(j = 1; j < max_j -1; j++){
       if(MAP[i][j].lieu == vide){
-        mvwprintw(fenetre,i,j," ");
+        mvwprintw(fenetre,i,j,"%i",MAP[i][j].position);
       }else if(MAP[i][j].lieu == porte){
         mvwprintw(fenetre,i,j,"p");
       }else if(MAP[i][j].lieu == sol){
