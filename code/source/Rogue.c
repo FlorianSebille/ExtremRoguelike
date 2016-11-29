@@ -33,6 +33,9 @@ int main(){
     refresh();
     start_color();
     use_default_colors();
+    init_pair(1, COLOR_RED, -1);
+  	init_pair(2, COLOR_GREEN, -1);
+
 
     F_win=create_newwin(heightF,widthF,startyF,startxF,"Profile");
     S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");

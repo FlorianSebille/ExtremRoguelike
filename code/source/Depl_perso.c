@@ -5,12 +5,12 @@ int test_depl(t_cellule MAP [x] [y], int c,t_joueur joueur){
  	t_joueur temp_joueur;
  	temp_joueur = joueur;
  	switch(c){
- 		case KEY_UP:	if(MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu == mur){
+ 		case KEY_UP:	if(MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu == mur){
  										return 0;
  									}else{
  										return 1;
  									}
- 	  case KEY_DOWN:	if(MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu == mur){
+ 	  case KEY_DOWN:	if(MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu == mur){
  											return 0;
  										}else{
  											return 1;
@@ -45,19 +45,19 @@ int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, int *ligne, WINDOW *fenet
 	if(c!=ERR){
 		switch(c){
 			case KEY_UP:	if(test_depl(MAP, c, temp_joueur)){
-											ecrire_chat(fenetre, MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu);
+											ecrire_chat(fenetre, MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu);
 											MAP[temp_joueur.coordo_x][temp_joueur.coordo_y].lieu = temp_joueur.etat_avant;
-											temp_joueur.etat_avant = MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu;
-											MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu = personnage;
-											temp_joueur.coordo_x++;
+											temp_joueur.etat_avant = MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu;
+											MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu = personnage;
+											temp_joueur.coordo_x--;
 										}
 										break;
 			case KEY_DOWN:	if(test_depl(MAP, c, temp_joueur)){
-												ecrire_chat(fenetre, MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu);
+												ecrire_chat(fenetre, MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu);
 												MAP[temp_joueur.coordo_x][temp_joueur.coordo_y].lieu = temp_joueur.etat_avant;
-												temp_joueur.etat_avant = MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu;
-												MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu = personnage;
-												temp_joueur.coordo_x--;
+												temp_joueur.etat_avant = MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu;
+												MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu = personnage;
+												temp_joueur.coordo_x++;
 											}
 											break;
 			case KEY_LEFT:	if(test_depl(MAP, c, temp_joueur)){

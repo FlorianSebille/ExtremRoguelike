@@ -13,11 +13,6 @@ void Win_Stat(WINDOW *F_win, int widthF){
 	int MAX_FOOD = 10;
 	int FOOD = 5 ;
 
-	start_color();
-	use_default_colors();
-	init_pair(1, COLOR_RED, -1);
-	init_pair(2, COLOR_GREEN, -1);
-	noecho();
 	wattron(F_win, A_BOLD | COLOR_PAIR(1));
 	mvwprintw(F_win,3,2,"STAGE");
 	mvwprintw(F_win,2,2, "USER");
