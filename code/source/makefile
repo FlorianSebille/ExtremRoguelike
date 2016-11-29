@@ -28,10 +28,10 @@ RandomRoom.o: RandomRoom.c
 	gcc -c RandomRoom.c
 
 Placer_perso.o: Placer_perso.c
- 	gcc -c Placer_perso.c
+	gcc -c Placer_perso.c
 
 Depl_perso.o: Depl_perso.c
- 	gcc -c Depl_perso.c
+	gcc -c Depl_perso.c
 
 Rogue.o: Rogue.c
 	gcc -c Rogue.c
