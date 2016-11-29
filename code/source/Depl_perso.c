@@ -34,11 +34,13 @@ int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, int *ligne, WINDOW *fenet
 	cbreak();
 	keypad(stdscr,TRUE);
   timeout(0);
+  
  	int c;
 	int porte = 0;
 	t_joueur temp_joueur;
+
  	temp_joueur = *joueur;
-   	int c;
+
 	c = getch();
 	if(c!=ERR){
 		switch(c){
