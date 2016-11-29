@@ -42,16 +42,13 @@ int main(){
 
     srand(time(NULL));
     init_map();
+    Placer_perso(MAP, S_win);
     affichage(MAP,S_win);
-
-    int position_perso = 0;
     while (getch() != 'q') {
-      ecrire_chat(T_win,&ligne, position_perso);
-      position_perso++;
-      if (position_perso > 4) {
-        position_perso = 0;
-      }
+      Depl_perso(MAP, &joueur, &ligne,T_win);
+      affichage(MAP,S_win);
     }
+
   }
-  endwin();  	
+  endwin();
 }
