@@ -1,6 +1,36 @@
 #include "total.h"
 
 int test_depl(t_cellule MAP [x] [y], int c,t_joueur joueur){
+<<<<<<< HEAD
+ 
+ 	t_joueur temp_joueur;
+ 	temp_joueur = joueur;
+ 	switch(c){
+ 		case KEY_UP:	if(MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu == mur){
+ 										return 0;
+ 									}else{
+ 										return 1;
+ 									}
+ 		case KEY_DOWN:	if(MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu == mur){
+ 											return 0;
+ 										}else{
+ 											return 1;
+ 										}
+ 	case KEY_LEFT:	if(MAP[temp_joueur.coordo_x][temp_joueur.coordo_y-1].lieu == mur){
+ 										return 0;
+ 										}else{
+ 											return 1;
+ 										}
+ 		case KEY_RIGHT:	if(MAP[temp_joueur.coordo_x][temp_joueur.coordo_y+1].lieu == mur){
+ 											return 0;
+ 										}else{
+ 											return 1;
+ 										}
+ 	}
+ 	return 0;
+  }
+=======
+>>>>>>> 7668e34801704f3605992417c8ece67cd0c5a5a1
 
  	t_joueur temp_joueur;
  	temp_joueur = joueur;
