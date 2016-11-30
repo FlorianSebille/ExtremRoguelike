@@ -6,6 +6,7 @@
 #include <time.h>
 #include <ncurses.h>
 #define TAILLE 100
+int nombre_salle;
 
 typedef struct joueur {char nom;int coordo_x;int coordo_y;int etat_avant;int STAGE;int SALLE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
 t_joueur joueur;
@@ -53,6 +54,8 @@ int relier_2Portes(int xA, int yA);
 void init_map();
 
 void affichage(t_cellule MAP [x] [y], WINDOW *fenetre);
+
+int Placer_uplevel(t_cellule MAP [x] [y], WINDOW *fenetre);
 
 int Placer_perso(t_cellule MAP [x] [y], WINDOW *fenetre);
 

@@ -163,15 +163,14 @@ int relier_2Portes(int xA, int yA){
 
 
 void init_map(){                    //fonction qui remplit la map d'un nombre de salle aléatoire
-  int nb_salle;
   int i;
 
 
   fillmap();
-  nb_salle = aleat(3,6);
+  nombre_salle = aleat(3,6);
 
-  for(i = 0; i < nb_salle; i++){
-    init_room(i,nb_salle);
+  for(i = 0; i < nombre_salle; i++){
+    init_room(i,nombre_salle);
   }
 
 }

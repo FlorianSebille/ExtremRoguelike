@@ -10,13 +10,25 @@ void affichage(t_cellule MAP [x] [y], WINDOW *fenetre){
       if(MAP[i][j].lieu == vide){
         mvwprintw(fenetre,i,j,"%i",MAP[i][j].position);
       }else if(MAP[i][j].lieu == porte){
+        wattron(fenetre, COLOR_PAIR(5));
         mvwprintw(fenetre,i,j,"p");
+        wattroff(fenetre, COLOR_PAIR(5));
+      }else if(MAP[i][j].lieu == uplevel){
+        wattron(fenetre, COLOR_PAIR(5));
+        mvwprintw(fenetre,i,j,"#");
+        wattroff(fenetre, COLOR_PAIR(5));
       }else if(MAP[i][j].lieu == sol){
+        wattron(fenetre, COLOR_PAIR(4));
         mvwprintw(fenetre,i,j,".");
+        wattroff(fenetre, COLOR_PAIR(4));
       }else if(MAP[i][j].lieu == mur){
+        wattron(fenetre, COLOR_PAIR(4));
         mvwprintw(fenetre,i,j,"+");
+        wattroff(fenetre, COLOR_PAIR(4));
       }else if(MAP[i][j].lieu == personnage){
+        wattron(fenetre, COLOR_PAIR(3));
       	mvwprintw(fenetre,i,j,"@");
+        wattroff(fenetre, COLOR_PAIR(3));
       }
     }
   }
