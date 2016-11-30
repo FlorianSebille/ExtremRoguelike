@@ -63,6 +63,7 @@ int test_depl(t_cellule MAP [x] [y], int c,t_joueur joueur);
 
 int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur,int *ligne, WINDOW *fenetre);
 
+int charger_sauvegarde();
 
 /* Dimensions et Position de la 1ère fenêtre
 const int startxF = 5;

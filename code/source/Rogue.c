@@ -4,7 +4,6 @@ int main(){
   initscr();
   noecho();
   if(taille_terminal()){
-
     int startxF, startyF, widthF, heightF;
     int startxS, startyS, widthS, heightS;
     int startxT, startyT, widthT, heightT;
@@ -39,19 +38,25 @@ int main(){
     init_pair(4, COLOR_BLACK, COLOR_WHITE);
     init_pair(5, COLOR_CYAN, COLOR_WHITE);
     init_pair(6, COLOR_WHITE, COLOR_CYAN);
+    int choix = charger_sauvegarde();
+    if(choix == 1){
+        //fonction qui charge la partie
+        while(1);
+    }
+    else{
+        F_win=create_newwin(heightF,widthF,startyF,startxF,"Profile");
+        S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
+        T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
 
-    F_win=create_newwin(heightF,widthF,startyF,startxF,"Profile");
-    S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
-    T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
+        Win_Stat(F_win,widthF);
+        wrefresh(F_win);
 
-    Win_Stat(F_win,widthF);
-    wrefresh(F_win);
-
-    srand(time(NULL));
-    init_map();
-    Placer_uplevel(MAP, S_win);
-    Placer_perso(MAP, S_win);
-    affichage(MAP,S_win);
+        srand(time(NULL));
+        init_map();
+        Placer_uplevel(MAP, S_win);
+        Placer_perso(MAP, S_win);
+        affichage(MAP,S_win);
+    }
     while (utilisateur != 'q') {
       utilisateur = Depl_perso(MAP, &joueur, &ligne,T_win);
       affichage(MAP,S_win);
