@@ -3,49 +3,55 @@
 
 void Win_Stat(WINDOW *F_win, int widthF){
 	int n;
-	int STAGE = joueur.STAGE;
-	int LEVEL = 1;
-	int EXP = 98484;
 	int MAX_HP = 5836;
-	int HP = 200 ;
-	int ATT = 15;
-	int DEF = 15;
 	int MAX_FOOD = 10;
-	int FOOD = 5 ;
 
 	wattron(F_win, A_BOLD | COLOR_PAIR(1));
-	mvwprintw(F_win,3,2,"STAGE");
 	mvwprintw(F_win,2,2, "USER");
+	n = log10(joueur.nom) + 1;
+	mvwprintw(F_win,3,widthF-1-n,"%i", joueur.nom);
+	mvwprintw(F_win,3,2,"STAGE");
 	n = log10(joueur.STAGE) + 1;
 	mvwprintw(F_win,3,widthF-1-n,"%i", joueur.STAGE);
 	wattroff(F_win, A_BOLD | COLOR_PAIR(1));
 	wattron(F_win, A_BOLD | COLOR_PAIR(2));
 	mvwprintw(F_win,6,2, "STATS:");
 	mvwprintw(F_win,7,2,"LEVEL");
-	n = log10(LEVEL) + 1;
-	mvwprintw(F_win,7,widthF-1-n,"%i", LEVEL);
+	n = log10(joueur.LEVEL) + 1;
+	mvwprintw(F_win,7,widthF-1-n,"%i", joueur.LEVEL);
 	//wbkgd(F_win, COLOR_PAIR(1)); colorier toute la fenêtre
+	if(joueur.EXP == 0){
+		mvwprintw(F_win,8,widthF-2,"0");
+	}
 	mvwprintw(F_win,8,2,"EXP");
-	n = log10(EXP) + 1;
-	mvwprintw(F_win,8,widthF-1-n,"%i", EXP);
+	n = log10(joueur.EXP) + 1;
+	mvwprintw(F_win,8,widthF-1-n,"%i", joueur.EXP);
 	mvwprintw(F_win,9,2,"MAX HP");
 	n = log10(MAX_HP) + 1;
 	mvwprintw(F_win,9,widthF-1-n,"%i", MAX_HP);
 	mvwprintw(F_win,10,2,"HP");
-	n = log10(HP) + 1;
-	mvwprintw(F_win,10,widthF-1-n,"%i", HP);
+	n = log10(joueur.HP) + 1;
+	mvwprintw(F_win,10,widthF-1-n,"%i", joueur.HP);
 	mvwprintw(F_win,11,2,"ATT");
-	n = log10(ATT) + 1;
-	mvwprintw(F_win,11,widthF-1-n,"%i", ATT);
+	n = log10(joueur.ATT) + 1;
+	mvwprintw(F_win,11,widthF-1-n,"%i", joueur.ATT);
 	mvwprintw(F_win,12,2,"DEF");
-	n = log10(DEF) + 1;
-	mvwprintw(F_win,12,widthF-1-n,"%i", DEF);
+	n = log10(joueur.DEF) + 1;
+	mvwprintw(F_win,12,widthF-1-n,"%i", joueur.DEF);
 	mvwprintw(F_win,13,2,"MAX FOOD");
 	n = log10(MAX_FOOD) + 1;
 	mvwprintw(F_win,13,widthF-1-n,"%i", MAX_FOOD);
 	mvwprintw(F_win,14,2,"FOOD");
-	n = log10(FOOD) + 1;
-	mvwprintw(F_win,14,widthF-1-n,"%i", FOOD);
+	n = log10(joueur.FOOD) + 1;
+	mvwprintw(F_win,15,widthF-1-n,"%i", joueur.FOOD);
+	if(joueur.addcle == 1){
+		wattroff(F_win, A_BOLD | COLOR_PAIR(2));
+		wattron(F_win, A_BOLD | COLOR_PAIR(1));
+		mvwprintw(F_win,15,2,"KEY");
+		wattroff(F_win, A_BOLD | COLOR_PAIR(1));
+		wattron(F_win, A_BOLD | COLOR_PAIR(2));
+	}
+
 	mvwprintw(F_win,21,2,"COMMAND: ");
 	mvwprintw(F_win,22,2,"QUIT");
 	n = strlen("Q");

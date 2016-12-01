@@ -61,11 +61,18 @@ int main(){
         Placer_perso(MAP, S_win);
         joueur.STAGE = 1;
         joueur.SALLE = 1;
+        joueur.LEVEL = 1;
+        joueur.EXP = 1;
+        joueur.HP = 20;
+        joueur.ATT = 5;
+        joueur.DEF = 12;
+        joueur.FOOD = 10;
         affichage(MAP,S_win);
     }
     while (utilisateur != 'q') {
       utilisateur = Depl_perso(MAP, &joueur,T_win);
       affichage(MAP,S_win);
+      Win_Stat(F_win,widthF);
       if(joueur.etat_avant == porte || joueur.etat_avant == uplevel){
         porte_escalier(T_win, S_win, utilisateur);
       }
