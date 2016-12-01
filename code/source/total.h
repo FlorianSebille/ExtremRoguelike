@@ -4,16 +4,17 @@
 #include <curses.h>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 #include <ncurses.h>
 #define TAILLE 100
 int nombre_salle;
 
-typedef struct joueur {char nom;int coordo_x;int coordo_y;int etat_avant;int STAGE;int SALLE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
-t_joueur joueur;
-
 typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel} t_element;
 
 typedef struct cellule {t_element lieu; int position; int relie; int num_salle;} t_cellule;
+
+typedef struct joueur {char nom;int coordo_x;int coordo_y;t_element etat_avant;int STAGE;int SALLE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
+t_joueur joueur;
 
 #define x 30
 #define y 89
@@ -61,8 +62,13 @@ int Placer_perso(t_cellule MAP [x] [y], WINDOW *fenetre);
 
 int test_depl(t_cellule MAP [x] [y], int c,t_joueur joueur);
 
-int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur,int *ligne, WINDOW *fenetre);
+int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, WINDOW *fenetre);
 
+void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur);
+
+int Ask_Load_Save();
+
+int Charger_Sauvegarde();
 
 /* Dimensions et Position de la 1ère fenêtre
 const int startxF = 5;

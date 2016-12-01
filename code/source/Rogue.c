@@ -4,12 +4,11 @@ int main(){
   initscr();
   noecho();
   if(taille_terminal()){
-
     int startxF, startyF, widthF, heightF;
     int startxS, startyS, widthS, heightS;
     int startxT, startyT, widthT, heightT;
     int ligne = 1;
-    int utilisateur = 0;
+    char utilisateur;
 
     WINDOW * F_win;
     WINDOW * S_win;
@@ -40,21 +39,33 @@ int main(){
     init_pair(5, COLOR_CYAN, COLOR_WHITE);
     init_pair(6, COLOR_WHITE, COLOR_CYAN);
 
-    F_win=create_newwin(heightF,widthF,startyF,startxF,"Profile");
-    S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
-    T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
+    int choix = Ask_Load_Save();
+   if(choix == KEY_LEFT){
+        choix = Charger_Sauvegarde();
+    }
+    if(choix == KEY_RIGHT){
 
-    Win_Stat(F_win,widthF);
-    wrefresh(F_win);
+        F_win=create_newwin(heightF,widthF,startyF,startxF,"Profile");
+        S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
+        T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
 
-    srand(time(NULL));
-    init_map();
-    Placer_uplevel(MAP, S_win);
-    Placer_perso(MAP, S_win);
-    affichage(MAP,S_win);
+        Win_Stat(F_win,widthF);
+        wrefresh(F_win);
+
+        srand(time(NULL));
+        init_map();
+        Placer_uplevel(MAP, S_win);
+        Placer_perso(MAP, S_win);
+        joueur.STAGE = 1;
+        joueur.SALLE = 1;
+        affichage(MAP,S_win);
+    }
     while (utilisateur != 'q') {
-      utilisateur = Depl_perso(MAP, &joueur, &ligne,T_win);
+      utilisateur = Depl_perso(MAP, &joueur,T_win);
       affichage(MAP,S_win);
+      if(joueur.etat_avant == porte || joueur.etat_avant == uplevel){
+        porte_escalier(T_win, S_win, utilisateur);
+      }
     }
   }
   endwin();
