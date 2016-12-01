@@ -3,7 +3,7 @@
 
 void Win_Stat(WINDOW *F_win, int widthF){
 	int n;
-	int STAGE = 10;
+	int STAGE = joueur.STAGE;
 	int LEVEL = 1;
 	int EXP = 98484;
 	int MAX_HP = 5836;
@@ -16,8 +16,8 @@ void Win_Stat(WINDOW *F_win, int widthF){
 	wattron(F_win, A_BOLD | COLOR_PAIR(1));
 	mvwprintw(F_win,3,2,"STAGE");
 	mvwprintw(F_win,2,2, "USER");
-	n = log10(STAGE) + 1;
-	mvwprintw(F_win,3,widthF-1-n,"%i", STAGE);
+	n = log10(joueur.STAGE) + 1;
+	mvwprintw(F_win,3,widthF-1-n,"%i", joueur.STAGE);
 	wattroff(F_win, A_BOLD | COLOR_PAIR(1));
 	wattron(F_win, A_BOLD | COLOR_PAIR(2));
 	mvwprintw(F_win,6,2, "STATS:");
