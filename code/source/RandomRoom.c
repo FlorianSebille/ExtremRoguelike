@@ -255,5 +255,4 @@ void init_map(){      //fonction qui remplit la map d'un nombre de salle aléato
     trouver_porte(xB,yB,i);
     relier_2Portes(ligne,colonne);
   }
-
 }

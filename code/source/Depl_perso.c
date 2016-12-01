@@ -36,8 +36,6 @@ int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, WINDOW *fenetre){
   timeout(0);
 
  	int c;
-  int dep_reussi = 0;
-	int porte = 0;
 	t_joueur temp_joueur;
 
  	temp_joueur = *joueur;
@@ -51,7 +49,7 @@ int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, WINDOW *fenetre){
 											temp_joueur.etat_avant = MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu;
 											MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu = personnage;
 											temp_joueur.coordo_x--;
-                      dep_reussi++;
+                      deplacement = 5;
 										}
 										break;
 			case KEY_DOWN:	if(test_depl(MAP, c, temp_joueur)){
@@ -60,7 +58,7 @@ int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, WINDOW *fenetre){
 												temp_joueur.etat_avant = MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu;
 												MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu = personnage;
 												temp_joueur.coordo_x++;
-                        dep_reussi++;
+                        deplacement = 2;
 											}
 											break;
 			case KEY_LEFT:	if(test_depl(MAP, c, temp_joueur)){
@@ -69,7 +67,7 @@ int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, WINDOW *fenetre){
 												temp_joueur.etat_avant = MAP[temp_joueur.coordo_x][temp_joueur.coordo_y-1].lieu;
 												MAP[temp_joueur.coordo_x][temp_joueur.coordo_y-1].lieu = personnage;
 												temp_joueur.coordo_y--;
-                        dep_reussi++;
+                        deplacement = 1;
 											}
 											break;
 			case KEY_RIGHT: if(test_depl(MAP, c, temp_joueur)){
@@ -78,11 +76,18 @@ int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, WINDOW *fenetre){
 												temp_joueur.etat_avant = MAP[temp_joueur.coordo_x][temp_joueur.coordo_y+1].lieu;
 												MAP[temp_joueur.coordo_x][temp_joueur.coordo_y+1].lieu = personnage;
 												temp_joueur.coordo_y++;
-                        dep_reussi++;
+                        deplacement = 3;
 											}
 											break;
 		}
 	}
+  if(temp_joueur.etat_avant == cle){ // le joueur recupere la clé
+    temp_joueur.addcle = 1;
+    temp_joueur.etat_avant = sol;
+  }
+  if(temp_joueur.etat_avant == arriver && temp_joueur.addcle == 1){// le joueur est a l'arriver avec la clé
+
+  }
 	*joueur = temp_joueur;
-	return dep_reussi;
+	return c;
 }

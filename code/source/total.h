@@ -8,12 +8,14 @@
 #include <ncurses.h>
 #define TAILLE 100
 int nombre_salle;
+int deplacement;
+int stage_cle;
 
-typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel} t_element;
+typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel, arriver, cle} t_element;
 
 typedef struct cellule {t_element lieu; int position; int relie; int num_salle;} t_cellule;
 
-typedef struct joueur {char nom;int coordo_x;int coordo_y;t_element etat_avant;int STAGE;int SALLE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
+typedef struct joueur {char nom;int coordo_x;int coordo_y;t_element etat_avant;int addcle;int STAGE;int SALLE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
 t_joueur joueur;
 
 #define x 30
@@ -59,6 +61,8 @@ void affichage(t_cellule MAP [x] [y], WINDOW *fenetre);
 int Placer_uplevel(t_cellule MAP [x] [y], WINDOW *fenetre);
 
 int Placer_perso(t_cellule MAP [x] [y], WINDOW *fenetre);
+
+int Placer_cle(t_cellule MAP [x] [y], WINDOW *fenetre);
 
 int test_depl(t_cellule MAP [x] [y], int c,t_joueur joueur);
 

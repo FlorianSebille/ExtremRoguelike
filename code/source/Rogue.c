@@ -8,6 +8,7 @@ int main(){
     int startxS, startyS, widthS, heightS;
     int startxT, startyT, widthT, heightT;
     int ligne = 1;
+    stage_cle = aleat(2,5);
     char utilisateur;
 
     WINDOW * F_win;
@@ -38,6 +39,8 @@ int main(){
     init_pair(4, COLOR_BLACK, COLOR_WHITE);
     init_pair(5, COLOR_CYAN, COLOR_WHITE);
     init_pair(6, COLOR_WHITE, COLOR_CYAN);
+    init_pair(7, COLOR_RED, COLOR_WHITE);
+    init_pair(8, COLOR_GREEN, COLOR_WHITE);
 
     int choix = Ask_Load_Save();
    if(choix == KEY_LEFT){
