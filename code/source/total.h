@@ -48,7 +48,7 @@ int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx);
 
 void init_room();
 
-int trouver_porte(int * xA, int * yA);
+int trouver_porte(int * xA, int * yA, int salle);
 
 int relier_2Portes(int xA, int yA);
 
