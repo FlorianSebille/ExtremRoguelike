@@ -15,7 +15,7 @@ typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel, arriv
 
 typedef struct cellule {t_element lieu; int position; int relie; int xb;int yb;int num_salle;} t_cellule;
 
-typedef struct joueur {char nom;int coordo_x;int coordo_y;t_element etat_avant;int addcle;int STAGE;int SALLE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
+typedef struct joueur {char nom[20];int coordo_x;int coordo_y;t_element etat_avant;int addcle;int STAGE;int SALLE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
 t_joueur joueur;
 
 #define x 30
@@ -73,6 +73,8 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur);
 int Ask_Load_Save();
 
 int Charger_Sauvegarde();
+
+void addsauv();
 
 /* Dimensions et Position de la 1ère fenêtre
 const int startxF = 5;

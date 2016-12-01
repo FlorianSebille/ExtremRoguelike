@@ -5,11 +5,10 @@ void Win_Stat(WINDOW *F_win, int widthF){
 	int n;
 	int MAX_HP = 5836;
 	int MAX_FOOD = 10;
-
 	wattron(F_win, A_BOLD | COLOR_PAIR(1));
 	mvwprintw(F_win,2,2, "USER");
-	n = log10(joueur.nom) + 1;
-	mvwprintw(F_win,3,widthF-1-n,"%i", joueur.nom);
+	n = strlen(joueur.nom);
+	mvwprintw(F_win,2,widthF-1-n,"%s", joueur.nom);
 	mvwprintw(F_win,3,2,"STAGE");
 	n = log10(joueur.STAGE) + 1;
 	mvwprintw(F_win,3,widthF-1-n,"%i", joueur.STAGE);
@@ -43,11 +42,11 @@ void Win_Stat(WINDOW *F_win, int widthF){
 	mvwprintw(F_win,13,widthF-1-n,"%i", MAX_FOOD);
 	mvwprintw(F_win,14,2,"FOOD");
 	n = log10(joueur.FOOD) + 1;
-	mvwprintw(F_win,15,widthF-1-n,"%i", joueur.FOOD);
+	mvwprintw(F_win,14,widthF-1-n,"%i", joueur.FOOD);
 	if(joueur.addcle == 1){
 		wattroff(F_win, A_BOLD | COLOR_PAIR(2));
 		wattron(F_win, A_BOLD | COLOR_PAIR(1));
-		mvwprintw(F_win,15,2,"KEY");
+		mvwprintw(F_win,16,2,"KEY");
 		wattroff(F_win, A_BOLD | COLOR_PAIR(1));
 		wattron(F_win, A_BOLD | COLOR_PAIR(2));
 	}

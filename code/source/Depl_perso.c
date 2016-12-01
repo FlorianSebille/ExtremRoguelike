@@ -33,7 +33,7 @@ int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, WINDOW *fenetre){
 
 	cbreak();
 	keypad(stdscr,TRUE);
-  timeout(0);
+ 	timeout(0);
 
  	int c;
 	t_joueur temp_joueur;

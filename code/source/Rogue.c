@@ -46,19 +46,16 @@ int main(){
    if(choix == KEY_LEFT){
         choix = Charger_Sauvegarde();
     }
-    if(choix == KEY_RIGHT){
-
         F_win=create_newwin(heightF,widthF,startyF,startxF,"Profile");
         S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
         T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
-
-        Win_Stat(F_win,widthF);
-        wrefresh(F_win);
+    if(choix == KEY_RIGHT){
 
         srand(time(NULL));
         init_map();
         Placer_uplevel(MAP, S_win);
         Placer_perso(MAP, S_win);
+        strcpy(joueur.nom, "Mario");
         joueur.STAGE = 1;
         joueur.SALLE = 1;
         joueur.LEVEL = 1;
@@ -67,15 +64,19 @@ int main(){
         joueur.ATT = 5;
         joueur.DEF = 12;
         joueur.FOOD = 10;
-        affichage(MAP,S_win);
     }
-    while (utilisateur != 'q') {
-      utilisateur = Depl_perso(MAP, &joueur,T_win);
-      affichage(MAP,S_win);
-      Win_Stat(F_win,widthF);
-      if(joueur.etat_avant == porte || joueur.etat_avant == uplevel){
+        affichage(MAP,S_win);
+        Win_Stat(F_win,widthF);
+    while(utilisateur != 'q' && utilisateur != 's'){
+        utilisateur = Depl_perso(MAP, &joueur,T_win);
+        affichage(MAP,S_win);
+        Win_Stat(F_win,widthF);
+        if(joueur.etat_avant == porte || joueur.etat_avant == uplevel){
         porte_escalier(T_win, S_win, utilisateur);
-      }
+        }
+    }
+    if(utilisateur == 's'){
+        addsauv();
     }
   }
   endwin();
