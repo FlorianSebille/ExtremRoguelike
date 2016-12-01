@@ -29,13 +29,14 @@ int test_depl(t_cellule MAP [x] [y], int c,t_joueur joueur){
  	return 0;
 }
 
-int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, int *ligne, WINDOW *fenetre){
+int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, WINDOW *fenetre){
 
 	cbreak();
 	keypad(stdscr,TRUE);
   timeout(0);
 
  	int c;
+  int dep_reussi = 0;
 	int porte = 0;
 	t_joueur temp_joueur;
 
@@ -50,6 +51,7 @@ int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, int *ligne, WINDOW *fenet
 											temp_joueur.etat_avant = MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu;
 											MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu = personnage;
 											temp_joueur.coordo_x--;
+                      dep_reussi++;
 										}
 										break;
 			case KEY_DOWN:	if(test_depl(MAP, c, temp_joueur)){
@@ -58,6 +60,7 @@ int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, int *ligne, WINDOW *fenet
 												temp_joueur.etat_avant = MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu;
 												MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu = personnage;
 												temp_joueur.coordo_x++;
+                        dep_reussi++;
 											}
 											break;
 			case KEY_LEFT:	if(test_depl(MAP, c, temp_joueur)){
@@ -66,6 +69,7 @@ int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, int *ligne, WINDOW *fenet
 												temp_joueur.etat_avant = MAP[temp_joueur.coordo_x][temp_joueur.coordo_y-1].lieu;
 												MAP[temp_joueur.coordo_x][temp_joueur.coordo_y-1].lieu = personnage;
 												temp_joueur.coordo_y--;
+                        dep_reussi++;
 											}
 											break;
 			case KEY_RIGHT: if(test_depl(MAP, c, temp_joueur)){
@@ -74,10 +78,11 @@ int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, int *ligne, WINDOW *fenet
 												temp_joueur.etat_avant = MAP[temp_joueur.coordo_x][temp_joueur.coordo_y+1].lieu;
 												MAP[temp_joueur.coordo_x][temp_joueur.coordo_y+1].lieu = personnage;
 												temp_joueur.coordo_y++;
+                        dep_reussi++;
 											}
 											break;
 		}
 	}
 	*joueur = temp_joueur;
-	return c;
+	return dep_reussi;
 }
