@@ -9,6 +9,8 @@ void affichage(t_cellule MAP [x] [y], WINDOW *fenetre){
     for(j = 1; j < max_j -1; j++){
       if(MAP[i][j].lieu == vide){
         mvwprintw(fenetre,i,j,"%i",MAP[i][j].position);
+      }else if(MAP[i][j].lieu == couloir){
+        mvwprintw(fenetre,i,j,"X");
       }else if(MAP[i][j].lieu == porte){
         wattron(fenetre, COLOR_PAIR(6));
         mvwprintw(fenetre,i,j," ");

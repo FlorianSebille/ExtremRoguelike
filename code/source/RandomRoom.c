@@ -123,6 +123,23 @@ void init_room(int num, int nb_salle){                   //fonction qui initiali
   }
 }
 
+void afficher(int num){
+  int i,j;
+  for (i = 0; i < x; i++){
+    for(j = 0; j < y; j++){
+      if(MAP[i][j].lieu == porte && MAP[i][j].num_salle == num + 1){
+        fprintf(stderr,"?");
+      }else if(MAP[i][j].lieu != vide){
+        fprintf(stderr,"+");
+      }else if(MAP[i][j].position != 0){
+        fprintf(stderr,"#");
+      }else fprintf(stderr," ");
+    }
+    fprintf(stderr,"\n");
+  }
+  fprintf(stderr,"\n");
+}
+
 int trouver_porte(int * xA, int * yA){    //fonction qui retourne les coordonnées d'un pointeur et marque la porte comme reliée
   int i,j;
   for(i = 0; i < x; i++){
@@ -131,40 +148,164 @@ int trouver_porte(int * xA, int * yA){    //fonction qui retourne les coordonné
         *xA = i;
         *yA = j;
         MAP[i][j].relie = 1;
-        return 0;
+        return 1;
       }
     }
   }
   return 0;
 }
 
-int relier_2Portes(int xA, int yA){
+int relier_2Portes(int xA, int yA){ //fonction qui relie une porte à la salle suivante
+  t_coord MaPos;
   int num = MAP[xA][yA].num_salle;
-  int compteur = 0;
+  int compteur;
   int l,c;
 
   init_file();
 
-  if(MAP[xA][yA].lieu != vide && !(MAP[xA][yA].lieu == porte && MAP[xA][yA].num_salle == num))return 0;
-  ajouter(xA,yA);
+  MaPos.ligne = xA;
+  MaPos.colonne = yA;
+  MAP[xA][yA].position = 0;
+  ajouter(MaPos);
+  int prop = 0, propmem = -1;
 
-  while(!file_vide()){
-    retirer(&l,&c);
-    MAP[l][c].position = compteur;
-    compteur++;
+  while(MAP[MaPos.ligne][MaPos.colonne].lieu != porte || MAP[MaPos.ligne][MaPos.colonne].num_salle != num + 1){
+    // retirer(&MaPos);
+    l = MaPos.ligne;
+    c = MaPos.colonne;
+    compteur = MAP[l][c].position + 1;
+    propmem = prop;
+    prop = compteur;
+    if (prop != propmem) afficher(num);
 
-    if((MAP[l-1][c].lieu == vide || (MAP[l-1][c].lieu == porte && MAP[l-1][c].num_salle == num +1)) && l-1 >= 0)ajouter(l-1,c);
-    if((MAP[l+1][c].lieu == vide || (MAP[l+1][c].lieu == porte && MAP[l+1][c].num_salle == num +1)) && l+1 <= x)ajouter(l+1,c);
-    if((MAP[l][c-1].lieu == vide || (MAP[l][c-1].lieu == porte && MAP[l][c-1].num_salle == num +1)) && c-1 >= 0)ajouter(l,c-1);
-    if((MAP[l][c+1].lieu == vide || (MAP[l][c+1].lieu == porte && MAP[l][c+1].num_salle == num +1)) && l+1 <= y)ajouter(l,c+1);
+
+  //if(MAP[l][c].lieu == porte && MAP[l][c].num_salle == num + 1){  //si on a trouver la porte de la salle suivante, on fait le chemin inverse
+      /*MAP[l][c].relie = 1;
+      while(MAP[l][c].position != 1){
+        if(MAP[l+1][c].position == MAP[l][c].position - 1){
+          l++;
+        }else if(MAP[l-1][c].position == MAP[l][c].position - 1){
+          l--;
+        }else if(MAP[l][c+1].position == MAP[l][c].position - 1){
+          c++;
+        }else if(MAP[l][c-1].position == MAP[l][c].position - 1){
+          c--;
+        }
+        MAP[l][c].lieu = couloir;
+      }
+      MAP[l][c].lieu = couloir;*/
+    //   file_supprimer();
+    //   return 1;
+    // }
+    if( l-1 >= 0 && MAP[l-1][c].position == 0 &&(MAP[l-1][c].lieu == vide || (MAP[l-1][c].lieu == porte && MAP[l-1][c].num_salle == num +1))){
+      MaPos.ligne = l-1;
+      MaPos.colonne = c;
+      MAP[l-1][c].position = compteur;
+      ajouter(MaPos);
+    }if( l+1 < x && MAP[l+1][c].position == 0 && (MAP[l+1][c].lieu == vide || (MAP[l+1][c].lieu == porte && MAP[l+1][c].num_salle == num +1))){
+      MaPos.ligne = l+1;
+      MaPos.colonne = c;
+      MAP[l+1][c].position = compteur;
+      ajouter(MaPos);
+    }if( c-1 >= 0 && MAP[l][c-1].position == 0 && (MAP[l][c-1].lieu == vide || (MAP[l][c-1].lieu == porte && MAP[l][c-1].num_salle == num +1))){
+      MaPos.ligne = l;
+      MaPos.colonne = c-1;
+      MAP[l][c-1].position = compteur;
+      ajouter(MaPos);
+    }if( c+1 < y && MAP[l][c+1].position == 0 && (MAP[l][c+1].lieu == vide || (MAP[l][c+1].lieu == porte && MAP[l][c+1].num_salle == num +1))){
+      MaPos.ligne = l;
+      MaPos.colonne = c+1;
+      MAP[l][c+1].position = compteur;
+      ajouter(MaPos);
+    }
+    retirer(&MaPos);
   }
+  fprintf(stderr, "Sortie de la boucle !!\n");
+  file_supprimer();
   return 1;
 }
+/*
+int relier_2Portesbis(int xA, int yA){ //fonction qui relie une porte à la salle suivante
+  t_coord MaPos;
+  int num = MAP[xA][yA].num_salle;
+  int compteur;
+  int l,c;
+  int test[x][y];
 
+  init_file();
+
+  MaPos.ligne = xA;
+  MaPos.colonne = yA;
+  test[xA][yA] = 0;
+  ajouter(MaPos);
+
+  while(!file_vide()){
+    retirer(&MaPos);
+    l = MaPos.ligne;
+    c = MaPos.colonne;
+    compteur = test[l][c] + 1;
+
+    if(MAP[l][c].lieu == porte && MAP[l][c].num_salle == num + 1){  //si on a trouver la porte de la salle suivante, on fait le chemin inverse
+      MAP[l][c].relie = 1;
+      while(test[l][c] != 1){
+        if(test[l+1][c] == test[l][c] - 1){
+          l++;
+        }else if(test[l-1][c] == test[l][c] - 1){
+          l--;
+        }else if(test[l][c+1] == test[l][c] - 1){
+          c++;
+        }else if(test[l][c-1] == test[l][c] - 1){
+          c--;
+        }
+        MAP[l][c].lieu = couloir;
+      }
+      MAP[l][c].lieu = couloir;
+      file_supprimer();
+      return 1;
+    }
+    if( l-1 >= 0 && (MAP[l-1][c].lieu == vide || (MAP[l-1][c].lieu == porte && MAP[l-1][c].num_salle == num +1))){
+      MaPos.ligne = l-1;
+      MaPos.colonne = c;
+      test[l-1][c] = compteur;
+      ajouter(MaPos);
+    }if( l+1 < x && (MAP[l+1][c].lieu == vide || (MAP[l+1][c].lieu == porte && MAP[l+1][c].num_salle == num +1))){
+      MaPos.ligne = l+1;
+      MaPos.colonne = c;
+      test[l+1][c].position = compteur;
+      ajouter(MaPos);
+    }if( c-1 >= 0 && (MAP[l][c-1].lieu == vide || (MAP[l][c-1].lieu == porte && MAP[l][c-1].num_salle == num +1))){
+      MaPos.ligne = l;
+      MaPos.colonne = c-1;
+      MAP[l][c-1].position = compteur;
+      ajouter(MaPos);
+    }if( c+1 < y && (MAP[l][c+1].lieu == vide || (MAP[l][c+1].lieu == porte && MAP[l][c+1].num_salle == num +1))){
+      MaPos.ligne = l;
+      MaPos.colonne = c+1;
+      MAP[l][c+1].position = compteur;
+      ajouter(MaPos);
+    }
+  }
+  file_supprimer();
+  return 0;
+}*/
+
+
+void positionzero(){
+  int i, j;
+  for(i=0;i<x;i++){
+    for(j=0;j<y;j++){
+      MAP[i][j].position = 0;
+    }
+  }
+}   //fonction qui met à zéro le type position
 
 void init_map(){                    //fonction qui remplit la map d'un nombre de salle aléatoire
+  int * xB;
+  int * yB;
+  int ligne, colonne;
   int i;
-
+  xB = &ligne;
+  yB = &colonne;
 
   fillmap();
   nombre_salle = aleat(3,6);
@@ -172,5 +313,11 @@ void init_map(){                    //fonction qui remplit la map d'un nombre de
   for(i = 0; i < nombre_salle; i++){
     init_room(i,nombre_salle);
   }
-
+/*  for(i = 0; i < nombre_salle - 1; i++){
+    positionzero();
+    trouver_porte(xB,yB);
+    relier_2Portes(ligne,colonne);
+  }*/
+  trouver_porte(xB,yB);
+  relier_2Portes(ligne,colonne);
 }

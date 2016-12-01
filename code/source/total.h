@@ -88,9 +88,9 @@ WINDOW * T_win;*/
 
 //dans le fichier file.c
 
-typedef struct coord{int ligne; int colonne;} t_colonne;
+typedef struct coord{int ligne; int colonne;} t_coord;
 
-typedef struct elemfile{t_colonne nombre; struct elemfile*suivant;} t_elemfile;
+typedef struct elemfile{t_coord nombre; struct elemfile*suivant;} t_elemfile;
 
 t_elemfile*tete;
 t_elemfile*queue;
@@ -99,8 +99,10 @@ void init_file();
 
 int file_vide(void);
 
-void ajouter(int l, int c);
+void ajouter(t_coord coord);
 
-void retirer(int*l, int*c);
+void retirer(t_coord*coord);
 
-void queue_file(int*l, int*c);
+void queue_file(t_coord*coord);
+
+void file_supprimer();
