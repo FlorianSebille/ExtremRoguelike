@@ -60,6 +60,25 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
                                 wrefresh(mapfenetre);
                                 break;
                       }
+
+                      /*MAP[joueur.coordo_x][joueur.coordo_y].lieu = joueur.etat_avant;
+                      joueur.coordo_x = MAP[joueur.coordo_x][joueur.coordo_y].xb;
+                      joueur.coordo_y = MAP[joueur.coordo_x][joueur.coordo_y].yb;
+
+                      if(MAP[joueur.coordo_x][joueur.coordo_y+1].lieu == sol){
+                        joueur.coordo_y++;
+                        MAP[joueur.coordo_x][joueur.coordo_y].lieu = personnage;
+                      }else if(MAP[joueur.coordo_x][joueur.coordo_y-1].lieu == sol){
+                        joueur.coordo_y--;
+                        MAP[joueur.coordo_x][joueur.coordo_y].lieu = personnage;
+                      }else if(MAP[joueur.coordo_x+1][joueur.coordo_y].lieu == sol){
+                        joueur.coordo_x++;
+                        MAP[joueur.coordo_x][joueur.coordo_y].lieu = personnage;
+                      }else if(MAP[joueur.coordo_x-1][joueur.coordo_y].lieu == sol){
+                        joueur.coordo_x--;
+                        MAP[joueur.coordo_x][joueur.coordo_y].lieu = personnage;
+                      }*/
+
                     }else if (joueur.etat_avant == uplevel){
                       joueur.STAGE = joueur.STAGE + 1;
                       srand(time(NULL));
@@ -69,8 +88,8 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
                       if(stage_cle == joueur.STAGE){
                         Placer_cle(MAP,mapfenetre);
                       }
-                      affichage(MAP,mapfenetre);
                     }
+                    affichage(MAP,mapfenetre);
                     wrefresh(mapfenetre);
                     break;
     case KEY_LEFT:
