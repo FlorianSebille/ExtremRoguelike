@@ -318,6 +318,6 @@ void init_map(){                    //fonction qui remplit la map d'un nombre de
     trouver_porte(xB,yB);
     relier_2Portes(ligne,colonne);
   }*/
-  trouver_porte(xB,yB);
-  relier_2Portes(ligne,colonne);
+  //trouver_porte(xB,yB);
+  //relier_2Portes(ligne,colonne);
 }

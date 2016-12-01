@@ -25,8 +25,48 @@ int Placer_uplevel(t_cellule MAP [x] [y], WINDOW *fenetre){
     		if(MAP[i][j].lieu == sol){
           taille_salle++;
           if(taille_salle == pos_uplevel){
-            MAP[i][j].lieu=uplevel;
-            return 1;
+            if(joueur.STAGE == 5){
+              MAP[i][j].lieu=arriver;
+            }else{
+              MAP[i][j].lieu=uplevel;
+              return 1;
+            }
+          }
+				}
+  		}
+		}
+  }
+	return 0;
+}
+
+int Placer_cle(t_cellule MAP [x] [y], WINDOW *fenetre){
+
+    int i,max_i,j,max_j,salle,taille_salle;
+    salle = aleat(1,nombre_salle-2);
+    taille_salle = 0;
+    getmaxyx(fenetre,max_i,max_j);
+
+  for(i = 1; i < max_i -1; i++){
+  	for(j = 1; j < max_j -1; j++){
+    	if(MAP[i][j].num_salle == salle){
+    		if(MAP[i][j].lieu == sol){
+          taille_salle++;
+				}
+  		}
+		}
+  }
+
+  int pos_cle = aleat(0,taille_salle);
+  taille_salle = 0;
+
+  for(i = 1; i < max_i -1; i++){
+  	for(j = 1; j < max_j -1; j++){
+    	if(MAP[i][j].num_salle == salle){
+    		if(MAP[i][j].lieu == sol){
+          taille_salle++;
+          if(taille_salle == pos_cle && joueur.addcle == 0){
+              MAP[i][j].lieu=cle;
+              return 1;
           }
 				}
   		}

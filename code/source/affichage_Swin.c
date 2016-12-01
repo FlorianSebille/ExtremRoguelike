@@ -31,6 +31,15 @@ void affichage(t_cellule MAP [x] [y], WINDOW *fenetre){
         wattron(fenetre, COLOR_PAIR(3));
       	mvwprintw(fenetre,i,j,"@");
         wattroff(fenetre, COLOR_PAIR(3));
+      }else if(MAP[i][j].lieu == arriver){
+        wattron(fenetre, COLOR_PAIR(8));
+      	mvwaddch(fenetre, i, j, ACS_CKBOARD);
+        wattroff(fenetre, COLOR_PAIR(8));
+      }else if(MAP[i][j].lieu == cle){
+        wattron(fenetre, COLOR_PAIR(7));
+        mvwprintw(fenetre,i,j,"K");
+      	//mvwaddch(fenetre, i, j, ACS_STERLING);
+        wattroff(fenetre, COLOR_PAIR(7));
       }
     }
   }
