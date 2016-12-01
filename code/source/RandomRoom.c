@@ -123,7 +123,7 @@ void init_room(int num, int nb_salle){   //fonction qui initialise une salle de 
   }
 }
 
-void afficher(int num){
+/*void afficher(int num){   //fonction temporaire pour afficher pas à pas la matrice (résolution de bugs)
   int i,j;
   for (i = 0; i < x; i++){
      for(j = 0; j < y; j++){
@@ -142,7 +142,7 @@ void afficher(int num){
      fprintf(stderr,"\n");
    }
    fprintf(stderr,"\n");
- }  //fonction temporaire pour afficher pas à pas la matrice (résolution de bugs)
+ }  //fonction temporaire pour afficher pas à pas la matrice (résolution de bugs)*/
 
 int trouver_porte(int * xA, int * yA, int salle){    //fonction qui retourne les coordonnées d'un pointeur et marque la porte comme reliée
   int i,j;
@@ -179,7 +179,7 @@ int relier_2Portes(int xA, int yA){ //fonction qui relie une porte à la salle s
     compteur = MAP[l][c].position + 1;
     propmem = prop;
     prop = compteur;
-    if (prop != propmem) afficher(num);
+    //if (prop != propmem) afficher(num);
 
     if( l-1 >= 0 && MAP[l-1][c].position == 0 && ((MAP[l-1][c].lieu == vide || MAP[l-1][c].lieu == couloir) || (MAP[l-1][c].lieu == porte && MAP[l-1][c].num_salle == num +1))){
       MaPos.ligne = l-1;
