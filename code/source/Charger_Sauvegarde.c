@@ -1,35 +1,27 @@
 #include "total.h"
 
-int charger_sauvegarde(){
-	int startxSave, startySave, widthSave, heightSave;
-	WINDOW *Save_Win;
-	cbreak();
-	keypad(stdscr,TRUE);
-	timeout(0);
-	int choix;
-	heightSave = LINES*0.33;
-	widthSave = COLS*0.33;
-	startxSave = COLS*0.33;
-	startySave = LINES*0.33;
-	Save_Win=create_newwin(heightSave,widthSave,startySave,startxSave,"Sauvegarde");
-	mvwprintw(Save_Win,2,2,"Voulez vous charger une partie sauvegardée ?");
-	mvwprintw(Save_Win,6,widthSave*0.10,"LEFTWARDS ARROW: Oui");
-	mvwprintw(Save_Win,6,widthSave*0.60,"RIGHTWARDS ARROW: Non");
-	wrefresh(Save_Win);
-	do{
-			choix = getch();
-			if(choix!=ERR){
-				switch(choix){
-					case KEY_LEFT: choix = 1;break;
-					case KEY_RIGHT: choix = 2;break;
-				}
-				if(choix = 1){
-					mvwprintw(Save_Win,10,10,"1");
-				}else if(choix = 2){
-					mvwprintw(Save_Win,10,10,"2");
-				}
-			}
-	}while(choix != 1 || choix != 2);	
-	effacer_fenetre(Save_Win);
-	return choix;
+int Charger_Sauvegarde(){
+	FILE * fic1;
+	fic1 = fopen("Save.txt", "r");
+	if(fic1 == NULL){
+		WINDOW *Err_Win;
+		int startxErr, startyErr, widthErr, heightErr;
+		heightErr = LINES*0.33;
+		widthErr = COLS*0.33;
+		startxErr = COLS*0.33;
+		startyErr = LINES*0.33;
+		Err_Win=create_newwin(heightErr,widthErr,startyErr,startxErr,"Erreur");
+		mvwprintw(Err_Win,5,widthErr*0.33,"Il n'existe pas de sauvegarde");
+		mvwprintw(Err_Win,6,widthErr*0.30,"Une nouvelle partie va être chargé");
+		wrefresh(Err_Win);
+		sleep(2);
+		effacer_fenetre(Err_Win);
+		wborder(Err_Win, ' ', ' ', ' ', ' ', ' ', ' ', ' ',' ');
+		wrefresh(Err_Win);
+		delwin(Err_Win);
+		return KEY_RIGHT;
+	}
+	
+	fclose(fic1);
 }
+	

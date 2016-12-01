@@ -38,12 +38,11 @@ int main(){
     init_pair(4, COLOR_BLACK, COLOR_WHITE);
     init_pair(5, COLOR_CYAN, COLOR_WHITE);
     init_pair(6, COLOR_WHITE, COLOR_CYAN);
-    int choix = charger_sauvegarde();
-    if(choix == 1){
-        //fonction qui charge la partie
-        while(1);
+    int choix = Ask_Load_Save();
+   if(choix == KEY_LEFT){
+        choix = Charger_Sauvegarde();
     }
-    else{
+    if(choix == KEY_RIGHT){
         F_win=create_newwin(heightF,widthF,startyF,startxF,"Profile");
         S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
         T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");

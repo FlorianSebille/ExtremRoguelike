@@ -4,6 +4,7 @@
 #include <curses.h>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 #include <ncurses.h>
 #define TAILLE 100
 int nombre_salle;
@@ -63,7 +64,9 @@ int test_depl(t_cellule MAP [x] [y], int c,t_joueur joueur);
 
 int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur,int *ligne, WINDOW *fenetre);
 
-int charger_sauvegarde();
+int Ask_Load_Save();
+
+int Charger_Sauvegarde();
 
 /* Dimensions et Position de la 1ère fenêtre
 const int startxF = 5;
