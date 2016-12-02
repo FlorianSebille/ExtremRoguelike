@@ -208,8 +208,8 @@ int relier_2Portes(int xA, int yA){ //fonction qui relie une porte à la salle s
   MAP[xA][yA].xb = MaPos.ligne;
   MAP[xA][yA].yb = MaPos.colonne;
 
-  MAP[MaPos.ligne][MaPos.colonne].xb = MaPos.ligne;
-  MAP[MaPos.ligne][MaPos.colonne].yb = MaPos.colonne;
+  MAP[MaPos.ligne][MaPos.colonne].xb = xA;
+  MAP[MaPos.ligne][MaPos.colonne].yb = yA;
 
   l = MaPos.ligne;
   c = MaPos.colonne;

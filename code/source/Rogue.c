@@ -8,7 +8,6 @@ int main(){
     int startxS, startyS, widthS, heightS;
     int startxT, startyT, widthT, heightT;
     int ligne = 1;
-    stage_cle = aleat(2,5);
     char utilisateur;
 
     WINDOW * F_win;
@@ -55,6 +54,7 @@ int main(){
         init_map();
         Placer_uplevel(MAP, S_win);
         Placer_perso(MAP, S_win);
+        stage_cle = aleat(2,5);
         strcpy(joueur.nom, "Mario");
         joueur.STAGE = 1;
         joueur.SALLE = 1;
@@ -67,7 +67,7 @@ int main(){
     }
         affichage(MAP,S_win);
         Win_Stat(F_win,widthF);
-    while(utilisateur != 'q' && utilisateur != 's'){
+    while(utilisateur != 'q' && utilisateur != 's' && (joueur.etat_avant != arriver || joueur.addcle != 1)){
         utilisateur = Depl_perso(MAP, &joueur,T_win);
         affichage(MAP,S_win);
         Win_Stat(F_win,widthF);

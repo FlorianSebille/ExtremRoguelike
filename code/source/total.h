@@ -68,6 +68,8 @@ int test_depl(t_cellule MAP [x] [y], int c,t_joueur joueur);
 
 int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, WINDOW *fenetre);
 
+void deplacer_bout_couloir();
+
 void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur);
 
 int Ask_Load_Save();
