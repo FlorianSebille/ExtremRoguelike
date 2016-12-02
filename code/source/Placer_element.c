@@ -1,6 +1,7 @@
+
 #include "total.h"
 
-int Placer_perso(t_cellule MAP [x] [y], WINDOW *fenetre){
+int Placer_perso(WINDOW *fenetre){
 
   int i,max_i,j,max_j,taille_salle;
   taille_salle = 0;
@@ -38,7 +39,7 @@ int Placer_perso(t_cellule MAP [x] [y], WINDOW *fenetre){
 	return 0;
 }
 
-int Placer_uplevel(t_cellule MAP [x] [y], WINDOW *fenetre){
+int Placer_uplevel(WINDOW *fenetre){
 
     int i,max_i,j,max_j,taille_salle;
     taille_salle = 0;
@@ -77,7 +78,7 @@ int Placer_uplevel(t_cellule MAP [x] [y], WINDOW *fenetre){
 	return 0;
 }
 
-int Placer_cle(t_cellule MAP [x] [y], WINDOW *fenetre){
+int Placer_cle(WINDOW *fenetre){
 
     int i,max_i,j,max_j,salle,taille_salle;
     salle = aleat(1,nombre_salle-2);

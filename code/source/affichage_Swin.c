@@ -1,6 +1,6 @@
 #include "total.h"
 
-void affichage(t_cellule MAP [x] [y], WINDOW *fenetre){
+void affichage(WINDOW *fenetre){
 
   int i,max_i,j,max_j;
   getmaxyx(fenetre,max_i,max_j);

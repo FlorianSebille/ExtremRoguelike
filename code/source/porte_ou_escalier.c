@@ -40,7 +40,6 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
     mvwprintw(chatfenetre,5,1,"voulez vous changer de salle ?");
     wattron(chatfenetre, COLOR_PAIR(2));
     mvwprintw(chatfenetre,7,1,"oui: appuier sur RIGHTWARDS ARROW");
-    mvwprintw(chatfenetre,12,1,"x = %i et y = %i",MAP[joueur.coordo_x][joueur.coordo_y].xb,MAP[joueur.coordo_x][joueur.coordo_y].yb);
     wattroff(chatfenetre,COLOR_PAIR(2));
     wattron(chatfenetre, COLOR_PAIR(1));
     mvwprintw(chatfenetre,9,1,"non: appuier sur LEFTWARDS ARROW");
@@ -96,14 +95,15 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
 
                     }else if (joueur.etat_avant == uplevel){
                       joueur.STAGE = joueur.STAGE + 1;
+                      joueur.SALLE = 1;
                       init_map();
-                      Placer_uplevel(MAP, mapfenetre);
-                      Placer_perso(MAP, mapfenetre);
+                      Placer_uplevel(mapfenetre);
+                      Placer_perso(mapfenetre);
                       if(stage_cle == joueur.STAGE){
-                        Placer_cle(MAP,mapfenetre);
+                        Placer_cle(mapfenetre);
                       }
                     }
-                    affichage(MAP,mapfenetre);
+                    affichage(mapfenetre);
                     wrefresh(mapfenetre);
                     break;
     case KEY_LEFT:

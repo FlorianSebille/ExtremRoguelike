@@ -52,8 +52,8 @@ int main(){
 
         srand(time(NULL));
         init_map();
-        Placer_uplevel(MAP, S_win);
-        Placer_perso(MAP, S_win);
+        Placer_uplevel(S_win);
+        Placer_perso(S_win);
         stage_cle = aleat(2,5);
         strcpy(joueur.nom, "Mario");
         joueur.STAGE = 1;
@@ -65,11 +65,11 @@ int main(){
         joueur.DEF = 12;
         joueur.FOOD = 10;
     }
-        affichage(MAP,S_win);
+        affichage(S_win);
         Win_Stat(F_win,widthF);
     while(utilisateur != 'q' && utilisateur != 's' && (joueur.etat_avant != arriver || joueur.addcle != 1)){
-        utilisateur = Depl_perso(MAP, &joueur,T_win);
-        affichage(MAP,S_win);
+        utilisateur = Depl_perso(T_win);
+        affichage(S_win);
         Win_Stat(F_win,widthF);
         if(joueur.etat_avant == porte || joueur.etat_avant == uplevel){
         porte_escalier(T_win, S_win, utilisateur);

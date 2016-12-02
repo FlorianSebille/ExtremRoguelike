@@ -56,17 +56,17 @@ int relier_2Portes(int xA, int yA);
 
 void init_map();
 
-void affichage(t_cellule MAP [x] [y], WINDOW *fenetre);
+void affichage(WINDOW *fenetre);
 
-int Placer_uplevel(t_cellule MAP [x] [y], WINDOW *fenetre);
+int Placer_uplevel(WINDOW *fenetre);
 
-int Placer_perso(t_cellule MAP [x] [y], WINDOW *fenetre);
+int Placer_perso(WINDOW *fenetre);
 
-int Placer_cle(t_cellule MAP [x] [y], WINDOW *fenetre);
+int Placer_cle(WINDOW *fenetre);
 
-int test_depl(t_cellule MAP [x] [y], int c,t_joueur joueur);
+int test_depl(int c);
 
-int Depl_perso(t_cellule MAP [x] [y],t_joueur *joueur, WINDOW *fenetre);
+int Depl_perso(WINDOW *fenetre);
 
 void deplacer_bout_couloir();
 
