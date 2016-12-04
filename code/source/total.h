@@ -10,6 +10,7 @@
 int nombre_salle;
 int deplacement;
 int stage_cle;
+int nb_deplacement;
 
 typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel, arriver, cle} t_element;
 
@@ -56,24 +57,28 @@ int relier_2Portes(int xA, int yA);
 
 void init_map();
 
+//dans le fichier affichage_Swin.c
 void affichage(WINDOW *fenetre);
 
+//dans le fichier placer_element.c
 int Placer_uplevel(WINDOW *fenetre);
 
 int Placer_perso(WINDOW *fenetre);
 
 int Placer_cle(WINDOW *fenetre);
 
+//dans le fichier Depl_perso.c
 int test_depl(int c);
 
 int Depl_perso(WINDOW *fenetre);
 
-void deplacer_bout_couloir();
-
+//dans le fichier porte_ou_escalier.c
 void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur);
 
+//dans le fichier Ask_Load_Save.c
 int Ask_Load_Save();
 
+//dans le fichier Charger_Sauvegarde.c
 int Charger_Sauvegarde();
 
 void addsauv();

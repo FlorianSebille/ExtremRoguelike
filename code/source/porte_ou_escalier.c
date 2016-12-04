@@ -1,32 +1,5 @@
 #include "total.h"
 
-void deplacer_bout_couloir(){
-  while(joueur.etat_avant == couloir){
-    if(MAP[joueur.coordo_x-1][joueur.coordo_y].lieu == couloir || MAP[joueur.coordo_x-1][joueur.coordo_y].num_salle == joueur.SALLE+1){
-      MAP[joueur.coordo_x][joueur.coordo_y].lieu = joueur.etat_avant;
-      joueur.etat_avant = MAP[joueur.coordo_x-1][joueur.coordo_y].lieu;
-      MAP[joueur.coordo_x-1][joueur.coordo_y].lieu = personnage;
-      joueur.coordo_x--;
-    }else if(MAP[joueur.coordo_x+1][joueur.coordo_y].lieu == couloir || MAP[joueur.coordo_x+1][joueur.coordo_y].num_salle == joueur.SALLE+1){
-      MAP[joueur.coordo_x][joueur.coordo_y].lieu = joueur.etat_avant;
-      joueur.etat_avant = MAP[joueur.coordo_x+1][joueur.coordo_y].lieu;
-      MAP[joueur.coordo_x+1][joueur.coordo_y].lieu = personnage;
-      joueur.coordo_x++;
-    }else if(MAP[joueur.coordo_x][joueur.coordo_y-1].lieu == couloir || MAP[joueur.coordo_x][joueur.coordo_y-1].num_salle == joueur.SALLE+1){
-      MAP[joueur.coordo_x][joueur.coordo_y].lieu = joueur.etat_avant;
-      joueur.etat_avant = MAP[joueur.coordo_x][joueur.coordo_y-1].lieu;
-      MAP[joueur.coordo_x][joueur.coordo_y-1].lieu = personnage;
-      joueur.coordo_y--;
-    }else if(MAP[joueur.coordo_x][joueur.coordo_y+1].lieu == couloir || MAP[joueur.coordo_x][joueur.coordo_y+1].num_salle == joueur.SALLE+1){
-      MAP[joueur.coordo_x][joueur.coordo_y].lieu = joueur.etat_avant;
-      joueur.etat_avant = MAP[joueur.coordo_x][joueur.coordo_y+1].lieu;
-      MAP[joueur.coordo_x][joueur.coordo_y+1].lieu = personnage;
-      joueur.coordo_y++;
-    }
-  }
-  joueur.SALLE++;
-}
-
 void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
 
   int choix = 0;

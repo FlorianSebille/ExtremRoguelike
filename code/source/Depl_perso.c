@@ -45,6 +45,7 @@ int Depl_perso(WINDOW *fenetre){
 											MAP[joueur.coordo_x-1][joueur.coordo_y].lieu = personnage;
 											joueur.coordo_x--;
                       deplacement = 5;
+                      nb_deplacement++;
 										}
 										break;
 			case KEY_DOWN:	if(test_depl(c)){
@@ -54,6 +55,7 @@ int Depl_perso(WINDOW *fenetre){
 												MAP[joueur.coordo_x+1][joueur.coordo_y].lieu = personnage;
 												joueur.coordo_x++;
                         deplacement = 2;
+                        nb_deplacement++;
 											}
 											break;
 			case KEY_LEFT:	if(test_depl(c)){
@@ -63,6 +65,7 @@ int Depl_perso(WINDOW *fenetre){
 												MAP[joueur.coordo_x][joueur.coordo_y-1].lieu = personnage;
 												joueur.coordo_y--;
                         deplacement = 1;
+                        nb_deplacement++;
 											}
 											break;
 			case KEY_RIGHT: if(test_depl(c)){
@@ -72,6 +75,7 @@ int Depl_perso(WINDOW *fenetre){
 												MAP[joueur.coordo_x][joueur.coordo_y+1].lieu = personnage;
 												joueur.coordo_y++;
                         deplacement = 3;
+                        nb_deplacement++;
 											}
 											break;
 		}
@@ -79,6 +83,10 @@ int Depl_perso(WINDOW *fenetre){
   if(joueur.etat_avant == cle){ // le joueur recupere la clé
     joueur.addcle = 1;
     joueur.etat_avant = sol;
+  }
+  if(nb_deplacement == 5){
+    joueur.FOOD = joueur.FOOD - 1;
+    nb_deplacement = 0;
   }
   if(joueur.etat_avant == arriver && joueur.addcle == 1){// le joueur est a l'arriver avec la clé
 

@@ -9,6 +9,7 @@ int main(){
     int startxT, startyT, widthT, heightT;
     int ligne = 1;
     char utilisateur;
+    nb_deplacement = 0;
 
     WINDOW * F_win;
     WINDOW * S_win;
