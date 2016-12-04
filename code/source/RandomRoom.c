@@ -250,7 +250,10 @@ void init_map(){      //fonction qui remplit la map d'un nombre de salle aléato
   yB = &colonne;
 
   fillmap();                          //on initialise la map à vide
-  nombre_salle = aleat(3,5);
+
+  if(joueur.STAGE != 1){
+    nombre_salle = nombre_salle + 1;
+  }else nombre_salle = aleat(3,5);
 
   for(i = 0; i < nombre_salle; i++){  //on remplit la map de salles
     init_room(i,nombre_salle);

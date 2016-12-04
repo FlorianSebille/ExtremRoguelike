@@ -129,7 +129,15 @@ int Placer_cle(WINDOW *fenetre){
     		if(MAP[i][j].lieu == sol){
           taille_salle++;
           if(taille_salle == pos_cle && joueur.addcle == 0){
-              MAP[i][j].lieu=cle;
+            if(MAP[i][j+1].lieu==porte){
+              MAP[i][j-1].lieu=cle;
+            }else if(MAP[i][j-1].lieu==porte){
+              MAP[i][j+1].lieu=cle;
+            }else if(MAP[i+1][j].lieu==porte){
+              MAP[i-1][j].lieu=cle;
+            }else if(MAP[i-1][j].lieu==porte){
+              MAP[i+1][j].lieu=cle;
+            }else MAP[i][j].lieu=cle;
           }
 				}
   		}

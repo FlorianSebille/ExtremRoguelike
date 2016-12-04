@@ -52,12 +52,12 @@ int main(){
     if(choix == KEY_RIGHT){
 
         srand(time(NULL));
+        joueur.STAGE = 1;
         init_map();
         Placer_uplevel(S_win);
         Placer_perso(S_win);
         stage_cle = aleat(2,5);
         strcpy(joueur.nom, "Mario");
-        joueur.STAGE = 1;
         joueur.SALLE = 1;
         joueur.LEVEL = 1;
         joueur.EXP = 1;
