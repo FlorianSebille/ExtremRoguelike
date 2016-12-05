@@ -94,6 +94,12 @@ int Depl_perso(WINDOW *fenetre){
 
   }
 
+/* TRAP PART */
+
+  if(joueur.etat_avant == piege){
+    ecrire_chat(fenetre,8);
+  }
+
 
 /* FOOD PART */
 
@@ -110,6 +116,6 @@ int Depl_perso(WINDOW *fenetre){
     joueur.FOOD = 9;
     joueur.etat_avant = sol;
   }
-  
+
 	return c;
 }
