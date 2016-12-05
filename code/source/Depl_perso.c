@@ -104,10 +104,7 @@ int Depl_perso(WINDOW *fenetre){
 
 /* FOOD PART */
 
-  if(joueur.FOOD == 1){     //si le joueur est affamé, un message s'affiche dans le chat pour le prévenir
-    ecrire_chat(fenetre,7);
-  }
-  else if(nb_deplacement == 7){ //si le joueur effecue 5 déplacements alors il perd 1 dans sa barre de food
+  if(nb_deplacement == 7){ //si le joueur effecue 5 déplacements alors il perd 1 dans sa barre de food
     joueur.FOOD--;
     nb_deplacement = 0;
   }

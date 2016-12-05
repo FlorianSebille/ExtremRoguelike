@@ -29,8 +29,6 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
   wrefresh(chatfenetre);
   int i = 0;
   do{
-    mvwprintw(chatfenetre,15,2,"%i",choix);
-    wrefresh(chatfenetre);
     choix = getch();
     if(choix == KEY_LEFT || choix == KEY_RIGHT){
       i = 1;
@@ -73,7 +71,7 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
                       joueur.SALLE = MAP[joueur.coordo_x][joueur.coordo_y].num_salle+1;
 
                     }else if (joueur.etat_avant == uplevel){
-                      
+
                       effacer_fenetre(mapfenetre);
                       wrefresh(mapfenetre);
 

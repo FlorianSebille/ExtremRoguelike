@@ -12,6 +12,7 @@ int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win){
 	width = 90;
 	startx = 39;
 	starty = 2;
+	effacer_fenetre(chat_Win);
   effacer_fenetre(map_Win);
 	wborder(map_Win, ' ', ' ', ' ', ' ', ' ', ' ', ' ',' ');
 	wrefresh(map_Win);
@@ -23,8 +24,28 @@ int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win){
 	}else if(mort == 1){
 		mvwprintw(fin_Win,4,32,"Dommage, vous etes trop nul");
 		mvwprintw(fin_Win,6,30,"Vous etes mort comme une merde");
+		mvwprintw(chat_Win,4,5,"           uuuuuuu");
+		mvwprintw(chat_Win,5,5,"      uu$$$$$$$$$$$uu");
+		mvwprintw(chat_Win,6,5,"   uu$$$$$$$$$$$$$$$$$uu");
+		mvwprintw(chat_Win,7,5,"  u$$$$$$$$$$$$$$$$$$$$$u");
+		mvwprintw(chat_Win,8,5," u$$$$$$$$$$$$$$$$$$$$$$$u");
+		mvwprintw(chat_Win,9,5,"u$$$$$$$$$$$$$$$$$$$$$$$$$u");
+		mvwprintw(chat_Win,10,5,"u$$$$$$$$$$$$$$$$$$$$$$$$$u");
+		mvwprintw(chat_Win,11,5,"u$$$$$$     $$$     $$$$$$u");
+		mvwprintw(chat_Win,12,5," $$$$       u$u       $$$$");
+		mvwprintw(chat_Win,13,5," $$$u       u$u       u$$$");
+		mvwprintw(chat_Win,14,5," $$$u      u$$$u      u$$$");
+		mvwprintw(chat_Win,15,5,"   $$$$uu$$$   $$$uu$$$$");
+		mvwprintw(chat_Win,16,5,"    $$$$$$$     $$$$$$$ ");
+		mvwprintw(chat_Win,17,5,"     u$$$$$$$u$$$$$$$u");
+		mvwprintw(chat_Win,18,5,"      u$ $ $ $ $ $ $u");
+		mvwprintw(chat_Win,19,5,"      $$u$ $ $ $ $u$$");
+		mvwprintw(chat_Win,20,5,"       $$$$$u$u$u$$$");
+		mvwprintw(chat_Win,21,5,"         $$$$$$$$$");
+		mvwprintw(chat_Win,22,5,"           $$$$$");
 	}
 	wrefresh(fin_Win);
+	wrefresh(chat_Win);
 	height = 15;
 	width = 90;
 	startx = 39;
