@@ -32,6 +32,10 @@ void addsauv(){
 	fprintf(fic1,"%i ", entier);
 	entier = joueur.FOOD;
 	fprintf(fic1,"%i ", entier);
+	entier = nombre_salle;
+	fprintf(fic1,"%i ", entier);
+	entier = stage_cle;
+	fprintf(fic1,"%i ", entier);
 	fprintf(fic1,"\n\n");
 	for (i = 0; i < x; i++){
    		for(j = 0; j < y; j++){
@@ -40,6 +44,18 @@ void addsauv(){
    		}
    		fprintf(fic1,"\n");
    	}
-
+   	fprintf(fic1,"\n");
+   	for(i = 0; i < x; i++){
+   		for(j = 0; j < y; j++){
+   			if(MAP[i][j].xb != 0 && MAP[i][j].yb != 0){
+   				fprintf(fic1,"%i %i      ",i ,j);
+   				entier = MAP[i][j].xb;
+   				fprintf(fic1,"%i ",entier);
+   				entier = MAP[i][j].yb;
+   				fprintf(fic1,"%i ",entier);
+   				fprintf(fic1,"\n");
+   			}
+   		}
+   	}
 	fclose(fic1);
 }
