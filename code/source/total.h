@@ -83,6 +83,8 @@ int Charger_Sauvegarde();
 
 void addsauv();
 
+int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win);
+
 /* Dimensions et Position de la 1ère fenêtre
 const int startxF = 5;
 const int startyF = 2;

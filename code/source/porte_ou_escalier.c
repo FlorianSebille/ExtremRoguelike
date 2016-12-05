@@ -29,7 +29,7 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
   wrefresh(chatfenetre);
   do{
     choix = getch();
-  }while (choix != KEY_LEFT && choix != KEY_RIGHT);
+  }while (choix != KEY_LEFT && choix != KEY_RIGHT && choix != 260 && choix != 261 && choix != -10 && choix != -11 );
 
   switch (choix) {
 
