@@ -73,7 +73,15 @@ int Placer_uplevel(WINDOW *fenetre){
           taille_salle++;
           if(taille_salle == pos_uplevel){
             if(joueur.STAGE == 5){
-              MAP[i][j].lieu=arriver;
+              if(MAP[i][j+1].lieu==porte){
+                MAP[i][j-1].lieu=arriver;
+              }else if(MAP[i][j-1].lieu==porte){
+                MAP[i][j+1].lieu=arriver;
+              }else if(MAP[i+1][j].lieu==porte){
+                MAP[i-1][j].lieu=arriver;
+              }else if(MAP[i-1][j].lieu==porte){
+                MAP[i+1][j].lieu=arriver;
+              }else MAP[i][j].lieu=arriver;
             }else{
               if(MAP[i][j+1].lieu==porte){
                 MAP[i][j-1].lieu=uplevel;

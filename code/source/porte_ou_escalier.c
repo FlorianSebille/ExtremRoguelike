@@ -27,18 +27,15 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
     wattroff(chatfenetre,COLOR_PAIR(1));
   }
   wrefresh(chatfenetre);
+  int i = 0;
   do{
+    mvwprintw(chatfenetre,15,2,"%i",choix);
+    wrefresh(chatfenetre);
     choix = getch();
-    if(choix == 260){
-      choix = KEY_LEFT;
-    }else if(choix == 261){
-      choix = KEY_RIGHT;
-    }else if(choix == -10){
-      choix = KEY_LEFT;
-    }else if(choix == -11){
-      choix = KEY_RIGHT;
+    if(choix == KEY_LEFT || choix == KEY_RIGHT){
+      i = 1;
     }
-  }while (choix != KEY_LEFT && choix != KEY_RIGHT);
+  }while (i != 1);
 
   switch (choix) {
 
@@ -76,6 +73,11 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
                       joueur.SALLE = MAP[joueur.coordo_x][joueur.coordo_y].num_salle+1;
 
                     }else if (joueur.etat_avant == uplevel){
+                      
+                      effacer_fenetre(mapfenetre);
+                      wrefresh(mapfenetre);
+
+                      srand(time(NULL));
                       joueur.STAGE = joueur.STAGE + 1;
                       joueur.SALLE = 1;
                       init_map();

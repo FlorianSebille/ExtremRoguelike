@@ -11,6 +11,7 @@ int nombre_salle;
 int deplacement;
 int stage_cle;
 int nb_deplacement;
+int mort;
 
 typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel, arriver, cle, food, piege} t_element;
 

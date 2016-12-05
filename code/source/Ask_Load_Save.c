@@ -13,16 +13,16 @@ int Ask_Load_Save(){
 	widthSave = 60;
 	startxSave = 50;
 	startySave = 15;
-	heightStart = 34;
-	widthStart = 170;
-	startxStart = 2;
-	startyStart = 2;
+	heightStart = 33;
+	widthStart = 173;
+	startxStart = 1;
+	startyStart = 1;
 	Start_Win=create_newwin(heightStart,widthStart,startyStart,startxStart,"Roguelike");
-	mvwprintw(Start_Win,10,110,"					     ,-.");
+	/*mvwprintw(Start_Win,10,110,"					     ,-.");
 	mvwprintw(Start_Win,10,110,"			___,---.__          /'|`\          __,---,___");
 	mvwprintw(Start_Win,10,110,"	             ,-'    \`    `-.____,-'  |  `-.____,-'    //    `-.");
 	mvwprintw(Start_Win,10,110,"		   ,'        |           ~'\     /`~           |        `.");
-	mvwprintw(Start_Win,10,110,"		  /      ___//              `. ,'          ,  , \___      \");
+	mvwprintw(Start_Win,10,110,"		  /      ___//              `. ,'          ,  , \___      \ ");
 	mvwprintw(Start_Win,10,110,"             |    ,-'   `-.__   _         |        ,    __,-'   `-.    |");
 	mvwprintw(Start_Win,10,110,"		 |   /          /\_  `   .    |    ,      _/\          \   |");
 	mvwprintw(Start_Win,10,110,"		 \  |           \ \`-.___ \   |   / ___,-'/ /           |  /");
@@ -30,12 +30,12 @@ int Ask_Load_Save(){
 	mvwprintw(Start_Win,10,110,"		   `-.\         /'  _ `---'' , . ``---' _  `\         /,-'");
 	mvwprintw(Start_Win,10,110,"		      ``       /     \    ,='/ \`=.    /     \       ''");
 	mvwprintw(Start_Win,10,110,"			      |__   /|\_,--.,-.--,--._/|\   __|");
-	mvwprintw(Start_Win,10,110,"			      /  `./  \\`\ |  |  | /,//' \,'  \");
-	mvwprintw(Start_Win,10,110,"			     /   /     ||--+--|--+-/-|     \   \");
-	mvwprintw(Start_Win,10,110,"			    |   |     /'\_\_\ | /_/_/`\     |   |");
-	mvwprintw(Start_Win,10,110,"			     \   \__, \_     `~'     _/ .__/   /");
-	mvwprintw(Start_Win,10,110,"			      `-._,-'   `-._______,-'   `-._,-'*/");
-		
+	mvwprintw(Start_Win,10,110,"			      /  `./  \\`\ |  |  | /,//' \,'  \ ");
+	mvwprintw(Start_Win,10,110,"			     /   /     ||--+--|--+-/-|     \   \ ");
+	mvwprintw(Start_Win,10,110,"			    |   |     /'\_\_\ | /_/_/`\     |   | ");
+	mvwprintw(Start_Win,10,110,"			     \   \__, \_     `~'     _/ .__/   / ");
+	mvwprintw(Start_Win,10,110,"			      `-._,-'   `-._______,-'   `-._,-'*/ //");
+
 	Save_Win=create_newwin(heightSave,widthSave,startySave,startxSave,"Sauvegarde");
 	mvwprintw(Save_Win,2,2,"Voulez vous charger une partie sauvegardée ?");
 	mvwprintw(Save_Win,6,widthSave*0.05,"LEFTWARDS ARROW: Oui");
@@ -73,4 +73,3 @@ int Ask_Load_Save(){
 			    |   |     /'\_\_\ | /_/_/`\     |   |
 			     \   \__, \_     `~'     _/ .__/   /
 			      `-._,-'   `-._______,-'   `-._,-'*/
-
