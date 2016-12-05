@@ -29,6 +29,10 @@ void affichage(WINDOW *fenetre){
         wattron(fenetre, COLOR_PAIR(4));
         mvwaddch(fenetre, i, j, ACS_CKBOARD);
         wattroff(fenetre, COLOR_PAIR(4));
+      }else if(MAP[i][j].lieu == piege){
+        wattron(fenetre, COLOR_PAIR(5));
+        mvwprintw(fenetre, i, j, "&");
+        wattroff(fenetre, COLOR_PAIR(4));
       }else if(MAP[i][j].lieu == personnage){
         wattron(fenetre, COLOR_PAIR(3));
       	mvwprintw(fenetre,i,j,"@");

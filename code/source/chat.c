@@ -41,6 +41,7 @@ void ecrire_chat(WINDOW *chatwin, int position_perso){  // fonction qui ecrit da
     case 3: mvwprintw(chatwin,3,1,"Vous etes sur une porte "); break;
     case 6: mvwprintw(chatwin,3,1,"Vous etes sur un escalier"); break;
     case 7: mvwprintw(chatwin,2,1,"Vous etes affamés !!!");break;
+    case 8: mvwprintw(chatwin,3,1,"Oh nooon, vous êtes tombés dans ");mvwprintw(chatwin,4,1,"un piège !");break;
     //case ?: ; break;
   }
   noecho();
