@@ -112,6 +112,7 @@ void init_room(int num, int nb_salle){   //fonction qui initialise une salle de 
       }
       compteur++;
     }
+    x_piege = aleat()
     for(j = posy + 1, k = 0; (k < lg_mur_horiz - 1) && (j < y - 1); j++, k++){   //on place le sol dans la salle
       for(i = posx + 1, l = 0; (l < lg_mur_vert - 1) && (i < x - 1); i++, l++){
         MAP[i][j].lieu = sol;

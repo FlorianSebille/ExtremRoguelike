@@ -36,6 +36,8 @@ int Depl_perso(WINDOW *fenetre){
  	int c;
 
 	c = getch();
+
+
 	if(c!=ERR){
 		switch(c){
 			case KEY_UP:	if(test_depl(c)){

@@ -5,7 +5,7 @@
 #include <stdlib.h>
 typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel, arriver, cle} t_element;
 
-typedef struct cellule {t_element lieu; int position; int relie; int num_salle;} t_cellule;
+typedef struct cellule {t_element lieu; int position; int relie; int xb;int yb;int num_salle;} t_cellule;
 
 typedef struct joueur {char nom[20];int coordo_x;int coordo_y;t_element etat_avant;int addcle;int STAGE;int SALLE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
 t_joueur joueur;
@@ -15,13 +15,15 @@ t_joueur joueur;
 t_cellule MAP[x][y];
 
 int main(){
+	char nom_perso[20];
 	FILE * fic1;
 	fic1 = fopen("Save.txt", "r");
 	if(fic1 == NULL){
 		printf("vgjhbk");
 	}
 	int i,j;
-	fscanf(fic1, "%s", &joueur.nom);
+	fscanf(fic1, "%s", nom_perso);
+	strcpy(joueur.nom, nom_perso);
 	int compteur = 2;
 	int entier;
 	while(!feof(fic1)){
@@ -32,7 +34,8 @@ int main(){
 			fscanf(fic1, "%i", &joueur.coordo_y);
 		}
 		if(compteur == 4){
-			fscanf(fic1, "%i", &joueur.etat_avant);
+			fscanf(fic1, "%i", &entier);
+			joueur.etat_avant = entier;
 		}
 		if(compteur == 5){
 			fscanf(fic1, "%i", &joueur.addcle);
@@ -62,6 +65,12 @@ int main(){
 			fscanf(fic1, "%i", &joueur.FOOD);
 		}
 		if(compteur == 14){
+			fscanf(fic1,"%i", &nombre_salle);
+		}
+		if(compteur == 15){
+			fscanf(fic1,"%i", &stage_cle);
+		}
+		if(compteur == 16){
 			for (i = 0; i < x; i++){
    				for(j = 0; j < y; j++){
    					fscanf(fic1, "%i", &entier);
@@ -70,13 +79,28 @@ int main(){
    				}
    			}
 		}
-		compteur++;
-		if(compteur == 2685){
-			break;
-		}		
+		if (compteur >=17){
+			for(i = 0; i < x; i++){
+				for(j = 0; j < y; j++){
+					if(feof(fic1)){
+						break;
+					}	
+					fscanf(fic1,"%i", &i);
+					fscanf(fic1,"%i", &j);
+					fscanf(fic1,"%i", &entier);
+					printf("coord i: %i coord j:%i coord xb:%i coord yb:", i,j,entier);
+					fscanf(fic1,"%i",&entier);
+					printf("%i", entier);
+					compteur++;
+					printf("\n");				
+				}
+			}
+		}
+					
+		compteur++;		
 	}
+	
 	fclose(fic1);
-	printf("\n ejhsdbj \n");
 	printf(" nom du joueur : %s \n", joueur.nom);
 	printf(" positionx du joueur : %i \n", joueur.coordo_x);
 	printf(" positiony du joueur : %i \n", joueur.coordo_y);
@@ -96,7 +120,7 @@ int main(){
    			printf("%i ", MAP[i][j].lieu);
    		}
    		printf("\n");
-   }
-   printf("\n");
-   printf("compteur : %i\n", compteur);
+  	 }
+  	 printf("\n");
+  	 printf("compteur : %i\n", compteur);
 }

@@ -43,12 +43,12 @@ int main(){
     init_pair(8, COLOR_GREEN, COLOR_WHITE);
 
     int choix = Ask_Load_Save();
-   if(choix == KEY_LEFT){
+    if(choix == KEY_LEFT){
         choix = Charger_Sauvegarde();
     }
-        F_win=create_newwin(heightF,widthF,startyF,startxF,"Profile");
-        S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
-        T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
+    F_win=create_newwin(heightF,widthF,startyF,startxF,"Profile");
+    S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
+    T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
     if(choix == KEY_RIGHT){
 
         srand(time(NULL));
@@ -72,13 +72,35 @@ int main(){
         utilisateur = Depl_perso(T_win);
         affichage(S_win);
         Win_Stat(F_win,widthF);
+
         if(joueur.etat_avant == porte || joueur.etat_avant == uplevel){
         porte_escalier(T_win, S_win, utilisateur);
+        }
+        if(joueur.etat_avant == arriver && joueur.addcle == 1){
+          choix = fin_game(T_win,S_win,F_win);
+          if(choix == 1){
+            S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
+            srand(time(NULL));
+            joueur.STAGE = 1;
+            init_map();
+            Placer_uplevel(S_win);
+            Placer_perso(S_win);
+            stage_cle = aleat(2,5);
+            strcpy(joueur.nom, "Mario");
+            joueur.SALLE = 1;
+            joueur.LEVEL = 1;
+            joueur.EXP = 1;
+            joueur.HP = 20;
+            joueur.ATT = 5;
+            joueur.DEF = 12;
+            joueur.FOOD = 10;
+          }
         }
     }
     if(utilisateur == 's'){
         addsauv();
     }
+
   }
   endwin();
 }
