@@ -37,6 +37,10 @@ void affichage(WINDOW *fenetre){
         wattron(fenetre, COLOR_PAIR(8));
       	mvwaddch(fenetre, i, j, ACS_CKBOARD);
         wattroff(fenetre, COLOR_PAIR(8));
+      }else if(MAP[i][j].lieu == food){
+        wattron(fenetre, COLOR_PAIR(7));
+      	mvwprintw(fenetre, i, j,"f");
+        wattroff(fenetre, COLOR_PAIR(7));
       }else if(MAP[i][j].lieu == cle){
         wattron(fenetre, COLOR_PAIR(7));
         mvwprintw(fenetre,i,j,"K");

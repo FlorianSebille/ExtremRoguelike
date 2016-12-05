@@ -35,14 +35,15 @@ void ecrire_chat(WINDOW *chatwin, int position_perso){  // fonction qui ecrit da
   effacer_fenetre(chatwin);
 
   // ecrit dans la fenetre en fonction de la position du perso
-  mvwprintw(chatwin,1,1,"vous etes au niveau %i salle %i",joueur.STAGE,joueur.SALLE);
+  mvwprintw(chatwin,1,1,"Vous etes au niveau %i salle %i",joueur.STAGE,joueur.SALLE);
   switch (position_perso) { // pas plus de 44 caractere par commentaire dans le chat
-    case 2: mvwprintw(chatwin,3,1,"vous pouver vous deplacer"); mvwprintw(chatwin,5,1,"avec les fleches directionnelles"); break;
-    case 3: mvwprintw(chatwin,3,1,"vous etes sur une porte "); break;
-    case 6: mvwprintw(chatwin,3,1,"vous etes sur un escalier"); break;
+    case 2: mvwprintw(chatwin,3,1,"Vous pouvez vous deplacer"); mvwprintw(chatwin,5,1,"avec les fleches directionnelles"); break;
+    case 3: mvwprintw(chatwin,3,1,"Vous etes sur une porte "); break;
+    case 6: mvwprintw(chatwin,3,1,"Vous etes sur un escalier"); break;
+    case 7: mvwprintw(chatwin,2,1,"Vous etes affamés !!!");break;
     //case ?: ; break;
   }
-
+  noecho();
   wrefresh(chatwin);
 
 }

@@ -12,7 +12,7 @@ int deplacement;
 int stage_cle;
 int nb_deplacement;
 
-typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel, arriver, cle} t_element;
+typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel, arriver, cle, food} t_element;
 
 typedef struct cellule {t_element lieu; int position; int relie; int xb;int yb;int num_salle;} t_cellule;
 

@@ -1,7 +1,7 @@
 all: Rogue clean
 
 Rogue: GenWindow.o test_taille_terminal.o chat.o sauvegarde.o Win_Stat.o affichage_Swin.o RandomRoom.o Placer_element.o Depl_perso.o porte_ou_escalier.o file.o Ask_Load_Save.o Charger_Sauvegarde.o Rogue.o
-	gcc -o Rogue GenWindow.o test_taille_terminal.o chat.o sauvegarde.o Win_Stat.o affichage_Swin.o RandomRoom.o Placer_element.o Depl_perso.o porte_ou_escalier.o file.o Ask_Load_Save.o Charger_Sauvegarde.o Rogue.o -lncurses -lm
+	gcc -o Rogue -g GenWindow.o test_taille_terminal.o chat.o sauvegarde.o Win_Stat.o affichage_Swin.o RandomRoom.o Placer_element.o Depl_perso.o porte_ou_escalier.o file.o Ask_Load_Save.o Charger_Sauvegarde.o Rogue.o -lncurses -lm
 
 GenWindow.o: GenWindow.c
 	gcc -c GenWindow.c

@@ -80,16 +80,34 @@ int Depl_perso(WINDOW *fenetre){
 											break;
 		}
 	}
+
+/* KEY PART */
+
   if(joueur.etat_avant == cle){ // le joueur recupere la clé
     joueur.addcle = 1;
     joueur.etat_avant = sol;
   }
-  if(nb_deplacement == 5){
-    joueur.FOOD = joueur.FOOD - 1;
-    nb_deplacement = 0;
-  }
-  if(joueur.etat_avant == arriver && joueur.addcle == 1){// le joueur est a l'arriver avec la clé
+
+  if(joueur.etat_avant == arriver && joueur.addcle == 1){     // le joueur est a l'arriver avec la clé
 
   }
+
+
+/* FOOD PART */
+
+  if(joueur.FOOD == 1){     //si le joueur est affamé, un message s'affiche dans le chat pour le prévenir
+    ecrire_chat(fenetre,7);
+  }
+  else if(nb_deplacement == 7){ //si le joueur effecue 5 déplacements alors il perd 1 dans sa barre de food
+    joueur.FOOD--;
+    nb_deplacement = 0;
+  }
+
+  if(joueur.etat_avant == food){ //si le joueur marche sur un item food, il récupère ce qu'il a perdu
+    nb_deplacement = 0;
+    joueur.FOOD = 9;
+    joueur.etat_avant = sol;
+  }
+  
 	return c;
 }

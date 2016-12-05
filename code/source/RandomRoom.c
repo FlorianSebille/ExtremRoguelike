@@ -241,6 +241,26 @@ void positionzero(){    //fonction qui met à zéro le type position
   }
 }
 
+
+int init_food(int nb_salle){ //fonction qui place un item food aléatoirement dans une salle de la carte
+  int i, j;
+  int salle = aleat(0,nb_salle - 1);
+  int x_salle = aleat(0,4);
+  int y_salle = aleat(0,9);
+  for(i=0;i<x;i++){
+    for(j=0;j<y;j++){
+      if(MAP[i][j].num_salle == salle && MAP[i][j].lieu == sol){                         //On trouve le coin de la salle cherchée
+        while(MAP[i+x_salle][j+y_salle].lieu != sol){                                       //On avance en x et y aléatoirement et on place un item food
+          x_salle++;
+          y_salle++;
+        }
+        MAP[i+x_salle][j+x_salle].lieu = food;
+        return 1;
+      }
+    }
+  }
+}
+
 void init_map(){      //fonction qui remplit la map d'un nombre de salle aléatoire
   int * xB;
   int * yB;
@@ -264,4 +284,7 @@ void init_map(){      //fonction qui remplit la map d'un nombre de salle aléato
     trouver_porte(xB,yB,i);
     relier_2Portes(ligne,colonne);
   }
+
+  init_food(nombre_salle);
+
 }

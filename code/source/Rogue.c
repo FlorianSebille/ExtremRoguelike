@@ -64,7 +64,7 @@ int main(){
         joueur.HP = 20;
         joueur.ATT = 5;
         joueur.DEF = 12;
-        joueur.FOOD = 10;
+        joueur.FOOD = 9;
     }
         affichage(S_win);
         Win_Stat(F_win,widthF);
