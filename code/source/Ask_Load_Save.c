@@ -25,7 +25,7 @@ int Ask_Load_Save(){
 	delwin(Save_Win);
 	return choix;
 }
-
+/*
 
 
 ,-.
@@ -45,3 +45,4 @@ int Ask_Load_Save(){
 					|   |     /'\_\_\ | /_/_/`\     |   |
 					 \   \__, \_     `~'     _/ .__/   /
 						`-._,-'   `-._______,-'   `-._,-'
+*/

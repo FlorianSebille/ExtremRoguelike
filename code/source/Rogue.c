@@ -94,6 +94,7 @@ int main(){
             joueur.ATT = 5;
             joueur.DEF = 12;
             joueur.FOOD = 10;
+            joueur.addcle = 0;
           }
         }
     }
