@@ -19,11 +19,24 @@ int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win){
 	delwin(map_Win);
 	fin_Win=create_newwin(height,width,starty,startx,"FIN");
 	if(joueur.etat_avant == arriver && joueur.addcle == 1){
-		mvwprintw(fin_Win,4,30,"félicitation, vous n'etes pas trop nul");
-		mvwprintw(fin_Win,6,27,"Vous avez reussi a atteindre l'arriver avec la clé");
+		mvwprintw(fin_Win,3,16,"         _  _  _       _ _     ______                    " );
+    mvwprintw(fin_Win,4,16,"	(_)(_)(_)     | | |   (______)                   " );
+    mvwprintw(fin_Win,5,16,"	 _  _  _ _____| | |    _     _ ___  ____  _____  " );
+    mvwprintw(fin_Win,6,16," 	| || || | ___ | | |   | |   | / _ \\|  _ \\| ___ | " );
+    mvwprintw(fin_Win,7,16," 	| || || | ____| | |   | |__/ / |_| | | | | ____| " );
+    mvwprintw(fin_Win,8,16," 	\\______/|_____)\\_)_)  |_____/ \\___/|_| |_|_____)  " );
+		mvwprintw(fin_Win,11,24,"Vous avez reussi a atteindre l'arriver avec la clé");
 	}else if(mort == 1){
-		mvwprintw(fin_Win,4,32,"Dommage, vous etes trop nul");
-		mvwprintw(fin_Win,6,30,"Vous etes mort comme une merde");
+
+		mvwprintw(fin_Win,3,16,"  _______                      _______                    " );
+    mvwprintw(fin_Win,4,16," (_______)                    (_______)                   " );
+    mvwprintw(fin_Win,5,16,"  _   ___ _____ ____  _____    _     _ _   _ _____  ____  " );
+    mvwprintw(fin_Win,6,16," | | (_  (____ |    \\| ___ |  | |   | | | | | ___ |/ ___) " );
+    mvwprintw(fin_Win,7,16," | |___) / ___ | | | | ____|  | |___| |\\ V /| ____| |     " );
+    mvwprintw(fin_Win,8,16," \\______/\\_____|_|_|_|_____)   \\_____/  \\_/ |_____)_|      " );
+
+		mvwprintw(fin_Win,11,27,"Dommage, il semblerait que vous etes mort");
+
 		mvwprintw(chat_Win,4,5,"           uuuuuuu");
 		mvwprintw(chat_Win,5,5,"      uu$$$$$$$$$$$uu");
 		mvwprintw(chat_Win,6,5,"   uu$$$$$$$$$$$$$$$$$uu");
@@ -51,7 +64,7 @@ int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win){
 	startx = 39;
 	starty = 18;
 	rejouer_Win=create_newwin(height,width,starty,startx,"REJOUER");
-	mvwprintw(rejouer_Win,4,18,"Vous avez gagner la partie voulez vous rejouer ou quitter");
+	mvwprintw(rejouer_Win,4,30,"voulez vous rejouer ou quitter");
 	mvwprintw(rejouer_Win,9,17,"LEFTWARDS ARROW: QUITTER");
 	mvwprintw(rejouer_Win,9,52,"RIGHTWARDS ARROW: REJOUER");
 	wrefresh(rejouer_Win);

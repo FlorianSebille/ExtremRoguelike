@@ -100,8 +100,7 @@ int Depl_perso(WINDOW *fenetre){
     ecrire_chat(fenetre,8);
     mort = 1;
   }
-
-
+  
 /* FOOD PART */
 
   if(nb_deplacement == 7){ //si le joueur effecue 5 déplacements alors il perd 1 dans sa barre de food

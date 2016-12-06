@@ -4,7 +4,8 @@ int aleat(int min, int max){         //fonction qui retourne un nombre aléatoir
     return (rand() % (max - min + 1)) + min;
 }
 
-void fillmap(){                     //fonction qui remplit la map à l'état vide
+void fillmap(){                    //fonction qui remplit la map à l'état vide
+
   int i, j;
   for(i = 0; i < x; i++){
     for(j = 0; j < y; j++){
@@ -36,6 +37,7 @@ int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx){    //
 }
 
 void init_room(int num, int nb_salle){   //fonction qui initialise une salle de taille aléatoire à un endroit aléatoire avec des portes
+
   int i, j, k, l;
   int posx, posy;
   int lg_mur_horiz, lg_mur_vert;
@@ -167,6 +169,7 @@ int trouver_porte(int * xA, int * yA, int salle){    //fonction qui retourne les
 }
 
 int relier_2Portes(int xA, int yA){ //fonction qui relie une porte à la salle suivante
+
   t_coord MaPos;
   int num = MAP[xA][yA].num_salle;
   int compteur;
@@ -268,14 +271,15 @@ int init_food(int nb_salle){ //fonction qui place un item food aléatoirement da
   }
 }
 
-void init_map(){      //fonction qui remplit la map d'un nombre de salle aléatoire
+void init_map(WINDOW *fenetre){      //fonction qui remplit la map d'un nombre de salle aléatoire
   int * xB;
   int * yB;
   int ligne, colonne;
   int i;
   xB = &ligne;
   yB = &colonne;
-
+  effacer_fenetre(fenetre);
+  wrefresh(fenetre);
   fillmap();                          //on initialise la map à vide
 
   if(joueur.STAGE != 1){
@@ -289,9 +293,12 @@ void init_map(){      //fonction qui remplit la map d'un nombre de salle aléato
   for(i = 0; i < nombre_salle - 1; i++){  //puis on les relie entres elles
     positionzero();
     trouver_porte(xB,yB,i);
+    mvwprintw(fenetre,11,i+1,"T");
+    wrefresh(fenetre);
     relier_2Portes(ligne,colonne);
+    mvwprintw(fenetre,12,i+1,"R");
+    wrefresh(fenetre);
   }
-
   init_food(nombre_salle);
 
 }

@@ -53,7 +53,7 @@ int main(){
 
         srand(time(NULL));
         joueur.STAGE = 1;
-        init_map();
+        init_map(S_win);
         Placer_uplevel(S_win);
         Placer_perso(S_win);
         stage_cle = aleat(2,5);
@@ -82,7 +82,7 @@ int main(){
             S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
             srand(time(NULL));
             joueur.STAGE = 1;
-            init_map();
+            init_map(S_win);
             Placer_uplevel(S_win);
             Placer_perso(S_win);
             stage_cle = aleat(2,5);

@@ -72,13 +72,10 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
 
                     }else if (joueur.etat_avant == uplevel){
 
-                      effacer_fenetre(mapfenetre);
-                      wrefresh(mapfenetre);
-
                       srand(time(NULL));
                       joueur.STAGE = joueur.STAGE + 1;
                       joueur.SALLE = 1;
-                      init_map();
+                      init_map(mapfenetre);
                       Placer_uplevel(mapfenetre);
                       Placer_perso(mapfenetre);
                       if(stage_cle == joueur.STAGE){

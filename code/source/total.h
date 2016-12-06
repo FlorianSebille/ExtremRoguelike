@@ -12,6 +12,8 @@ int deplacement;
 int stage_cle;
 int nb_deplacement;
 int mort;
+int q;
+int f;
 
 typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel, arriver, cle, food, piege} t_element;
 
@@ -50,13 +52,17 @@ void fillmap();
 
 int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx);
 
-void init_room();
+void init_room(int num, int nb_salle);
 
 int trouver_porte(int * xA, int * yA, int salle);
 
 int relier_2Portes(int xA, int yA);
 
-void init_map();
+void positionzero();
+
+int init_food(int nb_salle);
+
+void init_map(WINDOW *fenetre);
 
 //dans le fichier affichage_Swin.c
 void affichage(WINDOW *fenetre);
