@@ -15,10 +15,10 @@ int Ask_Load_Save(){
 	widthSave = 60;
 	startxSave = 50;
 	startySave = 15;
-	heightStart = 34;
-	widthStart = 170;
-	startxStart = 2;
-	startyStart = 2;
+	heightStart = 33;
+	widthStart = 173;
+	startxStart = 1;
+	startyStart = 1;
 	heightRules = 18;
 	widthRules = 40;
 	startxRules = 5;
