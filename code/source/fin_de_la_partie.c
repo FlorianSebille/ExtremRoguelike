@@ -26,7 +26,25 @@ int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win){
     mvwprintw(fin_Win,7,16," 	| || || | ____| | |   | |__/ / |_| | | | | ____| " );
     mvwprintw(fin_Win,8,16," 	\\______/|_____)\\_)_)  |_____/ \\___/|_| |_|_____)  " );
 		mvwprintw(fin_Win,11,24,"Vous avez reussi a atteindre l'arriver avec la clé");
-	}else if(mort == 1){
+
+
+		mvwprintw(chat_Win,4,1,"				     OOOOOOO						 ");
+		mvwprintw(chat_Win,5,1,"	       OOOOOOOOOOOOOOO				 ");
+	  mvwprintw(chat_Win,6,1,"      OOOO  OOOOOOOOO  OOOO			 ");
+    mvwprintw(chat_Win,7,1,"    OOOO      OOOOO      OOOO		 ");
+    mvwprintw(chat_Win,8,1,"  OOOOOO  #   OOOOO  #   OOOOOO	 ");
+    mvwprintw(chat_Win,9,1," OOOOOOOO    OOOOOOO    OOOOOOOO ");
+    mvwprintw(chat_Win,10,1,"OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+    mvwprintw(chat_Win,11,1,"OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+    mvwprintw(chat_Win,12,1,"OO  OOOOOOOOOOOOOOOOOOOOOOOOO  OO");
+		mvwprintw(chat_Win,13,1," OO  OOOOOOOOOOOOOOOOOOOOOOO  OO ");
+    mvwprintw(chat_Win,14,1,"  OO   OOOOOOOOOOOOOOOOOOOO  OO	 ");
+    mvwprintw(chat_Win,15,1,"   OOO    OOOOOOOOOOOOOOO   OO	 ");
+	  mvwprintw(chat_Win,16,1,"     OOOO   OOOOOOOOO   OOOO		 ");
+		mvwprintw(chat_Win,17,1,"        OOOO         OOOO				 ");
+		mvwprintw(chat_Win,18,1,"		        OOOOOOOO					   ");
+
+	}else if(mort == 1 || joueur.HP == 0){
 
 		mvwprintw(fin_Win,3,16,"  _______                      _______                    " );
     mvwprintw(fin_Win,4,16," (_______)                    (_______)                   " );

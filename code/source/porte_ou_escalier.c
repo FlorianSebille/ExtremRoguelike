@@ -30,7 +30,7 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
   int i = 0;
   do{
     choix = getch();
-    if(choix == KEY_LEFT || choix == KEY_RIGHT){
+    if(choix == KEY_LEFT || choix == KEY_RIGHT || choix == '9'){
       i = 1;
     }
   }while (i != 1);
@@ -69,7 +69,6 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
                         MAP[joueur.coordo_x][joueur.coordo_y].lieu = personnage;
                       }
                       joueur.SALLE = MAP[joueur.coordo_x][joueur.coordo_y].num_salle+1;
-
                     }else if (joueur.etat_avant == uplevel){
 
                       srand(time(NULL));
@@ -112,6 +111,12 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
                               wrefresh(mapfenetre);
                               break;
                     }
+    case '9':
+                    if(choix == '9' && joueur.SALLE == 1 && joueur.STAGE == 1){
+                      joueur.addcle = 1;
+                      joueur.etat_avant = arriver;
+                      break;
+                    }else porte_escalier(chatfenetre, mapfenetre, utilisateur); break;
   }
   ecrire_chat(chatfenetre, MAP[joueur.coordo_x][joueur.coordo_y].lieu);
 }

@@ -68,7 +68,7 @@ int main(){
     }
         affichage(S_win);
         Win_Stat(F_win,widthF);
-    while(utilisateur != 'q' && utilisateur != 's' && (joueur.etat_avant != arriver || joueur.addcle != 1) && mort != 1){
+    while(utilisateur != 'q' && utilisateur != 's' && (joueur.etat_avant != arriver || joueur.addcle != 1) && mort != 1 && joueur.HP != 0){
         utilisateur = Depl_perso(T_win);
         affichage(S_win);
         Win_Stat(F_win,widthF);
@@ -76,7 +76,7 @@ int main(){
         if(joueur.etat_avant == porte || joueur.etat_avant == uplevel){
         porte_escalier(T_win, S_win, utilisateur);
         }
-        if((joueur.etat_avant == arriver && joueur.addcle == 1) || mort == 1){
+        if((joueur.etat_avant == arriver && joueur.addcle == 1) || mort == 1 || joueur.HP == 0){
           choix = fin_game(T_win,S_win,F_win);
           if(choix == 1){
             S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
