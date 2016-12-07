@@ -56,7 +56,7 @@ void init_room(int num, int nb_salle);
 
 int trouver_porte(int * xA, int * yA, int salle);
 
-int relier_2Portes(int xA, int yA);
+int relier_2Portes(int xA, int yA,WINDOW *fenetre,int *d);
 
 void positionzero();
 

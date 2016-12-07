@@ -168,7 +168,7 @@ int trouver_porte(int * xA, int * yA, int salle){    //fonction qui retourne les
   return 0;
 }
 
-int relier_2Portes(int xA, int yA){ //fonction qui relie une porte à la salle suivante
+int relier_2Portes(int xA, int yA,WINDOW *fenetre,int *d){ //fonction qui relie une porte à la salle suivante
 
   t_coord MaPos;
   int num = MAP[xA][yA].num_salle;
@@ -214,7 +214,9 @@ int relier_2Portes(int xA, int yA){ //fonction qui relie une porte à la salle s
     }
     retirer(&MaPos);
   }
-
+  mvwprintw(fenetre,20,*d,"m");
+  wrefresh(fenetre);
+  d++;
   MAP[xA][yA].xb = MaPos.ligne;
   MAP[xA][yA].yb = MaPos.colonne;
 
@@ -276,6 +278,7 @@ void init_map(WINDOW *fenetre){      //fonction qui remplit la map d'un nombre d
   int * yB;
   int ligne, colonne;
   int i;
+  int d = 2;
   xB = &ligne;
   yB = &colonne;
   effacer_fenetre(fenetre);
@@ -295,7 +298,7 @@ void init_map(WINDOW *fenetre){      //fonction qui remplit la map d'un nombre d
     trouver_porte(xB,yB,i);
     mvwprintw(fenetre,11,i+1,"T");
     wrefresh(fenetre);
-    relier_2Portes(ligne,colonne);
+    relier_2Portes(ligne,colonne,fenetre,&d);
     mvwprintw(fenetre,12,i+1,"R");
     wrefresh(fenetre);
   }
