@@ -52,7 +52,10 @@ void affichage(WINDOW *fenetre){
         wattroff(fenetre, COLOR_PAIR(7));
       }else if(MAP[i][j].lieu == mechant && monstre.HP > 0){
         wattron(fenetre, COLOR_PAIR(7));
-        mvwprintw(fenetre,i,j,"M");
+        mvwprintw(fenetre,i,j,"T");
+      }else if(MAP[i][j].lieu == medikit){
+        wattron(fenetre, COLOR_PAIR(7));
+      	mvwprintw(fenetre, i, j,"M");
         wattroff(fenetre, COLOR_PAIR(7));
       }
     }

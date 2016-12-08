@@ -42,6 +42,7 @@ int main(){
     init_pair(6, COLOR_WHITE, COLOR_CYAN);
     init_pair(7, COLOR_RED, COLOR_WHITE);
     init_pair(8, COLOR_GREEN, COLOR_WHITE);
+    init_pair(9, COLOR_YELLOW, COLOR_BLACK);
 
     int choix = Ask_Load_Save();
     if(choix == KEY_LEFT){
@@ -58,18 +59,19 @@ int main(){
         Placer_uplevel(S_win);
         Placer_perso(S_win);
         stage_cle = aleat(2,5);
-        strcpy(joueur.nom, "Mario");
+        stage_medikit = aleat(2,5);
         joueur.SALLE = 1;
         joueur.LEVEL = 1;
         joueur.EXP = 1;
         joueur.HP = 20;
         joueur.ATT = 5;
         joueur.DEF = 12;
-        joueur.FOOD = 9;
+        joueur.FOOD = 10;
+        ecrire_chat(T_win, 2);
     }
         affichage(S_win);
         Win_Stat(F_win,widthF);
-    while(utilisateur != 'q' && utilisateur != 's' && (joueur.etat_avant != arriver || joueur.addcle != 1) && mort != 1){
+    while(utilisateur != 'q' && utilisateur != 's' && (joueur.etat_avant != arriver || joueur.addcle != 1) && mort != 1 && joueur.HP != 0){
         utilisateur = Depl_perso(T_win);
         if(joueur.STAGE > 1 && (compteur%1000) == 0 && monstre.HP > 0){
             depl_monstre(S_win);
@@ -83,7 +85,7 @@ int main(){
         if(joueur.etat_avant == porte || joueur.etat_avant == uplevel){
         porte_escalier(T_win, S_win, utilisateur);
         }
-        if((joueur.etat_avant == arriver && joueur.addcle == 1) || mort == 1){
+        if((joueur.etat_avant == arriver && joueur.addcle == 1) || mort == 1 || joueur.HP == 0){
           choix = fin_game(T_win,S_win,F_win);
           if(choix == 1){
             S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
@@ -93,7 +95,7 @@ int main(){
             Placer_uplevel(S_win);
             Placer_perso(S_win);
             stage_cle = aleat(2,5);
-            strcpy(joueur.nom, "Mario");
+            stage_medikit = aleat(2,5);
             joueur.SALLE = 1;
             joueur.LEVEL = 1;
             joueur.EXP = 1;
@@ -102,6 +104,7 @@ int main(){
             joueur.DEF = 12;
             joueur.FOOD = 10;
             joueur.addcle = 0;
+            ecrire_chat(T_win, 2);
           }
         }
     }

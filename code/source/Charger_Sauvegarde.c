@@ -85,14 +85,14 @@ int Charger_Sauvegarde(){
 				for(j = 0; j < y; j++){
 					if(feof(fic1)){
 						break;
-					}	
+					}
 					fscanf(fic1,"%i", &i);
 					fscanf(fic1,"%i", &j);
 					fscanf(fic1,"%i", &entier);
 					MAP[i][j].xb = entier;
 					fscanf(fic1,"%i",&entier);
 					MAP[i][j].yb = entier;
-					compteur++;		
+					compteur++;
 				}
 			}
 		}
@@ -101,4 +101,3 @@ int Charger_Sauvegarde(){
 	fclose(fic1);
    	return 0;
 }
-	

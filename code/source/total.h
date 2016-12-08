@@ -10,12 +10,16 @@
 int nombre_salle;
 int deplacement;
 int stage_cle;
+int stage_medikit;
 int nb_deplacement;
 int mort;
 int q;
 int f;
 
-typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel, arriver, cle, food, piege, mechant} t_element;
+
+
+typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel, arriver, cle, food, piege, medikit, mechant} t_element;
+
 
 typedef struct cellule {t_element lieu; int position; int relie; int xb;int yb;int num_salle;int presence;} t_cellule;
 
@@ -78,6 +82,9 @@ int Placer_perso(WINDOW *fenetre);
 int Placer_cle(WINDOW *fenetre);
 
 int Placer_monstre();
+
+int Placer_medikit(WINDOW *fenetre);
+
 
 //dans le fichier Depl_perso.c
 int test_depl(int c);

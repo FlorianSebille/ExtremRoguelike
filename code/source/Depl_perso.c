@@ -90,6 +90,11 @@ int Depl_perso(WINDOW *fenetre){
     joueur.etat_avant = sol;
   }
 
+  if(joueur.etat_avant == medikit){ // le joueur recupere la clé
+    joueur.HP = 20;
+    joueur.etat_avant = sol;
+  }
+
   if(joueur.etat_avant == arriver && joueur.addcle == 1){     // le joueur est a l'arriver avec la clé
 
   }
@@ -100,17 +105,19 @@ int Depl_perso(WINDOW *fenetre){
     ecrire_chat(fenetre,8);
     mort = 1;
   }
-  
+
 /* FOOD PART */
 
   if(nb_deplacement == 7){ //si le joueur effecue 5 déplacements alors il perd 1 dans sa barre de food
-    joueur.FOOD--;
+    if (joueur.FOOD == 0) {
+      joueur.HP--;
+    }else joueur.FOOD--;
     nb_deplacement = 0;
   }
 
   if(joueur.etat_avant == food){ //si le joueur marche sur un item food, il récupère ce qu'il a perdu
     nb_deplacement = 0;
-    joueur.FOOD = 9;
+    joueur.FOOD = 10;
     joueur.etat_avant = sol;
   }
 
