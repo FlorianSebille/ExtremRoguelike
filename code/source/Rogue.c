@@ -41,6 +41,7 @@ int main(){
     init_pair(6, COLOR_WHITE, COLOR_CYAN);
     init_pair(7, COLOR_RED, COLOR_WHITE);
     init_pair(8, COLOR_GREEN, COLOR_WHITE);
+    init_pair(9, COLOR_YELLOW, COLOR_BLACK);
 
     int choix = Ask_Load_Save();
     if(choix == KEY_LEFT){
@@ -65,6 +66,7 @@ int main(){
         joueur.ATT = 5;
         joueur.DEF = 12;
         joueur.FOOD = 9;
+        ecrire_chat(T_win, 2);
     }
         affichage(S_win);
         Win_Stat(F_win,widthF);
@@ -95,6 +97,7 @@ int main(){
             joueur.DEF = 12;
             joueur.FOOD = 10;
             joueur.addcle = 0;
+            ecrire_chat(T_win, 2);
           }
         }
     }
