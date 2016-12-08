@@ -58,6 +58,7 @@ int main(){
         Placer_uplevel(S_win);
         Placer_perso(S_win);
         stage_cle = aleat(2,5);
+        stage_medikit = aleat(2,5);
         joueur.SALLE = 1;
         joueur.LEVEL = 1;
         joueur.EXP = 1;
@@ -87,13 +88,14 @@ int main(){
             Placer_uplevel(S_win);
             Placer_perso(S_win);
             stage_cle = aleat(2,5);
+            stage_medikit = aleat(2,5);
             joueur.SALLE = 1;
             joueur.LEVEL = 1;
             joueur.EXP = 1;
             joueur.HP = 20;
             joueur.ATT = 5;
             joueur.DEF = 12;
-            joueur.FOOD = 9;
+            joueur.FOOD = 10;
             joueur.addcle = 0;
             ecrire_chat(T_win, 2);
           }

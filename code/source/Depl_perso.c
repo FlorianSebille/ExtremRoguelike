@@ -90,6 +90,11 @@ int Depl_perso(WINDOW *fenetre){
     joueur.etat_avant = sol;
   }
 
+  if(joueur.etat_avant == medikit){ // le joueur recupere la clé
+    joueur.HP = 20;
+    joueur.etat_avant = sol;
+  }
+
   if(joueur.etat_avant == arriver && joueur.addcle == 1){     // le joueur est a l'arriver avec la clé
 
   }

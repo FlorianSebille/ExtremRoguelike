@@ -50,6 +50,10 @@ void affichage(WINDOW *fenetre){
         mvwprintw(fenetre,i,j,"K");
       	//mvwaddch(fenetre, i, j, ACS_STERLING);
         wattroff(fenetre, COLOR_PAIR(7));
+      }else if(MAP[i][j].lieu == medikit){
+        wattron(fenetre, COLOR_PAIR(7));
+      	mvwprintw(fenetre, i, j,"M");
+        wattroff(fenetre, COLOR_PAIR(7));
       }
     }
   }

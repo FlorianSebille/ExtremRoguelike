@@ -80,6 +80,9 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
                       if(stage_cle == joueur.STAGE){
                         Placer_cle(mapfenetre);
                       }
+                      if (stage_medikit == joueur.STAGE) {
+                        Placer_medikit(mapfenetre);
+                      }
                     }
                     affichage(mapfenetre);
                     wrefresh(mapfenetre);
