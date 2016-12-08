@@ -9,6 +9,7 @@ int main(){
     int startxT, startyT, widthT, heightT;
     int ligne = 1;
     char utilisateur;
+    int compteur = 0;
     nb_deplacement = 0;
 
     WINDOW * F_win;
@@ -70,9 +71,15 @@ int main(){
         Win_Stat(F_win,widthF);
     while(utilisateur != 'q' && utilisateur != 's' && (joueur.etat_avant != arriver || joueur.addcle != 1) && mort != 1){
         utilisateur = Depl_perso(T_win);
+        if(joueur.STAGE > 1 && (compteur%1000) == 0 && monstre.HP > 0){
+            depl_monstre(S_win);
+            combat();
+        }
+        mvwprintw(F_win,18,2,"monstre x:%i y:%i HP:%i", monstre.coordo_x, monstre.coordo_y, monstre.HP);
+        mvwprintw(F_win,19,2,"joueur x: %i  y: %i", joueur.coordo_x, joueur.coordo_y);
+        compteur++;    
         affichage(S_win);
         Win_Stat(F_win,widthF);
-
         if(joueur.etat_avant == porte || joueur.etat_avant == uplevel){
         porte_escalier(T_win, S_win, utilisateur);
         }

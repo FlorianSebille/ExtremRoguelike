@@ -50,7 +50,6 @@ void Win_Stat(WINDOW *F_win, int widthF){
 		wattroff(F_win, A_BOLD | COLOR_PAIR(1));
 		wattron(F_win, A_BOLD | COLOR_PAIR(2));
 	}
-
 	mvwprintw(F_win,21,2,"COMMAND: ");
 	mvwprintw(F_win,22,2,"QUIT");
 	n = strlen("Q");

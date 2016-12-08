@@ -303,5 +303,7 @@ void init_map(WINDOW *fenetre){      //fonction qui remplit la map d'un nombre d
     wrefresh(fenetre);
   }
   init_food(nombre_salle);
-
+  if(joueur.STAGE > 1){
+      Placer_monstre();
+  }
 }

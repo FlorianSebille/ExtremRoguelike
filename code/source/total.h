@@ -15,12 +15,15 @@ int mort;
 int q;
 int f;
 
-typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel, arriver, cle, food, piege} t_element;
+typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel, arriver, cle, food, piege, mechant} t_element;
 
-typedef struct cellule {t_element lieu; int position; int relie; int xb;int yb;int num_salle;} t_cellule;
+typedef struct cellule {t_element lieu; int position; int relie; int xb;int yb;int num_salle;int presence;} t_cellule;
 
 typedef struct joueur {char nom[20];int coordo_x;int coordo_y;t_element etat_avant;int addcle;int STAGE;int SALLE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
 t_joueur joueur;
+
+typedef struct monstre {int coordo_x;int coordo_y;int salle;int EXP;int HP;int ATT;int DEF;} t_monstre;
+t_monstre monstre;
 
 #define x 30
 #define y 89
@@ -74,6 +77,8 @@ int Placer_perso(WINDOW *fenetre);
 
 int Placer_cle(WINDOW *fenetre);
 
+int Placer_monstre();
+
 //dans le fichier Depl_perso.c
 int test_depl(int c);
 
@@ -91,6 +96,16 @@ int Charger_Sauvegarde();
 void addsauv();
 
 int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win);
+
+//dans le fichier monstre.c
+void init_presence(WINDOW *fenetre);
+
+int calcul_presence(int ligne, int colonne);
+
+void depl_monstre(WINDOW *fenetre);
+
+//dans le fichier combat.c
+void combat();
 
 /* Dimensions et Position de la 1ère fenêtre
 const int startxF = 5;

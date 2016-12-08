@@ -163,3 +163,29 @@ int Placer_cle(WINDOW *fenetre){
   Placer_cle(fenetre);
 	return 0;
 }
+
+
+int Placer_monstre(){
+  int i, j;
+  monstre.salle = aleat(0,nombre_salle - 1);
+  int x_salle = aleat(0,4);
+  int y_salle = aleat(0,9);
+  for(i=0;i<x;i++){
+    for(j=0;j<y;j++){
+      if(MAP[i][j].num_salle == monstre.salle && MAP[i][j].lieu == sol && joueur.STAGE > 1){
+        while(MAP[i+x_salle][j+y_salle].lieu != sol){
+                x_salle++;
+                y_salle++;
+        }
+        MAP[i+x_salle][j+x_salle].lieu = mechant;
+        monstre.coordo_x = i+x_salle;
+        monstre.coordo_y = j+x_salle;
+        monstre.EXP = 300;
+        monstre.ATT = 15;
+        monstre.HP = 100;
+        monstre.DEF = 4;
+        return 1;
+      }
+    }
+  }
+}

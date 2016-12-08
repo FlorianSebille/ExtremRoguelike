@@ -3,22 +3,22 @@
 int test_depl(int c){
 
  	switch(c){
- 		case KEY_UP:	if(MAP[joueur.coordo_x-1][joueur.coordo_y].lieu == mur /*|| MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y].lieu == vide*/){
+ 		case KEY_UP:	if(MAP[joueur.coordo_x-1][joueur.coordo_y].lieu == mur || MAP[joueur.coordo_x-1][joueur.coordo_y].lieu == mechant){
  										return 0;
  									}else{
  										return 1;
  									}
- 	  case KEY_DOWN:	if(MAP[joueur.coordo_x+1][joueur.coordo_y].lieu == mur /*|| MAP[temp_joueur.coordo_x+1][temp_joueur.coordo_y].lieu == vide*/){
+ 	  case KEY_DOWN:	if(MAP[joueur.coordo_x+1][joueur.coordo_y].lieu == mur || MAP[joueur.coordo_x+1][joueur.coordo_y].lieu == mechant){
  											return 0;
  										}else{
  											return 1;
  										}
- 		case KEY_LEFT:	if(MAP[joueur.coordo_x][joueur.coordo_y-1].lieu == mur /*|| MAP[temp_joueur.coordo_x][temp_joueur.coordo_y-1].lieu == vide*/){
+ 		case KEY_LEFT:	if(MAP[joueur.coordo_x][joueur.coordo_y-1].lieu == mur || MAP[joueur.coordo_x][joueur.coordo_y-1].lieu == mechant){
  											return 0;
  										}else{
  											return 1;
  										}
- 		case KEY_RIGHT:	if(MAP[joueur.coordo_x][joueur.coordo_y+1].lieu == mur /*|| MAP[temp_joueur.coordo_x-1][temp_joueur.coordo_y+1].lieu == vide*/){
+ 		case KEY_RIGHT:	if(MAP[joueur.coordo_x][joueur.coordo_y+1].lieu == mur || MAP[joueur.coordo_x-1][joueur.coordo_y+1].lieu == mechant){
  											return 0;
  										}else{
  											return 1;
