@@ -112,7 +112,7 @@ int Depl_perso(WINDOW *fenetre){
 
   if(joueur.etat_avant == food){ //si le joueur marche sur un item food, il récupère ce qu'il a perdu
     nb_deplacement = 0;
-    joueur.FOOD = 9;
+    joueur.FOOD = 10;
     joueur.etat_avant = sol;
   }
 

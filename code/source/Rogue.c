@@ -58,14 +58,13 @@ int main(){
         Placer_uplevel(S_win);
         Placer_perso(S_win);
         stage_cle = aleat(2,5);
-        strcpy(joueur.nom, "Mario");
         joueur.SALLE = 1;
         joueur.LEVEL = 1;
         joueur.EXP = 1;
         joueur.HP = 20;
         joueur.ATT = 5;
         joueur.DEF = 12;
-        joueur.FOOD = 9;
+        joueur.FOOD = 10;
         ecrire_chat(T_win, 2);
     }
         affichage(S_win);
@@ -88,7 +87,6 @@ int main(){
             Placer_uplevel(S_win);
             Placer_perso(S_win);
             stage_cle = aleat(2,5);
-            strcpy(joueur.nom, "Mario");
             joueur.SALLE = 1;
             joueur.LEVEL = 1;
             joueur.EXP = 1;

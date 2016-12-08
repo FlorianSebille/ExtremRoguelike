@@ -14,7 +14,7 @@ void addsauv(){
 	fprintf(fic1,"%i ", entier);
 	entier = joueur.etat_avant;
 	fprintf(fic1,"%i ", entier);
-	entier = joueur.addcle; 
+	entier = joueur.addcle;
 	fprintf(fic1,"%i ", entier);
 	entier = joueur.STAGE;
 	fprintf(fic1,"%i ", entier);

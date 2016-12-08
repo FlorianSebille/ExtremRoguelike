@@ -3,8 +3,9 @@
 
 void Win_Stat(WINDOW *F_win, int widthF){
 	int n;
-	int MAX_HP = 5836;
+	int MAX_HP = 20;
 	int MAX_FOOD = 10;
+	effacer_fenetre(F_win);
 	wattron(F_win, A_BOLD | COLOR_PAIR(1));
 	mvwprintw(F_win,2,2, "USER");
 	n = strlen(joueur.nom);

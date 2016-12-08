@@ -11,6 +11,8 @@ int Ask_Load_Save(){
 	keypad(stdscr,TRUE);
 	timeout(0);
 	int choix;
+	int i = 0;
+	char choix_pseudo;
 	heightSave = 10;
 	widthSave = 60;
 	startxSave = 50;
@@ -40,9 +42,9 @@ int Ask_Load_Save(){
 	mvwprintw(Start_Win,23,122,"/   /     ||--+--|--+-/-|    \\    \\");
 	mvwprintw(Start_Win,24,121,"|   |     /'\\_\\_\\ | /_/_/`\\    |   |");
 	mvwprintw(Start_Win,25,121,"\\   \\__,  \\_     `~'     _/ .__/   /");
-	mvwprintw(Start_Win,26,122,"`-._,-'    `-._______,-'   `-._,-'");	
-	mvwprintw(Start_Win,3,55," ______                         _  _ _ ");      
-	mvwprintw(Start_Win,4,55,"(_____ \\                       | |(_) | ");        
+	mvwprintw(Start_Win,26,122,"`-._,-'    `-._______,-'   `-._,-'");
+	mvwprintw(Start_Win,3,55," ______                         _  _ _ ");
+	mvwprintw(Start_Win,4,55,"(_____ \\                       | |(_) | ");
 	mvwprintw(Start_Win,5,55," _____) )___   ____ _   _ _____| | _| |  _ _____ ");
 	mvwprintw(Start_Win,6,55,"|  __  // _ \\ / _  | | | | ___ | || | |_/ ) ___ |");
 	mvwprintw(Start_Win,7,55,"| |  \\ \\ |_| ( (_| | |_| | ____| || |  _ (| ____|");
@@ -71,6 +73,25 @@ int Ask_Load_Save(){
 	do{
 		choix = getch();
 	}while(choix != KEY_RIGHT && choix != KEY_LEFT);
+	if(choix == KEY_RIGHT){
+		effacer_fenetre(Save_Win);
+		mvwprintw(Save_Win,2,2,"veuillez saisir votre pseudo pour la partie");
+		mvwprintw(Save_Win,6,3,"pseudo : ");
+		mvwprintw(Save_Win,8,26,"appuier sur entrer pour valider");
+		wrefresh(Save_Win);
+		do{
+			choix_pseudo = getch();
+			if(choix_pseudo != -1 && choix_pseudo != '\n'){
+				joueur.nom[i] = choix_pseudo;
+				mvwprintw(Save_Win,6,12+i,"%c",choix_pseudo);
+				i++;
+			}
+			/*if(choix_pseudo == '^G'){
+
+			}*/
+			wrefresh(Save_Win);
+		}while(choix_pseudo != '\n');
+	}
 	effacer_fenetre(Save_Win);
 	effacer_fenetre(Rules_Win);
 	effacer_fenetre(Start_Win);
