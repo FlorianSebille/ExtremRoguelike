@@ -17,15 +17,6 @@ void fillmap(){                    //fonction qui remplit la map à l'état vide
   }
 }
 
-int check_map(){
-  int i,j;
-  for(i = 0; i < x; i++){
-    for(j = 0; j < y; j++){
-      if(MAP[i][j].position == 0)return 1;
-    }
-  }
-  return 0;
-}
 
 int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx){    //fonction qui renvoit 1 si la creation d'une salle est possible
   int i, j, k;
@@ -143,7 +134,7 @@ void init_room(int num, int nb_salle){   //fonction qui initialise une salle de 
     init_room(num, nb_salle);
   }
 }
-
+/*
 void afficher(int num){   //fonction temporaire pour afficher pas à pas la matrice (résolution de bugs)
   int i,j;
   for (i = 0; i < x; i++){
@@ -164,7 +155,7 @@ void afficher(int num){   //fonction temporaire pour afficher pas à pas la matr
    }
    fprintf(stderr,"\n");
  }
-
+*/
 int trouver_porte(int * xA, int * yA, int salle){    //fonction qui retourne les coordonnées d'un pointeur et marque la porte comme reliée
   int i,j;
   for(i = 0; i < x; i++){
@@ -202,7 +193,7 @@ int relier_2Portes(int xA, int yA){ //fonction qui relie une porte à la salle s
     compteur = MAP[l][c].position + 1;
     propmem = prop;
     prop = compteur;
-    if (prop != propmem) afficher(num);
+    //if (prop != propmem) afficher(num);
 
     if( l-1 >= 0 && MAP[l-1][c].position == 0 && ((MAP[l-1][c].lieu == vide || MAP[l-1][c].lieu == couloir) || (MAP[l-1][c].lieu == porte && MAP[l-1][c].num_salle == num +1))){
       MaPos.ligne = l-1;
@@ -226,7 +217,6 @@ int relier_2Portes(int xA, int yA){ //fonction qui relie une porte à la salle s
       ajouter(MaPos);
     }
     retirer(&MaPos);
-    //check = check_map();
   }
     MAP[xA][yA].xb = MaPos.ligne;
     MAP[xA][yA].yb = MaPos.colonne;
@@ -251,8 +241,8 @@ int relier_2Portes(int xA, int yA){ //fonction qui relie une porte à la salle s
       MAP[l][c].lieu = couloir;
     }
     MAP[l][c].lieu = couloir;
-    afficher(num);
-    fprintf(stderr, "Sortie de la boucle !!\n");
+    //afficher(num);
+    //fprintf(stderr, "Sortie de la boucle !!\n");
     file_supprimer();
     return 1;
 }
@@ -288,7 +278,7 @@ void init_map(WINDOW *fenetre){      //fonction qui remplit la map d'un nombre d
     trouver_porte(xB,yB,i);
     relier_2Portes(ligne,colonne);
   }
-  fprintf(stderr, "SORTIE !!!! !!\n");
+  //fprintf(stderr, "SORTIE !!!! !!\n");
   if(joueur.STAGE > 1){
       Placer_monstre();
   }
