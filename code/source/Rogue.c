@@ -45,9 +45,7 @@ int main(){
     init_pair(9, COLOR_YELLOW, COLOR_BLACK);
 
     int choix = Ask_Load_Save();
-    if(choix == KEY_LEFT){
-        choix = Charger_Sauvegarde();
-    }
+    
     F_win=create_newwin(heightF,widthF,startyF,startxF,"Profile");
     S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
     T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
@@ -58,6 +56,7 @@ int main(){
         init_map(S_win);
         Placer_uplevel(S_win);
         Placer_perso(S_win);
+        Placer_food(S_win);
         stage_cle = aleat(2,5);
         stage_medikit = aleat(2,5);
         joueur.SALLE = 1;
@@ -79,7 +78,7 @@ int main(){
         }
         mvwprintw(F_win,18,2,"monstre x:%i y:%i HP:%i", monstre.coordo_x, monstre.coordo_y, monstre.HP);
         mvwprintw(F_win,19,2,"joueur x: %i  y: %i", joueur.coordo_x, joueur.coordo_y);
-        compteur++;    
+        compteur++;
         affichage(S_win);
         Win_Stat(F_win,widthF);
         if(joueur.etat_avant == porte || joueur.etat_avant == uplevel){
@@ -94,6 +93,7 @@ int main(){
             init_map(S_win);
             Placer_uplevel(S_win);
             Placer_perso(S_win);
+            Placer_food(S_win);
             stage_cle = aleat(2,5);
             stage_medikit = aleat(2,5);
             joueur.SALLE = 1;

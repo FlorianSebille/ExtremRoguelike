@@ -67,8 +67,6 @@ int relier_2Portes(int xA, int yA,WINDOW *fenetre,int *d);
 
 void positionzero();
 
-int init_food(int nb_salle);
-
 void init_map(WINDOW *fenetre);
 
 //dans le fichier affichage_Swin.c
@@ -84,6 +82,8 @@ int Placer_cle(WINDOW *fenetre);
 int Placer_monstre();
 
 int Placer_medikit(WINDOW *fenetre);
+
+int Placer_food(WINDOW *fenetre);
 
 
 //dans le fichier Depl_perso.c
