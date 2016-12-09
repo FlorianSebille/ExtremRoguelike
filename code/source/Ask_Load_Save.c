@@ -92,6 +92,32 @@ int Ask_Load_Save(){
 			wrefresh(Save_Win);
 		}while(choix_pseudo != '\n');
 	}
+
+	if(choix == KEY_LEFT){
+		effacer_fenetre(Save_Win);
+		int g = Charger_Sauvegarde(Save_Win);
+		if(g == KEY_RIGHT){
+			mvwprintw(Save_Win,2,2,"veuillez saisir votre pseudo pour la partie");
+			mvwprintw(Save_Win,6,3,"pseudo : ");
+			mvwprintw(Save_Win,8,26,"appuier sur entrer pour valider");
+			wrefresh(Save_Win);
+			do{
+				choix_pseudo = getch();
+				if(choix_pseudo != -1 && choix_pseudo != '\n'){
+					joueur.nom[i] = choix_pseudo;
+					mvwprintw(Save_Win,6,12+i,"%c",choix_pseudo);
+					i++;
+				}
+				/*if(choix_pseudo == '^G'){
+
+				}*/
+				wrefresh(Save_Win);
+			}	while(choix_pseudo != '\n');
+		}
+		choix = KEY_RIGHT;
+	}
+
+
 	effacer_fenetre(Save_Win);
 	effacer_fenetre(Rules_Win);
 	effacer_fenetre(Start_Win);

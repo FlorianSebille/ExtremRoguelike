@@ -63,11 +63,9 @@ void init_room(int num, int nb_salle);
 
 int trouver_porte(int * xA, int * yA, int salle);
 
-int relier_2Portes(int xA, int yA,WINDOW *fenetre,int *d);
+int relier_2Portes(int xA, int yA);
 
 void positionzero();
-
-int init_food(int nb_salle);
 
 void init_map(WINDOW *fenetre);
 
@@ -86,6 +84,8 @@ int Placer_monstre();
 int Placer_medikit(WINDOW *fenetre);
 
 int Placer_piege(WINDOW *fenetre);
+
+int Placer_food(WINDOW *fenetre);
 
 
 //dans le fichier Depl_perso.c

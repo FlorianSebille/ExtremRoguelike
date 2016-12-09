@@ -30,7 +30,7 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
   int i = 0;
   do{
     choix = getch();
-    if(choix == KEY_LEFT || choix == KEY_RIGHT || choix == '9'){
+    if(choix == KEY_LEFT || choix == KEY_RIGHT /*|| choix == '9'*/){
       i = 1;
     }
   }while (i != 1);
@@ -71,12 +71,13 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
                       joueur.SALLE = MAP[joueur.coordo_x][joueur.coordo_y].num_salle+1;
                     }else if (joueur.etat_avant == uplevel){
 
-                      srand(time(NULL));
+                      
                       joueur.STAGE = joueur.STAGE + 1;
                       joueur.SALLE = 1;
                       init_map(mapfenetre);
                       Placer_uplevel(mapfenetre);
                       Placer_perso(mapfenetre);
+                      Placer_food(mapfenetre);
                       if(stage_cle == joueur.STAGE){
                         Placer_cle(mapfenetre);
                       }

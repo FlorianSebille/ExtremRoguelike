@@ -4,6 +4,7 @@ int aleat(int min, int max){         //fonction qui retourne un nombre aléatoir
     return (rand() % (max - min + 1)) + min;
 }
 
+
 void fillmap(){                    //fonction qui remplit la map à l'état vide
 
   int i, j;
@@ -11,8 +12,19 @@ void fillmap(){                    //fonction qui remplit la map à l'état vide
     for(j = 0; j < y; j++){
       MAP[i][j].lieu = vide;
       MAP[i][j].position = 0;
+      MAP[i][j].relie = 0;
     }
   }
+}
+
+int check_map(){
+  int i,j;
+  for(i = 0; i < x; i++){
+    for(j = 0; j < y; j++){
+      if(MAP[i][j].position == 0)return 1;
+    }
+  }
+  return 0;
 }
 
 int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx){    //fonction qui renvoit 1 si la creation d'une salle est possible
@@ -125,27 +137,6 @@ void init_room(int num, int nb_salle){   //fonction qui initialise une salle de 
   }
 }
 
-/*void afficher(int num){   //fonction temporaire pour afficher pas à pas la matrice (résolution de bugs)
-  int i,j;
-  for (i = 0; i < x; i++){
-     for(j = 0; j < y; j++){
-       if(MAP[i][j].relie == 1){
-         fprintf(stderr,"1");
-       }else if(MAP[i][j].lieu == porte){
-         fprintf(stderr,"?");
-       }else if(MAP[i][j].lieu == couloir){
-             fprintf(stderr,"X");
-       }else if(MAP[i][j].lieu != vide){
-         fprintf(stderr,".");
-       }else if(MAP[i][j].position != 0){
-         fprintf(stderr,"#");
-       }else fprintf(stderr," ");
-     }
-     fprintf(stderr,"\n");
-   }
-   fprintf(stderr,"\n");
- }  //fonction temporaire pour afficher pas à pas la matrice (résolution de bugs)*/
-
 int trouver_porte(int * xA, int * yA, int salle){    //fonction qui retourne les coordonnées d'un pointeur et marque la porte comme reliée
   int i,j;
   for(i = 0; i < x; i++){
@@ -161,12 +152,13 @@ int trouver_porte(int * xA, int * yA, int salle){    //fonction qui retourne les
   return 0;
 }
 
-int relier_2Portes(int xA, int yA,WINDOW *fenetre,int *d){ //fonction qui relie une porte à la salle suivante
+int relier_2Portes(int xA, int yA){ //fonction qui relie une porte à la salle suivante
 
   t_coord MaPos;
   int num = MAP[xA][yA].num_salle;
   int compteur;
   int l,c;
+  int check = 1;
 
   init_file();
 
@@ -182,7 +174,6 @@ int relier_2Portes(int xA, int yA,WINDOW *fenetre,int *d){ //fonction qui relie 
     compteur = MAP[l][c].position + 1;
     propmem = prop;
     prop = compteur;
-    //if (prop != propmem) afficher(num);
 
     if( l-1 >= 0 && MAP[l-1][c].position == 0 && ((MAP[l-1][c].lieu == vide || MAP[l-1][c].lieu == couloir) || (MAP[l-1][c].lieu == porte && MAP[l-1][c].num_salle == num +1))){
       MaPos.ligne = l-1;
@@ -206,35 +197,33 @@ int relier_2Portes(int xA, int yA,WINDOW *fenetre,int *d){ //fonction qui relie 
       ajouter(MaPos);
     }
     retirer(&MaPos);
+    //check = check_map();
   }
-  mvwprintw(fenetre,20,*d,"m");
-  wrefresh(fenetre);
-  d++;
-  MAP[xA][yA].xb = MaPos.ligne;
-  MAP[xA][yA].yb = MaPos.colonne;
+    MAP[xA][yA].xb = MaPos.ligne;
+    MAP[xA][yA].yb = MaPos.colonne;
 
-  MAP[MaPos.ligne][MaPos.colonne].xb = xA;
-  MAP[MaPos.ligne][MaPos.colonne].yb = yA;
+    MAP[MaPos.ligne][MaPos.colonne].xb = xA;
+    MAP[MaPos.ligne][MaPos.colonne].yb = yA;
 
-  l = MaPos.ligne;
-  c = MaPos.colonne;
-  MAP[l][c].relie = 1;
+    l = MaPos.ligne;
+    c = MaPos.colonne;
+    MAP[l][c].relie = 1;
 
-  while(MAP[l][c].position != 1){
-    if(MAP[l][c+1].position == MAP[l][c].position - 1){
-      c++;
-    }else if(MAP[l-1][c].position == MAP[l][c].position - 1){
-      l--;
-    }else if(MAP[l+1][c].position == MAP[l][c].position - 1){
-      l++;
-    }else if(MAP[l][c-1].position == MAP[l][c].position - 1){
-      c--;
+    while(MAP[l][c].position != 1){
+      if(MAP[l][c+1].position == MAP[l][c].position - 1){
+        c++;
+      }else if(MAP[l-1][c].position == MAP[l][c].position - 1){
+        l--;
+      }else if(MAP[l+1][c].position == MAP[l][c].position - 1){
+        l++;
+      }else if(MAP[l][c-1].position == MAP[l][c].position - 1){
+        c--;
+      }
+      MAP[l][c].lieu = couloir;
     }
     MAP[l][c].lieu = couloir;
-  }
-  MAP[l][c].lieu = couloir;
-  file_supprimer();
-  return 1;
+    file_supprimer();
+    return 1;
 }
 
 void positionzero(){    //fonction qui met à zéro le type position
@@ -246,36 +235,14 @@ void positionzero(){    //fonction qui met à zéro le type position
   }
 }
 
-
-int init_food(int nb_salle){ //fonction qui place un item food aléatoirement dans une salle de la carte
-  int i, j;
-  int salle = aleat(0,nb_salle - 1);
-  int x_salle = aleat(0,4);
-  int y_salle = aleat(0,9);
-  for(i=0;i<x;i++){
-    for(j=0;j<y;j++){
-      if(MAP[i][j].num_salle == salle && MAP[i][j].lieu == sol){                         //On trouve le coin de la salle cherchée
-        while(MAP[i+x_salle][j+y_salle].lieu != sol){                                       //On avance en x et y aléatoirement et on place un item food
-          x_salle++;
-          y_salle++;
-        }
-        MAP[i+x_salle][j+x_salle].lieu = food;
-        return 1;
-      }
-    }
-  }
-}
-
 void init_map(WINDOW *fenetre){      //fonction qui remplit la map d'un nombre de salle aléatoire
   int * xB;
   int * yB;
   int ligne, colonne;
   int i;
-  int d = 2;
   xB = &ligne;
   yB = &colonne;
-  effacer_fenetre(fenetre);
-  wrefresh(fenetre);
+
   fillmap();                          //on initialise la map à vide
 
   if(joueur.STAGE != 1){
@@ -285,17 +252,12 @@ void init_map(WINDOW *fenetre){      //fonction qui remplit la map d'un nombre d
   for(i = 0; i < nombre_salle; i++){  //on remplit la map de salles
     init_room(i,nombre_salle);
   }
-
+  positionzero();
   for(i = 0; i < nombre_salle - 1; i++){  //puis on les relie entres elles
-    positionzero();
     trouver_porte(xB,yB,i);
-    mvwprintw(fenetre,11,i+1,"T");
-    wrefresh(fenetre);
-    relier_2Portes(ligne,colonne,fenetre,&d);
-    mvwprintw(fenetre,12,i+1,"R");
-    wrefresh(fenetre);
+    relier_2Portes(ligne,colonne);
+    positionzero();
   }
-  init_food(nombre_salle);
   if(joueur.STAGE > 1){
       Placer_monstre();
   }

@@ -243,6 +243,59 @@ int Placer_medikit(WINDOW *fenetre){
 	return 0;
 }
 
+int Placer_food(WINDOW *fenetre){
+
+    int i,max_i,j,max_j,salle,taille_salle;
+    salle = aleat(1,nombre_salle-2);
+    taille_salle = 0;
+    getmaxyx(fenetre,max_i,max_j);
+
+  for(i = 1; i < max_i -1; i++){
+  	for(j = 1; j < max_j -1; j++){
+    	if(MAP[i][j].num_salle == salle){
+    		if(MAP[i][j].lieu == sol){
+          taille_salle++;
+				}
+  		}
+		}
+  }
+
+  int pos_food = aleat(0,taille_salle);
+  taille_salle = 0;
+
+  for(i = 1; i < max_i -1; i++){
+  	for(j = 1; j < max_j -1; j++){
+    	if(MAP[i][j].num_salle == salle){
+    		if(MAP[i][j].lieu == sol){
+          taille_salle++;
+          if(taille_salle == pos_food){
+            if(MAP[i][j+1].lieu==porte){
+              MAP[i][j-1].lieu=food;
+            }else if(MAP[i][j-1].lieu==porte){
+              MAP[i][j+1].lieu=food;
+            }else if(MAP[i+1][j].lieu==porte){
+              MAP[i-1][j].lieu=food;
+            }else if(MAP[i-1][j].lieu==porte){
+              MAP[i+1][j].lieu=food;
+            }else MAP[i][j].lieu=food;
+          }
+				}
+  		}
+		}
+  }
+  for(i = 1; i < max_i -1; i++){ // test pour verifier que la clé est placer sinon on recommence la fonction
+    for(j = 1; j < max_j -1; j++){
+      if(MAP[i][j].num_salle == salle){
+        if(MAP[i][j].lieu==food){
+          return 1;
+        }
+      }
+    }
+  }
+  Placer_food(fenetre);
+	return 0;
+}
+
 int Placer_piege(WINDOW *fenetre){
 	int nombre_salle_piege = aleat(1,nombre_salle-1);
     int i,max_i,j,max_j,salle,taille_salle;
@@ -254,17 +307,15 @@ int Placer_piege(WINDOW *fenetre){
   	for(j = 1; j < max_j -1; j++){
     	if(MAP[i][j].num_salle == salle){
     		if(MAP[i][j].lieu == sol){
-          		taille_salle++;
-			}
+          taille_salle++;
+				}
   		}
-	}
+		}
   }
 	int compteur;
-	for(compteur = 0;compteur <= nombre_salle_piege; compteur++){
-	
-	 int pos_piege = aleat(0,taille_salle);
+	for(compteur = 0;compteur <= nombre_salle_piege; compteur++){	
+	  int pos_piege = aleat(0,taille_salle);
  	 taille_salle = 0;
-	 salle = aleat(1,nombre_salle-2);
  	 for(i = 1; i < max_i -1; i++){
   		for(j = 1; j < max_j -1; j++){
     		if(MAP[i][j].num_salle == salle){

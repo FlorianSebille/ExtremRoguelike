@@ -45,9 +45,7 @@ int main(){
     init_pair(9, COLOR_YELLOW, COLOR_BLACK);
 
     int choix = Ask_Load_Save();
-    if(choix == KEY_LEFT){
-        choix = Charger_Sauvegarde();
-    }
+    
     F_win=create_newwin(heightF,widthF,startyF,startxF,"Profile");
     S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
     T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
@@ -58,6 +56,7 @@ int main(){
         init_map(S_win);
         Placer_uplevel(S_win);
         Placer_perso(S_win);
+        Placer_food(S_win);
         stage_cle = aleat(2,5);
         stage_medikit = aleat(2,5);
         joueur.SALLE = 1;
@@ -97,6 +96,7 @@ int main(){
             Placer_uplevel(S_win);
             Placer_perso(S_win);
             Placer_piege(S_win);
+            Placer_food(S_win);
             stage_cle = aleat(2,5);
             stage_medikit = aleat(2,5);
             joueur.SALLE = 1;
