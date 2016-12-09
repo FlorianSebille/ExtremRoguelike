@@ -45,7 +45,6 @@ int main(){
     init_pair(9, COLOR_YELLOW, COLOR_BLACK);
 
     int choix = Ask_Load_Save();
-    
     F_win=create_newwin(heightF,widthF,startyF,startxF,"Profile");
     S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
     T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
@@ -83,7 +82,7 @@ int main(){
         if(joueur.etat_avant == porte || joueur.etat_avant == uplevel){
         porte_escalier(T_win, S_win, utilisateur);
         }
-        if((joueur.etat_avant == arriver && joueur.addcle == 1) || mort == 1 || joueur.HP == 0){
+        if((joueur.etat_avant == arriver && joueur.addcle == 1) || joueur.HP == 0){
           choix = fin_game(T_win,S_win,F_win);
           if(choix == 1){
             S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");

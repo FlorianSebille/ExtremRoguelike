@@ -299,9 +299,8 @@ int Placer_food(WINDOW *fenetre){
 }
 
 int Placer_piege(WINDOW *fenetre){
-	int nombre_salle_piege = aleat(1,nombre_salle-1);
+	int nombre_salle_piege = aleat(nombre_salle,9);
     int i,max_i,j,max_j,salle,taille_salle;
-    salle = aleat(1,nombre_salle-2);
     taille_salle = 0;
     getmaxyx(fenetre,max_i,max_j);
 
@@ -316,6 +315,7 @@ int Placer_piege(WINDOW *fenetre){
   }
 	int compteur;
 	for(compteur = 0;compteur <= nombre_salle_piege; compteur++){	
+		salle = aleat(1,nombre_salle-2);
 	  int pos_piege = aleat(0,taille_salle);
  	 taille_salle = 0;
  	 for(i = 1; i < max_i -1; i++){

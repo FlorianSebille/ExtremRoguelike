@@ -12,32 +12,35 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
   if (joueur.etat_avant == porte){
     mvwprintw(chatfenetre,5,1,"voulez vous changer de salle ?");
     wattron(chatfenetre, COLOR_PAIR(2));
-    mvwprintw(chatfenetre,7,1,"oui: appuier sur RIGHTWARDS ARROW");
+    mvwprintw(chatfenetre,7,1,"oui: appuier sur y");
     wattroff(chatfenetre,COLOR_PAIR(2));
     wattron(chatfenetre, COLOR_PAIR(1));
-    mvwprintw(chatfenetre,9,1,"non: appuier sur LEFTWARDS ARROW");
+    mvwprintw(chatfenetre,9,1,"non: appuier sur n");
     wattroff(chatfenetre,COLOR_PAIR(1));
   }else if (joueur.etat_avant == uplevel){
     mvwprintw(chatfenetre,5,1,"voulez vous changer de stage ?");
     wattron(chatfenetre, COLOR_PAIR(2));
-    mvwprintw(chatfenetre,7,1,"oui: appuier sur RIGHTWARDS ARROW");
+    mvwprintw(chatfenetre,7,1,"oui: appuier sur y");
     wattroff(chatfenetre,COLOR_PAIR(2));
     wattron(chatfenetre, COLOR_PAIR(1));
-    mvwprintw(chatfenetre,9,1,"non: appuier sur LEFTWARDS ARROW");
+    mvwprintw(chatfenetre,9,1,"non: appuier sur n");
     wattroff(chatfenetre,COLOR_PAIR(1));
   }
   wrefresh(chatfenetre);
   int i = 0;
   do{
     choix = getch();
-    if(choix == KEY_LEFT || choix == KEY_RIGHT /*|| choix == '9'*/){
+    /*mvwprintw(chatfenetre,15,2,"choix = %i",choix);
+    wrefresh(chatfenetre);
+    sleep(2);*/
+    if(choix == 'n' || choix == 'y' || choix == '9'){
       i = 1;
     }
   }while (i != 1);
 
   switch (choix) {
 
-    case KEY_RIGHT: if (joueur.etat_avant == porte){
+    case 'y': if (joueur.etat_avant == porte){
 
                       MAP[joueur.coordo_x][joueur.coordo_y].lieu = joueur.etat_avant;
                       int temp_coordo_x = MAP[joueur.coordo_x][joueur.coordo_y].xb;
@@ -71,7 +74,7 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
                       joueur.SALLE = MAP[joueur.coordo_x][joueur.coordo_y].num_salle+1;
                     }else if (joueur.etat_avant == uplevel){
 
-                      
+
                       joueur.STAGE = joueur.STAGE + 1;
                       joueur.SALLE = 1;
                       init_map(mapfenetre);
@@ -88,7 +91,7 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
                     affichage(mapfenetre);
                     wrefresh(mapfenetre);
                     break;
-    case KEY_LEFT:
+    case 'n':
                     switch(deplacement){
                       case 5: MAP[joueur.coordo_x][joueur.coordo_y].lieu = joueur.etat_avant;
                               joueur.etat_avant = MAP[joueur.coordo_x+1][joueur.coordo_y].lieu;

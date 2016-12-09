@@ -128,6 +128,8 @@ void init_room(int num, int nb_salle){   //fonction qui initialise une salle de 
   }
 }
 
+<<<<<<< HEAD
+=======
 /*
 void afficher(int num){   //fonction temporaire pour afficher pas à pas la matrice (résolution de bugs)
   int i,j;
@@ -151,6 +153,7 @@ void afficher(int num){   //fonction temporaire pour afficher pas à pas la matr
  }
 */
 
+>>>>>>> d15a280d20ee7da4947554680e0af690660c88eb
 int trouver_porte(int * xA, int * yA, int salle){    //fonction qui retourne les coordonnées d'un pointeur et marque la porte comme reliée
   int i,j;
   for(i = 0; i < x; i++){
@@ -188,7 +191,10 @@ int relier_2Portes(int xA, int yA){ //fonction qui relie une porte à la salle s
     compteur = MAP[l][c].position + 1;
     propmem = prop;
     prop = compteur;
+<<<<<<< HEAD
+=======
     //if (prop != propmem) afficher(num);
+>>>>>>> d15a280d20ee7da4947554680e0af690660c88eb
 
     if( l-1 >= 0 && MAP[l-1][c].position == 0 && ((MAP[l-1][c].lieu == vide || MAP[l-1][c].lieu == couloir) || (MAP[l-1][c].lieu == porte && MAP[l-1][c].num_salle == num +1))){
       MaPos.ligne = l-1;
@@ -236,8 +242,6 @@ int relier_2Portes(int xA, int yA){ //fonction qui relie une porte à la salle s
       MAP[l][c].lieu = couloir;
     }
     MAP[l][c].lieu = couloir;
-    //afficher(num);
-    //fprintf(stderr, "Sortie de la boucle !!\n");
     file_supprimer();
     return 1;
 }
@@ -278,5 +282,5 @@ void init_map(WINDOW *fenetre){      //fonction qui remplit la map d'un nombre d
       Placer_monstre();
   }
   Placer_piege(fenetre);
-  
+
 }
