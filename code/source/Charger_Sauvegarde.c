@@ -10,7 +10,7 @@ int Charger_Sauvegarde(WINDOW *Err_Win){
 		sleep(2);
 		effacer_fenetre(Err_Win);
 
-		return KEY_RIGHT;
+		return 'o';
 	}
 	int i,j;
 	char nom_perso[20];

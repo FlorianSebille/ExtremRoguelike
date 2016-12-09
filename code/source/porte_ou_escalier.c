@@ -12,7 +12,7 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
   if (joueur.etat_avant == porte){
     mvwprintw(chatfenetre,5,1,"voulez vous changer de salle ?");
     wattron(chatfenetre, COLOR_PAIR(2));
-    mvwprintw(chatfenetre,7,1,"oui: appuier sur y");
+    mvwprintw(chatfenetre,7,1,"oui: appuier sur o");
     wattroff(chatfenetre,COLOR_PAIR(2));
     wattron(chatfenetre, COLOR_PAIR(1));
     mvwprintw(chatfenetre,9,1,"non: appuier sur n");
@@ -20,7 +20,7 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
   }else if (joueur.etat_avant == uplevel){
     mvwprintw(chatfenetre,5,1,"voulez vous changer de stage ?");
     wattron(chatfenetre, COLOR_PAIR(2));
-    mvwprintw(chatfenetre,7,1,"oui: appuier sur y");
+    mvwprintw(chatfenetre,7,1,"oui: appuier sur o");
     wattroff(chatfenetre,COLOR_PAIR(2));
     wattron(chatfenetre, COLOR_PAIR(1));
     mvwprintw(chatfenetre,9,1,"non: appuier sur n");
@@ -30,17 +30,11 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
   int i = 0;
   do{
     choix = getch();
-    /*mvwprintw(chatfenetre,15,2,"choix = %i",choix);
-    wrefresh(chatfenetre);
-    sleep(2);*/
-    if(choix == 'n' || choix == 'y' || choix == '9'){
-      i = 1;
-    }
-  }while (i != 1);
+  }while (choix != 'n' && choix != 'o' && choix != '9');
 
   switch (choix) {
 
-    case 'y': if (joueur.etat_avant == porte){
+    case 'o': if (joueur.etat_avant == porte){
 
                       MAP[joueur.coordo_x][joueur.coordo_y].lieu = joueur.etat_avant;
                       int temp_coordo_x = MAP[joueur.coordo_x][joueur.coordo_y].xb;
@@ -97,27 +91,27 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
                               joueur.etat_avant = MAP[joueur.coordo_x+1][joueur.coordo_y].lieu;
                               MAP[joueur.coordo_x+1][joueur.coordo_y].lieu = personnage;
                               joueur.coordo_x++;
-                              wrefresh(mapfenetre);
                               break;
                       case 2:	MAP[joueur.coordo_x][joueur.coordo_y].lieu = joueur.etat_avant;
                               joueur.etat_avant = MAP[joueur.coordo_x-1][joueur.coordo_y].lieu;
                               MAP[joueur.coordo_x-1][joueur.coordo_y].lieu = personnage;
                               joueur.coordo_x--;
-                              wrefresh(mapfenetre);
                               break;
                       case 1: MAP[joueur.coordo_x][joueur.coordo_y].lieu = joueur.etat_avant;
                               joueur.etat_avant = MAP[joueur.coordo_x][joueur.coordo_y+1].lieu;
                               MAP[joueur.coordo_x][joueur.coordo_y+1].lieu = personnage;
                               joueur.coordo_y++;
-                              wrefresh(mapfenetre);
                               break;
                       case 3: MAP[joueur.coordo_x][joueur.coordo_y].lieu = joueur.etat_avant;
                               joueur.etat_avant = MAP[joueur.coordo_x][joueur.coordo_y-1].lieu;
                               MAP[joueur.coordo_x][joueur.coordo_y-1].lieu = personnage;
                               joueur.coordo_y--;
-                              wrefresh(mapfenetre);
                               break;
                     }
+                    affichage(mapfenetre);
+                    wrefresh(mapfenetre);
+                    break;
+
     case '9':
                     if(choix == '9' && joueur.SALLE == 1 && joueur.STAGE == 1){
                       joueur.addcle = 1;

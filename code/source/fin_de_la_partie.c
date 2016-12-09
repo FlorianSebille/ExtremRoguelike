@@ -86,13 +86,13 @@ int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win){
 	starty = 18;
 	rejouer_Win=create_newwin(height,width,starty,startx,"REJOUER");
 	mvwprintw(rejouer_Win,4,30,"voulez vous rejouer ou quitter");
-	mvwprintw(rejouer_Win,9,17,"LEFTWARDS ARROW: QUITTER");
-	mvwprintw(rejouer_Win,9,52,"RIGHTWARDS ARROW: REJOUER");
+	mvwprintw(rejouer_Win,9,27,"q : QUITTER");
+	mvwprintw(rejouer_Win,9,52,"r : REJOUER");
 	wrefresh(rejouer_Win);
 	do{
 		choix = getch();
-	}while(choix != KEY_RIGHT && choix != KEY_LEFT);
-	if(choix == KEY_RIGHT){
+	}while(choix != 'r' && choix != 'q');
+	if(choix == 'r'){
     effacer_fenetre(stat_Win);
     effacer_fenetre(chat_Win);
     effacer_fenetre(rejouer_Win);
@@ -113,7 +113,7 @@ int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win){
     startx = 39 ;
 		map_Win=create_newwin(height,width,starty,startx,"Map");
 	}
-  if(choix == KEY_RIGHT){
+  if(choix == 'r'){
     return 1;
   }else return 0;
 }

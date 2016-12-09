@@ -65,15 +65,15 @@ int Ask_Load_Save(){
 	mvwprintw(Rules_Win,15,2,"pour ne pas finir en tas d'os.");
 	Save_Win=create_newwin(heightSave,widthSave,startySave,startxSave,"Sauvegarde");
 	mvwprintw(Save_Win,2,2,"Voulez vous charger une partie sauvegardée ?");
-	mvwprintw(Save_Win,6,widthSave*0.05,"LEFTWARDS ARROW: Oui");
-	mvwprintw(Save_Win,6,widthSave*0.60,"RIGHTWARDS ARROW: Non");
+	mvwprintw(Save_Win,6,19,"o : Oui");
+	mvwprintw(Save_Win,6,widthSave*0.60,"n : Non");
 	wrefresh(Save_Win);
 	wrefresh(Rules_Win);
 	wrefresh(Start_Win);
 	do{
 		choix = getch();
-	}while(choix != KEY_RIGHT && choix != KEY_LEFT);
-	if(choix == KEY_RIGHT){
+	}while(choix != 'n' && choix != 'o');
+	if(choix == 'n'){
 		effacer_fenetre(Save_Win);
 		mvwprintw(Save_Win,2,2,"veuillez saisir votre pseudo pour la partie");
 		mvwprintw(Save_Win,6,3,"pseudo : ");
@@ -91,12 +91,11 @@ int Ask_Load_Save(){
 			}*/
 			wrefresh(Save_Win);
 		}while(choix_pseudo != '\n');
-	}
-
-	if(choix == KEY_LEFT){
+		choix = 'o';
+	}else if(choix == 'o'){
 		effacer_fenetre(Save_Win);
 		int g = Charger_Sauvegarde(Save_Win);
-		if(g == KEY_RIGHT){
+		if(g == 'o'){
 			mvwprintw(Save_Win,2,2,"veuillez saisir votre pseudo pour la partie");
 			mvwprintw(Save_Win,6,3,"pseudo : ");
 			mvwprintw(Save_Win,8,26,"appuier sur entrer pour valider");
@@ -114,7 +113,7 @@ int Ask_Load_Save(){
 				wrefresh(Save_Win);
 			}	while(choix_pseudo != '\n');
 		}
-		choix = KEY_RIGHT;
+		choix = 'n';
 	}
 
 

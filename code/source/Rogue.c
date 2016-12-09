@@ -48,7 +48,7 @@ int main(){
     F_win=create_newwin(heightF,widthF,startyF,startxF,"Profile");
     S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
     T_win=create_newwin(heightT,widthT,startyT,startxT,"Chat");
-    if(choix == KEY_RIGHT){
+    if(choix == 'o'){
 
         srand(time(NULL));
         joueur.STAGE = 1;
@@ -61,7 +61,7 @@ int main(){
         joueur.SALLE = 1;
         joueur.LEVEL = 1;
         joueur.EXP = 1;
-        joueur.HP = 200;
+        joueur.HP = 20;
         joueur.ATT = 5;
         joueur.DEF = 12;
         joueur.FOOD = 10;
@@ -75,7 +75,7 @@ int main(){
             depl_monstre(S_win);
             combat();
         }
-        compteur++;    
+        compteur++;
         wrefresh(F_win);
         affichage(S_win);
         Win_Stat(F_win,widthF);
