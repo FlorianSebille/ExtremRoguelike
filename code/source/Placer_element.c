@@ -45,6 +45,7 @@ int Placer_perso(WINDOW *fenetre){
     }
   }
   Placer_perso(fenetre);
+  return 0;
 }
 
 int Placer_uplevel(WINDOW *fenetre){
@@ -188,6 +189,7 @@ int Placer_monstre(){
       }
     }
   }
+  return 0;
 }
 
 int Placer_medikit(WINDOW *fenetre){

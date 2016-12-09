@@ -76,9 +76,6 @@ int main(){
             depl_monstre(S_win);
             combat();
         }
-        mvwprintw(F_win,17,2,"%i", compteur);
-        mvwprintw(F_win,18,2,"monstre x:%i y:%i HP:%i", monstre.coordo_x, monstre.coordo_y, monstre.HP);
-        mvwprintw(F_win,19,2,"joueur x: %i  y: %i", joueur.coordo_x, joueur.coordo_y);
         compteur++;    
         wrefresh(F_win);
         affichage(S_win);
@@ -102,7 +99,7 @@ int main(){
             joueur.SALLE = 1;
             joueur.LEVEL = 1;
             joueur.EXP = 1;
-            joueur.HP = 200;
+            joueur.HP = 20;
             joueur.ATT = 5;
             joueur.DEF = 12;
             joueur.FOOD = 10;
