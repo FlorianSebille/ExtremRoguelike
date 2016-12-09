@@ -83,6 +83,8 @@ int Placer_monstre();
 
 int Placer_medikit(WINDOW *fenetre);
 
+int Placer_piege(WINDOW *fenetre);
+
 int Placer_food(WINDOW *fenetre);
 
 

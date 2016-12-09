@@ -17,15 +17,6 @@ void fillmap(){                    //fonction qui remplit la map à l'état vide
   }
 }
 
-int check_map(){
-  int i,j;
-  for(i = 0; i < x; i++){
-    for(j = 0; j < y; j++){
-      if(MAP[i][j].position == 0)return 1;
-    }
-  }
-  return 0;
-}
 
 int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx){    //fonction qui renvoit 1 si la creation d'une salle est possible
   int i, j, k;
@@ -126,17 +117,10 @@ void init_room(int num, int nb_salle){   //fonction qui initialise une salle de 
       }
       compteur++;
     }
-    int x_piege = aleat(0,lg_mur_vert-1);
-    int y_piege = aleat(0,lg_mur_horiz-1);
     for(j = posy + 1, k = 0; (k < lg_mur_horiz - 1) && (j < y - 1); j++, k++){   //on place le sol dans la salle
       for(i = posx + 1, l = 0; (l < lg_mur_vert - 1) && (i < x - 1); i++, l++){
-        if(k == y_piege && l == x_piege){
-          MAP[i][j].lieu = piege;
-          MAP[i][j].num_salle = num;
-        }else{
           MAP[i][j].lieu = sol;
           MAP[i][j].num_salle = num;
-        }
       }
     }
   }else{
@@ -144,6 +128,32 @@ void init_room(int num, int nb_salle){   //fonction qui initialise une salle de 
   }
 }
 
+<<<<<<< HEAD
+=======
+/*
+void afficher(int num){   //fonction temporaire pour afficher pas à pas la matrice (résolution de bugs)
+  int i,j;
+  for (i = 0; i < x; i++){
+     for(j = 0; j < y; j++){
+       if(MAP[i][j].relie == 1){
+         fprintf(stderr,"1");
+       }else if(MAP[i][j].lieu == porte && MAP[i][j].num_salle == num+1){
+         fprintf(stderr,"?");
+       }else if(MAP[i][j].lieu == couloir){
+             fprintf(stderr,"X");
+       }else if(MAP[i][j].lieu != vide){
+         fprintf(stderr,".");
+       }else if(MAP[i][j].position != 0){
+         fprintf(stderr,"#");
+       }else fprintf(stderr," ");
+     }
+     fprintf(stderr,"\n");
+   }
+   fprintf(stderr,"\n");
+ }
+*/
+
+>>>>>>> d15a280d20ee7da4947554680e0af690660c88eb
 int trouver_porte(int * xA, int * yA, int salle){    //fonction qui retourne les coordonnées d'un pointeur et marque la porte comme reliée
   int i,j;
   for(i = 0; i < x; i++){
@@ -181,6 +191,10 @@ int relier_2Portes(int xA, int yA){ //fonction qui relie une porte à la salle s
     compteur = MAP[l][c].position + 1;
     propmem = prop;
     prop = compteur;
+<<<<<<< HEAD
+=======
+    //if (prop != propmem) afficher(num);
+>>>>>>> d15a280d20ee7da4947554680e0af690660c88eb
 
     if( l-1 >= 0 && MAP[l-1][c].position == 0 && ((MAP[l-1][c].lieu == vide || MAP[l-1][c].lieu == couloir) || (MAP[l-1][c].lieu == porte && MAP[l-1][c].num_salle == num +1))){
       MaPos.ligne = l-1;
@@ -204,7 +218,6 @@ int relier_2Portes(int xA, int yA){ //fonction qui relie une porte à la salle s
       ajouter(MaPos);
     }
     retirer(&MaPos);
-    //check = check_map();
   }
     MAP[xA][yA].xb = MaPos.ligne;
     MAP[xA][yA].yb = MaPos.colonne;
@@ -259,13 +272,15 @@ void init_map(WINDOW *fenetre){      //fonction qui remplit la map d'un nombre d
   for(i = 0; i < nombre_salle; i++){  //on remplit la map de salles
     init_room(i,nombre_salle);
   }
-  positionzero();
   for(i = 0; i < nombre_salle - 1; i++){  //puis on les relie entres elles
+    positionzero();
     trouver_porte(xB,yB,i);
     relier_2Portes(ligne,colonne);
-    positionzero();
   }
+  //fprintf(stderr, "SORTIE !!!! !!\n");
   if(joueur.STAGE > 1){
       Placer_monstre();
   }
+  Placer_piege(fenetre);
+
 }

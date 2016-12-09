@@ -182,8 +182,8 @@ int Placer_monstre(){
         monstre.coordo_x = i+x_salle;
         monstre.coordo_y = j+x_salle;
         monstre.EXP = 300;
-        monstre.ATT = 15;
-        monstre.HP = 100;
+        monstre.ATT = 7;
+        monstre.HP = 10;
         monstre.DEF = 4;
         return 1;
       }
@@ -295,5 +295,59 @@ int Placer_food(WINDOW *fenetre){
     }
   }
   Placer_food(fenetre);
+	return 0;
+}
+
+int Placer_piege(WINDOW *fenetre){
+	int nombre_salle_piege = aleat(nombre_salle,9);
+    int i,max_i,j,max_j,salle,taille_salle;
+    taille_salle = 0;
+    getmaxyx(fenetre,max_i,max_j);
+
+  for(i = 1; i < max_i -1; i++){
+  	for(j = 1; j < max_j -1; j++){
+    	if(MAP[i][j].num_salle == salle){
+    		if(MAP[i][j].lieu == sol){
+          taille_salle++;
+				}
+  		}
+		}
+  }
+	int compteur;
+	for(compteur = 0;compteur <= nombre_salle_piege; compteur++){	
+		salle = aleat(1,nombre_salle-2);
+	  int pos_piege = aleat(0,taille_salle);
+ 	 taille_salle = 0;
+ 	 for(i = 1; i < max_i -1; i++){
+  		for(j = 1; j < max_j -1; j++){
+    		if(MAP[i][j].num_salle == salle){
+    			if(MAP[i][j].lieu == sol){
+    	      		taille_salle++;
+    	      		if(taille_salle == pos_piege){
+    	      		  if(MAP[i][j+1].lieu==porte){
+    	      		    MAP[i][j-1].lieu=piege;
+    	      		  }else if(MAP[i][j-1].lieu==porte){
+    	      		    MAP[i][j+1].lieu=piege;
+    	      		  }else if(MAP[i+1][j].lieu==porte){
+    	      		    MAP[i-1][j].lieu=piege;
+    	      		  }else if(MAP[i-1][j].lieu==porte){
+    	      		    MAP[i+1][j].lieu=medikit;
+    	      		  }else MAP[i][j].lieu=piege;
+    	      		}
+ 				}
+  			}
+		}
+	  }
+	}
+  for(i = 1; i < max_i -1; i++){ // test pour verifier que la clé est placer sinon on recommence la fonction
+    for(j = 1; j < max_j -1; j++){
+      if(MAP[i][j].num_salle == salle){
+        if(MAP[i][j].lieu==piege){
+          return 1;
+        }
+      }
+    }
+  }
+  Placer_piege(fenetre);
 	return 0;
 }
