@@ -7,7 +7,7 @@ void effacer_ligne(WINDOW *chatwin, int ligne_effacer){
 
   getmaxyx(chatwin,lignemax,colonemax);
 
-  for (colone = 1; colone < colone; colone++) {
+  for (colone = 1; colone < colonemax; colone++) {
     mvwprintw(chatwin,ligne_effacer,colone," ");
   }
 }
