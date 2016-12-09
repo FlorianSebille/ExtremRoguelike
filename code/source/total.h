@@ -85,6 +85,8 @@ int Placer_monstre();
 
 int Placer_medikit(WINDOW *fenetre);
 
+int Placer_piege(WINDOW *fenetre);
+
 
 //dans le fichier Depl_perso.c
 int test_depl(int c);

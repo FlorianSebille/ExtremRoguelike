@@ -69,7 +69,7 @@ void Win_Stat(WINDOW *F_win, int widthF){
 		mvwprintw(F_win,13,2,"KEY");
 		wattroff(F_win, A_BOLD | COLOR_PAIR(1));
 	}
-	wattron(F_win, A_BOLD | COLOR_PAIR(2));
+	/*wattron(F_win, A_BOLD | COLOR_PAIR(2));
 	mvwprintw(F_win,15,2,"COMMAND: ");
 	wattroff(F_win, A_BOLD | COLOR_PAIR(2));
 	mvwprintw(F_win,16,4,"Nouriture");
@@ -96,7 +96,7 @@ void Win_Stat(WINDOW *F_win, int widthF){
 	n = strlen("f");
 	wattron(F_win, A_BOLD | COLOR_PAIR(2));
 	mvwaddch(F_win, 20, widthF-1-n, ACS_CKBOARD);
-	wattroff(F_win, A_BOLD | COLOR_PAIR(2));
+	wattroff(F_win, A_BOLD | COLOR_PAIR(2));*/
 
 	wattron(F_win, A_BOLD | COLOR_PAIR(2));
 	mvwprintw(F_win,22,2,"COMMAND: ");

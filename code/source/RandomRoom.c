@@ -114,17 +114,10 @@ void init_room(int num, int nb_salle){   //fonction qui initialise une salle de 
       }
       compteur++;
     }
-    int x_piege = aleat(0,lg_mur_vert-1);
-    int y_piege = aleat(0,lg_mur_horiz-1);
     for(j = posy + 1, k = 0; (k < lg_mur_horiz - 1) && (j < y - 1); j++, k++){   //on place le sol dans la salle
       for(i = posx + 1, l = 0; (l < lg_mur_vert - 1) && (i < x - 1); i++, l++){
-        if(k == y_piege && l == x_piege){
-          MAP[i][j].lieu = piege;
-          MAP[i][j].num_salle = num;
-        }else{
           MAP[i][j].lieu = sol;
           MAP[i][j].num_salle = num;
-        }
       }
     }
   }else{
@@ -306,4 +299,6 @@ void init_map(WINDOW *fenetre){      //fonction qui remplit la map d'un nombre d
   if(joueur.STAGE > 1){
       Placer_monstre();
   }
+  Placer_piege(fenetre);
+  
 }

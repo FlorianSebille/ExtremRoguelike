@@ -63,7 +63,7 @@ int main(){
         joueur.SALLE = 1;
         joueur.LEVEL = 1;
         joueur.EXP = 1;
-        joueur.HP = 20;
+        joueur.HP = 200;
         joueur.ATT = 5;
         joueur.DEF = 12;
         joueur.FOOD = 10;
@@ -73,13 +73,15 @@ int main(){
         Win_Stat(F_win,widthF);
     while(utilisateur != 'q' && utilisateur != 's' && (joueur.etat_avant != arriver || joueur.addcle != 1) && mort != 1 && joueur.HP != 0){
         utilisateur = Depl_perso(T_win);
-        if(joueur.STAGE > 1 && (compteur%1000) == 0 && monstre.HP > 0){
+        if(joueur.STAGE > 1 && (compteur%900) == 0 && monstre.HP > 0){
             depl_monstre(S_win);
             combat();
         }
+        mvwprintw(F_win,17,2,"%i", compteur);
         mvwprintw(F_win,18,2,"monstre x:%i y:%i HP:%i", monstre.coordo_x, monstre.coordo_y, monstre.HP);
         mvwprintw(F_win,19,2,"joueur x: %i  y: %i", joueur.coordo_x, joueur.coordo_y);
         compteur++;    
+        wrefresh(F_win);
         affichage(S_win);
         Win_Stat(F_win,widthF);
         if(joueur.etat_avant == porte || joueur.etat_avant == uplevel){
@@ -94,18 +96,29 @@ int main(){
             init_map(S_win);
             Placer_uplevel(S_win);
             Placer_perso(S_win);
+            Placer_piege(S_win);
             stage_cle = aleat(2,5);
             stage_medikit = aleat(2,5);
             joueur.SALLE = 1;
             joueur.LEVEL = 1;
             joueur.EXP = 1;
-            joueur.HP = 20;
+            joueur.HP = 200;
             joueur.ATT = 5;
             joueur.DEF = 12;
             joueur.FOOD = 10;
             joueur.addcle = 0;
             ecrire_chat(T_win, 2);
           }
+        }else if(joueur.etat_avant == arriver && joueur.addcle == 0){
+        	int i,j;
+        	for(i = 0; i < x; i++){
+        		for(j = 0; j < y; j++){
+        			if(joueur.SALLE == MAP[i][j].num_salle && MAP[i][j].lieu == sol){
+        				MAP[i][j].lieu = mechant;
+        				sleep(1);
+        			}
+        		}
+        	}
         }
     }
     if(utilisateur == 's'){
