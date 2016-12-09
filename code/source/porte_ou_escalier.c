@@ -71,7 +71,7 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
                       joueur.SALLE = MAP[joueur.coordo_x][joueur.coordo_y].num_salle+1;
                     }else if (joueur.etat_avant == uplevel){
 
-                      srand(time(NULL));
+                      
                       joueur.STAGE = joueur.STAGE + 1;
                       joueur.SALLE = 1;
                       init_map(mapfenetre);
