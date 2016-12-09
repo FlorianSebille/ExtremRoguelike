@@ -283,12 +283,12 @@ void init_map(WINDOW *fenetre){      //fonction qui remplit la map d'un nombre d
   for(i = 0; i < nombre_salle; i++){  //on remplit la map de salles
     init_room(i,nombre_salle);
   }
-  positionzero();
   for(i = 0; i < nombre_salle - 1; i++){  //puis on les relie entres elles
+    positionzero();
     trouver_porte(xB,yB,i);
     relier_2Portes(ligne,colonne);
-    positionzero();
   }
+  fprintf(stderr, "SORTIE !!!! !!\n");
   if(joueur.STAGE > 1){
       Placer_monstre();
   }
