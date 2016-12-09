@@ -55,8 +55,6 @@ void Win_Stat(WINDOW *F_winn, int widthF);
 //dans le fichier RandomRoom.c
 int aleat(int min, int max);
 
-void afficher(int num);
-
 void fillmap();
 
 int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx);

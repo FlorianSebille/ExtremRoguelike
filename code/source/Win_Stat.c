@@ -37,8 +37,8 @@ void Win_Stat(WINDOW *F_win, int widthF){
 		wattron(F_win, A_BOLD | COLOR_PAIR(1));
 	}else wattron(F_win, A_BOLD | COLOR_PAIR(2));
 	if(joueur.HP == 0){
-		mvwprintw(F_win,11,widthF-1-n,"0");
-	}else mvwprintw(F_win,11,widthF-1-n,"%i", joueur.HP);
+		mvwprintw(F_win,8,widthF-2,"0");
+	}else mvwprintw(F_win,8,widthF-1-n,"%i", joueur.HP);
 	if(joueur.HP <= 5){
 		wattroff(F_win, A_BOLD | COLOR_PAIR(1));
 	}else wattroff(F_win, A_BOLD | COLOR_PAIR(2));
@@ -59,7 +59,7 @@ void Win_Stat(WINDOW *F_win, int widthF){
 		wattron(F_win, A_BOLD | COLOR_PAIR(1));
 	}else wattron(F_win, A_BOLD | COLOR_PAIR(2));
 	if(joueur.FOOD == 0){
-		mvwprintw(F_win,11,widthF-1-n,"0");
+		mvwprintw(F_win,11,widthF-2,"0");
 	}else mvwprintw(F_win,11,widthF-1-n,"%i", joueur.FOOD);
 	if(joueur.FOOD <= 5){
 		wattroff(F_win, A_BOLD | COLOR_PAIR(1));

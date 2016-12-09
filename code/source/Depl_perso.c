@@ -103,7 +103,7 @@ int Depl_perso(WINDOW *fenetre){
 
   if(joueur.etat_avant == piege){
     ecrire_chat(fenetre,8);
-    mort = 1;
+    joueur.HP = 0;
   }
 
 /* FOOD PART */
