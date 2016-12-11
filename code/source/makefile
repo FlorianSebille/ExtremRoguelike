@@ -1,7 +1,7 @@
 all: Rogue clean
 
-Rogue: GenWindow.o test_taille_terminal.o chat.o sauvegarde.o Win_Stat.o affichage_Swin.o RandomRoom.o Placer_element.o Depl_perso.o porte_ou_escalier.o file.o Ask_Load_Save.o Charger_Sauvegarde.o fin_de_la_partie.o monstre.o combat.o Rogue.o
-	gcc -o Rogue -g GenWindow.o test_taille_terminal.o chat.o sauvegarde.o Win_Stat.o affichage_Swin.o RandomRoom.o Placer_element.o Depl_perso.o porte_ou_escalier.o file.o Ask_Load_Save.o Charger_Sauvegarde.o fin_de_la_partie.o monstre.o combat.o Rogue.o -lncurses -lm
+Rogue: GenWindow.o test_taille_terminal.o chat.o sauvegarde.o Win_Stat.o affichage_Swin.o RandomRoom.o Placer_element.o Depl_perso.o porte_ou_escalier.o file.o Ask_Load_Save.o Charger_Sauvegarde.o debut_partie.o fin_de_la_partie.o monstre.o combat.o Rogue.o
+	gcc -o Rogue -g GenWindow.o test_taille_terminal.o chat.o sauvegarde.o Win_Stat.o affichage_Swin.o RandomRoom.o Placer_element.o Depl_perso.o porte_ou_escalier.o file.o Ask_Load_Save.o Charger_Sauvegarde.o debut_partie.o fin_de_la_partie.o monstre.o combat.o Rogue.o -lncurses -lm
 
 GenWindow.o: GenWindow.c
 	gcc -c GenWindow.c
@@ -42,7 +42,10 @@ Ask_Load_Save.o: Ask_Load_Save.c
 Charger_Sauvegarde.o: Charger_Sauvegarde.c
 	gcc -c Charger_Sauvegarde.c
 
-fin_de_la_partie.o:fin_de_la_partie.c
+debut_partie.o: debut_partie.c
+	gcc -c debut_partie.c
+
+fin_de_la_partie.o: fin_de_la_partie.c
 	gcc -c fin_de_la_partie.c
 
 combat.o: combat.c
