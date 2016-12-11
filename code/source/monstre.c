@@ -78,5 +78,3 @@ void depl_monstre(WINDOW *fenetre){
 	monstre.coordo_x = futurx;
 	MAP[monstre.coordo_x][monstre.coordo_y].lieu = mechant;
 }
-
-

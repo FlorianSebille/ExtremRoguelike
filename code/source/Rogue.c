@@ -77,7 +77,7 @@ int main(){
         joueur.SALLE = 1;
         joueur.LEVEL = 1;
         joueur.EXP = 1;
-        joueur.HP = 20;
+        joueur.HP = 200;
         joueur.ATT = 5;
         joueur.DEF = 12;
         joueur.FOOD = 10;
@@ -89,7 +89,6 @@ int main(){
         utilisateur = Depl_perso(T_win);
         if(joueur.STAGE > 1 && (compteur%900) == 0 && monstre.HP > 0){
             depl_monstre(S_win);
-            combat();
         }
         compteur++;
         wrefresh(F_win);
@@ -121,16 +120,19 @@ int main(){
             joueur.addcle = 0;
             ecrire_chat(T_win, 2);
           }
-        }else if(joueur.etat_avant == arriver && joueur.addcle == 0){
+        }else if(joueur.etat_avant == arriver && joueur.addcle == 0 && joueur.STAGE == 5){
         	int i,j;
-        	for(i = 0; i < x; i++){
-        		for(j = 0; j < y; j++){
-        			if(joueur.SALLE == MAP[i][j].num_salle && MAP[i][j].lieu == sol){
+        	for(i = 1; i < x; i++){
+        		for(j = 1; j < y; j++){
+        			if(/*joueur.SALLE == (MAP[i][j].num_salle)-1 &&*/ MAP[i][j].lieu == sol){
         				MAP[i][j].lieu = mechant;
         				sleep(1);
+                        affichage(S_win);
         			}
         		}
         	}
+            joueur.HP = 0;
+            fin_game(T_win,S_win,F_win);
         }
     }
     if(utilisateur == 's'){
