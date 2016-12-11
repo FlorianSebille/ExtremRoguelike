@@ -113,10 +113,10 @@ void Win_Stat(WINDOW *F_win, int widthF){
 	wattron(F_win, A_BOLD | COLOR_PAIR(2));
 	mvwprintw(F_win,25,2,"MOVE:");
 	wattroff(F_win, A_BOLD | COLOR_PAIR(2));
-	n = strlen("FLECHE HAUT");
-	mvwprintw(F_win,26,widthF-1-n,"FLECHE HAUT");
-	n = strlen("FLECHE BAS");
-	mvwprintw(F_win,27,widthF-1-n,"FLECHE BAS");
+	n = strlen("FLECHE   HAUT");
+	mvwprintw(F_win,26,widthF-1-n,"FLECHE   HAUT");
+	n = strlen("FLECHE    BAS");
+	mvwprintw(F_win,27,widthF-1-n,"FLECHE    BAS");
 	n = strlen("FLECHE DROITE");
 	mvwprintw(F_win,28,widthF-1-n,"FLECHE DROITE");
 	n = strlen("FLECHE GAUCHE");

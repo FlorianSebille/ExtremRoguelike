@@ -1,5 +1,18 @@
 #include "total.h"
 
+/**
+ * \fn fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win)
+ * \brief Fonction qui sert à gerer la fin de la partie
+ *
+ * demander a l'utilisateur de rejouer ou quitter et
+ * de faire un affichage en fonction de la partie précedente.
+ *
+ * \param chat_Win fenetre ou se situe le chat.
+ * \param map_Win fenetre ou se situe la map du jeu.
+ * \param stat_Win fenetre ou se situe les stats de la partie.
+ *
+ * \return 1 si le joueur veux rejouer 0 si il veux quitter.
+ */
 int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win){
 	int startx, starty, width, height;
 	WINDOW *fin_Win;

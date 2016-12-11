@@ -17,15 +17,43 @@ int q;
 int f;
 
 
-
+/**
+ * \enum t_element
+ * \brief type enumeration pour les cellules.
+ *
+ * t_element est un type enum qui sert a définir ce qu'une cellule contient par exemple
+ * un mur, le sol, le joueur etc.
+ */
 typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel, arriver, cle, food, piege, medikit, mechant} t_element;
 
+/**
+ * \struct t_cellule
+ * \brief type de la matrice qui se sert jouer.
+ *
+ * t_cellule est une structure qui sert à stocker les differents element utile a la gestion d'une partie
+ * par exemple les different objets du jeu tel que le medikit ou la nouriture et bien les monstre
+ * elle sert aussi a faire le lien entre les salle.
+ */
 
 typedef struct cellule {t_element lieu; int position; int relie; int xb;int yb;int num_salle;int presence;} t_cellule;
 
+/**
+ * \struct t_joueur
+ * \brief type du joueur.
+ *
+ * t_joueur est une structure contenant tout les element utile consernant le joueur tel que son niveau de vie
+ * ou sa nouriture, son niveau. Elle sert aussi a stocker le nom du joueur son etage ou meme sa salle.
+ */
 typedef struct joueur {char nom[20];int coordo_x;int coordo_y;t_element etat_avant;int addcle;int STAGE;int SALLE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
 t_joueur joueur;
 
+/**
+ * \struct t_monstre
+ * \brief type des monstres.
+ *
+ * t_monstre est une structure qui sert à stocker les differents element utile consernant les monstres
+ * comme leurs coordonnés, leurs niveaux.
+ */
 typedef struct monstre {int coordo_x;int coordo_y;int salle;int EXP;int HP;int ATT;int DEF;} t_monstre;
 t_monstre monstre;
 
@@ -115,28 +143,6 @@ void depl_monstre(WINDOW *fenetre);
 
 //dans le fichier combat.c
 void combat();
-
-/* Dimensions et Position de la 1ère fenêtre
-const int startxF = 5;
-const int startyF = 2;
-const int widthF = 30;
-const int heightF = 31;
-
-Dimensions et Position de la 2ème fenêtre
-const int startxS = 39;
-const int startyS = 2;
-const int widthS = 90;
-const int heightS = 31;
-
-Dimensions et Position de la 3ème fenêtre
-const int startxT = 134;
-const int startyT = 2;
-const int widthT = 36;
-const int heightT = 31;
-
-WINDOW * F_win;
-WINDOW * S_win;
-WINDOW * T_win;*/
 
 //dans le fichier file.c
 

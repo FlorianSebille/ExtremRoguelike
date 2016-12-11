@@ -1,15 +1,31 @@
-#include "total.h"
 
+/**
+ * \file Rogue.c
+ * \brief Programme principal du jeu.
+ * \author LARDY Anthony
+ * \author TROTTIER Arthur
+ * \author SEBILLE Florian
+ * \version 1.0.1
+ */
+
+#include "total.h"
+/**
+ * \fn int main
+ * \fonction principale du jeu qui fait le déroulement de la partie
+ */
 int main(){
   initscr();
   noecho();
   if(taille_terminal()){
-    int startxF, startyF, widthF, heightF;
-    int startxS, startyS, widthS, heightS;
-    int startxT, startyT, widthT, heightT;
-    int ligne = 1;
+
+    int startxF, startyF, widthF, heightF;/* Initialisation des variables pour la création de la 1ère fenêtre */
+    int startxS, startyS, widthS, heightS;/* Initialisation des variables pour la création de la 2ème fenêtre */
+    int startxT, startyT, widthT, heightT;/* Initialisation des variables pour la création de la 3ème fenêtre */
+
     char utilisateur;
+
     int compteur = 0;
+
     nb_deplacement = 0;
 
     WINDOW * F_win;
