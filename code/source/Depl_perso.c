@@ -2,7 +2,8 @@
 
 /**
  * \fn test_depl(int c)
- * \brief Fonction qui sert tester le deplacement du joueur en fonction du deplacement choisi par l'utilisateur.
+ * \brief Fonction qui sert tester le deplacement du joueur en fonction du deplacement
+ *        choisi par l'utilisateur.
  *
  * \param c deplacement choisi par l'utilisateur.
  */
@@ -35,7 +36,8 @@ int test_depl(int c){
 
 /**
  * \fn Depl_perso(WINDOW *fenetre)
- * \brief Fonction qui sert déplacer le joueur et à gerer les différentes actions en fonction de l'endroit ou se déplace le joueur.
+ * \brief Fonction qui sert déplacer le joueur et à gerer les différentes actions
+ *        en fonction de l'endroit ou se déplace le joueur.
  *
  * \param fenetre ou se situe la map du jeu.
  */

@@ -132,6 +132,8 @@ int Charger_Sauvegarde();
 
 void addsauv();
 
+void debut_game(WINDOW *S_win, WINDOW *T_win);
+
 int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win);
 
 //dans le fichier monstre.c

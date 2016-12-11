@@ -68,20 +68,7 @@ int main(){
 
         srand(time(NULL));
         joueur.STAGE = 1;
-        init_map(S_win);
-        Placer_uplevel(S_win);
-        Placer_perso(S_win);
-        Placer_food(S_win);
-        stage_cle = aleat(2,5);
-        stage_medikit = aleat(2,5);
-        joueur.SALLE = 1;
-        joueur.LEVEL = 1;
-        joueur.EXP = 1;
-        joueur.HP = 200;
-        joueur.ATT = 5;
-        joueur.DEF = 12;
-        joueur.FOOD = 10;
-        ecrire_chat(T_win, 2);
+        debut_game(S_win, T_win);
     }
         affichage(S_win);
         Win_Stat(F_win,widthF);
@@ -101,24 +88,8 @@ int main(){
           choix = fin_game(T_win,S_win,F_win);
           if(choix == 1){
             S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
-            srand(time(NULL));
             joueur.STAGE = 1;
-            init_map(S_win);
-            Placer_uplevel(S_win);
-            Placer_perso(S_win);
-            Placer_piege(S_win);
-            Placer_food(S_win);
-            stage_cle = aleat(2,5);
-            stage_medikit = aleat(2,5);
-            joueur.SALLE = 1;
-            joueur.LEVEL = 1;
-            joueur.EXP = 1;
-            joueur.HP = 20;
-            joueur.ATT = 5;
-            joueur.DEF = 12;
-            joueur.FOOD = 10;
-            joueur.addcle = 0;
-            ecrire_chat(T_win, 2);
+            debut_game(S_win, T_win);
           }
         }else if(joueur.etat_avant == arriver && joueur.addcle == 0 && joueur.STAGE == 5){
         	int i,j;

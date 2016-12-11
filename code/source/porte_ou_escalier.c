@@ -67,14 +67,8 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
                       }
                       joueur.SALLE = MAP[joueur.coordo_x][joueur.coordo_y].num_salle+1;
                     }else if (joueur.etat_avant == uplevel){
-
-
                       joueur.STAGE = joueur.STAGE + 1;
-                      joueur.SALLE = 1;
-                      init_map(mapfenetre);
-                      Placer_uplevel(mapfenetre);
-                      Placer_perso(mapfenetre);
-                      Placer_food(mapfenetre);
+                      debut_game(mapfenetre, chatfenetre);
                       if(stage_cle == joueur.STAGE){
                         Placer_cle(mapfenetre);
                       }
