@@ -42,7 +42,8 @@ void fillmap(){
  * \param posy numero de la ligne ou débute la salle
  */
 int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx){
-  i = posx;
+  int i = posx;
+  int j,k,l;
   if(posx <= 1 || posx >= x - lg_mur_vert -1) return 0;
   if(posy <= 1 || posy >= y - lg_mur_horiz -1) return 0;
   for(j = posy, k = 0; (k < lg_mur_horiz) && (j < y); j++, k++){
