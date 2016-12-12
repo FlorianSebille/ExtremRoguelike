@@ -308,7 +308,9 @@ int Placer_piege(){
 		}
   }
 	int compteur;
-	for(compteur = 0;compteur <= nombre_salle_piege; compteur++){
+
+	for(compteur = 0;compteur < nombre_salle_piege; compteur++){
+
 		salle = aleat(1,nombre_salle-2);
 	  int pos_piege = aleat(0,taille_salle);
  	 taille_salle = 0;

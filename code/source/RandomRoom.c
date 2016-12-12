@@ -1,11 +1,27 @@
+/**
+ * \file RandomRoom.c
+ * \brief Programme regroupant les fonctions qui génèrent les principales structures du jeu
+ * \author TROTTIER Arthur
+ * \version 1.0.1
+ */
+
 #include "total.h"
 
-int aleat(int min, int max){         //fonction qui retourne un nombre aléatoire entre 2 bornes
+/**
+ * \fn int aleat
+ * \fonction qui retourne un nombre aléatoire entre 2 bornes
+ * \param min valeur minimum possible
+ * \param max valeur maximum possible
+ */
+int aleat(int min, int max){
     return (rand() % (max - min + 1)) + min;
 }
 
-
-void fillmap(){                    //fonction qui remplit la map à l'état vide
+/**
+ * \fn void fillmap
+ * \fonction qui met la carte (matrice) à l'état 0
+ */
+void fillmap(){
 
   int i, j;
   for(i = 0; i < x; i++){
@@ -17,9 +33,15 @@ void fillmap(){                    //fonction qui remplit la map à l'état vide
   }
 }
 
-
-int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx){    //fonction qui renvoit 1 si la creation d'une salle est possible
-  int i, j, k;
+/**
+ * \fn int room_possible
+ * \fonction qui parcourt la matrice pour vérifier si la construction d'une salle est possible
+ * \param lg_mur_horiz longueur des murs horizontaux
+ * \param lg_mur_vert longueur des murs verticaux
+ * \param posy numero de la colonne ou débute la salle
+ * \param posy numero de la ligne ou débute la salle
+ */
+int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx){
   i = posx;
   if(posx <= 1 || posx >= x - lg_mur_vert -1) return 0;
   if(posy <= 1 || posy >= y - lg_mur_horiz -1) return 0;
@@ -38,8 +60,13 @@ int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx){    //
   }
   return 1;
 }
-
-void init_room(int num, int nb_salle){   //fonction qui initialise une salle de taille aléatoire à un endroit aléatoire avec des portes
+/**
+ * \fn void init_room
+ * \fonction qui consruit une salle numérotée avec 1 ou 2 portes en fonction de ce numéro
+ * \param num numéro de la salle à construire
+ * \param nb_salle nombre de salle total de la carte
+ */
+void init_room(int num, int nb_salle){
 
   int i, j, k, l;
   int posx, posy;
@@ -52,10 +79,10 @@ void init_room(int num, int nb_salle){   //fonction qui initialise une salle de 
   posy = aleat(0,y);
   perim_room = (lg_mur_horiz + lg_mur_vert )* 2;
   pos_door1 = aleat(0,perim_room);
-  if(num != 0 && num != nb_salle -1) pos_door2 = aleat(0,perim_room); //on initialise qu'une porte pour la salle de depart et d'arrivée
+  if(num != 0 && num != nb_salle -1) pos_door2 = aleat(0,perim_room); /*!< On initialise qu'une porte pour la salle de depart et d'arrivée */
   else pos_door2 = -1;
 
-   //On vérifie que les portes ne sont pas dans les angles et décalés d'au moins 1
+   /*!< On vérifie que les portes ne sont pas dans les angles et écartés d'au moins 1 entre elles */
 
   if(pos_door1 == 0 || pos_door1 == lg_mur_horiz || pos_door1 == perim_room || pos_door1 == 2 * lg_mur_horiz + lg_mur_vert || pos_door1 == lg_mur_horiz + lg_mur_vert){
     if(pos_door1 == 0)pos_door1 = pos_door1 + 1;
@@ -71,13 +98,13 @@ void init_room(int num, int nb_salle){   //fonction qui initialise une salle de 
     pos_door2 = aleat(0,perim_room);
   }
 
-  //si il y a la place pour une salle
+  /*!< Si il y a la place pour une salle, alors on la construit */
 
   if(room_possible(lg_mur_horiz, lg_mur_vert, posy, posx)){
 
     i = posx;
-    for(j = posy, k = 0; (k < lg_mur_horiz) && (j < y); j++, k++){   //On place le mur du haut
-      if(compteur == pos_door1 || compteur == pos_door2){    // On place la porte de la salle aleatoirement sur l'un des 4 murs en s'assurant que la porte n'est pas dans un angle */
+    for(j = posy, k = 0; (k < lg_mur_horiz) && (j < y); j++, k++){   /*!< On place le mur du haut */
+      if(compteur == pos_door1 || compteur == pos_door2){    /*!< On place les portes de la salle aleatoirement */
         MAP[i][j].lieu = porte;
         MAP[i][j].num_salle = num;
       }else{
@@ -86,7 +113,7 @@ void init_room(int num, int nb_salle){   //fonction qui initialise une salle de 
       }
       compteur++;
     }
-    for(i = posx, k = 0; (k < lg_mur_vert) && (i < x); i++, k++){     //...de droite
+    for(i = posx, k = 0; (k < lg_mur_vert) && (i < x); i++, k++){     /*!< On place le mur de droite */
       if(compteur == pos_door1 || compteur == pos_door2){
         MAP[i][j].lieu = porte;
         MAP[i][j].num_salle = num;
@@ -96,7 +123,7 @@ void init_room(int num, int nb_salle){   //fonction qui initialise une salle de 
       }
       compteur++;
     }
-    for(j = posy, k = 0; (k <= lg_mur_horiz) && (i < y); j++, k++){   //...du bas
+    for(j = posy, k = 0; (k <= lg_mur_horiz) && (i < y); j++, k++){   /*!< On place le mur du bas */
       if(compteur == pos_door1 || compteur == pos_door2){
         MAP[i][j].lieu = porte;
         MAP[i][j].num_salle = num;
@@ -107,7 +134,7 @@ void init_room(int num, int nb_salle){   //fonction qui initialise une salle de 
       compteur++;
     }
     j = posy;
-    for(i = posx + 1, k = 0; (k < lg_mur_vert) && (i < x); i++, k++){     //...de gauche
+    for(i = posx + 1, k = 0; (k < lg_mur_vert) && (i < x); i++, k++){     /*!< On place le mur de gauche */
       if(compteur == pos_door1 || compteur == pos_door2){
         MAP[i][j].lieu = porte;
         MAP[i][j].num_salle = num;
@@ -117,7 +144,7 @@ void init_room(int num, int nb_salle){   //fonction qui initialise une salle de 
       }
       compteur++;
     }
-    for(j = posy + 1, k = 0; (k < lg_mur_horiz - 1) && (j < y - 1); j++, k++){   //on place le sol dans la salle
+    for(j = posy + 1, k = 0; (k < lg_mur_horiz - 1) && (j < y - 1); j++, k++){   /*!< On place le sol à l'intérieur de la salle */
       for(i = posx + 1, l = 0; (l < lg_mur_vert - 1) && (i < x - 1); i++, l++){
           MAP[i][j].lieu = sol;
           MAP[i][j].num_salle = num;
@@ -128,7 +155,15 @@ void init_room(int num, int nb_salle){   //fonction qui initialise une salle de 
   }
 }
 
-int trouver_porte(int * xA, int * yA, int salle){    //fonction qui retourne les coordonnées d'un pointeur et marque la porte comme reliée
+/**
+ * \fn int trouver_porte
+ * \fonction qui met à jour les coordonnées de la prochaine porte à relier
+ * \param xA numéro de ligne de la porte à relier
+ * \param yA numéro de colonne de la porte à relier
+ * \param salle numéro de la salle où se situe actuellement le reliage de porte
+ */
+
+int trouver_porte(int * xA, int * yA, int salle){
   int i,j;
   for(i = 0; i < x; i++){
     for(j = 0; j < y; j++){
@@ -143,7 +178,13 @@ int trouver_porte(int * xA, int * yA, int salle){    //fonction qui retourne les
   return 0;
 }
 
-int relier_2Portes(int xA, int yA){ //fonction qui relie une porte à la salle suivante
+/**
+ * \fn int relier_2Portes
+ * \fonction qui relie une porte d'une salle à la porte de la salle suivante
+ * \param xA numéro de ligne de la porte à relier
+ * \param yA numéro de colonne de la porte à relier
+ */
+int relier_2Portes(int xA, int yA){
 
   t_coord MaPos;
   int num = MAP[xA][yA].num_salle;
@@ -151,7 +192,7 @@ int relier_2Portes(int xA, int yA){ //fonction qui relie une porte à la salle s
   int l,c;
   int check = 1;
 
-  init_file();
+  init_file();      /*!< Utilisation d'une file qui utilise le système de flood & fill pour trouver le chemin le plus court */
 
   MaPos.ligne = xA;
   MaPos.colonne = yA;
@@ -189,7 +230,7 @@ int relier_2Portes(int xA, int yA){ //fonction qui relie une porte à la salle s
     }
     retirer(&MaPos);
   }
-    MAP[xA][yA].xb = MaPos.ligne;
+    MAP[xA][yA].xb = MaPos.ligne; /*!< Mise à jour des coordonnées de la porte A et B mutuellement reliées entres elles */
     MAP[xA][yA].yb = MaPos.colonne;
 
     MAP[MaPos.ligne][MaPos.colonne].xb = xA;
@@ -199,7 +240,7 @@ int relier_2Portes(int xA, int yA){ //fonction qui relie une porte à la salle s
     c = MaPos.colonne;
     MAP[l][c].relie = 1;
 
-    while(MAP[l][c].position != 1){
+    while(MAP[l][c].position != 1){     /*!< Lorsque la porte que l'on cherche est trouvée, on fait le chemin inverse pour arriver jusqu'a elle */
       if(MAP[l][c+1].position == MAP[l][c].position - 1){
         c++;
       }else if(MAP[l-1][c].position == MAP[l][c].position - 1){
@@ -216,7 +257,11 @@ int relier_2Portes(int xA, int yA){ //fonction qui relie une porte à la salle s
     return 1;
 }
 
-void positionzero(){    //fonction qui met à zéro le type position
+/**
+ * \void positionzero
+ * \fonction qui met à zéro le paramètre position de la carte (matrice)
+ */
+void positionzero(){
   int i, j;
   for(i=0;i<x;i++){
     for(j=0;j<y;j++){
@@ -225,7 +270,12 @@ void positionzero(){    //fonction qui met à zéro le type position
   }
 }
 
-void init_map(WINDOW *fenetre){      //fonction qui remplit la map d'un nombre de salle aléatoire
+/**
+ * \fn void init_map
+ * \fonction qui initialise une carte totalement aléatoire constituée de salles reliées par des couloirs
+ * \param fenetre fenetre centrale qui contient le jeu
+ */
+void init_map(WINDOW * fenetre){
   int * xB;
   int * yB;
   int ligne, colonne;
@@ -233,23 +283,23 @@ void init_map(WINDOW *fenetre){      //fonction qui remplit la map d'un nombre d
   xB = &ligne;
   yB = &colonne;
 
-  fillmap();                          //on initialise la map à vide
+  fillmap();                          /*!< On initialise la map à vide */
 
   if(joueur.STAGE != 1){
     nombre_salle = nombre_salle + 1;
   }else nombre_salle = aleat(3,5);
 
-  for(i = 0; i < nombre_salle; i++){  //on remplit la map de salles
+  for(i = 0; i < nombre_salle; i++){  /*!< On remplit la carte d'un nombre de salle aléatoire */
     init_room(i,nombre_salle);
   }
-  for(i = 0; i < nombre_salle - 1; i++){  //puis on les relie entres elles
+  for(i = 0; i < nombre_salle - 1; i++){  /*!< On relie les salles entres elles */
     positionzero();
     trouver_porte(xB,yB,i);
     relier_2Portes(ligne,colonne);
   }
-  if(joueur.STAGE > 1){
+  if(joueur.STAGE > 1){ /*!< Si l'on ne se situe pas au premier étage alors on place dans les salles des monstres (fonction se situant dans Placer_element.c) */
       Placer_monstre();
   }
-  Placer_piege(fenetre);
+  Placer_piege(fenetre); /*!< On place pour finir des pièges dans les salles (fonction se situant dans Placer_element.c) */
 
 }
