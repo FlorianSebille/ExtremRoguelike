@@ -9,9 +9,9 @@
  */
 void debut_game(WINDOW *S_win, WINDOW *T_win){
   init_map(S_win);
-  Placer_uplevel(S_win);
-  Placer_perso(S_win);
-  Placer_food(S_win);
+  Placer_uplevel();
+  Placer_perso();
+  Placer_food();
   stage_cle = aleat(2,5);
   stage_medikit = aleat(2,5);
   joueur.SALLE = 1;

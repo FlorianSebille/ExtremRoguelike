@@ -101,19 +101,19 @@ void init_map(WINDOW *fenetre);
 void affichage(WINDOW *fenetre);
 
 //dans le fichier placer_element.c
-int Placer_uplevel(WINDOW *fenetre);
+int Placer_uplevel();
 
-int Placer_perso(WINDOW *fenetre);
+int Placer_perso();
 
-int Placer_cle(WINDOW *fenetre);
+int Placer_cle();
 
 int Placer_monstre();
 
-int Placer_medikit(WINDOW *fenetre);
+int Placer_medikit();
 
-int Placer_piege(WINDOW *fenetre);
+int Placer_piege();
 
-int Placer_food(WINDOW *fenetre);
+int Placer_food();
 
 
 //dans le fichier Depl_perso.c

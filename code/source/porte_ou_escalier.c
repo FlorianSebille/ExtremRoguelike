@@ -70,10 +70,10 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
                       joueur.STAGE = joueur.STAGE + 1;
                       debut_game(mapfenetre, chatfenetre);
                       if(stage_cle == joueur.STAGE){
-                        Placer_cle(mapfenetre);
+                        Placer_cle();
                       }
                       if (stage_medikit == joueur.STAGE) {
-                        Placer_medikit(mapfenetre);
+                        Placer_medikit();
                       }
                     }
                     affichage(mapfenetre);

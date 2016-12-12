@@ -1,14 +1,13 @@
 
 #include "total.h"
 
-int Placer_perso(WINDOW *fenetre){
+int Placer_perso(){
 
-  int i,max_i,j,max_j,taille_salle;
+  int i,j,taille_salle;
   taille_salle = 0;
-  getmaxyx(fenetre,max_i,max_j);
 
-  for(i = 1; i < max_i -1; i++){
-    for(j = 1; j < max_j -1; j++){
+  for(i = 1; i < x; i++){
+    for(j = 1; j < y; j++){
       if(MAP[i][j].num_salle == 0){
       	if(MAP[i][j].lieu == sol){
           taille_salle++;
@@ -20,8 +19,8 @@ int Placer_perso(WINDOW *fenetre){
   int pos_perso = aleat(0,taille_salle);
   taille_salle = 0;
 
-  for(i = 1; i < max_i -1; i++){
-  	for(j = 1; j < max_j -1; j++){
+  for(i = 1; i < x; i++){
+  	for(j = 1; j < y; j++){
     	if(MAP[i][j].num_salle == 0){
     		if(MAP[i][j].lieu == sol){
           taille_salle++;
@@ -35,8 +34,8 @@ int Placer_perso(WINDOW *fenetre){
   		}
 		}
   }
-  for(i = 1; i < max_i -1; i++){ // test pour verifier que le perso est placer sinon on recommence la fonction
-    for(j = 1; j < max_j -1; j++){
+  for(i = 1; i < x; i++){ // test pour verifier que le perso est placer sinon on recommence la fonction
+    for(j = 1; j < y; j++){
       if(MAP[i][j].num_salle == 0){
         if(MAP[i][j].lieu==personnage){
           return 1;
@@ -44,18 +43,17 @@ int Placer_perso(WINDOW *fenetre){
       }
     }
   }
-  Placer_perso(fenetre);
+  Placer_perso();
   return 0;
 }
 
-int Placer_uplevel(WINDOW *fenetre){
+int Placer_uplevel(){
 
-    int i,max_i,j,max_j,taille_salle;
+    int i,j,taille_salle;
     taille_salle = 0;
-    getmaxyx(fenetre,max_i,max_j);
 
-  for(i = 1; i < max_i -1; i++){
-  	for(j = 1; j < max_j -1; j++){
+  for(i = 1; i < x; i++){
+  	for(j = 1; j < y; j++){
     	if(MAP[i][j].num_salle == nombre_salle-1){
     		if(MAP[i][j].lieu == sol){
           taille_salle++;
@@ -67,8 +65,8 @@ int Placer_uplevel(WINDOW *fenetre){
   int pos_uplevel = aleat(0,taille_salle);
   taille_salle = 0;
 
-  for(i = 1; i < max_i -1; i++){
-  	for(j = 1; j < max_j -1; j++){
+  for(i = 1; i < x; i++){
+  	for(j = 1; j < y; j++){
     	if(MAP[i][j].num_salle == nombre_salle-1){
     		if(MAP[i][j].lieu == sol){
           taille_salle++;
@@ -99,8 +97,8 @@ int Placer_uplevel(WINDOW *fenetre){
   		}
 		}
   }
-  for(i = 1; i < max_i -1; i++){ // test pour verifier que uplevel ou l'arriver est placer sinon on recommence la fonction
-    for(j = 1; j < max_j -1; j++){
+  for(i = 1; i < x; i++){ // test pour verifier que uplevel ou l'arriver est placer sinon on recommence la fonction
+    for(j = 1; j < y; j++){
       if(MAP[i][j].num_salle == nombre_salle-1){
         if(MAP[i][j].lieu==uplevel || MAP[i][j].lieu==arriver){
           return 1;
@@ -108,19 +106,18 @@ int Placer_uplevel(WINDOW *fenetre){
       }
     }
   }
-  Placer_uplevel(fenetre);
+  Placer_uplevel();
 	return 0;
 }
 
-int Placer_cle(WINDOW *fenetre){
+int Placer_cle(){
 
-    int i,max_i,j,max_j,salle,taille_salle;
+    int i,j,salle,taille_salle;
     salle = aleat(1,nombre_salle-2);
     taille_salle = 0;
-    getmaxyx(fenetre,max_i,max_j);
 
-  for(i = 1; i < max_i -1; i++){
-  	for(j = 1; j < max_j -1; j++){
+  for(i = 1; i < x; i++){
+  	for(j = 1; j < y; j++){
     	if(MAP[i][j].num_salle == salle){
     		if(MAP[i][j].lieu == sol){
           taille_salle++;
@@ -132,8 +129,8 @@ int Placer_cle(WINDOW *fenetre){
   int pos_cle = aleat(0,taille_salle);
   taille_salle = 0;
 
-  for(i = 1; i < max_i -1; i++){
-  	for(j = 1; j < max_j -1; j++){
+  for(i = 1; i < x; i++){
+  	for(j = 1; j < y; j++){
     	if(MAP[i][j].num_salle == salle){
     		if(MAP[i][j].lieu == sol){
           taille_salle++;
@@ -152,8 +149,8 @@ int Placer_cle(WINDOW *fenetre){
   		}
 		}
   }
-  for(i = 1; i < max_i -1; i++){ // test pour verifier que la clé est placer sinon on recommence la fonction
-    for(j = 1; j < max_j -1; j++){
+  for(i = 1; i < x; i++){ // test pour verifier que la clé est placer sinon on recommence la fonction
+    for(j = 1; j < y; j++){
       if(MAP[i][j].num_salle == salle){
         if(MAP[i][j].lieu==cle){
           return 1;
@@ -161,7 +158,7 @@ int Placer_cle(WINDOW *fenetre){
       }
     }
   }
-  Placer_cle(fenetre);
+  Placer_cle();
 	return 0;
 }
 
@@ -192,15 +189,14 @@ int Placer_monstre(){
   return 0;
 }
 
-int Placer_medikit(WINDOW *fenetre){
+int Placer_medikit(){
 
-    int i,max_i,j,max_j,salle,taille_salle;
+    int i,j,salle,taille_salle;
     salle = aleat(1,nombre_salle-2);
     taille_salle = 0;
-    getmaxyx(fenetre,max_i,max_j);
 
-  for(i = 1; i < max_i -1; i++){
-  	for(j = 1; j < max_j -1; j++){
+  for(i = 1; i < x; i++){
+  	for(j = 1; j < y; j++){
     	if(MAP[i][j].num_salle == salle){
     		if(MAP[i][j].lieu == sol){
           taille_salle++;
@@ -212,8 +208,8 @@ int Placer_medikit(WINDOW *fenetre){
   int pos_medikit = aleat(0,taille_salle);
   taille_salle = 0;
 
-  for(i = 1; i < max_i -1; i++){
-  	for(j = 1; j < max_j -1; j++){
+  for(i = 1; i < x; i++){
+  	for(j = 1; j < y; j++){
     	if(MAP[i][j].num_salle == salle){
     		if(MAP[i][j].lieu == sol){
           taille_salle++;
@@ -232,8 +228,8 @@ int Placer_medikit(WINDOW *fenetre){
   		}
 		}
   }
-  for(i = 1; i < max_i -1; i++){ // test pour verifier que la clé est placer sinon on recommence la fonction
-    for(j = 1; j < max_j -1; j++){
+  for(i = 1; i < x; i++){ // test pour verifier que la clé est placer sinon on recommence la fonction
+    for(j = 1; j < y; j++){
       if(MAP[i][j].num_salle == salle){
         if(MAP[i][j].lieu==medikit){
           return 1;
@@ -241,19 +237,18 @@ int Placer_medikit(WINDOW *fenetre){
       }
     }
   }
-  Placer_medikit(fenetre);
+  Placer_medikit();
 	return 0;
 }
 
-int Placer_food(WINDOW *fenetre){
+int Placer_food(){
 
-    int i,max_i,j,max_j,salle,taille_salle;
+    int i,j,salle,taille_salle;
     salle = aleat(1,nombre_salle-2);
     taille_salle = 0;
-    getmaxyx(fenetre,max_i,max_j);
 
-  for(i = 1; i < max_i -1; i++){
-  	for(j = 1; j < max_j -1; j++){
+  for(i = 1; i < x; i++){
+  	for(j = 1; j < y; j++){
     	if(MAP[i][j].num_salle == salle){
     		if(MAP[i][j].lieu == sol){
           taille_salle++;
@@ -265,8 +260,8 @@ int Placer_food(WINDOW *fenetre){
   int pos_food = aleat(0,taille_salle);
   taille_salle = 0;
 
-  for(i = 1; i < max_i -1; i++){
-  	for(j = 1; j < max_j -1; j++){
+  for(i = 1; i < x; i++){
+  	for(j = 1; j < y; j++){
     	if(MAP[i][j].num_salle == salle){
     		if(MAP[i][j].lieu == sol){
           taille_salle++;
@@ -285,8 +280,8 @@ int Placer_food(WINDOW *fenetre){
   		}
 		}
   }
-  for(i = 1; i < max_i -1; i++){ // test pour verifier que la clé est placer sinon on recommence la fonction
-    for(j = 1; j < max_j -1; j++){
+  for(i = 1; i < x; i++){ // test pour verifier que la clé est placer sinon on recommence la fonction
+    for(j = 1; j < y; j++){
       if(MAP[i][j].num_salle == salle){
         if(MAP[i][j].lieu==food){
           return 1;
@@ -294,18 +289,17 @@ int Placer_food(WINDOW *fenetre){
       }
     }
   }
-  Placer_food(fenetre);
+  Placer_food();
 	return 0;
 }
 
-int Placer_piege(WINDOW *fenetre){
+int Placer_piege(){
 	int nombre_salle_piege = aleat(nombre_salle,9);
-    int i,max_i,j,max_j,salle,taille_salle;
+    int i,j,salle,taille_salle;
     taille_salle = 0;
-    getmaxyx(fenetre,max_i,max_j);
 
-  for(i = 1; i < max_i -1; i++){
-  	for(j = 1; j < max_j -1; j++){
+  for(i = 1; i < x; i++){
+  	for(j = 1; j < y; j++){
     	if(MAP[i][j].num_salle == salle){
     		if(MAP[i][j].lieu == sol){
           taille_salle++;
@@ -314,12 +308,14 @@ int Placer_piege(WINDOW *fenetre){
 		}
   }
 	int compteur;
+
 	for(compteur = 0;compteur < nombre_salle_piege; compteur++){
+
 		salle = aleat(1,nombre_salle-2);
 	  int pos_piege = aleat(0,taille_salle);
  	 taille_salle = 0;
- 	 for(i = 1; i < max_i -1; i++){
-  		for(j = 1; j < max_j -1; j++){
+ 	 for(i = 1; i < x; i++){
+  		for(j = 1; j < y; j++){
     		if(MAP[i][j].num_salle == salle){
     			if(MAP[i][j].lieu == sol){
     	      		taille_salle++;
@@ -339,8 +335,8 @@ int Placer_piege(WINDOW *fenetre){
 		}
 	  }
 	}
-  for(i = 1; i < max_i -1; i++){ // test pour verifier que la clé est placer sinon on recommence la fonction
-    for(j = 1; j < max_j -1; j++){
+  for(i = 1; i < x; i++){ // test pour verifier que la clé est placer sinon on recommence la fonction
+    for(j = 1; j < y; j++){
       if(MAP[i][j].num_salle == salle){
         if(MAP[i][j].lieu==piege){
           return 1;
@@ -348,6 +344,6 @@ int Placer_piege(WINDOW *fenetre){
       }
     }
   }
-  Placer_piege(fenetre);
+  Placer_piege();
 	return 0;
 }
