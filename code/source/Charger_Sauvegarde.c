@@ -63,6 +63,27 @@ int Charger_Sauvegarde(WINDOW *Err_Win){
 			fscanf(fic1,"%i", &stage_cle);
 		}
 		if(compteur == 16){
+			fscanf(fic1,"%i", &monstre.coordo_x);
+		}
+		if(compteur == 17){
+			fscanf(fic1,"%i", &monstre.coordo_y);
+		}
+		if(compteur == 18){
+			fscanf(fic1,"%i", &monstre.salle);
+		}
+		if(compteur == 19){
+			fscanf(fic1,"%i", &monstre.EXP);
+		}
+		if(compteur == 20){
+			fscanf(fic1,"%i", &monstre.HP);
+		}
+		if(compteur == 21){
+			fscanf(fic1,"%i", &monstre.ATT);
+		}
+		if(compteur == 22){
+			fscanf(fic1,"%i", &monstre.DEF);
+		}
+		if(compteur == 23){
 			for (i = 0; i < x; i++){
    				for(j = 0; j < y; j++){
    					fscanf(fic1, "%i", &entier);
@@ -71,7 +92,7 @@ int Charger_Sauvegarde(WINDOW *Err_Win){
    				}
    			}
 		}
-		if (compteur >=17){
+		if (compteur >=24){
 			for(i = 0; i < x; i++){
 				for(j = 0; j < y; j++){
 					if(feof(fic1)){

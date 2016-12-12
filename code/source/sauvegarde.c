@@ -36,6 +36,20 @@ void addsauv(){
 	fprintf(fic1,"%i ", entier);
 	entier = stage_cle;
 	fprintf(fic1,"%i ", entier);
+	entier = monstre.coordo_x;
+	fprintf(fic1,"%i ", entier);
+	entier = monstre.coordo_y;
+	fprintf(fic1,"%i ", entier);
+	entier = monstre.salle;
+	fprintf(fic1,"%i ", entier);
+	entier = monstre.EXP;
+	fprintf(fic1,"%i ", entier);
+	entier = monstre.HP;
+	fprintf(fic1,"%i ", entier);
+	entier = monstre.ATT;
+	fprintf(fic1,"%i ", entier);
+	entier = monstre.DEF;
+	fprintf(fic1,"%i ", entier);
 	fprintf(fic1,"\n\n");
 	for (i = 0; i < x; i++){
    		for(j = 0; j < y; j++){
