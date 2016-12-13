@@ -1,3 +1,13 @@
+
+/**
+ * \file total.h
+ * \brief fichier contenant tous les entêtes des fonctions utilent pour le jeu.
+ * \author TROTIIER Arthur
+ * \author LARDY Anthony
+ * \author SEBILLE Florian
+ * \version 1.0.1
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include <math.h>

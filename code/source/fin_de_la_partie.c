@@ -1,3 +1,11 @@
+
+/**
+ * \file fin_de_la_partie.c
+ * \brief Programme contenant la fonctions gérant le fin de la partie
+ * \author SEBILLE Florian
+ * \version 1.0.1
+ */
+
 #include "total.h"
 
 /**

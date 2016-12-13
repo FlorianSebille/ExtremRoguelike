@@ -1,3 +1,11 @@
+
+/**
+ * \file porte_ou_escalier.c
+ * \brief Programme contenant les différentes étapes de la rencontre d'une porte ou d'un escalier par le joueur
+ * \author SEBILLE Florian
+ * \version 1.0.1
+ */
+
 #include "total.h"
 
 void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, WINDOW *statfenetre, int utilisateur){

@@ -1,6 +1,9 @@
-/* test pour savoir si le terminal est assez grand
-pour pouvoir jouer sinon redimansionner quitter et
-relancer*/
+/**
+ * \file test_taille_terminal.c
+ * \brief Programme contenant le test pour la taille minimale du terminal
+ * \author SEBILLE Florian
+ * \version 1.0.1
+ */
 #include "total.h"
 
 int taille_terminal(){

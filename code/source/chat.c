@@ -1,3 +1,10 @@
+/**
+ * \file chat.c
+ * \brief Programme contenant la fonction qui ecrit dans la fenetre du chat
+ * \author SEBILLE Florian
+ * \version 1.0.1
+ */
+
 #include "total.h"
 
 /**

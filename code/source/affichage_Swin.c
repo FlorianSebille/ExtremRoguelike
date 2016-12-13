@@ -1,4 +1,12 @@
-#include "total.h"
+
+/**
+ * \file affichage_Swin.c
+ * \brief Programme contenant la fonction qui affiche toute la map
+ * \author SEBILLE Florian
+ * \version 1.0.1
+ */
+
+ #include "total.h"
 
 /**
  * \fn void affichage(WINDOW *fenetre)
