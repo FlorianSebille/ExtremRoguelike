@@ -1,6 +1,12 @@
-/* test pour savoir si le terminal est assez grand
-pour pouvoir jouer sinon redimansionner quitter et
-relancer*/
+/**
+ * \file test_taille_terminal.c
+ * \brief Test pour savoir si le terminal est assez grand pour pouvoir jouer sinon redimansionner quitter et relancer
+ * \author LARDY Anthony
+ * \author TROTTIER Arthur
+ * \author SEBILLE Florian
+ * \version 1.0.1
+ */
+
 #include "total.h"
 
 int taille_terminal(){
@@ -17,5 +23,4 @@ int taille_terminal(){
   }else{
     return 1;
   }
-
 }
