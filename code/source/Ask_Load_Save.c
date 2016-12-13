@@ -74,48 +74,33 @@ int Ask_Load_Save(){
 		choix = getch();
 	}while(choix != 'n' && choix != 'o');
 	if(choix == 'n'){
-		echo();
-		effacer_fenetre(Save_Win);
-		mvwprintw(Save_Win,2,2,"veuillez saisir votre pseudo pour la partie");
-		mvwprintw(Save_Win,6,3,"pseudo : ");
-		mvwprintw(Save_Win,8,26,"appuier sur entrer pour valider");
-		move(21,62);
-		wrefresh(Save_Win);
-		getstr(joueur.nom);
-		wrefresh(Save_Win);
-		noecho();
-		/*do{
-			choix_pseudo = getch();
-			if(choix_pseudo != -1 && choix_pseudo != '\n'){
-				joueur.nom[i] = choix_pseudo;
-				mvwprintw(Save_Win,6,12+i,"%c",choix_pseudo);
-				i++;
-			}
+
+			echo();
+			effacer_fenetre(Save_Win);
+			mvwprintw(Save_Win,2,2,"veuillez saisir votre pseudo pour la partie");
+			mvwprintw(Save_Win,6,3,"pseudo : ");
+			mvwprintw(Save_Win,8,26,"appuier sur entrer pour valider");
+			move(21,62);
 			wrefresh(Save_Win);
-		}while(choix_pseudo != '\n');*/
+			getnstr(joueur.nom, 20);
+			noecho();
+
 		choix = 'o';
 	}else if(choix == 'o'){
 		effacer_fenetre(Save_Win);
 		int g = Charger_Sauvegarde(Save_Win);
 		if(g == 'o'){
+			echo();
+			effacer_fenetre(Save_Win);
 			mvwprintw(Save_Win,2,2,"veuillez saisir votre pseudo pour la partie");
 			mvwprintw(Save_Win,6,3,"pseudo : ");
 			mvwprintw(Save_Win,8,26,"appuier sur entrer pour valider");
+			move(21,62);
 			wrefresh(Save_Win);
-			do{
-				choix_pseudo = getch();
-				if(choix_pseudo != -1 && choix_pseudo != '\n'){
-					joueur.nom[i] = choix_pseudo;
-					mvwprintw(Save_Win,6,12+i,"%c",choix_pseudo);
-					i++;
-				}
-				/*if(choix_pseudo == '^G'){
-
-				}*/
-				wrefresh(Save_Win);
-			}	while(choix_pseudo != '\n');
-		}
-		choix = 'o';
+			getnstr(joueur.nom, 20);
+			noecho();
+			choix = 'o';
+		}else choix = 'n';
 	}
 
 

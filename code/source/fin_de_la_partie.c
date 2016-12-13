@@ -109,22 +109,24 @@ int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win){
     effacer_fenetre(stat_Win);
     effacer_fenetre(chat_Win);
     effacer_fenetre(rejouer_Win);
+		effacer_fenetre(fin_Win);
 		wrefresh(stat_Win);
 		wrefresh(chat_Win);
 		wrefresh(rejouer_Win);
-		wborder(rejouer_Win, ' ', ' ', ' ', ' ', ' ', ' ', ' ',' ');
-		wrefresh(rejouer_Win);
-		delwin(rejouer_Win);
-		effacer_fenetre(fin_Win);
-		wborder(fin_Win, ' ', ' ', ' ', ' ', ' ', ' ', ' ',' ');
 		wrefresh(fin_Win);
+
+		wborder(rejouer_Win, ' ', ' ', ' ', ' ', ' ', ' ', ' ',' ');
+		delwin(rejouer_Win);
+		wborder(fin_Win, ' ', ' ', ' ', ' ', ' ', ' ', ' ',' ');
 		delwin(fin_Win);
+
 		mort = 0;
 		height = 31;
     width = 90;
     starty = 2 ;
     startx = 39 ;
 		map_Win=create_newwin(height,width,starty,startx,"Map");
+		joueur.STAGE = 1;
 	}
   if(choix == 'r'){
     return 1;

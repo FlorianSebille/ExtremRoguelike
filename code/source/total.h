@@ -122,7 +122,7 @@ int test_depl(int c);
 int Depl_perso(WINDOW *fenetre);
 
 //dans le fichier porte_ou_escalier.c
-void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur);
+void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, WINDOW *statfenetre, int utilisateur);
 
 //dans le fichier Ask_Load_Save.c
 int Ask_Load_Save();
@@ -132,7 +132,7 @@ int Charger_Sauvegarde();
 
 void addsauv();
 
-void debut_game(WINDOW *S_win, WINDOW *T_win);
+void debut_game(WINDOW *S_win, WINDOW *T_win, WINDOW *F_win);
 
 int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win);
 

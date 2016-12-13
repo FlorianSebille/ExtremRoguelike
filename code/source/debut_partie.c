@@ -7,13 +7,16 @@
  * \param S_win contenant la map.
  * \param T_win contenant la map.
  */
-void debut_game(WINDOW *S_win, WINDOW *T_win){
+void debut_game(WINDOW *S_win, WINDOW *T_win, WINDOW *F_win){
   init_map(S_win);
   Placer_uplevel();
   Placer_perso();
   Placer_food();
   stage_cle = aleat(2,5);
   stage_medikit = aleat(2,5);
+  if(joueur.STAGE == 1){
+    joueur.addcle = 0;
+  }
   joueur.SALLE = 1;
   joueur.LEVEL = 1;
   joueur.EXP = 1;
