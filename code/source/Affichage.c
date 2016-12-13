@@ -238,7 +238,7 @@ void ecrire_chat(WINDOW *chatwin, int position_perso){
  */
 void affichage(WINDOW *fenetre){
 
-  int i,j:
+  int i,j;
 
   for(i = 1; i < x; i++){    /*!< Parcour de la matrice pour afficher dans la fenetre les diferents elements. */
     for(j = 1; j < y; j++){

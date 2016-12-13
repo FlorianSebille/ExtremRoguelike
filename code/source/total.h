@@ -86,7 +86,7 @@ int relier_2Portes(int xA, int yA);
 
 void positionzero();
 
-void init_map(WINDOW *fenetre);
+void init_map();
 
 //dans le fichier Affichage.c
 void affichage(WINDOW *fenetre);
