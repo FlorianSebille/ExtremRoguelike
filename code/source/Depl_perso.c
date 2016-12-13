@@ -45,7 +45,7 @@ int Depl_perso(WINDOW *fenetre){
 
 	cbreak();
 	keypad(stdscr,TRUE);
- 	timeout(0);
+ 	//timeout(0);
 
  	int c;
 

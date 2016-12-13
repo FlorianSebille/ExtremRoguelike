@@ -9,7 +9,7 @@ int Ask_Load_Save(){
 	WINDOW *Rules_Win;
 	cbreak();
 	keypad(stdscr,TRUE);
-	timeout(0);
+	//timeout(0);
 	int choix;
 	int i = 0;
 	char choix_pseudo;
@@ -81,7 +81,6 @@ int Ask_Load_Save(){
 		mvwprintw(Save_Win,8,26,"appuier sur entrer pour valider");
 		wmove(Save_Win,6,12);
 		wrefresh(Save_Win);
-		sleep(2);
 		getstr(joueur.nom);
 		wrefresh(Save_Win);
 		noecho();
@@ -116,7 +115,7 @@ int Ask_Load_Save(){
 				wrefresh(Save_Win);
 			}	while(choix_pseudo != '\n');
 		}
-		choix = 'n';
+		choix = 'o';
 	}
 
 
