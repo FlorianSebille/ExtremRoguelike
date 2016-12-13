@@ -1,6 +1,6 @@
 #include "total.h"
 
-void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
+void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, WINDOW *statfenetre, int utilisateur){
 
   int choix = 0;
   int dep_reussi = 0;
@@ -68,7 +68,7 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
                       joueur.SALLE = MAP[joueur.coordo_x][joueur.coordo_y].num_salle+1;
                     }else if (joueur.etat_avant == uplevel){
                       joueur.STAGE = joueur.STAGE + 1;
-                      debut_game(mapfenetre, chatfenetre);
+                      debut_game(mapfenetre, chatfenetre, statfenetre);
                       if(stage_cle == joueur.STAGE){
                         Placer_cle();
                       }
@@ -111,7 +111,7 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, int utilisateur){
                       joueur.addcle = 1;
                       joueur.etat_avant = arriver;
                       break;
-                    }else porte_escalier(chatfenetre, mapfenetre, utilisateur); break;
+                    }else porte_escalier(chatfenetre, mapfenetre, statfenetre, utilisateur); break;
   }
   ecrire_chat(chatfenetre, MAP[joueur.coordo_x][joueur.coordo_y].lieu);
 }

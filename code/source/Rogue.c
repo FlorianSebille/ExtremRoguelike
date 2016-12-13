@@ -69,11 +69,15 @@ int main(){
 
         srand(time(NULL));
         joueur.STAGE = 1;
-        debut_game(S_win, T_win);
+        debut_game(S_win, T_win, F_win);
     }
-        affichage(S_win);
-        Win_Stat(F_win,widthF);
+
+    affichage(S_win);
+    Win_Stat(F_win,widthF);
+    ecrire_chat(T_win, 2);
+
     while(utilisateur != 'q' && utilisateur != 's' && (joueur.etat_avant != arriver || joueur.addcle != 1) && mort != 1 && joueur.HP != 0){
+
         utilisateur = Depl_perso(T_win);
         combat();
         if(joueur.STAGE > 1 && (compteur%900) == 0 && monstre.HP > 0){
@@ -84,14 +88,14 @@ int main(){
         affichage(S_win);
         Win_Stat(F_win,widthF);
         if(joueur.etat_avant == porte || joueur.etat_avant == uplevel){
-        porte_escalier(T_win, S_win, utilisateur);
+        porte_escalier(T_win, S_win, F_win, utilisateur);
         }
         if((joueur.etat_avant == arriver && joueur.addcle == 1) || joueur.HP == 0){
           choix = fin_game(T_win,S_win,F_win);
           if(choix == 1){
-            S_win=create_newwin(heightS,widthS,startyS,startxS,"Map");
-            joueur.STAGE = 1;
-            debut_game(S_win, T_win);
+            debut_game(S_win, T_win, F_win);
+            affichage(S_win);
+            Win_Stat(F_win,widthF);
           }
         }else if(joueur.etat_avant == arriver && joueur.addcle == 0 && joueur.STAGE == 5){
         	int i,j;
