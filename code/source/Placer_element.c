@@ -1,3 +1,11 @@
+/**
+ * \file Placer_element.c
+ * \brief Place tous les éléments du la carte.
+ * \author LARDY Anthony
+ * \author TROTTIER Arthur
+ * \author SEBILLE Florian
+ * \version 1.0.1
+ */
 
 /**
  * \file placer_element.c
@@ -9,6 +17,10 @@
 
 #include "total.h"
 
+/**
+  * \brief Place le personnage
+  * \fn int Placer_perso()
+  */
 int Placer_perso(){
 
   int i,j,taille_salle;
@@ -55,6 +67,10 @@ int Placer_perso(){
   return 0;
 }
 
+/**
+  * \brief Place l'escalier
+  * \fn int Placer_uplevel()
+  */
 int Placer_uplevel(){
 
     int i,j,taille_salle;
@@ -118,6 +134,10 @@ int Placer_uplevel(){
 	return 0;
 }
 
+/**
+  * \brief Place la clé
+  * \fn int Placer_cle()
+  */
 int Placer_cle(){
 
     int i,j,salle,taille_salle;
@@ -170,7 +190,10 @@ int Placer_cle(){
 	return 0;
 }
 
-
+/**
+  * \brief Place le monstre
+  * \fn int Placer_monstre()
+  */
 int Placer_monstre(){
   int i, j;
   monstre.salle = aleat(0,nombre_salle - 1);
@@ -197,6 +220,10 @@ int Placer_monstre(){
   return 0;
 }
 
+/**
+  * \brief Place le medikit
+  * \fn int Placer_medikit()
+  */
 int Placer_medikit(){
 
     int i,j,salle,taille_salle;
@@ -249,6 +276,10 @@ int Placer_medikit(){
 	return 0;
 }
 
+/**
+  * \brief Place la nourriture
+  * \fn int Placer_food()
+  */
 int Placer_food(){
 
     int i,j,salle,taille_salle;
@@ -301,6 +332,10 @@ int Placer_food(){
 	return 0;
 }
 
+/**
+  * \brief Place les pièges
+  * \fn int Placer_piege()
+  */
 int Placer_piege(){
 	int nombre_salle_piege = aleat(nombre_salle,9);
     int i,j,salle,taille_salle;

@@ -1,7 +1,7 @@
 all: Rogue clean
 
-Rogue: GenWindow.o test_taille_terminal.o chat.o sauvegarde.o Win_Stat.o affichage_Swin.o RandomRoom.o Placer_element.o Depl_perso.o porte_ou_escalier.o file.o Ask_Load_Save.o Charger_Sauvegarde.o debut_partie.o fin_de_la_partie.o monstre.o combat.o Rogue.o
-	gcc -o Rogue -g GenWindow.o test_taille_terminal.o chat.o sauvegarde.o Win_Stat.o affichage_Swin.o RandomRoom.o Placer_element.o Depl_perso.o porte_ou_escalier.o file.o Ask_Load_Save.o Charger_Sauvegarde.o debut_partie.o fin_de_la_partie.o monstre.o combat.o Rogue.o -lncurses -lm
+Rogue: GenWindow.o test_taille_terminal.o sauvegarde.o Affichage.o RandomRoom.o Placer_element.o Depl_perso.o porte_ou_escalier.o file.o Ask_Load_Save.o Charger_Sauvegarde.o debut_partie.o fin_de_la_partie.o monstre.o combat.o Rogue.o
+	gcc -o Rogue -g GenWindow.o test_taille_terminal.o sauvegarde.o Affichage.o RandomRoom.o Placer_element.o Depl_perso.o porte_ou_escalier.o file.o Ask_Load_Save.o Charger_Sauvegarde.o debut_partie.o fin_de_la_partie.o monstre.o combat.o Rogue.o -lncurses -lm
 
 GenWindow.o: GenWindow.c
 	gcc -c GenWindow.c
@@ -9,20 +9,14 @@ GenWindow.o: GenWindow.c
 test_taille_terminal.o: test_taille_terminal.c
 	gcc -c test_taille_terminal.c
 
-chat.o: chat.c
-	gcc -c chat.c
-
 sauvegarde.o: sauvegarde.c
 	gcc -c sauvegarde.c
 
-Win_Stat.o: Win_Stat.c
-	gcc -c Win_Stat.c
-
-affichage_Swin.o: affichage_Swin.c
-	gcc -c affichage_Swin.c
-
 file.o: file.c
 	gcc -c file.c
+
+Affichage.o: Affichage.c
+	gcc -c Affichage.c
 
 RandomRoom.o: RandomRoom.c
 	gcc -c RandomRoom.c

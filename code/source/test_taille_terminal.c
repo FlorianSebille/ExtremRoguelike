@@ -4,6 +4,7 @@
  * \author SEBILLE Florian
  * \version 1.0.1
  */
+
 #include "total.h"
 
 int taille_terminal(){
@@ -20,5 +21,4 @@ int taille_terminal(){
   }else{
     return 1;
   }
-
 }

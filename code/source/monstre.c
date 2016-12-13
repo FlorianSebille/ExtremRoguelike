@@ -1,7 +1,7 @@
 #include "total.h"
 
-
-void init_presence(WINDOW *fenetre){
+/*
+void init_presence(){
 	int i,max_i,j,max_j,dimension_carre;
 	getmaxyx(fenetre,max_i,max_j);
 	for(i = 1; i < max_i -1; i++){
@@ -29,10 +29,10 @@ int calcul_presence(int ligne, int colonne){
 		}
 	}
 	return somme;
-}
+}*/
 
 
-void depl_monstre(WINDOW *fenetre){
+void depl_monstre(){
 	/*if(joueur.SALLE == monstre.salle){
 		int i,max_i,j,max_j,futurx,futury;
 		int maxsomme = 0;

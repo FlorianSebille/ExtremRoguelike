@@ -274,9 +274,8 @@ void positionzero(){
 /**
  * \fn void init_map
  * \fonction qui initialise une carte totalement aléatoire constituée de salles reliées par des couloirs
- * \param fenetre fenetre centrale qui contient le jeu
  */
-void init_map(WINDOW * fenetre){
+void init_map(){
   int * xB;
   int * yB;
   int ligne, colonne;
@@ -301,6 +300,6 @@ void init_map(WINDOW * fenetre){
   if(joueur.STAGE > 1){ /*!< Si l'on ne se situe pas au premier étage alors on place dans les salles des monstres (fonction se situant dans Placer_element.c) */
       Placer_monstre();
   }
-  Placer_piege(fenetre); /*!< On place pour finir des pièges dans les salles (fonction se situant dans Placer_element.c) */
+  Placer_piege(); /*!< On place pour finir des pièges dans les salles (fonction se situant dans Placer_element.c) */
 
 }

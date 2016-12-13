@@ -24,13 +24,13 @@ void debut_game(WINDOW *S_win, WINDOW *T_win, WINDOW *F_win){
     joueur.addcle = 0;
     stage_cle = aleat(2,5);
     stage_medikit = aleat(2,5);
+    joueur.LEVEL = 1;
+    joueur.EXP = 1;
+    joueur.HP = 20;
+    joueur.ATT = 5;
+    joueur.DEF = 12;
+    joueur.FOOD = 10;
   }
   joueur.SALLE = 1;
-  joueur.LEVEL = 1;
-  joueur.EXP = 1;
-  joueur.HP = 20;
-  joueur.ATT = 5;
-  joueur.DEF = 12;
-  joueur.FOOD = 10;
   ecrire_chat(T_win, 2);
 }

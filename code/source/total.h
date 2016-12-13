@@ -79,16 +79,7 @@ void destroy_win(WINDOW *local_win);
 //dans le fichier test_taille_terminal.c
 int taille_terminal();
 
-//dans le fichier chat.c
-void effacer_ligne(WINDOW *chatwin, int ligne_effacer);
-
-void effacer_fenetre(WINDOW *chatwin);
-
-void ecrire_chat(WINDOW *chatwin,int position_perso);
-
 //int addsauv(WINDOW *centerwin);
-
-void Win_Stat(WINDOW *F_winn, int widthF);
 
 //dans le fichier RandomRoom.c
 int aleat(int min, int max);
@@ -105,10 +96,18 @@ int relier_2Portes(int xA, int yA);
 
 void positionzero();
 
-void init_map(WINDOW *fenetre);
+void init_map();
 
-//dans le fichier affichage_Swin.c
+//dans le fichier Affichage.c
 void affichage(WINDOW *fenetre);
+
+void Win_Stat(WINDOW *fenetre, int widthF);
+
+void effacer_ligne(WINDOW *chatwin, int ligne_effacer);
+
+void effacer_fenetre(WINDOW *chatwin);
+
+void ecrire_chat(WINDOW *chatwin,int position_perso);
 
 //dans le fichier placer_element.c
 int Placer_uplevel();
@@ -147,11 +146,11 @@ void debut_game(WINDOW *S_win, WINDOW *T_win, WINDOW *F_win);
 int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win);
 
 //dans le fichier monstre.c
-void init_presence(WINDOW *fenetre);
+void init_presence();
 
 int calcul_presence(int ligne, int colonne);
 
-void depl_monstre(WINDOW *fenetre);
+void depl_monstre();
 
 //dans le fichier combat.c
 void combat();

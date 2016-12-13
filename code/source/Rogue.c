@@ -1,4 +1,3 @@
-
 /**
  * \file Rogue.c
  * \brief Programme principal du jeu.
@@ -80,11 +79,10 @@ int main(){
 
         utilisateur = Depl_perso(T_win);
         combat();
-        if(joueur.STAGE > 1 && (compteur%900) == 0 && monstre.HP > 0){
-            depl_monstre(S_win);
+        if(joueur.STAGE > 1 && compteur%1000 == 0 && monstre.HP > 0){
+            depl_monstre();
         }
         compteur++;
-        wrefresh(F_win);
         affichage(S_win);
         Win_Stat(F_win,widthF);
         if(joueur.etat_avant == porte || joueur.etat_avant == uplevel){

@@ -1,5 +1,20 @@
+/**
+ * \file Win_Stat.C
+ * \brief Affichage de la fenêtre contenant les statistiques du personnages ainsi que les commandes utiles
+ * \author LARDY Anthony
+ * \author TROTTIER Arthur
+ * \author SEBILLE Florian
+ * \version 1.0.1
+ */
 
 #include "total.h"
+
+/**
+  * \brief 
+  * \fn void Win_Stat(WINDOW *F_win, int widthF)
+  * \param F_win Fenêtre où les différents éléments sont affichés
+  * \param widthF Nécessaire pour aligner à droite les statistiques
+  */
 
 void Win_Stat(WINDOW *F_win, int widthF){
 	int n;
@@ -127,5 +142,6 @@ void Win_Stat(WINDOW *F_win, int widthF){
 	mvwprintw(F_win,29,4,"GAUCHE");
 	wattroff(F_win, A_BOLD | COLOR_PAIR(2));
 	wrefresh(F_win);
-
 }
+
+
