@@ -74,16 +74,18 @@ int Ask_Load_Save(){
 		choix = getch();
 	}while(choix != 'n' && choix != 'o');
 	if(choix == 'n'){
+		echo();
 		effacer_fenetre(Save_Win);
 		mvwprintw(Save_Win,2,2,"veuillez saisir votre pseudo pour la partie");
 		mvwprintw(Save_Win,6,3,"pseudo : ");
 		mvwprintw(Save_Win,8,26,"appuier sur entrer pour valider");
-		/*echo();
 		wmove(Save_Win,6,12);
 		wrefresh(Save_Win);
+		sleep(2);
 		getstr(joueur.nom);
-		noecho();*/
-		do{
+		wrefresh(Save_Win);
+		noecho();
+		/*do{
 			choix_pseudo = getch();
 			if(choix_pseudo != -1 && choix_pseudo != '\n'){
 				joueur.nom[i] = choix_pseudo;
@@ -91,7 +93,7 @@ int Ask_Load_Save(){
 				i++;
 			}
 			wrefresh(Save_Win);
-		}while(choix_pseudo != '\n');
+		}while(choix_pseudo != '\n');*/
 		choix = 'o';
 	}else if(choix == 'o'){
 		effacer_fenetre(Save_Win);
