@@ -127,4 +127,5 @@ void Win_Stat(WINDOW *F_win, int widthF){
 	mvwprintw(F_win,29,4,"GAUCHE");
 	wattroff(F_win, A_BOLD | COLOR_PAIR(2));
 	wrefresh(F_win);
+
 }

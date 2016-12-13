@@ -16,6 +16,7 @@
 int main(){
   initscr();
   noecho();
+  curs_set(0);
   if(taille_terminal()){
 
     int startxF, startyF, widthF, heightF;/* Initialisation des variables pour la création de la 1ère fenêtre */

@@ -79,7 +79,7 @@ int Ask_Load_Save(){
 		mvwprintw(Save_Win,2,2,"veuillez saisir votre pseudo pour la partie");
 		mvwprintw(Save_Win,6,3,"pseudo : ");
 		mvwprintw(Save_Win,8,26,"appuier sur entrer pour valider");
-		wmove(Save_Win,6,12);
+		move(21,62);
 		wrefresh(Save_Win);
 		getstr(joueur.nom);
 		wrefresh(Save_Win);
