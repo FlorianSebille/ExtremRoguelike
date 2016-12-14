@@ -9,7 +9,6 @@ int Ask_Load_Save(){
 	WINDOW *Rules_Win;
 	cbreak();
 	keypad(stdscr,TRUE);
-	//timeout(0);
 	int choix;
 	int i = 0;
 	char choix_pseudo;

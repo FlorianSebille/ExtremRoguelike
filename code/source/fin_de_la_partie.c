@@ -27,7 +27,6 @@ int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win){
 	WINDOW *rejouer_Win;
 	cbreak();
 	keypad(stdscr,TRUE);
-	//timeout(0);
 	int choix;
 	height = 15;
 	width = 90;

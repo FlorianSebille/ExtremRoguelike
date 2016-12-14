@@ -15,7 +15,6 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, WINDOW *statfenetre,
 
   cbreak();
 	keypad(stdscr,TRUE);
-  //timeout(0);
 
   if (joueur.etat_avant == porte){
     mvwprintw(chatfenetre,5,1,"voulez vous changer de salle ?");
