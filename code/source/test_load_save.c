@@ -1,18 +1,4 @@
-//#include "total.h"
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
-#include <stdlib.h>
-typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel, arriver, cle} t_element;
-
-typedef struct cellule {t_element lieu; int position; int relie; int xb;int yb;int num_salle;} t_cellule;
-
-typedef struct joueur {char nom[20];int coordo_x;int coordo_y;t_element etat_avant;int addcle;int STAGE;int SALLE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
-t_joueur joueur;
-
-#define x 30
-#define y 89
-t_cellule MAP[x][y];
+#include "total.h"
 
 int main(){
 	char nom_perso[20];
@@ -84,7 +70,7 @@ int main(){
 				for(j = 0; j < y; j++){
 					if(feof(fic1)){
 						break;
-					}	
+					}
 					fscanf(fic1,"%i", &i);
 					fscanf(fic1,"%i", &j);
 					fscanf(fic1,"%i", &entier);
@@ -92,14 +78,14 @@ int main(){
 					fscanf(fic1,"%i",&entier);
 					printf("%i", entier);
 					compteur++;
-					printf("\n");				
+					printf("\n");
 				}
 			}
 		}
-					
-		compteur++;		
+
+		compteur++;
 	}
-	
+
 	fclose(fic1);
 	printf(" nom du joueur : %s \n", joueur.nom);
 	printf(" positionx du joueur : %i \n", joueur.coordo_x);

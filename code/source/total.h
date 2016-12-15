@@ -16,7 +16,7 @@
 #include <time.h>
 #include <unistd.h>
 #include <ncurses.h>
-#define TAILLE 100
+
 int nombre_salle;
 int deplacement;
 int stage_cle;
@@ -25,6 +25,7 @@ int nb_deplacement;
 int mort;
 int q;
 int f;
+int cheat;
 
 
 /**
@@ -34,7 +35,7 @@ int f;
  * t_element est un type enum qui sert a définir ce qu'une cellule contient par exemple
  * un mur, le sol, le joueur etc.
  */
-typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel, arriver, cle, food, piege, medikit, mechant} t_element;
+typedef enum {vide, mur, sol, porte, couloir, personnage, uplevel, arriver, cle, food, piege, medikit, mechant} t_element;
 
 /**
  * \struct t_cellule
@@ -45,7 +46,7 @@ typedef enum element {vide, mur, sol, porte, couloir, personnage, uplevel, arriv
  * elle sert aussi a faire le lien entre les salle.
  */
 
-typedef struct cellule {t_element lieu; int position; int relie; int xb;int yb;int num_salle;int presence;} t_cellule;
+typedef struct {t_element lieu; int position; int relie; int xb;int yb;int num_salle;int presence;} t_cellule;
 
 /**
  * \struct t_joueur
@@ -54,7 +55,15 @@ typedef struct cellule {t_element lieu; int position; int relie; int xb;int yb;i
  * t_joueur est une structure contenant tout les element utile consernant le joueur tel que son niveau de vie
  * ou sa nouriture, son niveau. Elle sert aussi a stocker le nom du joueur son etage ou meme sa salle.
  */
-typedef struct joueur {char nom[20];int coordo_x;int coordo_y;t_element etat_avant;int addcle;int STAGE;int SALLE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
+typedef struct {char nom[20];int coordo_x;int coordo_y;t_element etat_avant;int addcle;int STAGE;int SALLE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
+
+/**
+ * \var t_joueur joueur
+ * \brief variable joueur de type t_joueur.
+ *
+ * la variable joueur contient les différentes données du joueur points de vie, points d'attaques,
+ * la nouriture, ses coordonnées etc.
+ */
 t_joueur joueur;
 
 /**
@@ -64,7 +73,14 @@ t_joueur joueur;
  * t_monstre est une structure qui sert à stocker les differents element utile consernant les monstres
  * comme leurs coordonnés, leurs niveaux.
  */
-typedef struct monstre {int coordo_x;int coordo_y;int salle;int EXP;int HP;int ATT;int DEF;} t_monstre;
+typedef struct {int coordo_x;int coordo_y;int salle;int EXP;int HP;int ATT;int DEF;} t_monstre;
+
+/**
+ * \var t_monstre monstre
+ * \brief variable monstre de type t_monstres.
+ *
+ * la variable monstre contient les différentes données des monstres points de vie, points d'attaques etc.
+ */
 t_monstre monstre;
 
 #define x 30
@@ -157,8 +173,28 @@ void combat();
 
 //dans le fichier file.c
 
-typedef struct coord{int ligne; int colonne;} t_coord;
+/**
+ * \struct t_coord
+ * \brief type qui donne les coordonnés d'un objet ou d'un element.
+ *
+ * t_coord est une structure qui contient la ligne et la colonne d'un element.
+ * il est utiliser pour donner la coordonné d'un element de la matrice.
+ */
+typedef struct {int ligne; int colonne;} t_coord;
 
+/**
+ * \struct t_elemfile
+ * \brief type des element de la fille.
+ *
+ * t_elemfile est une structure contenant et l'element suivant.
+ */
+
+/**
+  * \struct elemfile
+  * \brief nom de la structure pour t_elemfile.
+  *
+  * t_elemfile est une structure contenant et l'element suivant.
+  */
 typedef struct elemfile{t_coord nombre; struct elemfile*suivant;} t_elemfile;
 
 t_elemfile*tete;

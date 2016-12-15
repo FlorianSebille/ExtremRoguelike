@@ -26,6 +26,7 @@ int main(){
 
     int compteur = 0;
 
+    cheat = 0;
     nb_deplacement = 0;
 
     WINDOW * F_win;
@@ -99,10 +100,10 @@ int main(){
         	int i,j;
         	for(i = 1; i < x; i++){
         		for(j = 1; j < y; j++){
-        			if(/*joueur.SALLE == (MAP[i][j].num_salle)-1 &&*/ MAP[i][j].lieu == sol){
+        			if(MAP[i][j].num_salle == nombre_salle-1 && MAP[i][j].lieu == sol){
         				MAP[i][j].lieu = mechant;
         				sleep(1);
-                        affichage(S_win);
+                affichage(S_win);
         			}
         		}
         	}

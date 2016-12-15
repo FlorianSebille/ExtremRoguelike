@@ -17,7 +17,7 @@
   */
 
 void Win_Stat(WINDOW *fenetre, int widthF){
-	int n;                      
+	int n;
 	effacer_fenetre(fenetre);
 
 	wattron(fenetre, A_BOLD | COLOR_PAIR(1));
@@ -92,7 +92,7 @@ void Win_Stat(WINDOW *fenetre, int widthF){
 	}
 
 	wattron(fenetre, A_BOLD | COLOR_PAIR(2));
-	mvwprintw(fenetre,15,2,"COMMAND: ");
+	mvwprintw(fenetre,15,2,"LEGENDE: ");
 	wattroff(fenetre, A_BOLD | COLOR_PAIR(2));
 
 	mvwprintw(fenetre,16,4,"NOURRITURE");
@@ -151,7 +151,7 @@ void Win_Stat(WINDOW *fenetre, int widthF){
 
 	n = strlen("FLECHE DROITE");
 	mvwprintw(fenetre,28,widthF-1-n,"FLECHE DROITE");		/*!< affichage de la touche pour aller à droite. */
-	mvwprintw(fenetre,28,4,"DROITE");	
+	mvwprintw(fenetre,28,4,"DROITE");
 
 	n = strlen("FLECHE GAUCHE");
 	mvwprintw(fenetre,29,widthF-1-n,"FLECHE GAUCHE");		/*!< affichage de la touche pour aller à gauche. */
@@ -271,9 +271,14 @@ void affichage(WINDOW *fenetre){
         mvwaddch(fenetre, i, j, ACS_CKBOARD);
         wattroff(fenetre, COLOR_PAIR(4));
 
-      }else if(MAP[i][j].lieu == piege){    /*!< afficge des pièges qui si on marche dessus provoque la mort. */
+      }else if(MAP[i][j].lieu == piege && cheat == 1){    /*!< afficge des pièges qui si on marche dessus provoque la mort. */
         wattron(fenetre, COLOR_PAIR(5));
         mvwprintw(fenetre, i, j, "&");
+        wattroff(fenetre, COLOR_PAIR(4));
+
+      }else if(MAP[i][j].lieu == piege && cheat == 0){    /*!< afficge des pièges qui si on marche dessus provoque la mort. */
+        wattron(fenetre, COLOR_PAIR(5));
+        mvwprintw(fenetre, i, j, " ");
         wattroff(fenetre, COLOR_PAIR(4));
 
       }else if(MAP[i][j].lieu == personnage){   /*!< affichage du personnage. */

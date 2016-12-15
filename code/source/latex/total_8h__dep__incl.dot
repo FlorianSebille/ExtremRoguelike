@@ -1,0 +1,28 @@
+digraph "total.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="total.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Affichage.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Affichage_8c.html",tooltip="Affichage des différentes fenêtres. "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="debut_partie.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$debut__partie_8c.html",tooltip="Programme regroupant les appels de fonction pour chaque debut de partie. "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Depl_perso.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Depl__perso_8c.html",tooltip="Programme regroupant les fonctions utile au deplacement. "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="fin_de_la_partie.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fin__de__la__partie_8c.html",tooltip="Programme contenant la fonctions gérant le fin de la partie. "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="GenWindow.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$GenWindow_8c.html",tooltip="Création d&#39;une fenêtre. "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="Placer_element.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Placer__element_8c.html",tooltip="Place tous les éléments du la carte. "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="porte_ou_escalier.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$porte__ou__escalier_8c.html",tooltip="Programme contenant les différentes étapes de la rencontre d&#39;une porte ou d&#39;un escalier par le joueur..."];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="RandomRoom.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$RandomRoom_8c.html",tooltip="Programme regroupant les fonctions qui génèrent les principales structures du jeu. "];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="Rogue.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Rogue_8c.html",tooltip="Programme principal du jeu. "];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="sauvegarde.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sauvegarde_8c.html",tooltip="Création d&#39;un fichier de sauvegarde. "];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="test_taille_terminal.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__taille__terminal_8c.html",tooltip="Programme contenant le test pour la taille minimale du terminal. "];
+}

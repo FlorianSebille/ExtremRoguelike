@@ -1,0 +1,608 @@
+\hypertarget{total_8h}{}\section{total.\+h File Reference}
+\label{total_8h}\index{total.\+h@{total.\+h}}
+
+
+fichier contenant tous les entêtes des fonctions utilent pour le jeu.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$curses.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$ncurses.\+h$>$}\\*
+Include dependency graph for total.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structt__cellule}{t\+\_\+cellule}
+\begin{DoxyCompactList}\small\item\em type de la matrice qui se sert jouer. \end{DoxyCompactList}\item 
+struct \hyperlink{structt__joueur}{t\+\_\+joueur}
+\begin{DoxyCompactList}\small\item\em type du joueur. \end{DoxyCompactList}\item 
+struct \hyperlink{structt__monstre}{t\+\_\+monstre}
+\begin{DoxyCompactList}\small\item\em type des monstres. \end{DoxyCompactList}\item 
+struct \hyperlink{structt__coord}{t\+\_\+coord}
+\begin{DoxyCompactList}\small\item\em type qui donne les coordonnés d\textquotesingle{}un objet ou d\textquotesingle{}un element. \end{DoxyCompactList}\item 
+struct \hyperlink{structelemfile}{elemfile}
+\begin{DoxyCompactList}\small\item\em nom de la structure pour \hyperlink{structt__elemfile}{t\+\_\+elemfile}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries T\+A\+I\+L\+LE}~100\hypertarget{total_8h_a7b29335add3a553ed85d0e3ace85629c}{}\label{total_8h_a7b29335add3a553ed85d0e3ace85629c}
+
+\item 
+\#define {\bfseries x}~30\hypertarget{total_8h_a6c4b361d72eb3767ba424ac9a6ecf52b}{}\label{total_8h_a6c4b361d72eb3767ba424ac9a6ecf52b}
+
+\item 
+\#define {\bfseries y}~89\hypertarget{total_8h_a0ed6a908288e0cd87f79c1b5ab56d07c}{}\label{total_8h_a0ed6a908288e0cd87f79c1b5ab56d07c}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structelemfile}{elemfile} {\bfseries t\+\_\+elemfile}\hypertarget{total_8h_a1bdc880c9e0f07cac2e78b67f5c6ff00}{}\label{total_8h_a1bdc880c9e0f07cac2e78b67f5c6ff00}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{total_8h_a8b071baf43ce73c99f88fc8169b0514d}{t\+\_\+element} \{ \\*
+{\bfseries vide}, 
+{\bfseries mur}, 
+{\bfseries sol}, 
+{\bfseries porte}, 
+\\*
+{\bfseries couloir}, 
+{\bfseries personnage}, 
+{\bfseries uplevel}, 
+{\bfseries arriver}, 
+\\*
+{\bfseries cle}, 
+{\bfseries food}, 
+{\bfseries piege}, 
+{\bfseries medikit}, 
+\\*
+{\bfseries mechant}
+ \}\begin{DoxyCompactList}\small\item\em type enumeration pour les cellules. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+W\+I\+N\+D\+OW $\ast$ \hyperlink{total_8h_aad8b078266a04e606d5306baa9e66dd6}{create\+\_\+newwin} (int height, int width, int starty, int startx, char $\ast$label)
+\begin{DoxyCompactList}\small\item\em Création d\textquotesingle{}une fenêtre. \end{DoxyCompactList}\item 
+void \hyperlink{total_8h_ada66364dd2a35d4c59586818d91dfcf8}{destroy\+\_\+win} (W\+I\+N\+D\+OW $\ast$local\+\_\+win)
+\begin{DoxyCompactList}\small\item\em Destruction d\textquotesingle{}une fenêtre. \end{DoxyCompactList}\item 
+int {\bfseries taille\+\_\+terminal} ()\hypertarget{total_8h_a99aa9cd497c1a170c1447522f9cdbc7b}{}\label{total_8h_a99aa9cd497c1a170c1447522f9cdbc7b}
+
+\item 
+int {\bfseries aleat} (int min, int max)\hypertarget{total_8h_a09b403bd1c6619a90e88cffae8b52728}{}\label{total_8h_a09b403bd1c6619a90e88cffae8b52728}
+
+\item 
+void \hyperlink{total_8h_a335000c114fc4b079d487e53b156ef57}{fillmap} ()
+\item 
+int {\bfseries room\+\_\+possible} (int lg\+\_\+mur\+\_\+horiz, int lg\+\_\+mur\+\_\+vert, int posy, int posx)\hypertarget{total_8h_a7213b6f4a58d528a141021409ef9abde}{}\label{total_8h_a7213b6f4a58d528a141021409ef9abde}
+
+\item 
+void \hyperlink{total_8h_a9afc86bc24b2ce3dd6884a52c80fd6ae}{init\+\_\+room} (int num, int nb\+\_\+salle)
+\item 
+int {\bfseries trouver\+\_\+porte} (int $\ast$xA, int $\ast$yA, int salle)\hypertarget{total_8h_afe8094b834c754bae83505527a67e93a}{}\label{total_8h_afe8094b834c754bae83505527a67e93a}
+
+\item 
+int \hyperlink{total_8h_adf23a078809017af2cc4349ee1fb20dc}{relier\+\_\+2\+Portes} (int xA, int yA)
+\item 
+void \hyperlink{total_8h_a22f6d4c2e2023fe2d6298a445f814bb6}{positionzero} ()
+\item 
+void \hyperlink{total_8h_a5f1586659681cf692359f7c8c003dd8b}{init\+\_\+map} ()
+\item 
+void \hyperlink{total_8h_aa135a4ff5a19ec65929390e67987df7f}{affichage} (W\+I\+N\+D\+OW $\ast$fenetre)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}affichage de la map de jeu. \end{DoxyCompactList}\item 
+void \hyperlink{total_8h_a317d466d2122b6abe466c26b5be50399}{Win\+\_\+\+Stat} (W\+I\+N\+D\+OW $\ast$fenetre, int widthF)
+\begin{DoxyCompactList}\small\item\em Affichage de la fenêtre contenant les statistiques et les commandes. \end{DoxyCompactList}\item 
+void \hyperlink{total_8h_abdd5e5efeb13d099b4b5591ccbb11fd8}{effacer\+\_\+ligne} (W\+I\+N\+D\+OW $\ast$chatwin, int ligne\+\_\+effacer)
+\begin{DoxyCompactList}\small\item\em Fonction qui sert a effacer une ligne d\textquotesingle{}une fenetre donner en parametre. \end{DoxyCompactList}\item 
+void \hyperlink{total_8h_aee718d7c11e76f5643cf189dbd127d44}{effacer\+\_\+fenetre} (W\+I\+N\+D\+OW $\ast$chatwin)
+\begin{DoxyCompactList}\small\item\em Fonction qui sert a effacer une fenetre donner en parametre. \end{DoxyCompactList}\item 
+void \hyperlink{total_8h_ac6641cfc9695f82e9312436f98718d6a}{ecrire\+\_\+chat} (W\+I\+N\+D\+OW $\ast$chatwin, int position\+\_\+perso)
+\begin{DoxyCompactList}\small\item\em Fonction qui sert a ecrire dans le chat. \end{DoxyCompactList}\item 
+int \hyperlink{total_8h_a1e005a6d0d9514779d721253c507d82e}{Placer\+\_\+uplevel} ()\hypertarget{total_8h_a1e005a6d0d9514779d721253c507d82e}{}\label{total_8h_a1e005a6d0d9514779d721253c507d82e}
+
+\begin{DoxyCompactList}\small\item\em Place l\textquotesingle{}escalier. \end{DoxyCompactList}\item 
+int \hyperlink{total_8h_a18415ca5d0e4f93c9848c1c4159c9269}{Placer\+\_\+perso} ()\hypertarget{total_8h_a18415ca5d0e4f93c9848c1c4159c9269}{}\label{total_8h_a18415ca5d0e4f93c9848c1c4159c9269}
+
+\begin{DoxyCompactList}\small\item\em Place le personnage. \end{DoxyCompactList}\item 
+int \hyperlink{total_8h_aa42ac97fd8ac7c2da2ac000a9ce23033}{Placer\+\_\+cle} ()\hypertarget{total_8h_aa42ac97fd8ac7c2da2ac000a9ce23033}{}\label{total_8h_aa42ac97fd8ac7c2da2ac000a9ce23033}
+
+\begin{DoxyCompactList}\small\item\em Place la clé \end{DoxyCompactList}\item 
+int \hyperlink{total_8h_a4dfe9f70b81947e7e096f73d8b3b7ce0}{Placer\+\_\+monstre} ()\hypertarget{total_8h_a4dfe9f70b81947e7e096f73d8b3b7ce0}{}\label{total_8h_a4dfe9f70b81947e7e096f73d8b3b7ce0}
+
+\begin{DoxyCompactList}\small\item\em Place le monstre. \end{DoxyCompactList}\item 
+int \hyperlink{total_8h_aa503c942bf6f17e674ef073954d6e36a}{Placer\+\_\+medikit} ()\hypertarget{total_8h_aa503c942bf6f17e674ef073954d6e36a}{}\label{total_8h_aa503c942bf6f17e674ef073954d6e36a}
+
+\begin{DoxyCompactList}\small\item\em Place le medikit. \end{DoxyCompactList}\item 
+int \hyperlink{total_8h_ab5c6b4f85fb187b74bc7f68ea4e83def}{Placer\+\_\+piege} ()\hypertarget{total_8h_ab5c6b4f85fb187b74bc7f68ea4e83def}{}\label{total_8h_ab5c6b4f85fb187b74bc7f68ea4e83def}
+
+\begin{DoxyCompactList}\small\item\em Place les pièges. \end{DoxyCompactList}\item 
+int \hyperlink{total_8h_a5ad2aaa7d9bf8c8f36669a50a89b6e77}{Placer\+\_\+food} ()\hypertarget{total_8h_a5ad2aaa7d9bf8c8f36669a50a89b6e77}{}\label{total_8h_a5ad2aaa7d9bf8c8f36669a50a89b6e77}
+
+\begin{DoxyCompactList}\small\item\em Place la nourriture. \end{DoxyCompactList}\item 
+int \hyperlink{total_8h_a6beebfd47f154a9030028950fcb0ef25}{test\+\_\+depl} (int c)
+\begin{DoxyCompactList}\small\item\em Fonction qui sert tester le deplacement du joueur en fonction du deplacement choisi par l\textquotesingle{}utilisateur. \end{DoxyCompactList}\item 
+int \hyperlink{total_8h_a1eae5c3e18ec44368d556cc8c31dc246}{Depl\+\_\+perso} (W\+I\+N\+D\+OW $\ast$fenetre)
+\begin{DoxyCompactList}\small\item\em Fonction qui sert déplacer le joueur et à gerer les différentes actions en fonction de l\textquotesingle{}endroit ou se déplace le joueur. \end{DoxyCompactList}\item 
+void {\bfseries porte\+\_\+escalier} (W\+I\+N\+D\+OW $\ast$chatfenetre, W\+I\+N\+D\+OW $\ast$mapfenetre, W\+I\+N\+D\+OW $\ast$statfenetre, int utilisateur)\hypertarget{total_8h_adb428603c79b0d3add7d02068a6cbb29}{}\label{total_8h_adb428603c79b0d3add7d02068a6cbb29}
+
+\item 
+int {\bfseries Ask\+\_\+\+Load\+\_\+\+Save} ()\hypertarget{total_8h_a9504dff7d07fdbbc6d85d6d232e41953}{}\label{total_8h_a9504dff7d07fdbbc6d85d6d232e41953}
+
+\item 
+int {\bfseries Charger\+\_\+\+Sauvegarde} ()\hypertarget{total_8h_ab83d71f04ee8b9a3448d6d796d66c100}{}\label{total_8h_ab83d71f04ee8b9a3448d6d796d66c100}
+
+\item 
+void \hyperlink{total_8h_a7bc6ae0098ba0d4cafbf96e91791ea9e}{addsauv} ()
+\item 
+void {\bfseries debut\+\_\+game} (W\+I\+N\+D\+OW $\ast$S\+\_\+win, W\+I\+N\+D\+OW $\ast$T\+\_\+win, W\+I\+N\+D\+OW $\ast$F\+\_\+win)\hypertarget{total_8h_a8e8b9ad6bfe92cf5ff9aa02ea6155188}{}\label{total_8h_a8e8b9ad6bfe92cf5ff9aa02ea6155188}
+
+\item 
+int \hyperlink{total_8h_a4c93e2beaa0b3706bdeca4a063edfd96}{fin\+\_\+game} (W\+I\+N\+D\+OW $\ast$chat\+\_\+\+Win, W\+I\+N\+D\+OW $\ast$map\+\_\+\+Win, W\+I\+N\+D\+OW $\ast$stat\+\_\+\+Win)
+\begin{DoxyCompactList}\small\item\em Fonction qui sert à gerer la fin de la partie. \end{DoxyCompactList}\item 
+void {\bfseries init\+\_\+presence} ()\hypertarget{total_8h_a2949d0a36197040b52dab62f2e29e799}{}\label{total_8h_a2949d0a36197040b52dab62f2e29e799}
+
+\item 
+int {\bfseries calcul\+\_\+presence} (int ligne, int colonne)\hypertarget{total_8h_a17d2a4064c6ce696b64e517fb2d1ad6b}{}\label{total_8h_a17d2a4064c6ce696b64e517fb2d1ad6b}
+
+\item 
+void {\bfseries depl\+\_\+monstre} ()\hypertarget{total_8h_a8d898e1dfe6e7f67758297f1f3fd1e0d}{}\label{total_8h_a8d898e1dfe6e7f67758297f1f3fd1e0d}
+
+\item 
+void {\bfseries combat} ()\hypertarget{total_8h_aa3925abcb5f99301febec81edc375e84}{}\label{total_8h_aa3925abcb5f99301febec81edc375e84}
+
+\item 
+void {\bfseries init\+\_\+file} ()\hypertarget{total_8h_ad927fffeb22d0ed497e2f8680f7d99a5}{}\label{total_8h_ad927fffeb22d0ed497e2f8680f7d99a5}
+
+\item 
+int {\bfseries file\+\_\+vide} (void)\hypertarget{total_8h_a3d6bb4e8924e8fba762f7ce6d0204a0f}{}\label{total_8h_a3d6bb4e8924e8fba762f7ce6d0204a0f}
+
+\item 
+void {\bfseries ajouter} (\hyperlink{structt__coord}{t\+\_\+coord} coord)\hypertarget{total_8h_ad93c2e5a376af34fb3094898d7e19376}{}\label{total_8h_ad93c2e5a376af34fb3094898d7e19376}
+
+\item 
+void {\bfseries retirer} (\hyperlink{structt__coord}{t\+\_\+coord} $\ast$coord)\hypertarget{total_8h_a7859e47a036c909e0509a21e299a66cd}{}\label{total_8h_a7859e47a036c909e0509a21e299a66cd}
+
+\item 
+void {\bfseries queue\+\_\+file} (\hyperlink{structt__coord}{t\+\_\+coord} $\ast$coord)\hypertarget{total_8h_a70e72cd8cb68736fbe46e5e471ad6dcb}{}\label{total_8h_a70e72cd8cb68736fbe46e5e471ad6dcb}
+
+\item 
+void {\bfseries file\+\_\+supprimer} ()\hypertarget{total_8h_a76d0bb16f4edc37765aa3ffda17d448e}{}\label{total_8h_a76d0bb16f4edc37765aa3ffda17d448e}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries nombre\+\_\+salle}\hypertarget{total_8h_a99854e2481c9e6eb3e55820814461a88}{}\label{total_8h_a99854e2481c9e6eb3e55820814461a88}
+
+\item 
+int {\bfseries deplacement}\hypertarget{total_8h_a364120ccb20363e31ebed9450ac86316}{}\label{total_8h_a364120ccb20363e31ebed9450ac86316}
+
+\item 
+int {\bfseries stage\+\_\+cle}\hypertarget{total_8h_ac9137d7a0d835978c2267988eff5f926}{}\label{total_8h_ac9137d7a0d835978c2267988eff5f926}
+
+\item 
+int {\bfseries stage\+\_\+medikit}\hypertarget{total_8h_a3876b15f2ebf5012703abb67ac024238}{}\label{total_8h_a3876b15f2ebf5012703abb67ac024238}
+
+\item 
+int {\bfseries nb\+\_\+deplacement}\hypertarget{total_8h_a56c99d55b455083f7728f8efb72e27e6}{}\label{total_8h_a56c99d55b455083f7728f8efb72e27e6}
+
+\item 
+int {\bfseries mort}\hypertarget{total_8h_a80e06e27760b1b0623a2aac7dc1bc191}{}\label{total_8h_a80e06e27760b1b0623a2aac7dc1bc191}
+
+\item 
+int {\bfseries q}\hypertarget{total_8h_a39ed6f33ae9187d166e4d9d69e456ff9}{}\label{total_8h_a39ed6f33ae9187d166e4d9d69e456ff9}
+
+\item 
+int {\bfseries f}\hypertarget{total_8h_a362077c979b0bb65159c603270e40f70}{}\label{total_8h_a362077c979b0bb65159c603270e40f70}
+
+\item 
+\hyperlink{structt__joueur}{t\+\_\+joueur} \hyperlink{total_8h_a7ceef52b18732e046b145a429b37a790}{joueur}
+\begin{DoxyCompactList}\small\item\em variable joueur de type \hyperlink{structt__joueur}{t\+\_\+joueur}. \end{DoxyCompactList}\item 
+\hyperlink{structt__monstre}{t\+\_\+monstre} \hyperlink{total_8h_a95e8a3620a94a4ebfeea1bffb6a52f16}{monstre}
+\begin{DoxyCompactList}\small\item\em variable monstre de type t\+\_\+monstres. \end{DoxyCompactList}\item 
+\hyperlink{structt__cellule}{t\+\_\+cellule} {\bfseries M\+AP} \mbox{[}x\mbox{]}\mbox{[}y\mbox{]}\hypertarget{total_8h_a638de9b67bdeeed87d5e0e5330376dd2}{}\label{total_8h_a638de9b67bdeeed87d5e0e5330376dd2}
+
+\item 
+\hyperlink{structt__elemfile}{t\+\_\+elemfile} $\ast$ {\bfseries tete}\hypertarget{total_8h_a38171a1f89a616b0b751ac76c9aecb07}{}\label{total_8h_a38171a1f89a616b0b751ac76c9aecb07}
+
+\item 
+\hyperlink{structt__elemfile}{t\+\_\+elemfile} $\ast$ {\bfseries queue}\hypertarget{total_8h_a40bff66c14319ca9ab2d22dc7f8d0374}{}\label{total_8h_a40bff66c14319ca9ab2d22dc7f8d0374}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+fichier contenant tous les entêtes des fonctions utilent pour le jeu. 
+
+\begin{DoxyAuthor}{Author}
+T\+R\+O\+T\+I\+I\+ER Arthur 
+
+L\+A\+R\+DY Anthony 
+
+S\+E\+B\+I\+L\+LE Florian 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+1 
+\end{DoxyVersion}
+
+
+\subsection{Enumeration Type Documentation}
+\index{total.\+h@{total.\+h}!t\+\_\+element@{t\+\_\+element}}
+\index{t\+\_\+element@{t\+\_\+element}!total.\+h@{total.\+h}}
+\subsubsection[{\texorpdfstring{t\+\_\+element}{t_element}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf t\+\_\+element}}\hypertarget{total_8h_a8b071baf43ce73c99f88fc8169b0514d}{}\label{total_8h_a8b071baf43ce73c99f88fc8169b0514d}
+
+
+type enumeration pour les cellules. 
+
+t\+\_\+element est un type enum qui sert a définir ce qu\textquotesingle{}une cellule contient par exemple un mur, le sol, le joueur etc. 
+
+\subsection{Function Documentation}
+\index{total.\+h@{total.\+h}!addsauv@{addsauv}}
+\index{addsauv@{addsauv}!total.\+h@{total.\+h}}
+\subsubsection[{\texorpdfstring{addsauv()}{addsauv()}}]{\setlength{\rightskip}{0pt plus 5cm}void addsauv (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{total_8h_a7bc6ae0098ba0d4cafbf96e91791ea9e}{}\label{total_8h_a7bc6ae0098ba0d4cafbf96e91791ea9e}
+$<$ Créer un fichier Save.\+txt.
+
+Copie toutes les statistiques du joueur
+
+Copie les informations générales du jeu
+
+Copie les statistiques du monstre
+
+Parcours la carte et copie le type de lieu de chaque cellule
+
+Parcours la carte et copie les coordonées de la porte ainsi que celle avec qui elle est reliée
+
+$<$ Fermeture du fichier Save.\+txt. \index{total.\+h@{total.\+h}!affichage@{affichage}}
+\index{affichage@{affichage}!total.\+h@{total.\+h}}
+\subsubsection[{\texorpdfstring{affichage(\+W\+I\+N\+D\+O\+W $\ast$fenetre)}{affichage(WINDOW *fenetre)}}]{\setlength{\rightskip}{0pt plus 5cm}void affichage (
+\begin{DoxyParamCaption}
+\item[{W\+I\+N\+D\+OW $\ast$}]{fenetre}
+\end{DoxyParamCaption}
+)}\hypertarget{total_8h_aa135a4ff5a19ec65929390e67987df7f}{}\label{total_8h_aa135a4ff5a19ec65929390e67987df7f}
+
+
+Fonction d\textquotesingle{}affichage de la map de jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fenetre} & contenant la map. \\
+\hline
+\end{DoxyParams}
+$<$ Parcour de la matrice pour afficher dans la fenetre les diferents elements.
+
+$<$ affichage du vide en dehors des salle et des couloirs.
+
+$<$ affichage des couloirs qui relie les différentes salles.
+
+$<$ affichage des portes qui se situe a l\textquotesingle{}entrer des couloirs.
+
+$<$ affichage des escaliers qui font la liaisons entre les etages.
+
+$<$ affichage du sol des salles.
+
+$<$ affichage des murs qui délimittes les salles.
+
+$<$ afficge des pièges qui si on marche dessus provoque la mort.
+
+$<$ affichage du personnage.
+
+$<$ affichage de l\textquotesingle{}arriver.
+
+$<$ affichage de la nouriture.
+
+$<$ affichage de la clé.
+
+$<$ affichage des différents monstres.
+
+$<$ affichage des medikits.
+
+$<$ rafrechit la fenetre contenant la map. \index{total.\+h@{total.\+h}!create\+\_\+newwin@{create\+\_\+newwin}}
+\index{create\+\_\+newwin@{create\+\_\+newwin}!total.\+h@{total.\+h}}
+\subsubsection[{\texorpdfstring{create\+\_\+newwin(int height, int width, int starty, int startx, char $\ast$label)}{create_newwin(int height, int width, int starty, int startx, char *label)}}]{\setlength{\rightskip}{0pt plus 5cm}W\+I\+N\+D\+OW$\ast$ create\+\_\+newwin (
+\begin{DoxyParamCaption}
+\item[{int}]{height, }
+\item[{int}]{width, }
+\item[{int}]{starty, }
+\item[{int}]{startx, }
+\item[{char $\ast$}]{label}
+\end{DoxyParamCaption}
+)}\hypertarget{total_8h_aad8b078266a04e606d5306baa9e66dd6}{}\label{total_8h_aad8b078266a04e606d5306baa9e66dd6}
+
+
+Création d\textquotesingle{}une fenêtre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & Hauteur de la fenêtre \\
+\hline
+{\em width} & Largeur de la fenêtre \\
+\hline
+{\em starty} & Début de la fenêtre sur l\textquotesingle{}axe des y \\
+\hline
+{\em startx} & Début de la fenêtre sur l\textquotesingle{}axe des x \\
+\hline
+{\em label} & Nom de la fenêtre \\
+\hline
+\end{DoxyParams}
+\index{total.\+h@{total.\+h}!Depl\+\_\+perso@{Depl\+\_\+perso}}
+\index{Depl\+\_\+perso@{Depl\+\_\+perso}!total.\+h@{total.\+h}}
+\subsubsection[{\texorpdfstring{Depl\+\_\+perso(\+W\+I\+N\+D\+O\+W $\ast$fenetre)}{Depl_perso(WINDOW *fenetre)}}]{\setlength{\rightskip}{0pt plus 5cm}int Depl\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{W\+I\+N\+D\+OW $\ast$}]{fenetre}
+\end{DoxyParamCaption}
+)}\hypertarget{total_8h_a1eae5c3e18ec44368d556cc8c31dc246}{}\label{total_8h_a1eae5c3e18ec44368d556cc8c31dc246}
+
+
+Fonction qui sert déplacer le joueur et à gerer les différentes actions en fonction de l\textquotesingle{}endroit ou se déplace le joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fenetre} & ou se situe la map du jeu. \\
+\hline
+\end{DoxyParams}
+\index{total.\+h@{total.\+h}!destroy\+\_\+win@{destroy\+\_\+win}}
+\index{destroy\+\_\+win@{destroy\+\_\+win}!total.\+h@{total.\+h}}
+\subsubsection[{\texorpdfstring{destroy\+\_\+win(\+W\+I\+N\+D\+O\+W $\ast$local\+\_\+win)}{destroy_win(WINDOW *local_win)}}]{\setlength{\rightskip}{0pt plus 5cm}void destroy\+\_\+win (
+\begin{DoxyParamCaption}
+\item[{W\+I\+N\+D\+OW $\ast$}]{local\+\_\+win}
+\end{DoxyParamCaption}
+)}\hypertarget{total_8h_ada66364dd2a35d4c59586818d91dfcf8}{}\label{total_8h_ada66364dd2a35d4c59586818d91dfcf8}
+
+
+Destruction d\textquotesingle{}une fenêtre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em local\+\_\+win} & Fenêtre que l\textquotesingle{}on souhaite supprimer \\
+\hline
+\end{DoxyParams}
+\index{total.\+h@{total.\+h}!ecrire\+\_\+chat@{ecrire\+\_\+chat}}
+\index{ecrire\+\_\+chat@{ecrire\+\_\+chat}!total.\+h@{total.\+h}}
+\subsubsection[{\texorpdfstring{ecrire\+\_\+chat(\+W\+I\+N\+D\+O\+W $\ast$chatwin, int position\+\_\+perso)}{ecrire_chat(WINDOW *chatwin, int position_perso)}}]{\setlength{\rightskip}{0pt plus 5cm}void ecrire\+\_\+chat (
+\begin{DoxyParamCaption}
+\item[{W\+I\+N\+D\+OW $\ast$}]{chatwin, }
+\item[{int}]{position\+\_\+perso}
+\end{DoxyParamCaption}
+)}\hypertarget{total_8h_ac6641cfc9695f82e9312436f98718d6a}{}\label{total_8h_ac6641cfc9695f82e9312436f98718d6a}
+
+
+Fonction qui sert a ecrire dans le chat. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chatwin} & fenetre ou se situe la ligne a effacer. \\
+\hline
+{\em position\+\_\+perso} & permet de choisir ce que l\textquotesingle{}on ecrit dans le chat. \\
+\hline
+\end{DoxyParams}
+\index{total.\+h@{total.\+h}!effacer\+\_\+fenetre@{effacer\+\_\+fenetre}}
+\index{effacer\+\_\+fenetre@{effacer\+\_\+fenetre}!total.\+h@{total.\+h}}
+\subsubsection[{\texorpdfstring{effacer\+\_\+fenetre(\+W\+I\+N\+D\+O\+W $\ast$chatwin)}{effacer_fenetre(WINDOW *chatwin)}}]{\setlength{\rightskip}{0pt plus 5cm}void effacer\+\_\+fenetre (
+\begin{DoxyParamCaption}
+\item[{W\+I\+N\+D\+OW $\ast$}]{chatwin}
+\end{DoxyParamCaption}
+)}\hypertarget{total_8h_aee718d7c11e76f5643cf189dbd127d44}{}\label{total_8h_aee718d7c11e76f5643cf189dbd127d44}
+
+
+Fonction qui sert a effacer une fenetre donner en parametre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chatwin} & fenetre a effacer. \\
+\hline
+\end{DoxyParams}
+\index{total.\+h@{total.\+h}!effacer\+\_\+ligne@{effacer\+\_\+ligne}}
+\index{effacer\+\_\+ligne@{effacer\+\_\+ligne}!total.\+h@{total.\+h}}
+\subsubsection[{\texorpdfstring{effacer\+\_\+ligne(\+W\+I\+N\+D\+O\+W $\ast$chatwin, int ligne\+\_\+effacer)}{effacer_ligne(WINDOW *chatwin, int ligne_effacer)}}]{\setlength{\rightskip}{0pt plus 5cm}void effacer\+\_\+ligne (
+\begin{DoxyParamCaption}
+\item[{W\+I\+N\+D\+OW $\ast$}]{chatwin, }
+\item[{int}]{ligne\+\_\+effacer}
+\end{DoxyParamCaption}
+)}\hypertarget{total_8h_abdd5e5efeb13d099b4b5591ccbb11fd8}{}\label{total_8h_abdd5e5efeb13d099b4b5591ccbb11fd8}
+
+
+Fonction qui sert a effacer une ligne d\textquotesingle{}une fenetre donner en parametre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chatwin} & fenetre ou se situe la ligne a effacer. \\
+\hline
+{\em ligne\+\_\+effacer} & ligne a effacer. \\
+\hline
+\end{DoxyParams}
+\index{total.\+h@{total.\+h}!fillmap@{fillmap}}
+\index{fillmap@{fillmap}!total.\+h@{total.\+h}}
+\subsubsection[{\texorpdfstring{fillmap()}{fillmap()}}]{\setlength{\rightskip}{0pt plus 5cm}void fillmap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{total_8h_a335000c114fc4b079d487e53b156ef57}{}\label{total_8h_a335000c114fc4b079d487e53b156ef57}
+qui met la carte (matrice) à l\textquotesingle{}état 0 \index{total.\+h@{total.\+h}!fin\+\_\+game@{fin\+\_\+game}}
+\index{fin\+\_\+game@{fin\+\_\+game}!total.\+h@{total.\+h}}
+\subsubsection[{\texorpdfstring{fin\+\_\+game(\+W\+I\+N\+D\+O\+W $\ast$chat\+\_\+\+Win, W\+I\+N\+D\+O\+W $\ast$map\+\_\+\+Win, W\+I\+N\+D\+O\+W $\ast$stat\+\_\+\+Win)}{fin_game(WINDOW *chat_Win, WINDOW *map_Win, WINDOW *stat_Win)}}]{\setlength{\rightskip}{0pt plus 5cm}int fin\+\_\+game (
+\begin{DoxyParamCaption}
+\item[{W\+I\+N\+D\+OW $\ast$}]{chat\+\_\+\+Win, }
+\item[{W\+I\+N\+D\+OW $\ast$}]{map\+\_\+\+Win, }
+\item[{W\+I\+N\+D\+OW $\ast$}]{stat\+\_\+\+Win}
+\end{DoxyParamCaption}
+)}\hypertarget{total_8h_a4c93e2beaa0b3706bdeca4a063edfd96}{}\label{total_8h_a4c93e2beaa0b3706bdeca4a063edfd96}
+
+
+Fonction qui sert à gerer la fin de la partie. 
+
+demander a l\textquotesingle{}utilisateur de rejouer ou quitter et de faire un affichage en fonction de la partie précedente.
+
+
+\begin{DoxyParams}{Parameters}
+{\em chat\+\_\+\+Win} & fenetre ou se situe le chat. \\
+\hline
+{\em map\+\_\+\+Win} & fenetre ou se situe la map du jeu. \\
+\hline
+{\em stat\+\_\+\+Win} & fenetre ou se situe les stats de la partie.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si le joueur veux rejouer 0 si il veux quitter. 
+\end{DoxyReturn}
+\index{total.\+h@{total.\+h}!init\+\_\+map@{init\+\_\+map}}
+\index{init\+\_\+map@{init\+\_\+map}!total.\+h@{total.\+h}}
+\subsubsection[{\texorpdfstring{init\+\_\+map()}{init_map()}}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{total_8h_a5f1586659681cf692359f7c8c003dd8b}{}\label{total_8h_a5f1586659681cf692359f7c8c003dd8b}
+qui initialise une carte totalement aléatoire constituée de salles reliées par des couloirs $<$ On initialise la map à vide
+
+$<$ On remplit la carte d\textquotesingle{}un nombre de salle aléatoire
+
+$<$ On relie les salles entres elles
+
+$<$ Si l\textquotesingle{}on ne se situe pas au premier étage alors on place dans les salles des monstres (fonction se situant dans \hyperlink{Placer__element_8c}{Placer\+\_\+element.\+c})
+
+$<$ On place pour finir des pièges dans les salles (fonction se situant dans \hyperlink{Placer__element_8c}{Placer\+\_\+element.\+c}) \index{total.\+h@{total.\+h}!init\+\_\+room@{init\+\_\+room}}
+\index{init\+\_\+room@{init\+\_\+room}!total.\+h@{total.\+h}}
+\subsubsection[{\texorpdfstring{init\+\_\+room(int num, int nb\+\_\+salle)}{init_room(int num, int nb_salle)}}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+room (
+\begin{DoxyParamCaption}
+\item[{int}]{num, }
+\item[{int}]{nb\+\_\+salle}
+\end{DoxyParamCaption}
+)}\hypertarget{total_8h_a9afc86bc24b2ce3dd6884a52c80fd6ae}{}\label{total_8h_a9afc86bc24b2ce3dd6884a52c80fd6ae}
+$<$ On initialise qu\textquotesingle{}une porte pour la salle de depart et d\textquotesingle{}arrivée
+
+$<$ On vérifie que les portes ne sont pas dans les angles et écartés d\textquotesingle{}au moins 1 entre elles
+
+$<$ On place le mur du haut
+
+$<$ On place les portes de la salle aleatoirement
+
+$<$ On place le mur de droite
+
+$<$ On place le mur du bas
+
+$<$ On place le mur de gauche
+
+$<$ On place le sol à l\textquotesingle{}intérieur de la salle \index{total.\+h@{total.\+h}!positionzero@{positionzero}}
+\index{positionzero@{positionzero}!total.\+h@{total.\+h}}
+\subsubsection[{\texorpdfstring{positionzero()}{positionzero()}}]{\setlength{\rightskip}{0pt plus 5cm}void positionzero (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{total_8h_a22f6d4c2e2023fe2d6298a445f814bb6}{}\label{total_8h_a22f6d4c2e2023fe2d6298a445f814bb6}
+positionzero  qui met à zéro le paramètre position de la carte (matrice) \index{total.\+h@{total.\+h}!relier\+\_\+2\+Portes@{relier\+\_\+2\+Portes}}
+\index{relier\+\_\+2\+Portes@{relier\+\_\+2\+Portes}!total.\+h@{total.\+h}}
+\subsubsection[{\texorpdfstring{relier\+\_\+2\+Portes(int x\+A, int y\+A)}{relier_2Portes(int xA, int yA)}}]{\setlength{\rightskip}{0pt plus 5cm}int relier\+\_\+2\+Portes (
+\begin{DoxyParamCaption}
+\item[{int}]{xA, }
+\item[{int}]{yA}
+\end{DoxyParamCaption}
+)}\hypertarget{total_8h_adf23a078809017af2cc4349ee1fb20dc}{}\label{total_8h_adf23a078809017af2cc4349ee1fb20dc}
+$<$ Utilisation d\textquotesingle{}une file qui utilise le système de flood \& fill pour trouver le chemin le plus court
+
+$<$ Mise à jour des coordonnées de la porte A et B mutuellement reliées entres elles
+
+$<$ Lorsque la porte que l\textquotesingle{}on cherche est trouvée, on fait le chemin inverse pour arriver jusqu\textquotesingle{}a elle \index{total.\+h@{total.\+h}!test\+\_\+depl@{test\+\_\+depl}}
+\index{test\+\_\+depl@{test\+\_\+depl}!total.\+h@{total.\+h}}
+\subsubsection[{\texorpdfstring{test\+\_\+depl(int c)}{test_depl(int c)}}]{\setlength{\rightskip}{0pt plus 5cm}int test\+\_\+depl (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{total_8h_a6beebfd47f154a9030028950fcb0ef25}{}\label{total_8h_a6beebfd47f154a9030028950fcb0ef25}
+
+
+Fonction qui sert tester le deplacement du joueur en fonction du deplacement choisi par l\textquotesingle{}utilisateur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & deplacement choisi par l\textquotesingle{}utilisateur. \\
+\hline
+\end{DoxyParams}
+\index{total.\+h@{total.\+h}!Win\+\_\+\+Stat@{Win\+\_\+\+Stat}}
+\index{Win\+\_\+\+Stat@{Win\+\_\+\+Stat}!total.\+h@{total.\+h}}
+\subsubsection[{\texorpdfstring{Win\+\_\+\+Stat(\+W\+I\+N\+D\+O\+W $\ast$fenetre, int width\+F)}{Win_Stat(WINDOW *fenetre, int widthF)}}]{\setlength{\rightskip}{0pt plus 5cm}void Win\+\_\+\+Stat (
+\begin{DoxyParamCaption}
+\item[{W\+I\+N\+D\+OW $\ast$}]{fenetre, }
+\item[{int}]{widthF}
+\end{DoxyParamCaption}
+)}\hypertarget{total_8h_a317d466d2122b6abe466c26b5be50399}{}\label{total_8h_a317d466d2122b6abe466c26b5be50399}
+
+
+Affichage de la fenêtre contenant les statistiques et les commandes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fenetre} & Fenêtre où les différents éléments(Statistiques/\+Commandes) sont affichés \\
+\hline
+{\em widthF} & Nécessaire pour aligner à droite les statistiques \\
+\hline
+\end{DoxyParams}
+$<$ affichage du nom du joueur.
+
+$<$ affichage de l\textquotesingle{}étage du joueur.
+
+$<$ affichage du niveau du joueur.
+
+$<$ affichage de l\textquotesingle{}expérience du joueur.
+
+$<$ affichage de la vie du joueur.
+
+$<$ affichage de l\textquotesingle{}attaque du joueur.
+
+$<$ affichage de la défense du joueur.
+
+$<$ affichage de l\textquotesingle{}état de faim du joueur.
+
+$<$ affichage de si le joueur possède la clé.
+
+$<$ affichage du symbole de la nourriture.
+
+$<$ affichage du symbole de la clé.
+
+$<$ affichage du symbole du medikit.
+
+$<$ affichage du symbole pour changer de S\+T\+A\+GE.
+
+$<$ affichage du symbole de la porte finale.
+
+$<$ affichage de la touche pour quitter.
+
+$<$ affichage de la touche pour sauvegarder.
+
+$<$ affichage de la touche pour monter.
+
+$<$ affichage de la touche pour descendre.
+
+$<$ affichage de la touche pour aller à droite.
+
+$<$ affichage de la touche pour aller à gauche. 
+
+\subsection{Variable Documentation}
+\index{total.\+h@{total.\+h}!joueur@{joueur}}
+\index{joueur@{joueur}!total.\+h@{total.\+h}}
+\subsubsection[{\texorpdfstring{joueur}{joueur}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+\_\+joueur} joueur}\hypertarget{total_8h_a7ceef52b18732e046b145a429b37a790}{}\label{total_8h_a7ceef52b18732e046b145a429b37a790}
+
+
+variable joueur de type \hyperlink{structt__joueur}{t\+\_\+joueur}. 
+
+la variable joueur contient les différentes données du joueur points de vie, points d\textquotesingle{}attaques, la nouriture, ses coordonnées etc. \index{total.\+h@{total.\+h}!monstre@{monstre}}
+\index{monstre@{monstre}!total.\+h@{total.\+h}}
+\subsubsection[{\texorpdfstring{monstre}{monstre}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\+\_\+monstre} monstre}\hypertarget{total_8h_a95e8a3620a94a4ebfeea1bffb6a52f16}{}\label{total_8h_a95e8a3620a94a4ebfeea1bffb6a52f16}
+
+
+variable monstre de type t\+\_\+monstres. 
+
+la variable monstre contient les différentes données des monstres points de vie, points d\textquotesingle{}attaques etc. 

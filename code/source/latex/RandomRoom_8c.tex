@@ -1,0 +1,110 @@
+\hypertarget{RandomRoom_8c}{}\section{Random\+Room.\+c File Reference}
+\label{RandomRoom_8c}\index{Random\+Room.\+c@{Random\+Room.\+c}}
+
+
+Programme regroupant les fonctions qui génèrent les principales structures du jeu.  
+
+
+{\ttfamily \#include \char`\"{}total.\+h\char`\"{}}\\*
+Include dependency graph for Random\+Room.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries aleat} (int min, int max)\hypertarget{RandomRoom_8c_a09b403bd1c6619a90e88cffae8b52728}{}\label{RandomRoom_8c_a09b403bd1c6619a90e88cffae8b52728}
+
+\item 
+void \hyperlink{RandomRoom_8c_a335000c114fc4b079d487e53b156ef57}{fillmap} ()
+\item 
+int {\bfseries room\+\_\+possible} (int lg\+\_\+mur\+\_\+horiz, int lg\+\_\+mur\+\_\+vert, int posy, int posx)\hypertarget{RandomRoom_8c_a7213b6f4a58d528a141021409ef9abde}{}\label{RandomRoom_8c_a7213b6f4a58d528a141021409ef9abde}
+
+\item 
+void \hyperlink{RandomRoom_8c_a9afc86bc24b2ce3dd6884a52c80fd6ae}{init\+\_\+room} (int num, int nb\+\_\+salle)
+\item 
+int {\bfseries trouver\+\_\+porte} (int $\ast$xA, int $\ast$yA, int salle)\hypertarget{RandomRoom_8c_afe8094b834c754bae83505527a67e93a}{}\label{RandomRoom_8c_afe8094b834c754bae83505527a67e93a}
+
+\item 
+int \hyperlink{RandomRoom_8c_adf23a078809017af2cc4349ee1fb20dc}{relier\+\_\+2\+Portes} (int xA, int yA)
+\item 
+void \hyperlink{RandomRoom_8c_a22f6d4c2e2023fe2d6298a445f814bb6}{positionzero} ()
+\item 
+void \hyperlink{RandomRoom_8c_a5f1586659681cf692359f7c8c003dd8b}{init\+\_\+map} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Programme regroupant les fonctions qui génèrent les principales structures du jeu. 
+
+\begin{DoxyAuthor}{Author}
+T\+R\+O\+T\+T\+I\+ER Arthur 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+1 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\index{Random\+Room.\+c@{Random\+Room.\+c}!fillmap@{fillmap}}
+\index{fillmap@{fillmap}!Random\+Room.\+c@{Random\+Room.\+c}}
+\subsubsection[{\texorpdfstring{fillmap()}{fillmap()}}]{\setlength{\rightskip}{0pt plus 5cm}void fillmap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{RandomRoom_8c_a335000c114fc4b079d487e53b156ef57}{}\label{RandomRoom_8c_a335000c114fc4b079d487e53b156ef57}
+qui met la carte (matrice) à l\textquotesingle{}état 0 \index{Random\+Room.\+c@{Random\+Room.\+c}!init\+\_\+map@{init\+\_\+map}}
+\index{init\+\_\+map@{init\+\_\+map}!Random\+Room.\+c@{Random\+Room.\+c}}
+\subsubsection[{\texorpdfstring{init\+\_\+map()}{init_map()}}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{RandomRoom_8c_a5f1586659681cf692359f7c8c003dd8b}{}\label{RandomRoom_8c_a5f1586659681cf692359f7c8c003dd8b}
+qui initialise une carte totalement aléatoire constituée de salles reliées par des couloirs $<$ On initialise la map à vide
+
+$<$ On remplit la carte d\textquotesingle{}un nombre de salle aléatoire
+
+$<$ On relie les salles entres elles
+
+$<$ Si l\textquotesingle{}on ne se situe pas au premier étage alors on place dans les salles des monstres (fonction se situant dans \hyperlink{Placer__element_8c}{Placer\+\_\+element.\+c})
+
+$<$ On place pour finir des pièges dans les salles (fonction se situant dans \hyperlink{Placer__element_8c}{Placer\+\_\+element.\+c}) \index{Random\+Room.\+c@{Random\+Room.\+c}!init\+\_\+room@{init\+\_\+room}}
+\index{init\+\_\+room@{init\+\_\+room}!Random\+Room.\+c@{Random\+Room.\+c}}
+\subsubsection[{\texorpdfstring{init\+\_\+room(int num, int nb\+\_\+salle)}{init_room(int num, int nb_salle)}}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+room (
+\begin{DoxyParamCaption}
+\item[{int}]{num, }
+\item[{int}]{nb\+\_\+salle}
+\end{DoxyParamCaption}
+)}\hypertarget{RandomRoom_8c_a9afc86bc24b2ce3dd6884a52c80fd6ae}{}\label{RandomRoom_8c_a9afc86bc24b2ce3dd6884a52c80fd6ae}
+$<$ On initialise qu\textquotesingle{}une porte pour la salle de depart et d\textquotesingle{}arrivée
+
+$<$ On vérifie que les portes ne sont pas dans les angles et écartés d\textquotesingle{}au moins 1 entre elles
+
+$<$ On place le mur du haut
+
+$<$ On place les portes de la salle aleatoirement
+
+$<$ On place le mur de droite
+
+$<$ On place le mur du bas
+
+$<$ On place le mur de gauche
+
+$<$ On place le sol à l\textquotesingle{}intérieur de la salle \index{Random\+Room.\+c@{Random\+Room.\+c}!positionzero@{positionzero}}
+\index{positionzero@{positionzero}!Random\+Room.\+c@{Random\+Room.\+c}}
+\subsubsection[{\texorpdfstring{positionzero()}{positionzero()}}]{\setlength{\rightskip}{0pt plus 5cm}void positionzero (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{RandomRoom_8c_a22f6d4c2e2023fe2d6298a445f814bb6}{}\label{RandomRoom_8c_a22f6d4c2e2023fe2d6298a445f814bb6}
+positionzero  qui met à zéro le paramètre position de la carte (matrice) \index{Random\+Room.\+c@{Random\+Room.\+c}!relier\+\_\+2\+Portes@{relier\+\_\+2\+Portes}}
+\index{relier\+\_\+2\+Portes@{relier\+\_\+2\+Portes}!Random\+Room.\+c@{Random\+Room.\+c}}
+\subsubsection[{\texorpdfstring{relier\+\_\+2\+Portes(int x\+A, int y\+A)}{relier_2Portes(int xA, int yA)}}]{\setlength{\rightskip}{0pt plus 5cm}int relier\+\_\+2\+Portes (
+\begin{DoxyParamCaption}
+\item[{int}]{xA, }
+\item[{int}]{yA}
+\end{DoxyParamCaption}
+)}\hypertarget{RandomRoom_8c_adf23a078809017af2cc4349ee1fb20dc}{}\label{RandomRoom_8c_adf23a078809017af2cc4349ee1fb20dc}
+$<$ Utilisation d\textquotesingle{}une file qui utilise le système de flood \& fill pour trouver le chemin le plus court
+
+$<$ Mise à jour des coordonnées de la porte A et B mutuellement reliées entres elles
+
+$<$ Lorsque la porte que l\textquotesingle{}on cherche est trouvée, on fait le chemin inverse pour arriver jusqu\textquotesingle{}a elle 
