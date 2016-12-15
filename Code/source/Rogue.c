@@ -1,3 +1,18 @@
+/* Documentation tag for Doxygen
+ */
+
+/*! \mainpage ExtremRoguelike Documentation
+ *
+ * \section intro_sec Introduction
+ *
+ * Dans le cadre du projet du semestre 3 de L2 nous avons du céer un jeux.
+ * Nous avons donc travailler en groupe de 3 personnes pour ce jeux 
+ *
+ * <BR><BR>
+ *
+ */
+
+
 /**
  * \file Rogue.c
  * \brief Programme principal du jeu.

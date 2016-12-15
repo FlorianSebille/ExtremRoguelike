@@ -8,6 +8,7 @@ var searchData=
   ['placer_5fperso',['Placer_perso',['../Placer__element_8c.html#a18415ca5d0e4f93c9848c1c4159c9269',1,'Placer_perso():&#160;Placer_element.c'],['../total_8h.html#a18415ca5d0e4f93c9848c1c4159c9269',1,'Placer_perso():&#160;Placer_element.c']]],
   ['placer_5fpiege',['Placer_piege',['../Placer__element_8c.html#ab5c6b4f85fb187b74bc7f68ea4e83def',1,'Placer_piege():&#160;Placer_element.c'],['../total_8h.html#ab5c6b4f85fb187b74bc7f68ea4e83def',1,'Placer_piege():&#160;Placer_element.c']]],
   ['placer_5fuplevel',['Placer_uplevel',['../Placer__element_8c.html#a1e005a6d0d9514779d721253c507d82e',1,'Placer_uplevel():&#160;Placer_element.c'],['../total_8h.html#a1e005a6d0d9514779d721253c507d82e',1,'Placer_uplevel():&#160;Placer_element.c']]],
+  ['porte_5fescalier',['porte_escalier',['../porte__ou__escalier_8c.html#adb428603c79b0d3add7d02068a6cbb29',1,'porte_escalier(WINDOW *chatfenetre, WINDOW *mapfenetre, WINDOW *statfenetre, int utilisateur):&#160;porte_ou_escalier.c'],['../total_8h.html#adb428603c79b0d3add7d02068a6cbb29',1,'porte_escalier(WINDOW *chatfenetre, WINDOW *mapfenetre, WINDOW *statfenetre, int utilisateur):&#160;porte_ou_escalier.c']]],
   ['porte_5fou_5fescalier_2ec',['porte_ou_escalier.c',['../porte__ou__escalier_8c.html',1,'']]],
   ['positionzero',['positionzero',['../RandomRoom_8c.html#a22f6d4c2e2023fe2d6298a445f814bb6',1,'positionzero():&#160;RandomRoom.c'],['../total_8h.html#a22f6d4c2e2023fe2d6298a445f814bb6',1,'positionzero():&#160;RandomRoom.c']]]
 ];
