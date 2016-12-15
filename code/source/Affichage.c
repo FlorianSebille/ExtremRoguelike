@@ -1,8 +1,7 @@
 /**
  * \file Affichage.c
- * \brief Affichage des différentes fenêtres
+ * \brief Fichier contenant les affichages des différentes fenêtres
  * \author LARDY Anthony
- * \author TROTTIER Arthur
  * \author SEBILLE Florian
  * \version 1.0.1
  */

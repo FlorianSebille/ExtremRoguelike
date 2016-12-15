@@ -153,7 +153,7 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, WINDOW *statfenetre,
 int Ask_Load_Save();
 
 //dans le fichier Charger_Sauvegarde.c
-int Charger_Sauvegarde();
+int Charger_Sauvegarde(WINDOW *fenetre);
 
 void addsauv();
 
@@ -162,9 +162,6 @@ void debut_game(WINDOW *S_win, WINDOW *T_win, WINDOW *F_win);
 int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win);
 
 //dans le fichier monstre.c
-void init_presence();
-
-int calcul_presence(int ligne, int colonne);
 
 void depl_monstre();
 

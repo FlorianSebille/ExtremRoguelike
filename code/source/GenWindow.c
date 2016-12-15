@@ -1,9 +1,7 @@
 /**
  * \file GenWindow.c
- * \brief Création d'une fenêtre
- * \author LARDY Anthony
+ * \brief Programme regroupant les fonctions pour créer et détruire une fenêtre
  * \author TROTTIER Arthur
- * \author SEBILLE Florian
  * \version 1.0.1
  */
 

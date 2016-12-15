@@ -1,7 +1,7 @@
 
 /**
  * \file fin_de_la_partie.c
- * \brief Programme contenant la fonctions gérant le fin de la partie
+ * \brief Programme contenant la fonction pour créer une fenêtre
  * \author SEBILLE Florian
  * \version 1.0.1
  */
@@ -45,7 +45,7 @@ int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win){
     mvwprintw(fin_Win,6,16," 	| || || | ___ | | |   | |   | / _ \\|  _ \\| ___ | " );
     mvwprintw(fin_Win,7,16," 	| || || | ____| | |   | |__/ / |_| | | | | ____| " );
     mvwprintw(fin_Win,8,16," 	\\______/|_____)\\_)_)  |_____/ \\___/|_| |_|_____)  " );
-		mvwprintw(fin_Win,11,24,"Vous avez reussi a atteindre l'arriver avec la clé");
+		mvwprintw(fin_Win,11,24,"Vous avez reussi a atteindre l'arrivé avec la clé");
 
 		wattron(chat_Win, COLOR_PAIR(9));
 		mvwprintw(chat_Win,4,1,"	      OOOOOOOO		 ");
@@ -76,7 +76,7 @@ int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win){
     mvwprintw(fin_Win,7,16," | |___) / ___ | | | | ____|  | |___| |\\ V /| ____| |     " );
     mvwprintw(fin_Win,8,16," \\______/\\_____|_|_|_|_____)   \\_____/  \\_/ |_____)_|      " );
 
-		mvwprintw(fin_Win,11,27,"Dommage, il semblerait que vous etes mort");
+		mvwprintw(fin_Win,11,27,"Dommage, il semblerait que vous êtes mort");
 
 		mvwprintw(chat_Win,4,5,"           uuuuuuu");
 		mvwprintw(chat_Win,5,5,"      uu$$$$$$$$$$$uu");
