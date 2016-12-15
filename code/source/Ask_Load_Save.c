@@ -1,5 +1,20 @@
+/**
+ * \file Ask_Load_Save.c
+ * \brief Programme gérant l'affichage de la fenêtre de début de partie
+ * \author LARDY Anthony
+ * \author SEBILLE Florian
+ * \version 1.0.1
+ */
+ 
+ 
 #include "total.h"
 
+
+/**
+  * \brief Affichage de la fenêtre de début de partie
+  * \fn int Ask_Load_Save()
+  * \return choix du joueur
+  */
 int Ask_Load_Save(){
 	int startxSave, startySave, widthSave, heightSave;
 	int startxStart, startyStart, widthStart, heightStart;
@@ -24,7 +39,7 @@ int Ask_Load_Save(){
 	widthRules = 40;
 	startxRules = 5;
 	startyRules = 11;
-	Start_Win=create_newwin(heightStart,widthStart,startyStart,startxStart,"Roguelike");
+	Start_Win=create_newwin(heightStart,widthStart,startyStart,startxStart,"Roguelike");  /*!< Création de la fenêtre Roguelike */
 	mvwprintw(Start_Win,10,138,",-.");
 	mvwprintw(Start_Win,11,118,"___,---.__         /'|`\\          __,---,___" );
 	mvwprintw(Start_Win,12,115,",-'    \\`    `-.____,-' |  `-.____,-'    //    `-." );
@@ -49,7 +64,7 @@ int Ask_Load_Save(){
 	mvwprintw(Start_Win,7,55,"| |  \\ \\ |_| ( (_| | |_| | ____| || |  _ (| ____|");
 	mvwprintw(Start_Win,8,55,"|_|   |_\\___/ \\___ |____/|_____)\\_)_|_| \\_)_____)");
 	mvwprintw(Start_Win,9,55,"             (_____|                             ");
-	Rules_Win=create_newwin(heightRules,widthRules,startyRules,startxRules,"Rules");
+	Rules_Win=create_newwin(heightRules,widthRules,startyRules,startxRules,"Rules");	/*!< Création de la fenêtre contenant les règles */
 	mvwprintw(Rules_Win,2,2,"Cher Joueur,");
 	mvwprintw(Rules_Win,3,2,"afin de profiter au maximum de");
 	mvwprintw(Rules_Win,4,2,"l'expérience de jeu, nous te");
@@ -62,7 +77,7 @@ int Ask_Load_Save(){
 	mvwprintw(Rules_Win,13,2,"tous les dangers afin de t'emparer");
 	mvwprintw(Rules_Win,14,2,"de la clé et gravir tous les étages");
 	mvwprintw(Rules_Win,15,2,"pour ne pas finir en tas d'os.");
-	Save_Win=create_newwin(heightSave,widthSave,startySave,startxSave,"Sauvegarde");
+	Save_Win=create_newwin(heightSave,widthSave,startySave,startxSave,"Sauvegarde");	/*!< Création de la fenêtre demandant de charger une partie */
 	mvwprintw(Save_Win,2,2,"Voulez vous charger une partie sauvegardée ?");
 	mvwprintw(Save_Win,6,19,"o : Oui");
 	mvwprintw(Save_Win,6,widthSave*0.60,"n : Non");
@@ -72,7 +87,7 @@ int Ask_Load_Save(){
 	do{
 		choix = getch();
 	}while(choix != 'n' && choix != 'o');
-	if(choix == 'n'){
+	if(choix == 'n'){		/*!< Une nouvelle partie va être crée */
 
 			echo();
 			effacer_fenetre(Save_Win);
@@ -83,9 +98,8 @@ int Ask_Load_Save(){
 			wrefresh(Save_Win);
 			getnstr(joueur.nom, 20);
 			noecho();
-
-		choix = 'o';
-	}else if(choix == 'o'){
+			choix = 'o';
+	}else if(choix == 'o'){		/*!< Une partie sauvegardée va être chargée */
 		effacer_fenetre(Save_Win);
 		int g = Charger_Sauvegarde(Save_Win);
 		if(g == 'o'){

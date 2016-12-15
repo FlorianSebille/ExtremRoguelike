@@ -85,6 +85,8 @@ int main(){
         compteur++;
         affichage(S_win);
         Win_Stat(F_win,widthF);
+        mvwprintw(F_win,14,2,"%i", MAP[joueur.coordo_x][joueur.coordo_y].num_salle);
+        wrefresh(F_win);
         if(joueur.etat_avant == porte || joueur.etat_avant == uplevel){
         porte_escalier(T_win, S_win, F_win, utilisateur);
         }

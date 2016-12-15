@@ -1,13 +1,18 @@
 /**
  * \file sauvegarde.c
- * \brief Création d'un fichier de sauvegarde
+ * \brief Fichier contenant la fontion qui créer une sauvegarde
  * \author LARDY Anthony
- * \author TROTTIER Arthur
- * \author SEBILLE Florian
  * \version 1.0.1
  */
 
 #include "total.h"
+
+
+
+/**
+  * \brief Création d'une sauvegarde
+  * \fn addsauv()
+  */
 
 void addsauv(){
 	FILE * fic1;
@@ -42,14 +47,13 @@ void addsauv(){
 	fprintf(fic1,"%i ", entier);
 	entier = joueur.FOOD;
 	fprintf(fic1,"%i ", entier);
-
 	/** Copie les informations générales du jeu */
 	entier = nombre_salle;
 	fprintf(fic1,"%i ", entier);
 	entier = stage_cle;
+	fprintf(fic1,"%i ", entier);
 
 	/** Copie les statistiques du monstre */
-	fprintf(fic1,"%i ", entier);
 	entier = monstre.coordo_x;
 	fprintf(fic1,"%i ", entier);
 	entier = monstre.coordo_y;
@@ -75,7 +79,15 @@ void addsauv(){
    		fprintf(fic1,"\n");
    	}
    	fprintf(fic1,"\n");
-
+	/** Parcours la carte et copie le num_salle de chaque cellule */
+	for (i = 0; i < x; i++){
+   		for(j = 0; j < y; j++){
+   			entier = MAP[i][j].num_salle;
+   			fprintf(fic1,"%i ", entier);
+   		}
+   		fprintf(fic1,"\n");
+   	}
+   	fprintf(fic1,"\n");
    	/** Parcours la carte et copie les coordonées de la porte ainsi que celle avec qui elle est reliée */
    	for(i = 0; i < x; i++){
    		for(j = 0; j < y; j++){
