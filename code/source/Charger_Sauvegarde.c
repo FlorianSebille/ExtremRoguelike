@@ -1,15 +1,25 @@
+/**
+ * \file Charger_Sauvegarde.c
+ * \brief Programme gérant la fonction pour charger une sauvegarde
+ * \author LARDY Anthony
+ * \version 1.0.1
+ */
+ 
 #include "total.h"
 
-int Charger_Sauvegarde(WINDOW *Err_Win){
+/**
+  * \brief Charge la partie sauvegardée sinon en crée une nouvelle
+  * \fn int Charger_Sauvegarde(WINDOW *fenetre)
+  */
+int Charger_Sauvegarde(WINDOW *fenetre){
 	FILE * fic1;
 	fic1 = fopen("Save.txt", "r");
-	if(fic1 == NULL){
-		mvwprintw(Err_Win,4,3,"Il n'existe pas de sauvegarde");
-		mvwprintw(Err_Win,5,5,"Une nouvelle partie va être chargé");
-		wrefresh(Err_Win);
+	if(fic1 == NULL){		/*!< Il n'existe pas de fichier une nouvelle partie va être crée */
+		mvwprintw(fenetre,4,3,"Il n'existe pas de sauvegarde");
+		mvwprintw(fenetre,5,5,"Une nouvelle partie va être chargé");
+		wrefresh(fenetre);
 		sleep(2);
-		effacer_fenetre(Err_Win);
-
+		effacer_fenetre(fenetre);
 		return 'o';
 	}
 	int i,j;
@@ -18,7 +28,7 @@ int Charger_Sauvegarde(WINDOW *Err_Win){
 	strcpy(joueur.nom, nom_perso);
 	int compteur = 2;
 	int entier;
-	while(!feof(fic1)){
+	while(!feof(fic1)){		/*!< Récupère les données du fichier */
 		if(compteur == 2){
 			fscanf(fic1, "%i", &joueur.coordo_x);
 		}
@@ -92,7 +102,16 @@ int Charger_Sauvegarde(WINDOW *Err_Win){
    				}
    			}
 		}
-		if (compteur >=24){
+		if(compteur == 2693){
+			for (i = 0; i < x; i++){
+   				for(j = 0; j < y; j++){
+   					fscanf(fic1, "%i", &entier);
+   					MAP[i][j].num_salle = entier;
+   					compteur ++;
+   				}
+   			}
+		}
+		if (compteur == 5363){
 			for(i = 0; i < x; i++){
 				for(j = 0; j < y; j++){
 					if(feof(fic1)){
