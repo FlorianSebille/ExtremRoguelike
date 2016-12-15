@@ -15,7 +15,7 @@
 void depl_monstre(){
 	int futury,futurx;
 	do{
-		int	Depl_aleatoire = aleat(0,5);		/*!< Choisit de façon aléatoire le déplacement du monstre */
+		int	Depl_aleatoire = aleat(0,5);		/* Choisit de façon aléatoire le déplacement du monstre */
 		switch(Depl_aleatoire){
 			case 1:futurx = monstre.coordo_x-1; futury = monstre.coordo_y;break;
 			case 2:futurx = monstre.coordo_x+1; futury = monstre.coordo_y;break;

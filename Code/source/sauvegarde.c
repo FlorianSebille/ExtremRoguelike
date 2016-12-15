@@ -19,8 +19,8 @@ void addsauv(){
 	int entier;
 	int i,j;
 	char nom_perso[20];
-	fic1 = fopen("Save.txt", "w");		/*!< Créer un fichier Save.txt. */
-	/** Copie toutes les statistiques du joueur */
+	fic1 = fopen("Save.txt", "w");		/* Créer un fichier Save.txt. */
+	/* Copie toutes les statistiques du joueur */
 	strcpy(nom_perso, joueur.nom);
 	fprintf(fic1,"%s ", nom_perso);
 	entier = joueur.coordo_x;
@@ -47,13 +47,13 @@ void addsauv(){
 	fprintf(fic1,"%i ", entier);
 	entier = joueur.FOOD;
 	fprintf(fic1,"%i ", entier);
-	/** Copie les informations générales du jeu */
+	/* Copie les informations générales du jeu */
 	entier = nombre_salle;
 	fprintf(fic1,"%i ", entier);
 	entier = stage_cle;
 	fprintf(fic1,"%i ", entier);
 
-	/** Copie les statistiques du monstre */
+	/* Copie les statistiques du monstre */
 	entier = monstre.coordo_x;
 	fprintf(fic1,"%i ", entier);
 	entier = monstre.coordo_y;
@@ -70,7 +70,7 @@ void addsauv(){
 	fprintf(fic1,"%i ", entier);
 	fprintf(fic1,"\n\n");
 
-	/** Parcours la carte et copie le type de lieu de chaque cellule */
+	/* Parcours la carte et copie le type de lieu de chaque cellule */
 	for (i = 0; i < x; i++){
    		for(j = 0; j < y; j++){
    			entier = MAP[i][j].lieu;
@@ -79,7 +79,7 @@ void addsauv(){
    		fprintf(fic1,"\n");
    	}
    	fprintf(fic1,"\n");
-	/** Parcours la carte et copie le num_salle de chaque cellule */
+	/* Parcours la carte et copie le num_salle de chaque cellule */
 	for (i = 0; i < x; i++){
    		for(j = 0; j < y; j++){
    			entier = MAP[i][j].num_salle;
@@ -88,7 +88,7 @@ void addsauv(){
    		fprintf(fic1,"\n");
    	}
    	fprintf(fic1,"\n");
-   	/** Parcours la carte et copie les coordonées de la porte ainsi que celle avec qui elle est reliée */
+   	/* Parcours la carte et copie les coordonées de la porte ainsi que celle avec qui elle est reliée */
    	for(i = 0; i < x; i++){
    		for(j = 0; j < y; j++){
    			if(MAP[i][j].xb != 0 && MAP[i][j].yb != 0){
@@ -102,5 +102,5 @@ void addsauv(){
    		}
    	}
    	
-	fclose(fic1);		/*!< Fermeture du fichier Save.txt. */
+	fclose(fic1);		/* Fermeture du fichier Save.txt. */
 }
