@@ -8,7 +8,7 @@
 #include "total.h"
 
 /**
- * \fn int aleat
+ * \fn int aleat(int min, int max)
  * \brief fonction qui retourne un nombre aléatoire entre 2 bornes
  * \param min valeur minimum possible
  * \param max valeur maximum possible
@@ -18,7 +18,7 @@ int aleat(int min, int max){
 }
 
 /**
- * \fn void fillmap
+ * \fn void fillmap()
  * \brief fonction qui met la carte (matrice) à l'état 0
  */
 void fillmap(){
@@ -34,7 +34,7 @@ void fillmap(){
 }
 
 /**
- * \fn int room_possible
+ * \fn int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx)
  * \brief fonction qui parcourt la matrice pour vérifier si la construction d'une salle est possible
  * \param lg_mur_horiz longueur des murs horizontaux
  * \param lg_mur_vert longueur des murs verticaux
@@ -62,7 +62,7 @@ int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx){
   return 1;
 }
 /**
- * \fn void init_room
+ * \fn void init_room(int num, int nb_salle)
  * \brief fonction qui consruit une salle numérotée avec 1 ou 2 portes en fonction de ce numéro
  * \param num numéro de la salle à construire
  * \param nb_salle nombre de salle total de la carte
@@ -157,7 +157,7 @@ void init_room(int num, int nb_salle){
 }
 
 /**
- * \fn int trouver_porte
+ * \fn int trouver_porte(int * xA, int * yA, int salle)
  * \brief fonction qui met à jour les coordonnées de la prochaine porte à relier
  * \param xA numéro de ligne de la porte à relier
  * \param yA numéro de colonne de la porte à relier
@@ -180,7 +180,7 @@ int trouver_porte(int * xA, int * yA, int salle){
 }
 
 /**
- * \fn int relier_2Portes
+ * \fn int relier_2Portes(int xA, int yA)
  * \brief fonction qui relie une porte d'une salle à la porte de la salle suivante
  * \param xA numéro de ligne de la porte à relier
  * \param yA numéro de colonne de la porte à relier

@@ -9,7 +9,7 @@
 #include "total.h"
 
 /**
- * \fn void debut_game(WINDOW *S_win, WINDOW *T_win)
+ * \fn void debut_game(WINDOW *S_win, WINDOW *T_win, WINDOW *F_win)
  * \brief Fonction qui nitialise la map et place les différents elements.
  *
  * \param S_win contenant la map.
