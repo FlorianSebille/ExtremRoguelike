@@ -1,0 +1,73 @@
+\hypertarget{GenWindow_8c}{\section{Référence du fichier Code/source/\-Gen\-Window.c}
+\label{GenWindow_8c}\index{Code/source/\-Gen\-Window.\-c@{Code/source/\-Gen\-Window.\-c}}
+}
+
+
+Programme regroupant les fonctions pour créer et détruire une fenêtre.  
+
+
+{\ttfamily \#include \char`\"{}total.\-h\char`\"{}}\\*
+Graphe des dépendances par inclusion de Gen\-Window.\-c\-:
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+W\-I\-N\-D\-O\-W $\ast$ \hyperlink{GenWindow_8c_ae0deededfa39ac243deda1fe6ad220e3}{create\-\_\-newwin} (int height, int width, int starty, int startx, char $\ast$label)
+\begin{DoxyCompactList}\small\item\em Création d'une fenêtre. \end{DoxyCompactList}\item 
+void \hyperlink{GenWindow_8c_ada66364dd2a35d4c59586818d91dfcf8}{destroy\-\_\-win} (W\-I\-N\-D\-O\-W $\ast$local\-\_\-win)
+\begin{DoxyCompactList}\small\item\em Destruction d'une fenêtre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Programme regroupant les fonctions pour créer et détruire une fenêtre. \begin{DoxyAuthor}{Auteur}
+T\-R\-O\-T\-T\-I\-E\-R Arthur 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0.\-1 
+\end{DoxyVersion}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{GenWindow_8c_ae0deededfa39ac243deda1fe6ad220e3}{\index{Gen\-Window.\-c@{Gen\-Window.\-c}!create\-\_\-newwin@{create\-\_\-newwin}}
+\index{create\-\_\-newwin@{create\-\_\-newwin}!GenWindow.c@{Gen\-Window.\-c}}
+\subsubsection[{create\-\_\-newwin}]{\setlength{\rightskip}{0pt plus 5cm}W\-I\-N\-D\-O\-W $\ast$ create\-\_\-newwin (
+\begin{DoxyParamCaption}
+\item[{int}]{height, }
+\item[{int}]{width, }
+\item[{int}]{starty, }
+\item[{int}]{startx, }
+\item[{char $\ast$}]{label}
+\end{DoxyParamCaption}
+)}}\label{GenWindow_8c_ae0deededfa39ac243deda1fe6ad220e3}
+
+
+Création d'une fenêtre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em height} & Hauteur de la fenêtre \\
+\hline
+{\em width} & Largeur de la fenêtre \\
+\hline
+{\em starty} & Début de la fenêtre sur l'axe des y \\
+\hline
+{\em startx} & Début de la fenêtre sur l'axe des x \\
+\hline
+{\em label} & Nom de la fenêtre \\
+\hline
+\end{DoxyParams}
+\hypertarget{GenWindow_8c_ada66364dd2a35d4c59586818d91dfcf8}{\index{Gen\-Window.\-c@{Gen\-Window.\-c}!destroy\-\_\-win@{destroy\-\_\-win}}
+\index{destroy\-\_\-win@{destroy\-\_\-win}!GenWindow.c@{Gen\-Window.\-c}}
+\subsubsection[{destroy\-\_\-win}]{\setlength{\rightskip}{0pt plus 5cm}void destroy\-\_\-win (
+\begin{DoxyParamCaption}
+\item[{W\-I\-N\-D\-O\-W $\ast$}]{local\-\_\-win}
+\end{DoxyParamCaption}
+)}}\label{GenWindow_8c_ada66364dd2a35d4c59586818d91dfcf8}
+
+
+Destruction d'une fenêtre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em local\-\_\-win} & Fenêtre que l'on souhaite supprimer \\
+\hline
+\end{DoxyParams}

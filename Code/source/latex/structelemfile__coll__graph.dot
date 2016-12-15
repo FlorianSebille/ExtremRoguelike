@@ -1,9 +1,0 @@
-digraph "elemfile"
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="elemfile",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" nombre" ];
-  Node2 [label="t_coord",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structt__coord.html",tooltip="type qui donne les coordonnés d&#39;un objet ou d&#39;un element. "];
-  Node1 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" suivant" ];
-}
