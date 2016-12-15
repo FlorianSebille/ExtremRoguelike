@@ -8,6 +8,18 @@
 
 #include "total.h"
 
+/**
+ * \fn void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, WINDOW *statfenetre, int utilisateur)
+ * \brief Fonction qui sert à gerer quand le joueur est sur une porte ou un escalier
+ *
+ * demander a l'utilisateur si il veut bien prendre la porte ou changer de stage
+ *
+ * \param chatfenetre fenetre ou se situe le chat.
+ * \param mapfenetre fenetre ou se situe la map du jeu.
+ * \param statfenetre fenetre ou se situe les stats de la partie.
+ *
+ */
+
 void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, WINDOW *statfenetre, int utilisateur){
 
   int choix = 0;

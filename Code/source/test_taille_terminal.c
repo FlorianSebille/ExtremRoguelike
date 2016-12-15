@@ -7,6 +7,11 @@
 
 #include "total.h"
 
+/**
+  * \fn int taille_terminal()
+  * \brief fonction qui test si la taille du terminal est assez grande pour pouvoir jouer
+  */
+
 int taille_terminal(){
 
   if(LINES < 36 || COLS < 179){
