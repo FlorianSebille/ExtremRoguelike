@@ -1,3 +1,11 @@
+
+/**
+ * \file file.c
+ * \brief Programme regroupant les primitives nécessaires à l'utilisation d'une file
+ * \author TROTTIER Artur
+ * \version 1.0.1
+ */
+
 #include "total.h"
 
 void init_file(){
