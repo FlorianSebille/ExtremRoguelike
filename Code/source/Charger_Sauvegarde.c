@@ -14,7 +14,7 @@
 int Charger_Sauvegarde(WINDOW *fenetre){
 	FILE * fic1;
 	fic1 = fopen("Save.txt", "r");
-	if(fic1 == NULL){		/*!< Il n'existe pas de fichier une nouvelle partie va être crée */
+	if(fic1 == NULL){		/* Il n'existe pas de fichier une nouvelle partie va être crée */
 		mvwprintw(fenetre,4,3,"Il n'existe pas de sauvegarde");
 		mvwprintw(fenetre,5,5,"Une nouvelle partie va être chargé");
 		wrefresh(fenetre);
@@ -28,7 +28,7 @@ int Charger_Sauvegarde(WINDOW *fenetre){
 	strcpy(joueur.nom, nom_perso);
 	int compteur = 2;
 	int entier;
-	while(!feof(fic1)){		/*!< Récupère les données du fichier */
+	while(!feof(fic1)){		/* Récupère les données du fichier */
 		if(compteur == 2){
 			fscanf(fic1, "%i", &joueur.coordo_x);
 		}

@@ -80,7 +80,7 @@ void init_room(int num, int nb_salle){
   posy = aleat(0,y);
   perim_room = (lg_mur_horiz + lg_mur_vert )* 2;
   pos_door1 = aleat(0,perim_room);
-  if(num != 0 && num != nb_salle -1) pos_door2 = aleat(0,perim_room); /*!< On initialise qu'une porte pour la salle de depart et d'arrivée */
+  if(num != 0 && num != nb_salle -1) pos_door2 = aleat(0,perim_room); /* On initialise qu'une porte pour la salle de depart et d'arrivée */
   else pos_door2 = -1;
 
    /* On vérifie que les portes ne sont pas dans les angles et écartés d'au moins 1 entre elles */

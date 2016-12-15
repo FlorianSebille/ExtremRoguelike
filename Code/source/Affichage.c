@@ -22,11 +22,11 @@ void Win_Stat(WINDOW *fenetre, int widthF){
 	wattron(fenetre, A_BOLD | COLOR_PAIR(1));
 	mvwprintw(fenetre,2,2, "NOM");
 	n = strlen(joueur.nom);
-	mvwprintw(fenetre,2,widthF-1-n,"%s", joueur.nom);     /*!< affichage du nom du joueur. */
+	mvwprintw(fenetre,2,widthF-1-n,"%s", joueur.nom);     /* affichage du nom du joueur. */
 
 	mvwprintw(fenetre,3,2,"ETAGE");
 	n = log10(joueur.STAGE) + 1;
-	mvwprintw(fenetre,3,widthF-1-n,"%i", joueur.STAGE);		/*!< affichage de l'étage du joueur. */
+	mvwprintw(fenetre,3,widthF-1-n,"%i", joueur.STAGE);		/* affichage de l'étage du joueur. */
 	wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
 
 	wattron(fenetre, A_BOLD | COLOR_PAIR(2));
@@ -36,7 +36,7 @@ void Win_Stat(WINDOW *fenetre, int widthF){
 	mvwprintw(fenetre,6,4,"NIVEAU");
 	n = log10(joueur.LEVEL) + 1;
 	wattron(fenetre, A_BOLD | COLOR_PAIR(2));
-	mvwprintw(fenetre,6,widthF-1-n,"%i", joueur.LEVEL);		/*!< affichage du niveau du joueur. */
+	mvwprintw(fenetre,6,widthF-1-n,"%i", joueur.LEVEL);		/* affichage du niveau du joueur. */
 	wattroff(fenetre, A_BOLD | COLOR_PAIR(2));
 
 	if(joueur.EXP == 0){
@@ -45,7 +45,7 @@ void Win_Stat(WINDOW *fenetre, int widthF){
 	mvwprintw(fenetre,7,4,"EXP");
 	n = log10(joueur.EXP) + 1;
 	wattron(fenetre, A_BOLD | COLOR_PAIR(2));
-	mvwprintw(fenetre,7,widthF-1-n,"%i", joueur.EXP);		/*!< affichage de l'expérience du joueur. */
+	mvwprintw(fenetre,7,widthF-1-n,"%i", joueur.EXP);		/* affichage de l'expérience du joueur. */
 	wattroff(fenetre, A_BOLD | COLOR_PAIR(2));
 
 	mvwprintw(fenetre,8,4,"HP");
@@ -55,7 +55,7 @@ void Win_Stat(WINDOW *fenetre, int widthF){
 	}else wattron(fenetre, A_BOLD | COLOR_PAIR(2));
 	if(joueur.HP == 0){
 		mvwprintw(fenetre,8,widthF-2,"0");
-	}else mvwprintw(fenetre,8,widthF-1-n,"%i", joueur.HP);		/*!< affichage de la vie du joueur. */
+	}else mvwprintw(fenetre,8,widthF-1-n,"%i", joueur.HP);		/* affichage de la vie du joueur. */
 	if(joueur.HP <= 5){
 		wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
 	}else wattroff(fenetre, A_BOLD | COLOR_PAIR(2));
@@ -63,13 +63,13 @@ void Win_Stat(WINDOW *fenetre, int widthF){
 	mvwprintw(fenetre,9,4,"ATT");
 	n = log10(joueur.ATT) + 1;
 	wattron(fenetre, A_BOLD | COLOR_PAIR(2));
-	mvwprintw(fenetre,9,widthF-1-n,"%i", joueur.ATT);		/*!< affichage de l'attaque du joueur. */
+	mvwprintw(fenetre,9,widthF-1-n,"%i", joueur.ATT);		/* affichage de l'attaque du joueur. */
 	wattroff(fenetre, A_BOLD | COLOR_PAIR(2));
 
 	mvwprintw(fenetre,10,4,"DEF");
 	n = log10(joueur.DEF) + 1;
 	wattron(fenetre, A_BOLD | COLOR_PAIR(2));
-	mvwprintw(fenetre,10,widthF-1-n,"%i", joueur.DEF);		/*!< affichage de la défense du joueur. */
+	mvwprintw(fenetre,10,widthF-1-n,"%i", joueur.DEF);		/* affichage de la défense du joueur. */
 	wattroff(fenetre, A_BOLD | COLOR_PAIR(2));
 
 	mvwprintw(fenetre,11,4,"FAIM");
@@ -79,14 +79,14 @@ void Win_Stat(WINDOW *fenetre, int widthF){
 	}else wattron(fenetre, A_BOLD | COLOR_PAIR(2));
 	if(joueur.FOOD == 0){
 		mvwprintw(fenetre,11,widthF-2,"0");
-	}else mvwprintw(fenetre,11,widthF-1-n,"%i", joueur.FOOD);		/*!< affichage de l'état de faim du joueur. */
+	}else mvwprintw(fenetre,11,widthF-1-n,"%i", joueur.FOOD);		/* affichage de l'état de faim du joueur. */
 	if(joueur.FOOD <= 5){
 		wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
 	}else wattroff(fenetre, A_BOLD | COLOR_PAIR(2));
 
 	if(joueur.addcle == 1){
 		wattron(fenetre, A_BOLD | COLOR_PAIR(1));
-		mvwprintw(fenetre,13,2,"KEY");					/*!< affichage de si le joueur possède la clé. */
+		mvwprintw(fenetre,13,2,"KEY");					/* affichage de si le joueur possède la clé. */
 		wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
 	}
 
@@ -97,31 +97,31 @@ void Win_Stat(WINDOW *fenetre, int widthF){
 	mvwprintw(fenetre,16,4,"NOURRITURE");
 	n = strlen("f");
 	wattron(fenetre, A_BOLD | COLOR_PAIR(1));
-	mvwprintw(fenetre,16,widthF-1-n,"f");		/*!< affichage du symbole de la nourriture. */
+	mvwprintw(fenetre,16,widthF-1-n,"f");		/* affichage du symbole de la nourriture. */
 	wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
 
 	mvwprintw(fenetre,17,4,"CLE");
 	n = strlen("K");
 	wattron(fenetre, A_BOLD | COLOR_PAIR(1));
-	mvwprintw(fenetre,17,widthF-1-n,"K");		/*!< affichage du symbole de la clé. */
+	mvwprintw(fenetre,17,widthF-1-n,"K");		/* affichage du symbole de la clé. */
 	wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
 
 	mvwprintw(fenetre,18,4,"MEDIKIT");
 	n = strlen("M");
 	wattron(fenetre, A_BOLD | COLOR_PAIR(1));
-	mvwprintw(fenetre,18,widthF-1-n,"M");		/*!< affichage du symbole du medikit. */
+	mvwprintw(fenetre,18,widthF-1-n,"M");		/* affichage du symbole du medikit. */
 	wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
 
 	mvwprintw(fenetre,19,4,"ESCALIER");
 	n = strlen("f");
 	wattron(fenetre, A_BOLD | COLOR_PAIR(1));
-	mvwaddch(fenetre, 19, widthF-1-n, ACS_PI);		/*!< affichage du symbole pour changer de STAGE. */
+	mvwaddch(fenetre, 19, widthF-1-n, ACS_PI);		/* affichage du symbole pour changer de STAGE. */
 	wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
 
 	mvwprintw(fenetre,20,4,"ARRIVE");
 	n = strlen("f");
 	wattron(fenetre, A_BOLD | COLOR_PAIR(2));
-	mvwaddch(fenetre, 20, widthF-1-n, ACS_CKBOARD);		/*!< affichage du symbole de la porte finale. */
+	mvwaddch(fenetre, 20, widthF-1-n, ACS_CKBOARD);		/* affichage du symbole de la porte finale. */
 	wattroff(fenetre, A_BOLD | COLOR_PAIR(2));
 
 	wattron(fenetre, A_BOLD | COLOR_PAIR(2));
@@ -130,30 +130,30 @@ void Win_Stat(WINDOW *fenetre, int widthF){
 
 	mvwprintw(fenetre,23,4,"QUITTER");
 	n = strlen("Q");
-	mvwprintw(fenetre,23,widthF-1-n,"Q");		/*!< affichage de la touche pour quitter. */
+	mvwprintw(fenetre,23,widthF-1-n,"Q");		/* affichage de la touche pour quitter. */
 
 	mvwprintw(fenetre,24,4,"SAUVEGARDER");
 	n = strlen("S");
-	mvwprintw(fenetre,24,widthF-1-n,"S");		/*!< affichage de la touche pour sauvegarder. */
+	mvwprintw(fenetre,24,widthF-1-n,"S");		/* affichage de la touche pour sauvegarder. */
 
 	wattron(fenetre, A_BOLD | COLOR_PAIR(2));
 	mvwprintw(fenetre,25,2,"MOVE:");
 	wattroff(fenetre, A_BOLD | COLOR_PAIR(2));
 
 	n = strlen("FLECHE   HAUT");
-	mvwprintw(fenetre,26,widthF-1-n,"FLECHE   HAUT");		/*!< affichage de la touche pour monter. */
+	mvwprintw(fenetre,26,widthF-1-n,"FLECHE   HAUT");		/* affichage de la touche pour monter. */
 	mvwprintw(fenetre,26,4,"HAUT");
 
 	n = strlen("FLECHE    BAS");
-	mvwprintw(fenetre,27,widthF-1-n,"FLECHE    BAS");		/*!< affichage de la touche pour descendre. */
+	mvwprintw(fenetre,27,widthF-1-n,"FLECHE    BAS");		/* affichage de la touche pour descendre. */
 	mvwprintw(fenetre,27,4,"BAS");
 
 	n = strlen("FLECHE DROITE");
-	mvwprintw(fenetre,28,widthF-1-n,"FLECHE DROITE");		/*!< affichage de la touche pour aller à droite. */
+	mvwprintw(fenetre,28,widthF-1-n,"FLECHE DROITE");		/* affichage de la touche pour aller à droite. */
 	mvwprintw(fenetre,28,4,"DROITE");
 
 	n = strlen("FLECHE GAUCHE");
-	mvwprintw(fenetre,29,widthF-1-n,"FLECHE GAUCHE");		/*!< affichage de la touche pour aller à gauche. */
+	mvwprintw(fenetre,29,widthF-1-n,"FLECHE GAUCHE");		/* affichage de la touche pour aller à gauche. */
 	mvwprintw(fenetre,29,4,"GAUCHE");
 
 	wrefresh(fenetre);
@@ -239,77 +239,77 @@ void affichage(WINDOW *fenetre){
 
   int i,j;
 
-  for(i = 1; i < x; i++){    /*!< Parcour de la matrice pour afficher dans la fenetre les diferents elements. */
+  for(i = 1; i < x; i++){    /* Parcour de la matrice pour afficher dans la fenetre les diferents elements. */
     for(j = 1; j < y; j++){
 
-      if(MAP[i][j].lieu == vide){   /*!< affichage du vide en dehors des salle et des couloirs. */
+      if(MAP[i][j].lieu == vide){   /* affichage du vide en dehors des salle et des couloirs. */
         mvwprintw(fenetre,i,j," ");
 
-      }else if(MAP[i][j].lieu == couloir){ /*!< affichage des couloirs qui relie les différentes salles. */
+      }else if(MAP[i][j].lieu == couloir){ /* affichage des couloirs qui relie les différentes salles. */
         wattron(fenetre, COLOR_PAIR(6));
         mvwprintw(fenetre,i,j," ");
         wattroff(fenetre, COLOR_PAIR(6));
 
-      }else if(MAP[i][j].lieu == porte){    /*!< affichage des portes qui se situe a l'entrer des couloirs. */
+      }else if(MAP[i][j].lieu == porte){    /* affichage des portes qui se situe a l'entrer des couloirs. */
         wattron(fenetre, COLOR_PAIR(6));
         mvwprintw(fenetre,i,j," ");
         wattroff(fenetre, COLOR_PAIR(6));
 
-      }else if(MAP[i][j].lieu == uplevel){  /*!< affichage des escaliers qui font la liaisons entre les etages. */
+      }else if(MAP[i][j].lieu == uplevel){  /* affichage des escaliers qui font la liaisons entre les etages. */
         wattron(fenetre, COLOR_PAIR(5));
         mvwaddch(fenetre, i, j, ACS_PI);
         wattroff(fenetre, COLOR_PAIR(5));
 
-      }else if(MAP[i][j].lieu == sol){      /*!< affichage du sol des salles. */
+      }else if(MAP[i][j].lieu == sol){      /* affichage du sol des salles. */
         wattron(fenetre, COLOR_PAIR(4));
         mvwprintw(fenetre,i,j," ");
         wattroff(fenetre, COLOR_PAIR(4));
 
-      }else if(MAP[i][j].lieu == mur){      /*!< affichage des murs qui délimittes les salles. */
+      }else if(MAP[i][j].lieu == mur){      /* affichage des murs qui délimittes les salles. */
         wattron(fenetre, COLOR_PAIR(4));
         mvwaddch(fenetre, i, j, ACS_CKBOARD);
         wattroff(fenetre, COLOR_PAIR(4));
 
-      }else if(MAP[i][j].lieu == piege && cheat == 1){    /*!< afficge des pièges qui si on marche dessus provoque la mort. */
+      }else if(MAP[i][j].lieu == piege && cheat == 1){    /* afficge des pièges qui si on marche dessus provoque la mort. */
         wattron(fenetre, COLOR_PAIR(5));
         mvwprintw(fenetre, i, j, "&");
         wattroff(fenetre, COLOR_PAIR(4));
 
-      }else if(MAP[i][j].lieu == piege && cheat == 0){    /*!< afficge des pièges qui si on marche dessus provoque la mort. */
+      }else if(MAP[i][j].lieu == piege && cheat == 0){    /* afficge des pièges qui si on marche dessus provoque la mort. */
         wattron(fenetre, COLOR_PAIR(5));
         mvwprintw(fenetre, i, j, " ");
         wattroff(fenetre, COLOR_PAIR(4));
 
-      }else if(MAP[i][j].lieu == personnage){   /*!< affichage du personnage. */
+      }else if(MAP[i][j].lieu == personnage){   /* affichage du personnage. */
         wattron(fenetre, COLOR_PAIR(3));
       	mvwprintw(fenetre,i,j,"@");
         wattroff(fenetre, COLOR_PAIR(3));
 
-      }else if(MAP[i][j].lieu == arriver){      /*!< affichage de l'arriver. */
+      }else if(MAP[i][j].lieu == arriver){      /* affichage de l'arriver. */
         wattron(fenetre, COLOR_PAIR(8));
       	mvwaddch(fenetre, i, j, ACS_CKBOARD);
         wattroff(fenetre, COLOR_PAIR(8));
 
-      }else if(MAP[i][j].lieu == food){       /*!< affichage de la nouriture. */
+      }else if(MAP[i][j].lieu == food){       /* affichage de la nouriture. */
         wattron(fenetre, COLOR_PAIR(7));
       	mvwprintw(fenetre, i, j,"f");
         wattroff(fenetre, COLOR_PAIR(7));
 
-      }else if(MAP[i][j].lieu == cle){    /*!< affichage de la clé. */
+      }else if(MAP[i][j].lieu == cle){    /* affichage de la clé. */
         wattron(fenetre, COLOR_PAIR(7));
         mvwprintw(fenetre,i,j,"K");
         wattroff(fenetre, COLOR_PAIR(7));
 
-      }else if(MAP[i][j].lieu == mechant && monstre.HP > 0){ /*!< affichage des différents monstres. */
+      }else if(MAP[i][j].lieu == mechant && monstre.HP > 0){ /* affichage des différents monstres. */
         wattron(fenetre, COLOR_PAIR(7));
         mvwprintw(fenetre,i,j,"T");
 
-      }else if(MAP[i][j].lieu == medikit){    /*!< affichage des medikits. */
+      }else if(MAP[i][j].lieu == medikit){    /* affichage des medikits. */
         wattron(fenetre, COLOR_PAIR(7));
       	mvwprintw(fenetre, i, j,"M");
         wattroff(fenetre, COLOR_PAIR(7));
       }
     }
   }
-  wrefresh(fenetre); /*!< rafrechit la fenetre contenant la map. */
+  wrefresh(fenetre); /* rafrechit la fenetre contenant la map. */
 }
