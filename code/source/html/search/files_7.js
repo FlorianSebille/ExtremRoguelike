@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['test_5ftaille_5fterminal_2ec',['test_taille_terminal.c',['../test__taille__terminal_8c.html',1,'']]],
-  ['total_2eh',['total.h',['../total_8h.html',1,'']]]
+  ['randomroom_2ec',['RandomRoom.c',['../RandomRoom_8c.html',1,'']]],
+  ['rogue_2ec',['Rogue.c',['../Rogue_8c.html',1,'']]]
 ];

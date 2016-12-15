@@ -2,7 +2,7 @@
 \label{Affichage_8c}\index{Affichage.\+c@{Affichage.\+c}}
 
 
-Affichage des différentes fenêtres.  
+Fichier contenant les affichages des différentes fenêtres.  
 
 
 {\ttfamily \#include \char`\"{}total.\+h\char`\"{}}\\*
@@ -24,12 +24,10 @@ void \hyperlink{Affichage_8c_aa135a4ff5a19ec65929390e67987df7f}{affichage} (W\+I
 
 
 \subsection{Detailed Description}
-Affichage des différentes fenêtres. 
+Fichier contenant les affichages des différentes fenêtres. 
 
 \begin{DoxyAuthor}{Author}
 L\+A\+R\+DY Anthony 
-
-T\+R\+O\+T\+T\+I\+ER Arthur 
 
 S\+E\+B\+I\+L\+LE Florian 
 \end{DoxyAuthor}
@@ -68,6 +66,8 @@ $<$ affichage des escaliers qui font la liaisons entre les etages.
 $<$ affichage du sol des salles.
 
 $<$ affichage des murs qui délimittes les salles.
+
+$<$ afficge des pièges qui si on marche dessus provoque la mort.
 
 $<$ afficge des pièges qui si on marche dessus provoque la mort.
 

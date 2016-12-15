@@ -2,7 +2,7 @@
 \label{sauvegarde_8c}\index{sauvegarde.\+c@{sauvegarde.\+c}}
 
 
-Création d\textquotesingle{}un fichier de sauvegarde.  
+Fichier contenant la fontion qui créer une sauvegarde.  
 
 
 {\ttfamily \#include \char`\"{}total.\+h\char`\"{}}\\*
@@ -11,19 +11,15 @@ Include dependency graph for sauvegarde.\+c\+:
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{sauvegarde_8c_a7bc6ae0098ba0d4cafbf96e91791ea9e}{addsauv} ()
-\end{DoxyCompactItemize}
+void \hyperlink{sauvegarde_8c_a08a2d90de12d4eba7342b4e5ec78605b}{addsauv} ()
+\begin{DoxyCompactList}\small\item\em Création d\textquotesingle{}une sauvegarde. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Création d\textquotesingle{}un fichier de sauvegarde. 
+Fichier contenant la fontion qui créer une sauvegarde. 
 
 \begin{DoxyAuthor}{Author}
 L\+A\+R\+DY Anthony 
-
-T\+R\+O\+T\+T\+I\+ER Arthur 
-
-S\+E\+B\+I\+L\+LE Florian 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
 1.\+0.\+1 
@@ -33,11 +29,15 @@ S\+E\+B\+I\+L\+LE Florian
 \subsection{Function Documentation}
 \index{sauvegarde.\+c@{sauvegarde.\+c}!addsauv@{addsauv}}
 \index{addsauv@{addsauv}!sauvegarde.\+c@{sauvegarde.\+c}}
-\subsubsection[{\texorpdfstring{addsauv()}{addsauv()}}]{\setlength{\rightskip}{0pt plus 5cm}void addsauv (
+\subsubsection[{\texorpdfstring{addsauv()}{addsauv()}}]{\setlength{\rightskip}{0pt plus 5cm}addsauv (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}\hypertarget{sauvegarde_8c_a7bc6ae0098ba0d4cafbf96e91791ea9e}{}\label{sauvegarde_8c_a7bc6ae0098ba0d4cafbf96e91791ea9e}
+)}\hypertarget{sauvegarde_8c_a08a2d90de12d4eba7342b4e5ec78605b}{}\label{sauvegarde_8c_a08a2d90de12d4eba7342b4e5ec78605b}
+
+
+Création d\textquotesingle{}une sauvegarde. 
+
 $<$ Créer un fichier Save.\+txt.
 
 Copie toutes les statistiques du joueur
@@ -47,6 +47,8 @@ Copie les informations générales du jeu
 Copie les statistiques du monstre
 
 Parcours la carte et copie le type de lieu de chaque cellule
+
+Parcours la carte et copie le num\+\_\+salle de chaque cellule
 
 Parcours la carte et copie les coordonées de la porte ainsi que celle avec qui elle est reliée
 
