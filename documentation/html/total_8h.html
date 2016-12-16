@@ -3,15 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
 <title>ExtremRoguelike: Référence du fichier Code/source/total.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -22,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="logo.jpg"/></td>
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ExtremRoguelike
    </div>
    <div id="projectbrief">Création d&#39;un Roguelike - L2 SPI</div>
@@ -32,7 +33,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.6 -->
+<!-- Généré par Doxygen 1.8.11 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -99,27 +100,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 <p>fichier contenant tous les entêtes des fonctions utilent pour le jeu.  
 <a href="#details">Plus de détails...</a></p>
-<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
-<code>#include &lt;string.h&gt;</code><br/>
-<code>#include &lt;math.h&gt;</code><br/>
-<code>#include &lt;curses.h&gt;</code><br/>
-<code>#include &lt;stdlib.h&gt;</code><br/>
-<code>#include &lt;time.h&gt;</code><br/>
-<code>#include &lt;unistd.h&gt;</code><br/>
-<code>#include &lt;ncurses.h&gt;</code><br/>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;curses.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;ncurses.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de total.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="total_8h__incl.png" border="0" usemap="#Code_2source_2total_8h" alt=""/></div>
-<map name="Code_2source_2total_8h" id="Code_2source_2total_8h">
-</map>
+<!-- MAP 0 -->
 </div>
 </div><div class="textblock"><div class="dynheader">
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
 <div class="dyncontent">
 <div class="center"><img src="total_8h__dep__incl.png" border="0" usemap="#Code_2source_2total_8hdep" alt=""/></div>
-<map name="Code_2source_2total_8hdep" id="Code_2source_2total_8hdep">
-</map>
+<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="total_8h_source.html">Aller au code source de ce fichier.</a></p>
@@ -127,19 +126,19 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structt__cellule.html">t_cellule</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">type de la matrice qui se sert jouer.  <a href="structt__cellule.html#details">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">type de la matrice qui se sert jouer.  <a href="structt__cellule.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structt__joueur.html">t_joueur</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">type du joueur.  <a href="structt__joueur.html#details">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">type du joueur.  <a href="structt__joueur.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structt__monstre.html">t_monstre</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">type des monstres.  <a href="structt__monstre.html#details">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">type des monstres.  <a href="structt__monstre.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structt__coord.html">t_coord</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">type qui donne les coordonnés d'un objet ou d'un element.  <a href="structt__coord.html#details">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">type qui donne les coordonnés d'un objet ou d'un element.  <a href="structt__coord.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structelemfile.html">elemfile</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">nom de la structure pour <a class="el" href="structt__elemfile.html" title="type des element de la fille. ">t_elemfile</a>.  <a href="structelemfile.html#details">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">nom de la structure pour <a class="el" href="structt__elemfile.html" title="type des element de la fille. ">t_elemfile</a>.  <a href="structelemfile.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -159,142 +158,142 @@ typedef struct <a class="el" href="structelemfile.html">elemfile</a>&#160;</td><
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Énumérations</h2></td></tr>
-<tr class="memitem:a8b071baf43ce73c99f88fc8169b0514d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a8b071baf43ce73c99f88fc8169b0514d">t_element</a> { <br/>
+<tr class="memitem:a8b071baf43ce73c99f88fc8169b0514d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a8b071baf43ce73c99f88fc8169b0514d">t_element</a> { <br />
 &#160;&#160;<b>vide</b>, 
 <b>mur</b>, 
 <b>sol</b>, 
 <b>porte</b>, 
-<br/>
+<br />
 &#160;&#160;<b>couloir</b>, 
 <b>personnage</b>, 
 <b>uplevel</b>, 
 <b>arriver</b>, 
-<br/>
+<br />
 &#160;&#160;<b>cle</b>, 
 <b>food</b>, 
 <b>piege</b>, 
 <b>medikit</b>, 
-<br/>
+<br />
 &#160;&#160;<b>mechant</b>
-<br/>
- }</td></tr>
-<tr class="memdesc:a8b071baf43ce73c99f88fc8169b0514d"><td class="mdescLeft">&#160;</td><td class="mdescRight">type enumeration pour les cellules.  <a href="total_8h.html#a8b071baf43ce73c99f88fc8169b0514d">Plus de détails...</a><br/></td></tr>
+<br />
+ }<tr class="memdesc:a8b071baf43ce73c99f88fc8169b0514d"><td class="mdescLeft">&#160;</td><td class="mdescRight">type enumeration pour les cellules.  <a href="total_8h.html#a8b071baf43ce73c99f88fc8169b0514d">Plus de détails...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:a8b071baf43ce73c99f88fc8169b0514d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:aad8b078266a04e606d5306baa9e66dd6"><td class="memItemLeft" align="right" valign="top">WINDOW *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#aad8b078266a04e606d5306baa9e66dd6">create_newwin</a> (int height, int width, int starty, int startx, char *label)</td></tr>
-<tr class="memdesc:aad8b078266a04e606d5306baa9e66dd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Création d'une fenêtre.  <a href="#aad8b078266a04e606d5306baa9e66dd6">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:aad8b078266a04e606d5306baa9e66dd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Création d'une fenêtre.  <a href="#aad8b078266a04e606d5306baa9e66dd6">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aad8b078266a04e606d5306baa9e66dd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada66364dd2a35d4c59586818d91dfcf8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#ada66364dd2a35d4c59586818d91dfcf8">destroy_win</a> (WINDOW *local_win)</td></tr>
-<tr class="memdesc:ada66364dd2a35d4c59586818d91dfcf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruction d'une fenêtre.  <a href="#ada66364dd2a35d4c59586818d91dfcf8">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:ada66364dd2a35d4c59586818d91dfcf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruction d'une fenêtre.  <a href="#ada66364dd2a35d4c59586818d91dfcf8">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ada66364dd2a35d4c59586818d91dfcf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99aa9cd497c1a170c1447522f9cdbc7b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99aa9cd497c1a170c1447522f9cdbc7b"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a99aa9cd497c1a170c1447522f9cdbc7b">taille_terminal</a> ()</td></tr>
-<tr class="memdesc:a99aa9cd497c1a170c1447522f9cdbc7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui test si la taille du terminal est assez grande pour pouvoir jouer <br/></td></tr>
+<tr class="memdesc:a99aa9cd497c1a170c1447522f9cdbc7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui test si la taille du terminal est assez grande pour pouvoir jouer <br /></td></tr>
 <tr class="separator:a99aa9cd497c1a170c1447522f9cdbc7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09b403bd1c6619a90e88cffae8b52728"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a09b403bd1c6619a90e88cffae8b52728">aleat</a> (int min, int max)</td></tr>
-<tr class="memdesc:a09b403bd1c6619a90e88cffae8b52728"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui retourne un nombre aléatoire entre 2 bornes  <a href="#a09b403bd1c6619a90e88cffae8b52728">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a09b403bd1c6619a90e88cffae8b52728"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui retourne un nombre aléatoire entre 2 bornes  <a href="#a09b403bd1c6619a90e88cffae8b52728">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a09b403bd1c6619a90e88cffae8b52728"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a335000c114fc4b079d487e53b156ef57"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a335000c114fc4b079d487e53b156ef57"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a335000c114fc4b079d487e53b156ef57">fillmap</a> ()</td></tr>
-<tr class="memdesc:a335000c114fc4b079d487e53b156ef57"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui met la carte (matrice) à l'état 0 <br/></td></tr>
+<tr class="memdesc:a335000c114fc4b079d487e53b156ef57"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui met la carte (matrice) à l'état 0 <br /></td></tr>
 <tr class="separator:a335000c114fc4b079d487e53b156ef57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7213b6f4a58d528a141021409ef9abde"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a7213b6f4a58d528a141021409ef9abde">room_possible</a> (int lg_mur_horiz, int lg_mur_vert, int posy, int posx)</td></tr>
-<tr class="memdesc:a7213b6f4a58d528a141021409ef9abde"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui parcourt la matrice pour vérifier si la construction d'une salle est possible  <a href="#a7213b6f4a58d528a141021409ef9abde">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a7213b6f4a58d528a141021409ef9abde"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui parcourt la matrice pour vérifier si la construction d'une salle est possible  <a href="#a7213b6f4a58d528a141021409ef9abde">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a7213b6f4a58d528a141021409ef9abde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9afc86bc24b2ce3dd6884a52c80fd6ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a9afc86bc24b2ce3dd6884a52c80fd6ae">init_room</a> (int num, int nb_salle)</td></tr>
-<tr class="memdesc:a9afc86bc24b2ce3dd6884a52c80fd6ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui consruit une salle numérotée avec 1 ou 2 portes en fonction de ce numéro  <a href="#a9afc86bc24b2ce3dd6884a52c80fd6ae">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a9afc86bc24b2ce3dd6884a52c80fd6ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui consruit une salle numérotée avec 1 ou 2 portes en fonction de ce numéro  <a href="#a9afc86bc24b2ce3dd6884a52c80fd6ae">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a9afc86bc24b2ce3dd6884a52c80fd6ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe8094b834c754bae83505527a67e93a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#afe8094b834c754bae83505527a67e93a">trouver_porte</a> (int *xA, int *yA, int salle)</td></tr>
-<tr class="memdesc:afe8094b834c754bae83505527a67e93a"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui met à jour les coordonnées de la prochaine porte à relier  <a href="#afe8094b834c754bae83505527a67e93a">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:afe8094b834c754bae83505527a67e93a"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui met à jour les coordonnées de la prochaine porte à relier  <a href="#afe8094b834c754bae83505527a67e93a">Plus de détails...</a><br /></td></tr>
 <tr class="separator:afe8094b834c754bae83505527a67e93a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf23a078809017af2cc4349ee1fb20dc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#adf23a078809017af2cc4349ee1fb20dc">relier_2Portes</a> (int xA, int yA)</td></tr>
-<tr class="memdesc:adf23a078809017af2cc4349ee1fb20dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui relie une porte d'une salle à la porte de la salle suivante  <a href="#adf23a078809017af2cc4349ee1fb20dc">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:adf23a078809017af2cc4349ee1fb20dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui relie une porte d'une salle à la porte de la salle suivante  <a href="#adf23a078809017af2cc4349ee1fb20dc">Plus de détails...</a><br /></td></tr>
 <tr class="separator:adf23a078809017af2cc4349ee1fb20dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22f6d4c2e2023fe2d6298a445f814bb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a22f6d4c2e2023fe2d6298a445f814bb6">positionzero</a> ()</td></tr>
-<tr class="memdesc:a22f6d4c2e2023fe2d6298a445f814bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui met à zéro le paramètre position de la carte (matrice)  <a href="#a22f6d4c2e2023fe2d6298a445f814bb6">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a22f6d4c2e2023fe2d6298a445f814bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui met à zéro le paramètre position de la carte (matrice)  <a href="#a22f6d4c2e2023fe2d6298a445f814bb6">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a22f6d4c2e2023fe2d6298a445f814bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f1586659681cf692359f7c8c003dd8b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5f1586659681cf692359f7c8c003dd8b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a5f1586659681cf692359f7c8c003dd8b">init_map</a> ()</td></tr>
-<tr class="memdesc:a5f1586659681cf692359f7c8c003dd8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui initialise une carte totalement aléatoire constituée de salles reliées par des couloirs <br/></td></tr>
+<tr class="memdesc:a5f1586659681cf692359f7c8c003dd8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui initialise une carte totalement aléatoire constituée de salles reliées par des couloirs <br /></td></tr>
 <tr class="separator:a5f1586659681cf692359f7c8c003dd8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa135a4ff5a19ec65929390e67987df7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#aa135a4ff5a19ec65929390e67987df7f">affichage</a> (WINDOW *fenetre)</td></tr>
-<tr class="memdesc:aa135a4ff5a19ec65929390e67987df7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'affichage de la map de jeu.  <a href="#aa135a4ff5a19ec65929390e67987df7f">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:aa135a4ff5a19ec65929390e67987df7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'affichage de la map de jeu.  <a href="#aa135a4ff5a19ec65929390e67987df7f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa135a4ff5a19ec65929390e67987df7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a317d466d2122b6abe466c26b5be50399"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a317d466d2122b6abe466c26b5be50399">Win_Stat</a> (WINDOW *fenetre, int widthF)</td></tr>
-<tr class="memdesc:a317d466d2122b6abe466c26b5be50399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage de la fenêtre contenant les statistiques et les commandes.  <a href="#a317d466d2122b6abe466c26b5be50399">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a317d466d2122b6abe466c26b5be50399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage de la fenêtre contenant les statistiques et les commandes.  <a href="#a317d466d2122b6abe466c26b5be50399">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a317d466d2122b6abe466c26b5be50399"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdd5e5efeb13d099b4b5591ccbb11fd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#abdd5e5efeb13d099b4b5591ccbb11fd8">effacer_ligne</a> (WINDOW *chatwin, int ligne_effacer)</td></tr>
-<tr class="memdesc:abdd5e5efeb13d099b4b5591ccbb11fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert a effacer une ligne d'une fenetre donner en parametre.  <a href="#abdd5e5efeb13d099b4b5591ccbb11fd8">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:abdd5e5efeb13d099b4b5591ccbb11fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert a effacer une ligne d'une fenetre donner en parametre.  <a href="#abdd5e5efeb13d099b4b5591ccbb11fd8">Plus de détails...</a><br /></td></tr>
 <tr class="separator:abdd5e5efeb13d099b4b5591ccbb11fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee718d7c11e76f5643cf189dbd127d44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#aee718d7c11e76f5643cf189dbd127d44">effacer_fenetre</a> (WINDOW *chatwin)</td></tr>
-<tr class="memdesc:aee718d7c11e76f5643cf189dbd127d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert a effacer une fenetre donner en parametre.  <a href="#aee718d7c11e76f5643cf189dbd127d44">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:aee718d7c11e76f5643cf189dbd127d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert a effacer une fenetre donner en parametre.  <a href="#aee718d7c11e76f5643cf189dbd127d44">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aee718d7c11e76f5643cf189dbd127d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6641cfc9695f82e9312436f98718d6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#ac6641cfc9695f82e9312436f98718d6a">ecrire_chat</a> (WINDOW *chatwin, int position_perso)</td></tr>
-<tr class="memdesc:ac6641cfc9695f82e9312436f98718d6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert a ecrire dans le chat.  <a href="#ac6641cfc9695f82e9312436f98718d6a">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:ac6641cfc9695f82e9312436f98718d6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert a ecrire dans le chat.  <a href="#ac6641cfc9695f82e9312436f98718d6a">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac6641cfc9695f82e9312436f98718d6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e005a6d0d9514779d721253c507d82e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e005a6d0d9514779d721253c507d82e"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a1e005a6d0d9514779d721253c507d82e">Placer_uplevel</a> ()</td></tr>
-<tr class="memdesc:a1e005a6d0d9514779d721253c507d82e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place l'escalier. <br/></td></tr>
+<tr class="memdesc:a1e005a6d0d9514779d721253c507d82e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place l'escalier. <br /></td></tr>
 <tr class="separator:a1e005a6d0d9514779d721253c507d82e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18415ca5d0e4f93c9848c1c4159c9269"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a18415ca5d0e4f93c9848c1c4159c9269"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a18415ca5d0e4f93c9848c1c4159c9269">Placer_perso</a> ()</td></tr>
-<tr class="memdesc:a18415ca5d0e4f93c9848c1c4159c9269"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place le personnage. <br/></td></tr>
+<tr class="memdesc:a18415ca5d0e4f93c9848c1c4159c9269"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place le personnage. <br /></td></tr>
 <tr class="separator:a18415ca5d0e4f93c9848c1c4159c9269"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa42ac97fd8ac7c2da2ac000a9ce23033"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa42ac97fd8ac7c2da2ac000a9ce23033"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#aa42ac97fd8ac7c2da2ac000a9ce23033">Placer_cle</a> ()</td></tr>
-<tr class="memdesc:aa42ac97fd8ac7c2da2ac000a9ce23033"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place la clé <br/></td></tr>
+<tr class="memdesc:aa42ac97fd8ac7c2da2ac000a9ce23033"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place la clé <br /></td></tr>
 <tr class="separator:aa42ac97fd8ac7c2da2ac000a9ce23033"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dfe9f70b81947e7e096f73d8b3b7ce0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4dfe9f70b81947e7e096f73d8b3b7ce0"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a4dfe9f70b81947e7e096f73d8b3b7ce0">Placer_monstre</a> ()</td></tr>
-<tr class="memdesc:a4dfe9f70b81947e7e096f73d8b3b7ce0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place le monstre. <br/></td></tr>
+<tr class="memdesc:a4dfe9f70b81947e7e096f73d8b3b7ce0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place le monstre. <br /></td></tr>
 <tr class="separator:a4dfe9f70b81947e7e096f73d8b3b7ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa503c942bf6f17e674ef073954d6e36a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa503c942bf6f17e674ef073954d6e36a"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#aa503c942bf6f17e674ef073954d6e36a">Placer_medikit</a> ()</td></tr>
-<tr class="memdesc:aa503c942bf6f17e674ef073954d6e36a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place le medikit. <br/></td></tr>
+<tr class="memdesc:aa503c942bf6f17e674ef073954d6e36a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place le medikit. <br /></td></tr>
 <tr class="separator:aa503c942bf6f17e674ef073954d6e36a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5c6b4f85fb187b74bc7f68ea4e83def"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab5c6b4f85fb187b74bc7f68ea4e83def"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#ab5c6b4f85fb187b74bc7f68ea4e83def">Placer_piege</a> ()</td></tr>
-<tr class="memdesc:ab5c6b4f85fb187b74bc7f68ea4e83def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place les pièges. <br/></td></tr>
+<tr class="memdesc:ab5c6b4f85fb187b74bc7f68ea4e83def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place les pièges. <br /></td></tr>
 <tr class="separator:ab5c6b4f85fb187b74bc7f68ea4e83def"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ad2aaa7d9bf8c8f36669a50a89b6e77"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ad2aaa7d9bf8c8f36669a50a89b6e77"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a5ad2aaa7d9bf8c8f36669a50a89b6e77">Placer_food</a> ()</td></tr>
-<tr class="memdesc:a5ad2aaa7d9bf8c8f36669a50a89b6e77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place la nourriture. <br/></td></tr>
+<tr class="memdesc:a5ad2aaa7d9bf8c8f36669a50a89b6e77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place la nourriture. <br /></td></tr>
 <tr class="separator:a5ad2aaa7d9bf8c8f36669a50a89b6e77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6beebfd47f154a9030028950fcb0ef25"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a6beebfd47f154a9030028950fcb0ef25">test_depl</a> (int c)</td></tr>
-<tr class="memdesc:a6beebfd47f154a9030028950fcb0ef25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert tester le deplacement du joueur en fonction du deplacement choisi par l'utilisateur.  <a href="#a6beebfd47f154a9030028950fcb0ef25">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a6beebfd47f154a9030028950fcb0ef25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert tester le deplacement du joueur en fonction du deplacement choisi par l'utilisateur.  <a href="#a6beebfd47f154a9030028950fcb0ef25">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a6beebfd47f154a9030028950fcb0ef25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1eae5c3e18ec44368d556cc8c31dc246"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a1eae5c3e18ec44368d556cc8c31dc246">Depl_perso</a> (WINDOW *fenetre)</td></tr>
-<tr class="memdesc:a1eae5c3e18ec44368d556cc8c31dc246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert déplacer le joueur et à gerer les différentes actions en fonction de l'endroit ou se déplace le joueur.  <a href="#a1eae5c3e18ec44368d556cc8c31dc246">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a1eae5c3e18ec44368d556cc8c31dc246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert déplacer le joueur et à gerer les différentes actions en fonction de l'endroit ou se déplace le joueur.  <a href="#a1eae5c3e18ec44368d556cc8c31dc246">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a1eae5c3e18ec44368d556cc8c31dc246"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb428603c79b0d3add7d02068a6cbb29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#adb428603c79b0d3add7d02068a6cbb29">porte_escalier</a> (WINDOW *chatfenetre, WINDOW *mapfenetre, WINDOW *statfenetre, int utilisateur)</td></tr>
-<tr class="memdesc:adb428603c79b0d3add7d02068a6cbb29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert à gerer quand le joueur est sur une porte ou un escalier.  <a href="#adb428603c79b0d3add7d02068a6cbb29">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:adb428603c79b0d3add7d02068a6cbb29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert à gerer quand le joueur est sur une porte ou un escalier.  <a href="#adb428603c79b0d3add7d02068a6cbb29">Plus de détails...</a><br /></td></tr>
 <tr class="separator:adb428603c79b0d3add7d02068a6cbb29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9504dff7d07fdbbc6d85d6d232e41953"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a9504dff7d07fdbbc6d85d6d232e41953">Ask_Load_Save</a> ()</td></tr>
-<tr class="memdesc:a9504dff7d07fdbbc6d85d6d232e41953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage de la fenêtre de début de partie.  <a href="#a9504dff7d07fdbbc6d85d6d232e41953">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a9504dff7d07fdbbc6d85d6d232e41953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage de la fenêtre de début de partie.  <a href="#a9504dff7d07fdbbc6d85d6d232e41953">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a9504dff7d07fdbbc6d85d6d232e41953"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb8312aa9848d3148954ca71c464dfb5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb8312aa9848d3148954ca71c464dfb5"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#aeb8312aa9848d3148954ca71c464dfb5">Charger_Sauvegarde</a> (WINDOW *fenetre)</td></tr>
-<tr class="memdesc:aeb8312aa9848d3148954ca71c464dfb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge la partie sauvegardée sinon en crée une nouvelle. <br/></td></tr>
+<tr class="memdesc:aeb8312aa9848d3148954ca71c464dfb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge la partie sauvegardée sinon en crée une nouvelle. <br /></td></tr>
 <tr class="separator:aeb8312aa9848d3148954ca71c464dfb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bc6ae0098ba0d4cafbf96e91791ea9e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7bc6ae0098ba0d4cafbf96e91791ea9e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a7bc6ae0098ba0d4cafbf96e91791ea9e">addsauv</a> ()</td></tr>
-<tr class="memdesc:a7bc6ae0098ba0d4cafbf96e91791ea9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Création d'une sauvegarde. <br/></td></tr>
+<tr class="memdesc:a7bc6ae0098ba0d4cafbf96e91791ea9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Création d'une sauvegarde. <br /></td></tr>
 <tr class="separator:a7bc6ae0098ba0d4cafbf96e91791ea9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e8b9ad6bfe92cf5ff9aa02ea6155188"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a8e8b9ad6bfe92cf5ff9aa02ea6155188">debut_game</a> (WINDOW *S_win, WINDOW *T_win, WINDOW *F_win)</td></tr>
-<tr class="memdesc:a8e8b9ad6bfe92cf5ff9aa02ea6155188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui nitialise la map et place les différents elements.  <a href="#a8e8b9ad6bfe92cf5ff9aa02ea6155188">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a8e8b9ad6bfe92cf5ff9aa02ea6155188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui nitialise la map et place les différents elements.  <a href="#a8e8b9ad6bfe92cf5ff9aa02ea6155188">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a8e8b9ad6bfe92cf5ff9aa02ea6155188"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c93e2beaa0b3706bdeca4a063edfd96"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a4c93e2beaa0b3706bdeca4a063edfd96">fin_game</a> (WINDOW *chat_Win, WINDOW *map_Win, WINDOW *stat_Win)</td></tr>
-<tr class="memdesc:a4c93e2beaa0b3706bdeca4a063edfd96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert à gerer la fin de la partie.  <a href="#a4c93e2beaa0b3706bdeca4a063edfd96">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a4c93e2beaa0b3706bdeca4a063edfd96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert à gerer la fin de la partie.  <a href="#a4c93e2beaa0b3706bdeca4a063edfd96">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a4c93e2beaa0b3706bdeca4a063edfd96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d898e1dfe6e7f67758297f1f3fd1e0d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8d898e1dfe6e7f67758297f1f3fd1e0d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a8d898e1dfe6e7f67758297f1f3fd1e0d">depl_monstre</a> ()</td></tr>
-<tr class="memdesc:a8d898e1dfe6e7f67758297f1f3fd1e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui fait déplacer le monstre aléatoirement. <br/></td></tr>
+<tr class="memdesc:a8d898e1dfe6e7f67758297f1f3fd1e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui fait déplacer le monstre aléatoirement. <br /></td></tr>
 <tr class="separator:a8d898e1dfe6e7f67758297f1f3fd1e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3925abcb5f99301febec81edc375e84"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa3925abcb5f99301febec81edc375e84"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#aa3925abcb5f99301febec81edc375e84">combat</a> ()</td></tr>
-<tr class="memdesc:aa3925abcb5f99301febec81edc375e84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gère le combat entre le joueur et le monstre. <br/></td></tr>
+<tr class="memdesc:aa3925abcb5f99301febec81edc375e84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gère le combat entre le joueur et le monstre. <br /></td></tr>
 <tr class="separator:aa3925abcb5f99301febec81edc375e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad927fffeb22d0ed497e2f8680f7d99a5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad927fffeb22d0ed497e2f8680f7d99a5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>init_file</b> ()</td></tr>
@@ -345,10 +344,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>f</b></td></tr>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>cheat</b></td></tr>
 <tr class="separator:ae80b0201d378d6dfc9ecc3d67e3e364b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ceef52b18732e046b145a429b37a790"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structt__joueur.html">t_joueur</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a7ceef52b18732e046b145a429b37a790">joueur</a></td></tr>
-<tr class="memdesc:a7ceef52b18732e046b145a429b37a790"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable joueur de type <a class="el" href="structt__joueur.html" title="type du joueur. ">t_joueur</a>.  <a href="#a7ceef52b18732e046b145a429b37a790">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a7ceef52b18732e046b145a429b37a790"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable joueur de type <a class="el" href="structt__joueur.html" title="type du joueur. ">t_joueur</a>.  <a href="#a7ceef52b18732e046b145a429b37a790">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a7ceef52b18732e046b145a429b37a790"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95e8a3620a94a4ebfeea1bffb6a52f16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structt__monstre.html">t_monstre</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="total_8h.html#a95e8a3620a94a4ebfeea1bffb6a52f16">monstre</a></td></tr>
-<tr class="memdesc:a95e8a3620a94a4ebfeea1bffb6a52f16"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable monstre de type t_monstres.  <a href="#a95e8a3620a94a4ebfeea1bffb6a52f16">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a95e8a3620a94a4ebfeea1bffb6a52f16"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable monstre de type t_monstres.  <a href="#a95e8a3620a94a4ebfeea1bffb6a52f16">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a95e8a3620a94a4ebfeea1bffb6a52f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a638de9b67bdeeed87d5e0e5330376dd2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a638de9b67bdeeed87d5e0e5330376dd2"></a>
 <a class="el" href="structt__cellule.html">t_cellule</a>&#160;</td><td class="memItemRight" valign="bottom"><b>MAP</b> [x][y]</td></tr>
@@ -1068,7 +1067,7 @@ SEBILLE Florian </dd></dl>
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
+</a> 1.8.11
 </small></address>
 </body>
 </html>

@@ -6,7 +6,7 @@
  * \section intro_sec Introduction
  *
  * Dans le cadre du projet du semestre 3 de L2 nous avons du céer un jeux.
- * Nous avons donc travailler en groupe de 3 personnes pour ce jeux 
+ * Nous avons donc travailler en groupe de 3 personnes pour ce jeux
  *
  * <BR><BR>
  *
@@ -75,6 +75,8 @@ int main(){
     init_pair(7, COLOR_RED, COLOR_WHITE);
     init_pair(8, COLOR_GREEN, COLOR_WHITE);
     init_pair(9, COLOR_YELLOW, -1);
+    init_pair(10, COLOR_BLUE, -1);
+    init_pair(11, COLOR_CYAN, -1);
 
     int choix = Ask_Load_Save();
     F_win=create_newwin(heightF,widthF,startyF,startxF,"Profile");

@@ -3,15 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
 <title>ExtremRoguelike: Référence du fichier Code/source/Affichage.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -22,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="logo.jpg"/></td>
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ExtremRoguelike
    </div>
    <div id="projectbrief">Création d&#39;un Roguelike - L2 SPI</div>
@@ -32,7 +33,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.6 -->
+<!-- Généré par Doxygen 1.8.11 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 <p>Fichier contenant les affichages des différentes fenêtres.  
 <a href="#details">Plus de détails...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="total_8h_source.html">total.h</a>&quot;</code><br/>
+<div class="textblock"><code>#include &quot;<a class="el" href="total_8h_source.html">total.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de Affichage.c:</div>
 <div class="dyncontent">
@@ -106,19 +107,19 @@ Graphe des dépendances par inclusion de Affichage.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:a317d466d2122b6abe466c26b5be50399"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Affichage_8c.html#a317d466d2122b6abe466c26b5be50399">Win_Stat</a> (WINDOW *fenetre, int widthF)</td></tr>
-<tr class="memdesc:a317d466d2122b6abe466c26b5be50399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage de la fenêtre contenant les statistiques et les commandes.  <a href="#a317d466d2122b6abe466c26b5be50399">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a317d466d2122b6abe466c26b5be50399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage de la fenêtre contenant les statistiques et les commandes.  <a href="#a317d466d2122b6abe466c26b5be50399">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a317d466d2122b6abe466c26b5be50399"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe902e0255e69a7dd7c6fb46bf32a3e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Affichage_8c.html#afe902e0255e69a7dd7c6fb46bf32a3e3">effacer_ligne</a> (WINDOW *chatwin, int ligne_effacer)</td></tr>
-<tr class="memdesc:afe902e0255e69a7dd7c6fb46bf32a3e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert a effacer une ligne d'une fenetre donner en parametre.  <a href="#afe902e0255e69a7dd7c6fb46bf32a3e3">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:afe902e0255e69a7dd7c6fb46bf32a3e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert a effacer une ligne d'une fenetre donner en parametre.  <a href="#afe902e0255e69a7dd7c6fb46bf32a3e3">Plus de détails...</a><br /></td></tr>
 <tr class="separator:afe902e0255e69a7dd7c6fb46bf32a3e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89c867892f6424016c821a4af6fbc013"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Affichage_8c.html#a89c867892f6424016c821a4af6fbc013">effacer_fenetre</a> (WINDOW *chatwin)</td></tr>
-<tr class="memdesc:a89c867892f6424016c821a4af6fbc013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert a effacer une fenetre donner en parametre.  <a href="#a89c867892f6424016c821a4af6fbc013">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a89c867892f6424016c821a4af6fbc013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert a effacer une fenetre donner en parametre.  <a href="#a89c867892f6424016c821a4af6fbc013">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a89c867892f6424016c821a4af6fbc013"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9642c399748816c6849af037a6fb824d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Affichage_8c.html#a9642c399748816c6849af037a6fb824d">ecrire_chat</a> (WINDOW *chatwin, int position_perso)</td></tr>
-<tr class="memdesc:a9642c399748816c6849af037a6fb824d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert a ecrire dans le chat.  <a href="#a9642c399748816c6849af037a6fb824d">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a9642c399748816c6849af037a6fb824d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui sert a ecrire dans le chat.  <a href="#a9642c399748816c6849af037a6fb824d">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a9642c399748816c6849af037a6fb824d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa135a4ff5a19ec65929390e67987df7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Affichage_8c.html#aa135a4ff5a19ec65929390e67987df7f">affichage</a> (WINDOW *fenetre)</td></tr>
-<tr class="memdesc:aa135a4ff5a19ec65929390e67987df7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'affichage de la map de jeu.  <a href="#aa135a4ff5a19ec65929390e67987df7f">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:aa135a4ff5a19ec65929390e67987df7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'affichage de la map de jeu.  <a href="#aa135a4ff5a19ec65929390e67987df7f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa135a4ff5a19ec65929390e67987df7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
@@ -286,7 +287,7 @@ SEBILLE Florian </dd></dl>
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
+</a> 1.8.11
 </small></address>
 </body>
 </html>

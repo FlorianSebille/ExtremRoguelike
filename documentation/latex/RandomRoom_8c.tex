@@ -1,54 +1,56 @@
-\hypertarget{RandomRoom_8c}{\section{Référence du fichier Code/source/\-Random\-Room.c}
-\label{RandomRoom_8c}\index{Code/source/\-Random\-Room.\-c@{Code/source/\-Random\-Room.\-c}}
-}
+\hypertarget{RandomRoom_8c}{}\section{Référence du fichier Code/source/\+Random\+Room.c}
+\label{RandomRoom_8c}\index{Code/source/\+Random\+Room.\+c@{Code/source/\+Random\+Room.\+c}}
 
 
 Programme regroupant les fonctions qui génèrent les principales structures du jeu.  
 
 
-{\ttfamily \#include \char`\"{}total.\-h\char`\"{}}\\*
-Graphe des dépendances par inclusion de Random\-Room.\-c\-:
+{\ttfamily \#include \char`\"{}total.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de Random\+Room.\+c\+:
+% FIG 0
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{RandomRoom_8c_a09b403bd1c6619a90e88cffae8b52728}{aleat} (int min, int max)
 \begin{DoxyCompactList}\small\item\em fonction qui retourne un nombre aléatoire entre 2 bornes \end{DoxyCompactList}\item 
-\hypertarget{RandomRoom_8c_a335000c114fc4b079d487e53b156ef57}{void \hyperlink{RandomRoom_8c_a335000c114fc4b079d487e53b156ef57}{fillmap} ()}\label{RandomRoom_8c_a335000c114fc4b079d487e53b156ef57}
+void \hyperlink{RandomRoom_8c_a335000c114fc4b079d487e53b156ef57}{fillmap} ()\hypertarget{RandomRoom_8c_a335000c114fc4b079d487e53b156ef57}{}\label{RandomRoom_8c_a335000c114fc4b079d487e53b156ef57}
 
-\begin{DoxyCompactList}\small\item\em fonction qui met la carte (matrice) à l'état 0 \end{DoxyCompactList}\item 
-int \hyperlink{RandomRoom_8c_a7213b6f4a58d528a141021409ef9abde}{room\-\_\-possible} (int lg\-\_\-mur\-\_\-horiz, int lg\-\_\-mur\-\_\-vert, int posy, int posx)
-\begin{DoxyCompactList}\small\item\em fonction qui parcourt la matrice pour vérifier si la construction d'une salle est possible \end{DoxyCompactList}\item 
-void \hyperlink{RandomRoom_8c_a9afc86bc24b2ce3dd6884a52c80fd6ae}{init\-\_\-room} (int num, int nb\-\_\-salle)
+\begin{DoxyCompactList}\small\item\em fonction qui met la carte (matrice) à l\textquotesingle{}état 0 \end{DoxyCompactList}\item 
+int \hyperlink{RandomRoom_8c_a7213b6f4a58d528a141021409ef9abde}{room\+\_\+possible} (int lg\+\_\+mur\+\_\+horiz, int lg\+\_\+mur\+\_\+vert, int posy, int posx)
+\begin{DoxyCompactList}\small\item\em fonction qui parcourt la matrice pour vérifier si la construction d\textquotesingle{}une salle est possible \end{DoxyCompactList}\item 
+void \hyperlink{RandomRoom_8c_a9afc86bc24b2ce3dd6884a52c80fd6ae}{init\+\_\+room} (int num, int nb\+\_\+salle)
 \begin{DoxyCompactList}\small\item\em fonction qui consruit une salle numérotée avec 1 ou 2 portes en fonction de ce numéro \end{DoxyCompactList}\item 
-int \hyperlink{RandomRoom_8c_afe8094b834c754bae83505527a67e93a}{trouver\-\_\-porte} (int $\ast$x\-A, int $\ast$y\-A, int salle)
+int \hyperlink{RandomRoom_8c_afe8094b834c754bae83505527a67e93a}{trouver\+\_\+porte} (int $\ast$xA, int $\ast$yA, int salle)
 \begin{DoxyCompactList}\small\item\em fonction qui met à jour les coordonnées de la prochaine porte à relier \end{DoxyCompactList}\item 
-int \hyperlink{RandomRoom_8c_adf23a078809017af2cc4349ee1fb20dc}{relier\-\_\-2\-Portes} (int x\-A, int y\-A)
-\begin{DoxyCompactList}\small\item\em fonction qui relie une porte d'une salle à la porte de la salle suivante \end{DoxyCompactList}\item 
+int \hyperlink{RandomRoom_8c_adf23a078809017af2cc4349ee1fb20dc}{relier\+\_\+2\+Portes} (int xA, int yA)
+\begin{DoxyCompactList}\small\item\em fonction qui relie une porte d\textquotesingle{}une salle à la porte de la salle suivante \end{DoxyCompactList}\item 
 void \hyperlink{RandomRoom_8c_a22f6d4c2e2023fe2d6298a445f814bb6}{positionzero} ()
 \begin{DoxyCompactList}\small\item\em fonction qui met à zéro le paramètre position de la carte (matrice) \end{DoxyCompactList}\item 
-\hypertarget{RandomRoom_8c_a5f1586659681cf692359f7c8c003dd8b}{void \hyperlink{RandomRoom_8c_a5f1586659681cf692359f7c8c003dd8b}{init\-\_\-map} ()}\label{RandomRoom_8c_a5f1586659681cf692359f7c8c003dd8b}
+void \hyperlink{RandomRoom_8c_a5f1586659681cf692359f7c8c003dd8b}{init\+\_\+map} ()\hypertarget{RandomRoom_8c_a5f1586659681cf692359f7c8c003dd8b}{}\label{RandomRoom_8c_a5f1586659681cf692359f7c8c003dd8b}
 
 \begin{DoxyCompactList}\small\item\em fonction qui initialise une carte totalement aléatoire constituée de salles reliées par des couloirs \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
-Programme regroupant les fonctions qui génèrent les principales structures du jeu. \begin{DoxyAuthor}{Auteur}
-T\-R\-O\-T\-T\-I\-E\-R Arthur 
+Programme regroupant les fonctions qui génèrent les principales structures du jeu. 
+
+\begin{DoxyAuthor}{Auteur}
+T\+R\+O\+T\+T\+I\+ER Arthur 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\-0.\-1 
+1.\+0.\+1 
 \end{DoxyVersion}
 
 
 \subsection{Documentation des fonctions}
-\hypertarget{RandomRoom_8c_a09b403bd1c6619a90e88cffae8b52728}{\index{Random\-Room.\-c@{Random\-Room.\-c}!aleat@{aleat}}
-\index{aleat@{aleat}!RandomRoom.c@{Random\-Room.\-c}}
-\subsubsection[{aleat}]{\setlength{\rightskip}{0pt plus 5cm}int aleat (
+\index{Random\+Room.\+c@{Random\+Room.\+c}!aleat@{aleat}}
+\index{aleat@{aleat}!Random\+Room.\+c@{Random\+Room.\+c}}
+\subsubsection[{\texorpdfstring{aleat(int min, int max)}{aleat(int min, int max)}}]{\setlength{\rightskip}{0pt plus 5cm}int aleat (
 \begin{DoxyParamCaption}
 \item[{int}]{min, }
 \item[{int}]{max}
 \end{DoxyParamCaption}
-)}}\label{RandomRoom_8c_a09b403bd1c6619a90e88cffae8b52728}
+)}\hypertarget{RandomRoom_8c_a09b403bd1c6619a90e88cffae8b52728}{}\label{RandomRoom_8c_a09b403bd1c6619a90e88cffae8b52728}
 
 
 fonction qui retourne un nombre aléatoire entre 2 bornes 
@@ -60,14 +62,14 @@ fonction qui retourne un nombre aléatoire entre 2 bornes
 {\em max} & valeur maximum possible \\
 \hline
 \end{DoxyParams}
-\hypertarget{RandomRoom_8c_a9afc86bc24b2ce3dd6884a52c80fd6ae}{\index{Random\-Room.\-c@{Random\-Room.\-c}!init\-\_\-room@{init\-\_\-room}}
-\index{init\-\_\-room@{init\-\_\-room}!RandomRoom.c@{Random\-Room.\-c}}
-\subsubsection[{init\-\_\-room}]{\setlength{\rightskip}{0pt plus 5cm}void init\-\_\-room (
+\index{Random\+Room.\+c@{Random\+Room.\+c}!init\+\_\+room@{init\+\_\+room}}
+\index{init\+\_\+room@{init\+\_\+room}!Random\+Room.\+c@{Random\+Room.\+c}}
+\subsubsection[{\texorpdfstring{init\+\_\+room(int num, int nb\+\_\+salle)}{init_room(int num, int nb_salle)}}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+room (
 \begin{DoxyParamCaption}
 \item[{int}]{num, }
-\item[{int}]{nb\-\_\-salle}
+\item[{int}]{nb\+\_\+salle}
 \end{DoxyParamCaption}
-)}}\label{RandomRoom_8c_a9afc86bc24b2ce3dd6884a52c80fd6ae}
+)}\hypertarget{RandomRoom_8c_a9afc86bc24b2ce3dd6884a52c80fd6ae}{}\label{RandomRoom_8c_a9afc86bc24b2ce3dd6884a52c80fd6ae}
 
 
 fonction qui consruit une salle numérotée avec 1 ou 2 portes en fonction de ce numéro 
@@ -76,82 +78,82 @@ fonction qui consruit une salle numérotée avec 1 ou 2 portes en fonction de ce
 \begin{DoxyParams}{Paramètres}
 {\em num} & numéro de la salle à construire \\
 \hline
-{\em nb\-\_\-salle} & nombre de salle total de la carte \\
+{\em nb\+\_\+salle} & nombre de salle total de la carte \\
 \hline
 \end{DoxyParams}
-\hypertarget{RandomRoom_8c_a22f6d4c2e2023fe2d6298a445f814bb6}{\index{Random\-Room.\-c@{Random\-Room.\-c}!positionzero@{positionzero}}
-\index{positionzero@{positionzero}!RandomRoom.c@{Random\-Room.\-c}}
-\subsubsection[{positionzero}]{\setlength{\rightskip}{0pt plus 5cm}void positionzero (
+\index{Random\+Room.\+c@{Random\+Room.\+c}!positionzero@{positionzero}}
+\index{positionzero@{positionzero}!Random\+Room.\+c@{Random\+Room.\+c}}
+\subsubsection[{\texorpdfstring{positionzero()}{positionzero()}}]{\setlength{\rightskip}{0pt plus 5cm}void positionzero (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{RandomRoom_8c_a22f6d4c2e2023fe2d6298a445f814bb6}
+)}\hypertarget{RandomRoom_8c_a22f6d4c2e2023fe2d6298a445f814bb6}{}\label{RandomRoom_8c_a22f6d4c2e2023fe2d6298a445f814bb6}
 
 
 fonction qui met à zéro le paramètre position de la carte (matrice) 
 
-positionzero \hypertarget{RandomRoom_8c_adf23a078809017af2cc4349ee1fb20dc}{\index{Random\-Room.\-c@{Random\-Room.\-c}!relier\-\_\-2\-Portes@{relier\-\_\-2\-Portes}}
-\index{relier\-\_\-2\-Portes@{relier\-\_\-2\-Portes}!RandomRoom.c@{Random\-Room.\-c}}
-\subsubsection[{relier\-\_\-2\-Portes}]{\setlength{\rightskip}{0pt plus 5cm}int relier\-\_\-2\-Portes (
+positionzero \index{Random\+Room.\+c@{Random\+Room.\+c}!relier\+\_\+2\+Portes@{relier\+\_\+2\+Portes}}
+\index{relier\+\_\+2\+Portes@{relier\+\_\+2\+Portes}!Random\+Room.\+c@{Random\+Room.\+c}}
+\subsubsection[{\texorpdfstring{relier\+\_\+2\+Portes(int x\+A, int y\+A)}{relier_2Portes(int xA, int yA)}}]{\setlength{\rightskip}{0pt plus 5cm}int relier\+\_\+2\+Portes (
 \begin{DoxyParamCaption}
-\item[{int}]{x\-A, }
-\item[{int}]{y\-A}
+\item[{int}]{xA, }
+\item[{int}]{yA}
 \end{DoxyParamCaption}
-)}}\label{RandomRoom_8c_adf23a078809017af2cc4349ee1fb20dc}
+)}\hypertarget{RandomRoom_8c_adf23a078809017af2cc4349ee1fb20dc}{}\label{RandomRoom_8c_adf23a078809017af2cc4349ee1fb20dc}
 
 
-fonction qui relie une porte d'une salle à la porte de la salle suivante 
+fonction qui relie une porte d\textquotesingle{}une salle à la porte de la salle suivante 
 
 
 \begin{DoxyParams}{Paramètres}
-{\em x\-A} & numéro de ligne de la porte à relier \\
+{\em xA} & numéro de ligne de la porte à relier \\
 \hline
-{\em y\-A} & numéro de colonne de la porte à relier \\
+{\em yA} & numéro de colonne de la porte à relier \\
 \hline
 \end{DoxyParams}
-\hypertarget{RandomRoom_8c_a7213b6f4a58d528a141021409ef9abde}{\index{Random\-Room.\-c@{Random\-Room.\-c}!room\-\_\-possible@{room\-\_\-possible}}
-\index{room\-\_\-possible@{room\-\_\-possible}!RandomRoom.c@{Random\-Room.\-c}}
-\subsubsection[{room\-\_\-possible}]{\setlength{\rightskip}{0pt plus 5cm}int room\-\_\-possible (
+\index{Random\+Room.\+c@{Random\+Room.\+c}!room\+\_\+possible@{room\+\_\+possible}}
+\index{room\+\_\+possible@{room\+\_\+possible}!Random\+Room.\+c@{Random\+Room.\+c}}
+\subsubsection[{\texorpdfstring{room\+\_\+possible(int lg\+\_\+mur\+\_\+horiz, int lg\+\_\+mur\+\_\+vert, int posy, int posx)}{room_possible(int lg_mur_horiz, int lg_mur_vert, int posy, int posx)}}]{\setlength{\rightskip}{0pt plus 5cm}int room\+\_\+possible (
 \begin{DoxyParamCaption}
-\item[{int}]{lg\-\_\-mur\-\_\-horiz, }
-\item[{int}]{lg\-\_\-mur\-\_\-vert, }
+\item[{int}]{lg\+\_\+mur\+\_\+horiz, }
+\item[{int}]{lg\+\_\+mur\+\_\+vert, }
 \item[{int}]{posy, }
 \item[{int}]{posx}
 \end{DoxyParamCaption}
-)}}\label{RandomRoom_8c_a7213b6f4a58d528a141021409ef9abde}
+)}\hypertarget{RandomRoom_8c_a7213b6f4a58d528a141021409ef9abde}{}\label{RandomRoom_8c_a7213b6f4a58d528a141021409ef9abde}
 
 
-fonction qui parcourt la matrice pour vérifier si la construction d'une salle est possible 
+fonction qui parcourt la matrice pour vérifier si la construction d\textquotesingle{}une salle est possible 
 
 
 \begin{DoxyParams}{Paramètres}
-{\em lg\-\_\-mur\-\_\-horiz} & longueur des murs horizontaux \\
+{\em lg\+\_\+mur\+\_\+horiz} & longueur des murs horizontaux \\
 \hline
-{\em lg\-\_\-mur\-\_\-vert} & longueur des murs verticaux \\
+{\em lg\+\_\+mur\+\_\+vert} & longueur des murs verticaux \\
 \hline
 {\em posy} & numero de la colonne ou débute la salle \\
 \hline
 {\em posy} & numero de la ligne ou débute la salle \\
 \hline
 \end{DoxyParams}
-\hypertarget{RandomRoom_8c_afe8094b834c754bae83505527a67e93a}{\index{Random\-Room.\-c@{Random\-Room.\-c}!trouver\-\_\-porte@{trouver\-\_\-porte}}
-\index{trouver\-\_\-porte@{trouver\-\_\-porte}!RandomRoom.c@{Random\-Room.\-c}}
-\subsubsection[{trouver\-\_\-porte}]{\setlength{\rightskip}{0pt plus 5cm}int trouver\-\_\-porte (
+\index{Random\+Room.\+c@{Random\+Room.\+c}!trouver\+\_\+porte@{trouver\+\_\+porte}}
+\index{trouver\+\_\+porte@{trouver\+\_\+porte}!Random\+Room.\+c@{Random\+Room.\+c}}
+\subsubsection[{\texorpdfstring{trouver\+\_\+porte(int $\ast$x\+A, int $\ast$y\+A, int salle)}{trouver_porte(int *xA, int *yA, int salle)}}]{\setlength{\rightskip}{0pt plus 5cm}int trouver\+\_\+porte (
 \begin{DoxyParamCaption}
-\item[{int $\ast$}]{x\-A, }
-\item[{int $\ast$}]{y\-A, }
+\item[{int $\ast$}]{xA, }
+\item[{int $\ast$}]{yA, }
 \item[{int}]{salle}
 \end{DoxyParamCaption}
-)}}\label{RandomRoom_8c_afe8094b834c754bae83505527a67e93a}
+)}\hypertarget{RandomRoom_8c_afe8094b834c754bae83505527a67e93a}{}\label{RandomRoom_8c_afe8094b834c754bae83505527a67e93a}
 
 
 fonction qui met à jour les coordonnées de la prochaine porte à relier 
 
 
 \begin{DoxyParams}{Paramètres}
-{\em x\-A} & numéro de ligne de la porte à relier \\
+{\em xA} & numéro de ligne de la porte à relier \\
 \hline
-{\em y\-A} & numéro de colonne de la porte à relier \\
+{\em yA} & numéro de colonne de la porte à relier \\
 \hline
 {\em salle} & numéro de la salle où se situe actuellement le reliage de porte \\
 \hline

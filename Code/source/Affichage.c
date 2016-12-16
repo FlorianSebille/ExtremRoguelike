@@ -84,45 +84,61 @@ void Win_Stat(WINDOW *fenetre, int widthF){
 		wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
 	}else wattroff(fenetre, A_BOLD | COLOR_PAIR(2));
 
-	if(joueur.addcle == 1){
+	/*if(joueur.addcle == 1){
 		wattron(fenetre, A_BOLD | COLOR_PAIR(1));
 		mvwprintw(fenetre,13,2,"KEY");					/* affichage de si le joueur possède la clé. */
-		wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
-	}
+		//wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
+	//}
 
 	wattron(fenetre, A_BOLD | COLOR_PAIR(2));
-	mvwprintw(fenetre,15,2,"LEGENDE: ");
+	mvwprintw(fenetre,13,2,"LEGENDE: ");
 	wattroff(fenetre, A_BOLD | COLOR_PAIR(2));
 
-	mvwprintw(fenetre,16,4,"NOURRITURE");
+	mvwprintw(fenetre,14,4,"JOUEUR");
+	n = strlen("f");
+	wattron(fenetre, A_BOLD | COLOR_PAIR(10));
+	mvwprintw(fenetre,14,widthF-1-n,"@");		/* affichage du symbole de la nourriture. */
+	wattroff(fenetre, A_BOLD | COLOR_PAIR(10));
+
+	mvwprintw(fenetre,15,4,"NOURRITURE");
 	n = strlen("f");
 	wattron(fenetre, A_BOLD | COLOR_PAIR(1));
-	mvwprintw(fenetre,16,widthF-1-n,"f");		/* affichage du symbole de la nourriture. */
+	mvwprintw(fenetre,15,widthF-1-n,"f");		/* affichage du symbole de la nourriture. */
 	wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
 
-	mvwprintw(fenetre,17,4,"CLE");
+	mvwprintw(fenetre,16,4,"CLE");
 	n = strlen("K");
-	wattron(fenetre, A_BOLD | COLOR_PAIR(1));
-	mvwprintw(fenetre,17,widthF-1-n,"K");		/* affichage du symbole de la clé. */
-	wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
+	if(joueur.addcle == 0){
+		wattron(fenetre, A_BOLD | COLOR_PAIR(1));
+	}else wattron(fenetre, A_BOLD | COLOR_PAIR(2));
+	mvwprintw(fenetre,16,widthF-1-n,"K");		/* affichage du symbole de la clé. */
+	if(joueur.addcle == 0){
+		wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
+	}else wattroff(fenetre, A_BOLD | COLOR_PAIR(2));
 
-	mvwprintw(fenetre,18,4,"MEDIKIT");
+	mvwprintw(fenetre,17,4,"MEDIKIT");
 	n = strlen("M");
 	wattron(fenetre, A_BOLD | COLOR_PAIR(1));
-	mvwprintw(fenetre,18,widthF-1-n,"M");		/* affichage du symbole du medikit. */
+	mvwprintw(fenetre,17,widthF-1-n,"M");		/* affichage du symbole du medikit. */
 	wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
 
-	mvwprintw(fenetre,19,4,"ESCALIER");
+	mvwprintw(fenetre,18,4,"ESCALIER");
 	n = strlen("f");
-	wattron(fenetre, A_BOLD | COLOR_PAIR(1));
-	mvwaddch(fenetre, 19, widthF-1-n, ACS_PI);		/* affichage du symbole pour changer de STAGE. */
-	wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
+	wattron(fenetre, A_BOLD | COLOR_PAIR(11));
+	mvwaddch(fenetre, 18, widthF-1-n, ACS_PI);		/* affichage du symbole pour changer de STAGE. */
+	wattroff(fenetre, A_BOLD | COLOR_PAIR(11));
 
-	mvwprintw(fenetre,20,4,"ARRIVE");
+	mvwprintw(fenetre,19,4,"ARRIVE");
 	n = strlen("f");
 	wattron(fenetre, A_BOLD | COLOR_PAIR(2));
-	mvwaddch(fenetre, 20, widthF-1-n, ACS_CKBOARD);		/* affichage du symbole de la porte finale. */
+	mvwaddch(fenetre, 19, widthF-1-n, ACS_CKBOARD);		/* affichage du symbole de la porte finale. */
 	wattroff(fenetre, A_BOLD | COLOR_PAIR(2));
+
+	mvwprintw(fenetre,20,4,"MONSTRES");
+	n = strlen("f");
+	wattron(fenetre, A_BOLD | COLOR_PAIR(1));
+	mvwprintw(fenetre, 20, widthF-1-n, "T");		/* affichage du symbole des Monstres. */
+	wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
 
 	wattron(fenetre, A_BOLD | COLOR_PAIR(2));
 	mvwprintw(fenetre,22,2,"COMMANDE: ");
