@@ -49,8 +49,8 @@ void fillmap(){
 int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx){
   int i = posx;
   int j,k,l;
-  if(posx <= 5 || posx >= x - lg_mur_vert - 5) return 0;
-  if(posy <= 5 || posy >= y - lg_mur_horiz - 5) return 0;
+  if(posx <= 2 || posx >= x - lg_mur_vert - 2) return 0;
+  if(posy <= 2 || posy >= y - lg_mur_horiz - 2) return 0;
   for(j = posy, k = 0; (k < lg_mur_horiz) && (j < y); j++, k++){
     if(MAP[i][j].lieu == 1 || MAP[i+1][j].lieu == 1 || MAP[i-1][j].lieu == 1) return 0;
   }
@@ -297,7 +297,7 @@ int main(){
   xB = &ligne;
   yB = &colonne;
   fillmap();
-  nombre_salle = aleat(3,5);
+  nombre_salle = aleat(3,4);
 
   for(i = 0; i < nombre_salle; i++){  /* On remplit la carte d'un nombre de salle aléatoire */
     init_room(i,nombre_salle);
@@ -310,6 +310,7 @@ int main(){
   }
   for(i = 0; i < x; i++){
     for(j = 0; j < y; j++){
+      if(i == 0 || j == 0 || i == x - 1 || j == y - 1)printf("X");
       if(MAP[i][j].lieu == 0) printf(" ");
       else printf("%i",MAP[i][j].lieu);
     }

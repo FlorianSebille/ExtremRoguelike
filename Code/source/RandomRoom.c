@@ -44,8 +44,8 @@ void fillmap(){
 int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx){
   int i = posx;
   int j,k,l;
-  if(posx <= 1 || posx >= x - lg_mur_vert -1) return 0;
-  if(posy <= 1 || posy >= y - lg_mur_horiz -1) return 0;
+  if(posx <= 2 || posx >= x - lg_mur_vert -2) return 0;
+  if(posy <= 2 || posy >= y - lg_mur_horiz -2) return 0;
   for(j = posy, k = 0; (k < lg_mur_horiz) && (j < y); j++, k++){
     if(MAP[i][j].lieu == 1 || MAP[i+1][j].lieu == 1 || MAP[i-1][j].lieu == 1) return 0;
   }
@@ -100,7 +100,8 @@ void init_room(int num, int nb_salle){
     if(pos_door2 == 0 || pos_door2 == lg_mur_horiz || pos_door2 == perim_room || pos_door2 == 2 * lg_mur_horiz + lg_mur_vert || pos_door2 == lg_mur_horiz + lg_mur_vert){
       if(pos_door2 == 0)pos_door2 = pos_door2 + 1;
       else pos_door2 = pos_door2 - 1;
-    
+    }
+
   }
 
   /* Si il y a la place pour une salle, alors on la construit */
