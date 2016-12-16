@@ -76,7 +76,9 @@ int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win){
     mvwprintw(fin_Win,7,16," | |___) / ___ | | | | ____|  | |___| |\\ V /| ____| |     " );
     mvwprintw(fin_Win,8,16," \\______/\\_____|_|_|_|_____)   \\_____/  \\_/ |_____)_|      " );
 
-		mvwprintw(fin_Win,11,27,"Dommage, il semblerait que vous êtes mort");
+		if(type_mort == 0) mvwprintw(fin_Win,11,21,"Dommage, vous êtes mort tué par un monstre");
+		else if(type_mort == 1) mvwprintw(fin_Win,11,21,"Dommage, vous êtes mort en tombant dans un piège");
+		else if(type_mort == 2) mvwprintw(fin_Win,11,27,"Dommage, vous êtes mort de faim ");
 
 		mvwprintw(chat_Win,4,5,"           uuuuuuu");
 		mvwprintw(chat_Win,5,5,"      uu$$$$$$$$$$$uu");
