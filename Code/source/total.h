@@ -31,30 +31,30 @@ int type_mort;
 
 /**
  * \enum t_element
- * \brief type enumeration pour les cellules.
+ * \brief Type énumeration pour les cellules.
  *
- * t_element est un type enum qui sert a définir ce qu'une cellule contient par exemple
+ * t_element est un type enum qui sert à définir ce qu'une cellule contient par exemple
  * un mur, le sol, le joueur etc.
  */
 typedef enum {vide, mur, sol, porte, couloir, personnage, uplevel, arriver, cle, food, piege, medikit, mechant} t_element;
 
 /**
  * \struct t_cellule
- * \brief type de la matrice qui se sert jouer.
+ * \brief Type de la matrice qui sert à jouer.
  *
- * t_cellule est une structure qui sert à stocker les differents element utile a la gestion d'une partie
- * par exemple les different objets du jeu tel que le medikit ou la nouriture et bien les monstre
- * elle sert aussi a faire le lien entre les salle.
+ * t_cellule est une structure qui sert à stocker les différents éléments utile a la gestion d'une partie
+ * par exemple les différents objets du jeu tel que le medikit ou la nourriture et bien les monstres,
+ * elle sert aussi à faire le lien entre les salles.
  */
 
 typedef struct {t_element lieu; int position; int relie; int xb;int yb;int num_salle;int presence;} t_cellule;
 
 /**
  * \struct t_joueur
- * \brief type du joueur.
+ * \brief Type du joueur.
  *
- * t_joueur est une structure contenant tout les element utile consernant le joueur tel que son niveau de vie
- * ou sa nouriture, son niveau. Elle sert aussi a stocker le nom du joueur son etage ou meme sa salle.
+ * t_joueur est une structure contenant tous les éléments utiles concernant le joueur tel que ses points de vie
+ * ou sa nourriture, son niveau. Elle sert aussi à stocker le nom du joueur son étage ou même sa salle.
  */
 typedef struct {char nom[20];int coordo_x;int coordo_y;t_element etat_avant;int addcle;int STAGE;int SALLE;int LEVEL;int EXP;int HP;int ATT;int DEF;int FOOD;} t_joueur;
 
@@ -71,8 +71,8 @@ t_joueur joueur;
  * \struct t_monstre
  * \brief type des monstres.
  *
- * t_monstre est une structure qui sert à stocker les differents element utile consernant les monstres
- * comme leurs coordonnés, leurs niveaux.
+ * t_monstre est une structure qui sert à stocker les différents éléments utiles concernant les monstres
+ * comme leurs coordonnées, leurs niveaux.
  */
 typedef struct {int coordo_x;int coordo_y;int salle;int EXP;int HP;int ATT;int DEF;} t_monstre;
 
@@ -158,12 +158,13 @@ int Charger_Sauvegarde(WINDOW *fenetre);
 
 void addsauv();
 
-void debut_game(WINDOW *S_win, WINDOW *T_win, WINDOW *F_win);
+//dans le fichier debut_partie.c
+void debut_game(WINDOW *S_win, WINDOW *T_win);
 
+//dans le fichier fin_de_la_partie.c
 int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win);
 
 //dans le fichier monstre.c
-
 void depl_monstre();
 
 //dans le fichier combat.c
@@ -173,25 +174,25 @@ void combat();
 
 /**
  * \struct t_coord
- * \brief type qui donne les coordonnés d'un objet ou d'un element.
+ * \brief Type qui donne les coordonnés d'un objet ou d'un élément.
  *
- * t_coord est une structure qui contient la ligne et la colonne d'un element.
- * il est utiliser pour donner la coordonné d'un element de la matrice.
+ * t_coord est une structure qui contient la ligne et la colonne d'un élément.
+ * il est utilisé pour donner la coordonnée d'un élément de la matrice.
  */
 typedef struct {int ligne; int colonne;} t_coord;
 
 /**
  * \struct t_elemfile
- * \brief type des element de la fille.
+ * \brief Type des éléments de la file.
  *
- * t_elemfile est une structure contenant et l'element suivant.
+ * t_elemfile est une structure contenant une valeur de type t_coord et l'élément suivant.
  */
 
 /**
   * \struct elemfile
-  * \brief nom de la structure pour t_elemfile.
+  * \brief Nom de la structure pour t_elemfile.
   *
-  * t_elemfile est une structure contenant et l'element suivant.
+  * t_elemfile est une structure contenant une valeur de type t_coord et l'élément suivant.
   */
 typedef struct elemfile{t_coord nombre; struct elemfile*suivant;} t_elemfile;
 

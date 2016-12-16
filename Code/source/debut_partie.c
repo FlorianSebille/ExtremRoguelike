@@ -1,7 +1,7 @@
 
 /**
  * \file debut_partie.c
- * \brief Programme regroupant les appels de fonction pour chaque debut de partie
+ * \brief Programme regroupant les appels de fonction pour chaque début de partie
  * \author SEBILLE Florian
  * \version 1.0.1
  */
@@ -9,13 +9,13 @@
 #include "total.h"
 
 /**
- * \fn void debut_game(WINDOW *S_win, WINDOW *T_win, WINDOW *F_win)
- * \brief Fonction qui nitialise la map et place les différents elements.
+ * \fn void debut_game(WINDOW *S_win, WINDOW *T_win)
+ * \brief Fonction qui initialise la map et place les différents elements.
  *
  * \param S_win contenant la map.
- * \param T_win contenant la map.
+ * \param T_win contenant le chat.
  */
-void debut_game(WINDOW *S_win, WINDOW *T_win, WINDOW *F_win){
+void debut_game(WINDOW *S_win, WINDOW *T_win){
   init_map(S_win);
   Placer_uplevel();
   Placer_perso();

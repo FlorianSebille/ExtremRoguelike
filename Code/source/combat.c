@@ -1,5 +1,5 @@
 /**
- * \file Charger_Sauvegarde.c
+ * \file combat.c
  * \brief Fichier contenant la fontion pour le combat
  * \author LARDY Anthony
  * \version 1.0.1

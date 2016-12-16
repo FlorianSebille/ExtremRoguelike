@@ -11,7 +11,7 @@
 
   ```
   git clone https://github.com/kirozz/ExtremRoguelike.git
-  cd ExtremRoguelike/code/source
+  cd ExtremRoguelike/Code/source
   make
   ./Rogue
   ```

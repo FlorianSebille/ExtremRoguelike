@@ -1,7 +1,7 @@
 
 /**
  * \file Depl_perso.c
- * \brief Programme regroupant les fonctions utile au deplacement
+ * \brief Programme regroupant les fonctions utiles au déplacement
  * \author SEBILLE Florian
  * \author LARDY Anthony
  * \version 1.0.1
@@ -11,10 +11,10 @@
 
 /**
  * \fn test_depl(int c)
- * \brief Fonction qui sert tester le deplacement du joueur en fonction du deplacement
+ * \brief Fonction qui sert à tester le déplacement du joueur en fonction du déplacement
  *        choisi par l'utilisateur.
  *
- * \param c deplacement choisi par l'utilisateur.
+ * \param c déplacement choisi par l'utilisateur.
  */
 int test_depl(int c){
 
@@ -45,10 +45,10 @@ int test_depl(int c){
 
 /**
  * \fn Depl_perso(WINDOW *fenetre)
- * \brief Fonction qui sert déplacer le joueur et à gerer les différentes actions
- *        en fonction de l'endroit ou se déplace le joueur.
+ * \brief Fonction qui sert à déplacer le joueur et à gerer les différentes actions
+ *        en fonction de l'endroit où se déplace le joueur.
  *
- * \param fenetre ou se situe la map du jeu.
+ * \param fenetre où se situe la map du jeu.
  */
 int Depl_perso(WINDOW *fenetre){
 
@@ -108,17 +108,17 @@ int Depl_perso(WINDOW *fenetre){
 
 /* KEY PART */
 
-  if(joueur.etat_avant == cle){ // le joueur recupere la clé
+  if(joueur.etat_avant == cle){ // le joueur récupère la clé
     joueur.addcle = 1;
     joueur.etat_avant = sol;
   }
 
-  if(joueur.etat_avant == medikit){ // le joueur recupere la clé
+  if(joueur.etat_avant == medikit){ // le joueur récupère la clé
     joueur.HP = 20;
     joueur.etat_avant = sol;
   }
 
-  if(joueur.etat_avant == arriver && joueur.addcle == 1){     // le joueur est a l'arriver avec la clé
+  if(joueur.etat_avant == arriver && joueur.addcle == 1){     // le joueur est a l'arrivée avec la clé
 
   }
 
