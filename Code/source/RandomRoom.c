@@ -100,6 +100,7 @@ void init_room(int num, int nb_salle){
     if(pos_door2 == 0 || pos_door2 == lg_mur_horiz || pos_door2 == perim_room || pos_door2 == 2 * lg_mur_horiz + lg_mur_vert || pos_door2 == lg_mur_horiz + lg_mur_vert){
       if(pos_door2 == 0)pos_door2 = pos_door2 + 1;
       else pos_door2 = pos_door2 - 1;
+    
   }
 
   /* Si il y a la place pour une salle, alors on la construit */
