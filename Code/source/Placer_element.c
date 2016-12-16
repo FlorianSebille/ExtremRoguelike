@@ -174,7 +174,7 @@ int Placer_cle(){
         if(MAP[i][j].lieu==cle){
           return 1;
         }
-      }Fonction qui fait déplacer le monstre aléatoirement
+      }
     }
   }
   Placer_cle();
@@ -187,7 +187,7 @@ int Placer_cle(){
   */
 int Placer_monstre(){
   int i, j;
-  monstre.salle = aleat(0,nombre_salle - 1);
+  monstre.salle = aleat(1,nombre_salle - 1);
   int x_salle = aleat(0,4);
   int y_salle = aleat(0,9);
   for(i=0;i<x;i++){

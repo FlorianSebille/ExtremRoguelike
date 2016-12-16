@@ -127,12 +127,14 @@ int Depl_perso(WINDOW *fenetre){
   if(joueur.etat_avant == piege){
     ecrire_chat(fenetre,8);
     joueur.HP = 0;
+    type_mort = 1;
   }
 
 /* FOOD PART */
 
   if(nb_deplacement == 7){ //si le joueur effecue 5 déplacements alors il perd 1 dans sa barre de food
-    if (joueur.FOOD == 0) {
+    if(joueur.FOOD == 0){
+      if(joueur.HP == 1) type_mort = 2;
       joueur.HP--;
     }else joueur.FOOD--;
     nb_deplacement = 0;

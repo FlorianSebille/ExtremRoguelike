@@ -26,6 +26,7 @@ int mort;
 int q;
 int f;
 int cheat;
+int type_mort;
 
 
 /**

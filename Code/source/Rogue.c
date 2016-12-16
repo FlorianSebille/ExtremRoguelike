@@ -97,7 +97,7 @@ int main(){
 
         utilisateur = Depl_perso(T_win);
         combat();
-        if(joueur.STAGE > 1 && compteur%1000 == 0 && monstre.HP > 0){
+        if(joueur.STAGE > 1 && compteur%3000 == 0 && monstre.HP > 0){
             depl_monstre();
         }
         compteur++;
