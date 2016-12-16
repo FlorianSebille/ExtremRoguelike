@@ -106,15 +106,17 @@ void Win_Stat(WINDOW *fenetre, int widthF){
 	mvwprintw(fenetre,15,widthF-1-n,"f");		/* affichage du symbole de la nourriture. */
 	wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
 
-	mvwprintw(fenetre,16,4,"CLE");
-	n = strlen("K");
 	if(joueur.addcle == 0){
 		wattron(fenetre, A_BOLD | COLOR_PAIR(1));
 	}else wattron(fenetre, A_BOLD | COLOR_PAIR(2));
-	mvwprintw(fenetre,16,widthF-1-n,"K");		/* affichage du symbole de la clé. */
+	mvwprintw(fenetre,16,4,"CLE");
 	if(joueur.addcle == 0){
 		wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
 	}else wattroff(fenetre, A_BOLD | COLOR_PAIR(2));
+	n = strlen("K");
+	wattron(fenetre, A_BOLD | COLOR_PAIR(1));
+	mvwprintw(fenetre,16,widthF-1-n,"K");		/* affichage du symbole de la clé. */
+	wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
 
 	mvwprintw(fenetre,17,4,"MEDIKIT");
 	n = strlen("M");
@@ -153,7 +155,7 @@ void Win_Stat(WINDOW *fenetre, int widthF){
 	mvwprintw(fenetre,24,widthF-1-n,"S");		/* affichage de la touche pour sauvegarder. */
 
 	wattron(fenetre, A_BOLD | COLOR_PAIR(2));
-	mvwprintw(fenetre,25,2,"MOVE:");
+	mvwprintw(fenetre,25,2,"DEPLACEMENT:");
 	wattroff(fenetre, A_BOLD | COLOR_PAIR(2));
 
 	n = strlen("FLECHE   HAUT");

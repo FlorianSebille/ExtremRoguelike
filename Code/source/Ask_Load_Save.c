@@ -68,9 +68,7 @@ int Ask_Load_Save(){
 	mvwprintw(Rules_Win,2,2,"Cher Joueur,");
 	mvwprintw(Rules_Win,3,2,"afin de profiter au maximum de");
 	mvwprintw(Rules_Win,4,2,"l'expérience de jeu, nous te");
-	mvwprintw(Rules_Win,5,2,"demandons de ne pas effectuer toutes");
-	mvwprintw(Rules_Win,6,2,"actions qui serait contraire au mode");
-	mvwprintw(Rules_Win,7,2,"d'utilisation normal.");
+	mvwprintw(Rules_Win,5,2,"demandons de ne pasl.");
 	mvwprintw(Rules_Win,10,2,"Au cours de ton aventure, tu");
 	mvwprintw(Rules_Win,11,2,"évolueras dans une tour formé de");
 	mvwprintw(Rules_Win,12,2,"plusieurs étages, tu devras braver");
