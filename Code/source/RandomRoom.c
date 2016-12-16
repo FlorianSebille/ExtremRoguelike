@@ -38,8 +38,8 @@ void fillmap(){
  * \brief fonction qui parcourt la matrice pour vérifier si la construction d'une salle est possible
  * \param lg_mur_horiz longueur des murs horizontaux
  * \param lg_mur_vert longueur des murs verticaux
- * \param posy numero de la colonne ou débute la salle
- * \param posy numero de la ligne ou débute la salle
+ * \param posy numéro de la colonne où débute la salle
+ * \param posy numéro de la ligne où débute la salle
  */
 int room_possible (int lg_mur_horiz, int lg_mur_vert, int posy, int posx){
   int i = posx;
@@ -259,7 +259,7 @@ int relier_2Portes(int xA, int yA){
 }
 
 /**
- * \void positionzero
+ * \void positionzero()
  * \brief fonction qui met à zéro le paramètre position de la carte (matrice)
  */
 void positionzero(){
@@ -272,7 +272,7 @@ void positionzero(){
 }
 
 /**
- * \fn void init_map
+ * \fn void init_map()
  * \brief fonction qui initialise une carte totalement aléatoire constituée de salles reliées par des couloirs
  */
 void init_map(){

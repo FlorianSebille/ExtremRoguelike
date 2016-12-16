@@ -1,4 +1,3 @@
-
 /**
  * \file fin_de_la_partie.c
  * \brief Programme contenant la fonction pour créer une fenêtre
@@ -12,14 +11,14 @@
  * \fn fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win)
  * \brief Fonction qui sert à gerer la fin de la partie
  *
- * demander a l'utilisateur de rejouer ou quitter et
+ * demande à l'utilisateur de rejouer ou quitter et
  * de faire un affichage en fonction de la partie précedente.
  *
- * \param chat_Win fenetre ou se situe le chat.
- * \param map_Win fenetre ou se situe la map du jeu.
- * \param stat_Win fenetre ou se situe les stats de la partie.
+ * \param chat_Win fenêtre où se situe le chat.
+ * \param map_Win fenêtre où se situe la map du jeu.
+ * \param stat_Win fenêtre où se situe les stats de la partie.
  *
- * \return 1 si le joueur veux rejouer 0 si il veux quitter.
+ * \return 1 si le joueur veut rejouer 0 s'il veux quitter.
  */
 int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win){
 	int startx, starty, width, height;

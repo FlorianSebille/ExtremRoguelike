@@ -178,10 +178,10 @@ void Win_Stat(WINDOW *fenetre, int widthF){
 
 /**
  * \fn effacer_ligne(WINDOW *chatwin, int ligne_effacer)
- * \brief Fonction qui sert a effacer une ligne d'une fenetre donner en parametre.
+ * \brief Fonction qui sert à effacer une ligne d'une fenêtre donnée en paramètre.
  *
- * \param chatwin fenetre ou se situe la ligne a effacer.
- * \param ligne_effacer ligne a effacer.
+ * \param chatwin fenêtre où se situe la ligne à effacer.
+ * \param ligne_effacer ligne à effacer.
  */
 void effacer_ligne(WINDOW *chatwin, int ligne_effacer){
   int colone;
@@ -197,9 +197,9 @@ void effacer_ligne(WINDOW *chatwin, int ligne_effacer){
 
 /**
  * \fn effacer_fenetre(WINDOW *chatwin)
- * \brief Fonction qui sert a effacer une fenetre donner en parametre.
+ * \brief Fonction qui sert à effacer une fenêtre donnée en paramètre.
  *
- * \param chatwin fenetre a effacer.
+ * \param chatwin fenêtre à effacer.
  */
 void effacer_fenetre(WINDOW *chatwin){
   int ligne;
@@ -218,10 +218,10 @@ void effacer_fenetre(WINDOW *chatwin){
 
 /**
  * \fn ecrire_chat(WINDOW *chatwin, int position_perso)
- * \brief Fonction qui sert a ecrire dans le chat.
+ * \brief Fonction qui sert à écrire dans le chat.
  *
- * \param chatwin fenetre ou se situe la ligne a effacer.
- * \param position_perso permet de choisir ce que l'on ecrit dans le chat.
+ * \param chatwin fenêtre où se situe la ligne à effacer.
+ * \param position_perso permet de choisir ce que l'on écrit dans le chat.
  */
 void ecrire_chat(WINDOW *chatwin, int position_perso){
 
