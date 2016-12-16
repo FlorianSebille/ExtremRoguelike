@@ -107,7 +107,7 @@ int fin_game(WINDOW *chat_Win,WINDOW *map_Win,WINDOW *stat_Win){
 	startx = 39;
 	starty = 18;
 	rejouer_Win=create_newwin(height,width,starty,startx,"REJOUER");
-	mvwprintw(rejouer_Win,4,30,"voulez vous rejouer ou quitter");
+	mvwprintw(rejouer_Win,4,30,"Voulez vous rejouer ou quitter ?");
 	mvwprintw(rejouer_Win,9,27,"q : QUITTER");
 	mvwprintw(rejouer_Win,9,52,"r : REJOUER");
 	wrefresh(rejouer_Win);
