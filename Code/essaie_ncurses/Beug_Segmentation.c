@@ -1,18 +1,23 @@
-/**
- * \file RandomRoom.c
- * \brief Programme regroupant les fonctions qui génèrent les principales structures du jeu
- * \author TROTTIER Arthur
- * \version 1.0.1
- */
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <curses.h>
+#include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
+#include <ncurses.h>
+#include "file.h"
+#define x 30
+#define y 89
 
-#include "total.h"
 
-/**
- * \fn int aleat(int min, int max)
- * \brief fonction qui retourne un nombre aléatoire entre 2 bornes
- * \param min valeur minimum possible
- * \param max valeur maximum possible
- */
+typedef enum {vide, mur, sol, porte, couloir, personnage, uplevel, arriver, cle, food, piege, medikit, mechant} t_element;
+
+typedef struct {t_element lieu; int position; int relie; int xb;int yb;int num_salle;int presence;} t_cellule;
+
+t_cellule MAP[x][y];
+
+
 int aleat(int min, int max){
     return (rand() % (max - min + 1)) + min;
 }
@@ -111,9 +116,12 @@ void init_room(int num, int nb_salle){
       if(compteur == pos_door1 || compteur == pos_door2){    /* On place les portes de la salle aleatoirement */
         MAP[i][j].lieu = porte;
         MAP[i][j].num_salle = num;
+      }if(compteur == pos_door1 || compteur == pos_door2){    /* On place les portes de la salle aleatoirement */
+          MAP[i][j].lieu = porte;
+          MAP[i][j].num_salle = num;
       }else{
-        MAP[i][j].lieu = mur;
-        MAP[i][j].num_salle = num;
+      MAP[i][j].lieu = mur;
+      MAP[i][j].num_salle = num;
       }
       compteur++;
     }
@@ -146,6 +154,7 @@ void init_room(int num, int nb_salle){
         MAP[i][j].lieu = mur;
         MAP[i][j].num_salle = num;
       }
+      if(compteur == ) MAP[i][j].lieu = 0;
       compteur++;
     }
     for(j = posy + 1, k = 0; (k < lg_mur_horiz - 1) && (j < y - 1); j++, k++){   /* On place le sol à l'intérieur de la salle */
@@ -278,31 +287,32 @@ void positionzero(){
  * \fn void init_map
  * \brief fonction qui initialise une carte totalement aléatoire constituée de salles reliées par des couloirs
  */
-void init_map(){
+
+int main(){
+  srand(time(NULL));
+  int nombre_salle, i,j;
+  int ligne, colonne;
   int * xB;
   int * yB;
-  int ligne, colonne;
-  int i;
   xB = &ligne;
   yB = &colonne;
-
-  fillmap();                          /* On initialise la map à vide */
-
-  if(joueur.STAGE != 1){
-    nombre_salle = nombre_salle + 1;
-  }else nombre_salle = aleat(3,5);
+  fillmap();
+  nombre_salle = aleat(3,5);
 
   for(i = 0; i < nombre_salle; i++){  /* On remplit la carte d'un nombre de salle aléatoire */
     init_room(i,nombre_salle);
   }
+
   for(i = 0; i < nombre_salle - 1; i++){  /* On relie les salles entres elles */
     positionzero();
     trouver_porte(xB,yB,i);
     relier_2Portes(ligne,colonne);
   }
-  if(joueur.STAGE > 1){ /* Si l'on ne se situe pas au premier étage alors on place dans les salles des monstres (fonction se situant dans Placer_element.c) */
-      Placer_monstre();
+  for(i = 0; i < x; i++){
+    for(j = 0; j < y; j++){
+      if(MAP[i][j].lieu == 0) printf(" ");
+      else printf("%i",MAP[i][j].lieu);
+    }
+    printf("\n");
   }
-  Placer_piege(); /* On place pour finir des pièges dans les salles (fonction se situant dans Placer_element.c) */
-
 }
