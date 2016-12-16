@@ -11,7 +11,7 @@
 
   ```
   git clone https://github.com/kirozz/ExtremRoguelike.git
-  cd ExtremRoguelike/code/source
+  cd ExtremRoguelike/Code/source
   make
   ./Rogue
   ```
@@ -20,9 +20,9 @@
 
   Avant que vous vous lanciez dans l'aventure, lisez les quelques conseils ci-dessous:
 
-  * Ne vous précipitez pas, la carte est remplis de piège
-  * N'oubliez pas de récuperer la clé, seul et unique moyen de gagner
-  * Veuillez lire attentivement les indications à l'écran
+  * Ne vous précipitez pas, la carte est remplis de piège.
+  * N'oubliez pas de récuperer la clé, seul et unique moyen de gagner.
+  * Veuillez lire attentivement les indications à l'écran.
 
 ## Compléments
 

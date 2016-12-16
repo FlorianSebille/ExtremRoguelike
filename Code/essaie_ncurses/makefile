@@ -1,9 +1,10 @@
-all: exe clean
+all: Beug clean
 
-exe: test_ncurses.o
-	gcc -o exe test_ncurses.o -lncurses
-test_ncurses.o: test_ncurses.c
-	gcc -c test_ncurses.c -lncurses
-
+Beug: Beug_Segmentation.o file.o
+	gcc -o Beug Beug_Segmentation.o file.o -lncurses
+Beug_Segmentation.o: Beug_Segmentation.c
+	gcc -c Beug_Segmentation.c
+file.o: file.c
+	gcc -c file.c
 clean:
 	rm *.o
