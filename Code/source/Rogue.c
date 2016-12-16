@@ -3,12 +3,43 @@
 
 /*! \mainpage ExtremRoguelike Documentation
  *
- * \section intro_sec Introduction
  *
- * Dans le cadre du projet du semestre 3 de L2 nous avons du céer un jeux.
- * Nous avons donc travailler en groupe de 3 personnes pour ce jeux
- *
- * <BR><BR>
+
+ * ## De quoi s'agit-il ?
+
+ * ExtremRoguelike est un jeu de type Roguelike poussé à son extrême où l'unique but est de progresser jusqu'au dernier étage tout en survivant aux élèments extérieurs.
+
+ * ## Comment jouer ?
+
+ * Vous souhaitez tenter votre chance ?
+ * Alors ouvrez un terminal et rentrez les commandes suivantes:
+
+ * ```
+ * git clone https://github.com/kirozz/ExtremRoguelike.git
+ * cd ExtremRoguelike/code/source
+ * make
+ * ./Rogue
+ * ```
+
+ * ## Vous êtes prêt ?
+
+ * Avant que vous vous lanciez dans l'aventure, lisez les quelques conseils ci-dessous:
+
+ * Ne vous précipitez pas, la carte est remplis de piège. <Br>
+ * N'oubliez pas de récuperer la clé, seul et unique moyen de gagner. <Br>
+ * Veuillez lire attentivement les indications à l'écran.
+
+ * ## Compléments
+
+ * #### Cadre
+
+ *Jeu réalisé dans le cadre d'un projet en 2ème année de licence SPI.
+
+ * #### Developpeurs
+
+ * LARDY Anthony (Anthony-Lardy)<Br>
+ * SEBILLE Florian (kirozz)<Br>
+ * TROTTIER Arthur (WarNN)
  *
  */
 
