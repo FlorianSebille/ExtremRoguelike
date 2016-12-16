@@ -64,13 +64,13 @@ int Ask_Load_Save(){
 	mvwprintw(Start_Win,7,55,"| |  \\ \\ |_| ( (_| | |_| | ____| || |  _ (| ____|");
 	mvwprintw(Start_Win,8,55,"|_|   |_\\___/ \\___ |____/|_____)\\_)_|_| \\_)_____)");
 	mvwprintw(Start_Win,9,55,"             (_____|                             ");
-	Rules_Win=create_newwin(heightRules,widthRules,startyRules,startxRules,"Rules");	/* Création de la fenêtre contenant les règles */
+	Rules_Win=create_newwin(heightRules,widthRules,startyRules,startxRules,"Règles");	/* Création de la fenêtre contenant les règles */
 	mvwprintw(Rules_Win,2,2,"Cher Joueur,");
 	mvwprintw(Rules_Win,3,2,"afin de profiter au maximum de");
 	mvwprintw(Rules_Win,4,2,"l'expérience de jeu, nous te");
 	mvwprintw(Rules_Win,5,2,"demandons de ne pas effectuer toutes");
-	mvwprintw(Rules_Win,6,2,"actions qui seraient contraire au mode");
-	mvwprintw(Rules_Win,7,2,"d'utilisation normal.");
+	mvwprintw(Rules_Win,6,2,"actions qui seraient contraire au");
+	mvwprintw(Rules_Win,7,2,"mode d'utilisation normal.");
 	mvwprintw(Rules_Win,10,2,"Au cours de ton aventure, tu");
 	mvwprintw(Rules_Win,11,2,"évolueras dans une tour formée de");
 	mvwprintw(Rules_Win,12,2,"plusieurs étages, tu devras braver");

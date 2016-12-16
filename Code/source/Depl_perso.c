@@ -108,17 +108,17 @@ int Depl_perso(WINDOW *fenetre){
 
 /* KEY PART */
 
-  if(joueur.etat_avant == cle){ // le joueur recupere la clé
+  if(joueur.etat_avant == cle){ // le joueur récupère la clé
     joueur.addcle = 1;
     joueur.etat_avant = sol;
   }
 
-  if(joueur.etat_avant == medikit){ // le joueur recupere la clé
+  if(joueur.etat_avant == medikit){ // le joueur récupère la clé
     joueur.HP = 20;
     joueur.etat_avant = sol;
   }
 
-  if(joueur.etat_avant == arriver && joueur.addcle == 1){     // le joueur est a l'arriver avec la clé
+  if(joueur.etat_avant == arriver && joueur.addcle == 1){     // le joueur est a l'arrivée avec la clé
 
   }
 
