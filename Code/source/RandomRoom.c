@@ -282,7 +282,6 @@ void init_map(){
   int i;
   xB = &ligne;
   yB = &colonne;
-
   fillmap();                          /* On initialise la map à vide */
 
   if(joueur.STAGE != 1){

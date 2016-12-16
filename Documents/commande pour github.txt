@@ -1,2 +1,10 @@
 export HTTP_PROXY="http://proxy.univ-lemans.fr:3128"
 export HTTPS_PROXY="http://proxy.univ-lemans.fr:3128"
+
+
+
+ouvrir deux terminal
+une avec gdb et une autre
+dans l'autre taper tty
+dans gdb taper tty (puis se que renvoie l'autre fenêtre)
+et voilà
