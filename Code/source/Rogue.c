@@ -25,7 +25,7 @@
 #include "total.h"
 /**
  * \fn int main
- * \fonction principale du jeu qui fait le déroulement de la partie
+ * \brief fonction principale du jeu qui fait le déroulement de la partie
  */
 int main(){
   initscr();
@@ -86,7 +86,7 @@ int main(){
 
         srand(time(NULL));
         joueur.STAGE = 1;
-        debut_game(S_win, T_win, F_win);
+        debut_game(S_win, T_win);
     }
 
     affichage(S_win);
@@ -97,7 +97,7 @@ int main(){
 
         utilisateur = Depl_perso(T_win);
         combat();
-        if(joueur.STAGE > 1 && compteur%1000 == 0 && monstre.HP > 0){
+        if(joueur.STAGE > 1 && compteur%3000 == 0 && monstre.HP > 0){
             depl_monstre();
         }
         compteur++;
@@ -110,7 +110,7 @@ int main(){
         if((joueur.etat_avant == arriver && joueur.addcle == 1) || joueur.HP == 0){
           choix = fin_game(T_win,S_win,F_win);
           if(choix == 1){
-            debut_game(S_win, T_win, F_win);
+            debut_game(S_win, T_win);
             affichage(S_win);
             Win_Stat(F_win,widthF);
           }

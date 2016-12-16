@@ -12,11 +12,11 @@
  * \fn void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, WINDOW *statfenetre, int utilisateur)
  * \brief Fonction qui sert à gerer quand le joueur est sur une porte ou un escalier
  *
- * demander a l'utilisateur si il veut bien prendre la porte ou changer de stage
+ * demande à l'utilisateur s'il veut bien prendre la porte ou changer de stage
  *
- * \param chatfenetre fenetre ou se situe le chat.
- * \param mapfenetre fenetre ou se situe la map du jeu.
- * \param statfenetre fenetre ou se situe les stats de la partie.
+ * \param chatfenetre fenêtre où se situe le chat.
+ * \param mapfenetre fenêtre où se situe la map du jeu.
+ * \param statfenetre fenêtre où se situe les stats de la partie.
  *
  */
 
@@ -87,7 +87,7 @@ void porte_escalier(WINDOW *chatfenetre,WINDOW *mapfenetre, WINDOW *statfenetre,
                       joueur.SALLE = MAP[joueur.coordo_x][joueur.coordo_y].num_salle+1;
                     }else if (joueur.etat_avant == uplevel){
                       joueur.STAGE = joueur.STAGE + 1;
-                      debut_game(mapfenetre, chatfenetre, statfenetre);
+                      debut_game(mapfenetre, chatfenetre);
                       if(stage_cle == joueur.STAGE){
                         Placer_cle();
                       }

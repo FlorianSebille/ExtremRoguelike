@@ -1,14 +1,5 @@
 /**
  * \file Placer_element.c
- * \brief Place tous les éléments du la carte.
- * \author LARDY Anthony
- * \author TROTTIER Arthur
- * \author SEBILLE Florian
- * \version 1.0.1
- */
-
-/**
- * \file placer_element.c
  * \brief Programme regroupant les fonctions de placement des différents éléments
  * \author SEBILLE Florian
  * \author LARDY Anthony
