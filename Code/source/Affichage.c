@@ -86,9 +86,9 @@ void Win_Stat(WINDOW *fenetre, int widthF){
 
 	/*if(joueur.addcle == 1){
 		wattron(fenetre, A_BOLD | COLOR_PAIR(1));
-		mvwprintw(fenetre,13,2,"KEY");					/* affichage de si le joueur possède la clé. */
+		mvwprintw(fenetre,13,2,"KEY");					 affichage de si le joueur possède la clé.
 		//wattroff(fenetre, A_BOLD | COLOR_PAIR(1));
-	//}
+	}*/
 
 	wattron(fenetre, A_BOLD | COLOR_PAIR(2));
 	mvwprintw(fenetre,13,2,"LEGENDE: ");
