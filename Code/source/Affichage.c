@@ -257,8 +257,8 @@ void affichage(WINDOW *fenetre){
 
   int i,j;
 
-  for(i = 1; i < x-2; i++){    /* Parcour de la matrice pour afficher dans la fenetre les diferents elements. */
-    for(j = 1; j < y-2; j++){
+  for(i = 1; i < x-1; i++){    /* Parcour de la matrice pour afficher dans la fenetre les diferents elements. */
+    for(j = 1; j < y-1; j++){
 
       if(MAP[i][j].lieu == vide){   /* affichage du vide en dehors des salle et des couloirs. */
         mvwprintw(fenetre,i,j," ");
