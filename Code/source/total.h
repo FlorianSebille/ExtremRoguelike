@@ -84,8 +84,8 @@ typedef struct {int coordo_x;int coordo_y;int salle;int EXP;int HP;int ATT;int D
  */
 t_monstre monstre;
 
-#define x 30
-#define y 89
+#define x 29
+#define y 88
 t_cellule MAP[x][y];
 
 

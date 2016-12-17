@@ -13,28 +13,28 @@
   */
 void combat(){
 	if(MAP[monstre.coordo_x][monstre.coordo_y+1].lieu == personnage){
-		joueur.HP = joueur.HP - 5;
+		joueur.HP = 0;
 		type_mort = 0;
 	}else if(MAP[monstre.coordo_x][monstre.coordo_y-1].lieu == personnage){
-		joueur.HP = joueur.HP - 5;
+		joueur.HP = 0;
 		type_mort = 0;
 	}else if(MAP[monstre.coordo_x+1][monstre.coordo_y-1].lieu == personnage){
-		joueur.HP = joueur.HP - 5;
+		joueur.HP = 0;
 		type_mort = 0;
 	}else if(MAP[monstre.coordo_x+1][monstre.coordo_y].lieu == personnage){
-		joueur.HP = joueur.HP - 5;
+		joueur.HP = 0;
 		type_mort = 0;
 	}else if(MAP[monstre.coordo_x+1][monstre.coordo_y+1].lieu == personnage){
-		joueur.HP = joueur.HP - 5;
+		joueur.HP = 0;
 		type_mort = 0;
 	}else if(MAP[monstre.coordo_x-1][monstre.coordo_y-1].lieu == personnage){
-		joueur.HP = joueur.HP - 5;
+		joueur.HP = 0;
 		type_mort = 0;
 	}else if(MAP[monstre.coordo_x-1][monstre.coordo_y].lieu == personnage){
-		joueur.HP = joueur.HP - 5;
+		joueur.HP = 0;
 		type_mort = 0;
 	}else if(MAP[monstre.coordo_x-1][monstre.coordo_y+1].lieu == personnage){
-		joueur.HP = joueur.HP - 5;
+		joueur.HP = 0;
 		type_mort = 0;
 	}
 }
